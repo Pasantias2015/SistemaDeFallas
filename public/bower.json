@@ -1,0 +1,17 @@
+{
+  "name": "transbarca",
+  "version": "0.0.1",
+  "authors": [
+    "Leonardo Loyo <cyberedward@gmail.com> "
+  ],
+  "description": "paquetes del frontend para el proyecto transbarca",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "sgf.app",
+   "dependencies": {
+    "bootstrap": "~3.3.4"
+    "bootstrap-material-design":  "~0.3.0"
+  }
+}
