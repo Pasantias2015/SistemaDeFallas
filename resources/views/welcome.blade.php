@@ -9,30 +9,44 @@
 		{!! Html::style('bower_components/bootstrap-material-design/dist/css/ripples.min.css') !!}
 		{!! Html::style('bower_components/bootstrap-material-design/dist/css/roboto.min.css') !!}
 		{!! Html::style('bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css') !!}
-<style>
-	body{
-		background-color: #B7011C;
-	}
+		{!! Html::style('css/style.css') !!}
 
-</style>
 	</head>
 	<body>
-<div class=" container" style="height:50em">
-<div class="col-md-12 well" style="margin-top:10px;height:80px ">
-	<div class=" col-md-6" >dasdasd</div>
-	<div class="col-md-6">baasdasdsadasdrra de navegacion</div>
+
+<div class=" container" style="height:40em">
+<div class="col-md-12 well banner">
+	<div class=" col-md-6" ><h4>Sistema De Gestion De Fallas | Transbarca</h4></div>
+		<div class="col-md-6">
+			<nav >
+				<ul>
+					<li><a href="">Inicio</a></li>
+					<li><a href="">Noticias</a></li>
+					<li><a href="">Ingresar</a></li>
+				</ul>
+			</nav>
+		</div>
 </div>
 	<section class="col-md-12">
-		<article class="col-md-8 well" style="height:40em">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, officia veniam explicabo eveniet incidunt quisquam sequi debitis, quos eaque minima. Quod culpa beatae obcaecati ipsam, ducimus nihil voluptates, voluptatem expedita!
-		</article>
-		<aside class="col-md-3 well" style="float:right ; height:40em">twitter</aside>
+		<div class="row">
+			<div class="col-md-8 well">
+				<div class="row">
+				<div class="col-md-12 ">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo dolore et laborum libero dolores incidunt deserunt quasi repellendus sapiente pariatur omnis autem maiores dolor, doloremque rerum nulla illum nihil! Quibusdam!
+				</div>
+			
+				</div>
+			</div>
+			<div class="twitter col-md-3 well"></div>
+		</div>
+		
+			
 	</section>
 
 
 
 	<footer class="col-md-12 well">
-		Diseñado Por Pasantes
+		<span class="foot">Design for Pasantes</span>
 	</footer>
 	</div>	
 	

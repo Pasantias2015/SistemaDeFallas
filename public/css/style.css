@@ -1,0 +1,61 @@
+body{
+
+	background-color: #CD0325;
+}
+
+.col-md-12.well.banner {
+	margin-top:10px ;
+	color: white;
+	background-color: #E90B30;
+}
+
+
+
+ul{
+	
+	text-align: right;
+}
+
+nav ul li {
+	
+	display: inline-block;
+	font-size: 16px;
+}
+nav ul li a{
+	padding-left: 50px;
+	color: white;
+}
+nav ul li a:hover{
+	text-decoration: none;
+	color: black;
+	
+}
+section{
+	height: 30em;
+}
+
+.col-md-12 .well {
+  margin-top: 10px;
+  height: 80px;
+  padding: 0px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+
+.twitter.col-md-3.well {
+  float: right;
+}
+footer.col-md-12.well{
+	text-align: center;
+	background-color: #E90B30;
+
+	position: relative;
+	clear: both;
+	
+}
+
+.foot{
+	
+	color: white;
+}
