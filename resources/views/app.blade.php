@@ -11,6 +11,7 @@
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/ripples.min.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/roboto.min.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css') !!}
+{!! Html::style('style.css') !!}
 
 	<link rel="stylesheet"  href="{!! url('css/app.css') !!}"/>
 	
@@ -59,9 +60,13 @@
 			</div>
 		</div>
 	</nav>
+<div class="row">
+	<div class="col-md-3 well">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus facere omnis, ipsum inventore, sapiente voluptas nostrum ad et error. Repellendus ratione, a reprehenderit minima, est minus qui! Non, veritatis, assumenda.90r</div>
 
-	@yield('content')
-
+	<div class="col-md-8">
+		@yield('content')
+	</div>
+</div>
 	<!-- Scripts -->
 
 

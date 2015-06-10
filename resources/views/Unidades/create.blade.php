@@ -1,17 +1,31 @@
 @extends('app') 
 @section('content')
-	<div class="container">
-		<header><h1>Registrar Unidades</h1></header>
-	<!--'route'=> 'unidad.create -->
+	
 	{!! Form::open() !!}
+	<div class="container">
+		<header style="text-align:center"><h1>Registrar Unidades</h1></header>
+	<!--'route'=> 'unidad.create -->
 	<div class="row">
-		<div class="col-md-12">
-			<div class="col-md-6 well">
+		
+			<div class=" col-md-12 well">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Serial De La Unidad">	
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Numero De VIN">	
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" placeholder="Serial Del Motor">	
+				</div>
+
+
+				<div class="form-group">
+					<label class="col-md-6">Fecha De Fabricacion:</label>
+					<div class="col-md-6" style="padding-right: 0px">
+						<input type="date" name="bday" class="col-md-6 form-control" style=" margin-bottom: 15px">
+					</div>
+					
+					
 				</div>
 				
 				<div class="form-group">
@@ -28,28 +42,22 @@
 					    <option>Gasolina</option>					   
 				 	</select> 
 				</div>
-				<div class="form-group">
-					<label class="col-md-2 control-label ">Fecha De Fabricacion</label>
-					<input data-provide="datepicker">
-					
-				</div>
 
-				
 
-				
 			</div>
-			<div class="col-md-5 well" style="float:right">dsad</div>
+			
 		</div>
-	</div>
+	
 	
 	<div class="row">
-		<div class="col-md-offset4 col-md-4 form-group">
+		<div class="col-md-offset-5 col-md-5 form-group">
 		 {!! Form::button('Guardar',['type' => 'submit', 'class' => 'btn btn-primary']) !!}
 		 {!! Form::button('Cancelar',['type' => 'submit', 'class' => 'btn btn-danger']) !!}
 		</div>
 	</div>
-	{!! Form::close() !!}
 	</div>
+	{!! Form::close() !!}
+	
 	
 
 @endsection
