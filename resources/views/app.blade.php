@@ -27,7 +27,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-danger">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -60,10 +60,12 @@
 			</div>
 		</div>
 	</nav>
-<div class="row">
-	<div class="col-md-3 well">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus facere omnis, ipsum inventore, sapiente voluptas nostrum ad et error. Repellendus ratione, a reprehenderit minima, est minus qui! Non, veritatis, assumenda.90r</div>
+<div class="row col-md-12">
+	<div class="col-md-3 well">
+	@yield('sidebar')
+	</div>
 
-	<div class="col-md-8">
+	<div class="col-md-9">
 		@yield('content')
 	</div>
 </div>

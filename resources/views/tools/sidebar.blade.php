@@ -1,8 +1,18 @@
-@extends('app')
-
 @section('sidebar')
-    @@parent
+<ul>
+	<li>Unidades</li>
+	<li>DAtos</li>
+	<li>asdasd</li>
+	<li>asdasd</li>
+		<li>Unidades</li>
+	<li>DAtos</li>
+	<li>asdasd</li>
+	<li>asdasd</li>
+		<li>Unidades</li>
+	<li>DAtos</li>
+	<li>asdasd</li>
+	<li>asdasd</li>
+</ul>
 
-    <p>Esto se añade a la barra lateral principal</p>
-@stop
 
+@endsection
