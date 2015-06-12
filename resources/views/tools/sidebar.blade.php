@@ -1,18 +1,20 @@
-@section('sidebar')
-<ul>
-	<li>Unidades</li>
-	<li>DAtos</li>
-	<li>asdasd</li>
-	<li>asdasd</li>
+<div class="col-md-3">
+	@section('sidebar')
+	<ul>
 		<li>Unidades</li>
-	<li>DAtos</li>
-	<li>asdasd</li>
-	<li>asdasd</li>
+		<li>DAtos</li>
+		<li>asdasd</li>
+		<li>asdasd</li>
 		<li>Unidades</li>
-	<li>DAtos</li>
-	<li>asdasd</li>
-	<li>asdasd</li>
-</ul>
+		<li>DAtos</li>
+		<li>asdasd</li>
+		<li>asdasd</li>
+		<li>Unidades</li>
+		<li>DAtos</li>
+		<li>asdasd</li>
+		<li>asdasd</li>
+	</ul>
 
 
 @endsection
+</div>

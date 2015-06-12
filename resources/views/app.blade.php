@@ -27,7 +27,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar navbar-danger">
+	<nav class="navbar navbar-success" >
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -61,11 +61,11 @@
 		</div>
 	</nav>
 <div class="row col-md-12">
-	<div class="col-md-3 well">
+	<div class="col-md-3">
 	@yield('sidebar')
 	</div>
 
-	<div class="col-md-9">
+	<div class="col-md-8">
 		@yield('content')
 	</div>
 </div>
