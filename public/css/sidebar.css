@@ -1,0 +1,88 @@
+.expand {
+  float: right; 
+  display: inline; 
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  margin: 0 10px;}
+
+.turn {
+    -ms-transform: rotate(-90deg); /* IE 9 */
+-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+transform: rotate(-90deg);
+}
+
+h1 {
+  font-size: 36px;
+  
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 900;
+  margin: 0 20px;
+  color: #8aa8bd;
+  text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .5px;
+}
+
+body, input, textarea {
+  font-weight: 200;
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1.54;
+	font-size: 1rem;
+	background: #f8f8f8;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+
+.sidebar-1 {
+  /* these are the styles for the container around the menu */
+  text-align: right;
+  padding: 0px;
+  display:inline-block;
+  box-shadow: 0 0px 1px 0 rgba(0,0,0,.2);
+  margin-left: 20px;
+}
+
+.sidebar-menu {
+  /*this style impacts the look of the heading containers. */
+  cursor: pointer;
+  padding: 10px;
+  background: #ffffff;
+  color: #8aa8bd;
+  border-bottom: 1px solid #dedede;
+  font-size: 24px;
+  font-weight: 200;
+  text-rendering: optimizeLegibility;
+  letter-spacing: .5px;
+}
+
+.sidebar-menu:hover {background: #eeeeee;}
+
+.sub-menu {
+  /*this style is for the sub-menu box*/
+  color: #466479;
+  border: 1px solid #dedede;
+  font-size: 18px;
+  display: none;
+}
+
+.sub-menu li:hover {
+  background: #e0e0e7;
+  cursor: pointer;
+}
+
+.sub-menu li {
+  /*this styles individual elements in a sub-menu*/
+  padding: 10px;
+  background: #F1F1F9;
+  border-bottom: 1px solid #dedede;
+}
+.sub-menu ul {
+  /*this just 0s out a bunch of stuff so that it plays nice with the list stylings*/
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

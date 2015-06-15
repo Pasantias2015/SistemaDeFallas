@@ -3,9 +3,9 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Register</div>
+		<div class="col-md-9 col-md-offset-1">
+			<div class="panel panel-danger">
+				<div class="panel-heading">Registrar Persona</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -18,41 +18,84 @@
 						</div>
 					@endif
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
+					<form class="form-horizontal com-md-12" role="form" method="POST" action="{{ url('/auth/register') }}">
+						<div class="row"><h3>Datos Personales</h3></div>
+						<div class="col-md-6">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
+						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Name</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+							
+							<div class="">
+								<input type="text" class="form-control floating-label colornegro" placeholder="Documento De identidad" name="name" value="{{ old('name') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+							
+							<div class="">
+								<input type="text" class="form-control floating-label colornegro" placeholder="Primer Nombre" name="name" value="{{ old('name') }}">
 							</div>
 						</div>
 
+						
 						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
+							
+							<div class="">
+								<input type="text" class="form-control floating-label colornegro" placeholder="Primer Apellido" name="name" value="{{ old('name') }}">
 							</div>
 						</div>
+						
+						<div class="form-group">
+							
+							<div class="">
+								<input type="text" class="form-control floating-label colornegro" placeholder="Fecha de Nacimiento" name="name" value="{{ old('name') }}">
+							</div>
+						</div>
+						<div class="form-group">
+							
+							<div class="">
+							<textarea class="form-control floating-label" placeholder="Direccion" rows="4"  ></textarea>								
+							</div>
+						</div>
+						</div>
+						<div class="col-md-6">
+						
+							</br>	</br>
+						
+							<div class="form-group">
+							
+								<div class="">
+									<input type="text" class="form-control floating-label colornegro" placeholder="Segundo Nombre" name="name" value="{{ old('name') }}">
+								</div>
+							</div>
+							<div class="form-group">
+							
+								<div class="">
+									<input type="text" class="form-control floating-label colornegro" placeholder="Segundo Apellido" name="name" value="{{ old('name') }}">
+								</div>
+							</div>
+							</div>
+							<div class="input-group">
+				                
+			                    </br>
+			                    <select class="selectpicker show-tick floating-label form-control " placeholder="DEPARTAMENTO" >
+								    <option>Taller</option>
+								    <option>Presidencia</option>
+								    <option>Operaciones</option>
+								    <option>Telecomunicacion</option>
 
-						<div class="form-group">
-							<label class="col-md-4 control-label">Confirm Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password_confirmation">
+								</select>
+
 							</div>
-						</div>
+
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
-									Register
+									Guardar
+								</button>
+								<button type="submit" class="btn btn-danger">
+									Cancelar
 								</button>
 							</div>
 						</div>
