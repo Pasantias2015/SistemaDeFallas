@@ -30,7 +30,7 @@ $(document).ready(function () {
         
         $this.addClass('open');
         $this.children('.expand').addClass('turn');
-        $(this.next().stop(true).slideDown("fast"));
+        $this.next().stop(true).slideDown("fast");
         }
     });
   

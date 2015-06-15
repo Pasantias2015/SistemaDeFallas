@@ -10,7 +10,7 @@
 	<div class=" col-md-12">
 		<header ><h1>Registrar Falla</h1></header>
 		<!--'route'=> 'unidad.create -->
-		<div class="row well">
+		<div class="row well panel-body">
 		<h4 class="floating-label">Datos Basico</h4>
 		<div class="form-group">
    			<div class="col-md-4">
@@ -44,7 +44,7 @@
   		</div>
 		</div>
 
-		<div class="row well">
+		<div class="row well panel-body">
 			<h4 class="floating-label">Datos Del Operador</h4>
 			<div class="col-md-6">
 				<div class="form-group">
@@ -96,7 +96,7 @@
 	
 	</div>
 <!-- #####################################   Datos De La Unidad     ############################### -->
-	<div class="row well">
+	<div class="row well panel-body">
 		<h4 class="floating-label">Datos De La Unidad (Material Rodante)</h4>
 		<div class="form-group  col-md-6 ">
 				<div class="input-group">

@@ -11,22 +11,9 @@
 transform: rotate(-90deg);
 }
 
-h1 {
-  font-size: 36px;
-  
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 900;
-  margin: 0 20px;
-  color: #8aa8bd;
-  text-rendering: optimizeLegibility;
-}
 
-h2 {
-  font-size: 36px;
-  font-weight: 700;
-  text-rendering: optimizeLegibility;
-  letter-spacing: .5px;
-}
+
+
 
 body, input, textarea {
   font-weight: 200;
@@ -43,17 +30,19 @@ body, input, textarea {
   padding: 0px;
   display:inline-block;
   box-shadow: 0 0px 1px 0 rgba(0,0,0,.2);
-  margin-left: 20px;
+    width: 80%;
+  text-align: center;
+ 
 }
 
 .sidebar-menu {
   /*this style impacts the look of the heading containers. */
   cursor: pointer;
   padding: 10px;
-  background: #ffffff;
-  color: #8aa8bd;
+  background: #b71c1c;
+  color: white;
   border-bottom: 1px solid #dedede;
-  font-size: 24px;
+  
   font-weight: 200;
   text-rendering: optimizeLegibility;
   letter-spacing: .5px;

@@ -25,7 +25,7 @@
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-	{!! Html::style('font/material-design-icons/Material-Design-Icons.woff') !!}
+	
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,7 +49,7 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="{{ url('/') }}">Home</a></li>
+					<li><a href="{{ url('/') }}">Inicio</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -69,9 +69,9 @@
 		</div>
 	</nav>
 <div class="row col-md-12">
-	<div class="col-md-3">
+	
 	@yield('sidebar')
-	</div>
+	
 
 	<div class="col-md-8">
 		@yield('content')
@@ -84,8 +84,9 @@
 	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
 	{!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
 	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
-	{!! Html::style('js/sidebar.js') !!}
-	{!! Html::style('materialize/js/materialize.min.js') !!}
+	{!! Html::script('js/sidebar.js') !!}
+	
+	{!! Html::script('materialize/js/materialize.min.js') !!}
 <script>
 	$(document).ready(function(){
 		$.material.init();

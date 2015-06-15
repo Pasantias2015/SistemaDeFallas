@@ -10,3 +10,14 @@ nav.navbar.colornav {
   background-color: #b71c1c;
   border-color: #ebccd1;
 }
+.title{
+	text-align: center;
+}
+.row.well.panel-body {
+  border: 2px solid rgb(183, 28, 28);
+  border-radius: 20px;
+}
+
+::-webkit-input-placeholder {
+   color: red;
+}
