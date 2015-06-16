@@ -12,7 +12,7 @@
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/ripples.min.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/roboto.min.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css') !!}
-<!--{!! Html::style('materialize/css/materialize.css') !!}-->
+{!! Html::style('materialize/css/materialize.css') !!}
 {!! Html::style('css/style.css') !!}
 {!! Html::style('css/sidebar.css') !!}
 
@@ -48,13 +48,13 @@
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav navbar-right">
 					<li><a href="{{ url('/') }}">Inicio</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
 					@if (Auth::guest())
-						<li><a href="{{ url('/auth/login') }}">Iniciar</a></li>
+						
 						<li><a href="{{ url('/auth/register') }}">Registrarse</a></li>
 					@else
 						<li class="dropdown">
@@ -70,7 +70,7 @@
 	</nav>
 <div class="row col-md-12">
 	
-	@yield('sidebar')
+		@yield('sidebar')
 	
 
 	<div class="col-md-8">

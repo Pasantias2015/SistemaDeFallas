@@ -30,7 +30,7 @@ body, input, textarea {
   padding: 0px;
   display:inline-block;
   box-shadow: 0 0px 1px 0 rgba(0,0,0,.2);
-    width: 80%;
+  width: 80%;
   text-align: center;
  
 }
@@ -48,7 +48,7 @@ body, input, textarea {
   letter-spacing: .5px;
 }
 
-.sidebar-menu:hover {background: #eeeeee;}
+.sidebar-menu:hover {/*background: #eeeeee;*/}
 
 .sub-menu {
   /*this style is for the sub-menu box*/

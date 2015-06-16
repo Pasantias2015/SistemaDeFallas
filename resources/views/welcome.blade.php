@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Laravel</title>
+		<title>.:Sistema de gestion de Fallas:.</title>
 		
 		<link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
@@ -22,7 +22,7 @@
 				<ul>
 					<li><a href="">Inicio</a></li>
 					<li><a href="">Noticias</a></li>
-					<li><a href="">Ingresar</a></li>
+					<li><a href="{{ url('/auth/login') }}">Ingresar</a></li>
 				</ul>
 			</nav>
 		</div>

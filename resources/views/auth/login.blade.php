@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-md-8 col-md-offset-5">
 			<div class="panel panel-danger">
 				<div class="panel-heading">Ingreso Al Sistema</div>
 				<div class="panel-body">
@@ -39,14 +39,14 @@
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="remember"> Remember Me
+										<input type="checkbox" name="remember"> Recuerdame	
 									</label>
 								</div>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<div class="col-md-offset-2">
+							<div class="col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Entrar</button>
 
 								<a class="btn btn-link" href="{{ url('/password/email') }}">Olvide su contraseña?</a>
