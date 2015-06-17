@@ -7,7 +7,8 @@
   <div class='sidebar-menu'><i class="fa fa-car left"></i>Unidades<div class='expand'><i class="fa fa-angle-left"></i></div></div>
 <div class='sub-menu'>
   <ul>
-	<li>Registrar Unidad</li>
+  <a href="{{ url('unidad') }}"><li>Registrar Unidad</li></a>
+	
 	<li>Asignar Unidad</li>
 	<li>Reportar Unidad</li>
   </ul>

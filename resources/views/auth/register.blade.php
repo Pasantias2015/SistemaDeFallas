@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-9 col-md-offset-1">
 			<div class="panel panel-danger">
-				<div class="panel-heading">Registrar Persona</div>
+				<div class="panel-heading">Registrar Usuario</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -80,19 +80,15 @@
 					          <label for="icon_prefix">Segundo Apellido</label>
 					        </div>
 							
-							<div class="input-field col-md-12">
+							
 				                
 			                    
-			                    <select class="selectpicker show-tick floating-label form-control icon_prefix"  placeholder="DEPARTAMENTO" style="height: 43px">
-								
-								    <option disabled>Seleccione</option>
-								    <option>Taller</option>
-								    <option>Presidencia</option>
-								    <option>Operaciones</option>
-								    <option>Telecomunicacion</option>
-
-								</select>
-							</div>
+			                   <div class="input-field">
+						          <i class="mdi-communication-phone prefix"></i>
+						          <input id="icon_telephone" type="tel" class="validate">
+						          <label for="icon_telephone">Telefono</label>
+						        </div>
+							
 							</div>
 							<div class="row col-md-12" style="padding-left: 30px">
 								<div class="input-field">
@@ -108,32 +104,27 @@
 						    </div>
 							</div>
 							<div class="col-md-6"style="padding-left: 0px">
-		<div class="input-field col-md-12">
+							<div class="input-field col-md-12">
 				                
-			                    
-			                    <select class="selectpicker show-tick floating-label form-control icon_prefix"  placeholder="Cargo" style="height: 43px">
-								
-								    <option disabled>Seleccione</option>
-								    <option>Taller</option>
-								    <option>Presidencia</option>
-								    <option>Operaciones</option>
-								    <option>Telecomunicacion</option>
-
-								</select>
+				                <div class="input-field ">
+						          <i class="fa fa-calendar-o prefix"></i>
+						          <input id="icon_prefix" type="text" class="validate">
+						          <label for="icon_prefix">Fecha de Ingreso</label>
+						        </div>     
 							</div>
 			                    
 							</div>
-							<div class="col-md-6">
-								<div class="input-field">
-						          <i class="mdi-communication-phone prefix"></i>
-						          <input id="icon_telephone" type="tel" class="validate">
-						          <label for="icon_telephone">Telefono</label>
-						        </div>
-								<div class="form-group">
-									</br>
-								<input type="text" class="form-control floating-label colornegro" placeholder="Semana" name="name" value="5-10">
+							<div class="col-md-6" style="padding-left: 0px">
 							
+								<div class="scenter">
+								
+								  <select name="sources" id="sources" class="custom-select sources" placeholder="Cargo">
+								    <option value="profile" disabled-select>Cargo</option>
+								    <option value="word">Word</option>
+								    <option value="hashtag">Hashtag</option>
+								  </select>
 								</div>
+							
 							</div>	
 							<div class="col-md-12">
 								<h3 class="title">Datos De usuario</h3>	
@@ -158,7 +149,7 @@
 								        </div>
 								</div>
 									<div class="col-md-6">
-									<div class="input-field"><h5 class="title">Opciones de recuperacion</h5></br></div>
+									
 									
 										<div class="input-field">
 								          <i class="fa fa-key prefix"></i>
