@@ -17,7 +17,7 @@ class UnidadController extends Controller {
 		//
 		return view('Unidades.create');
 	}
-
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -36,6 +36,10 @@ class UnidadController extends Controller {
 	public function store()
 	{
 		//
+		//return view('Unidades.unidadoperador');
+		// return view('Unidades.registrarfalla');
+		//return view('Unidades.registrartipofalla');
+		return view('Unidades.registrarcategoriafalla');
 	}
 
 	/**
