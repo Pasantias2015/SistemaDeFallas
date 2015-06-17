@@ -121,15 +121,7 @@
 
 								</select>
 							</div>
-			                    <div class="input-field col-md-12">
-								    <select>
-								      <option value="" disabled selected>Choose your option</option>
-								      <option value="1">Option 1</option>
-								      <option value="2">Option 2</option>
-								      <option value="3">Option 3</option>
-								    </select>
-								    <label>Materialize Select</label>
-								</div>
+			                    
 							</div>
 							<div class="col-md-6">
 								<div class="input-field">
@@ -147,27 +139,39 @@
 								<h3 class="title">Datos De usuario</h3>	
 								<div class="col-md-12" style="padding-left: 0px">
 									<div class="col-md-6">
-										<div class="form-group">
-											<input type="text" class="form-control floating-label colornegro" placeholder="Nombre De usuario" name="name" value="{{ old('name') }}">
-									    </div>
-										<div class="form-group">
-											<input type="password" placeholder="Contraseña" class="form-control floating-label" name="password">
-										
-										</div>
-										<div class="form-group">
-											<input type="password" placeholder="Confirmar Contraseña" class="form-control floating-label" name="password">
-											
-										</div>
-									</div>	
+										<div class="input-field">
+								          <i class="fa fa-user prefix"></i>
+								          <input id="icon_username" type="tel" class="validate">
+								          <label for="icon_username">Nombre de Usuario</label>
+								        </div>
+
+								        <div class="input-field">
+								          <i class="fa fa-key prefix"></i>
+								          <input id="icon_key" type="password" class="validate">
+								          <label for="icon_key">Contraseña</label>
+								        </div>
+
+								        <div class="input-field">
+								          <i class="fa fa-key prefix"></i>
+								          <input id="icon_keyc" type="password" class="validate">
+								          <label for="icon_keyc">Confirmar contraseña</label>
+								        </div>
+								</div>
 									<div class="col-md-6">
-										<div class="form-group">
-											<input type="password" placeholder="Pregunta de seguridad" class="	form-control floating-label" name="password">
-											
-										</div>
-										<div class="form-group">
-											<input type="password" placeholder="Respuesta" class="	form-control floating-label" name="password">
-											
-										</div>
+									<div class="input-field"><h5 class="title">Opciones de recuperacion</h5></br></div>
+									
+										<div class="input-field">
+								          <i class="fa fa-key prefix"></i>
+								          <input id="icon_ps" type="text" class="validate">
+								          <label for="icon_ps">Pregunta de seguridad</label>
+								        </div>
+
+								        <div class="input-field">
+								          <i class="fa fa-key prefix"></i>
+								          <input id="icon_rs" type="text" class="validate">
+								          <label for="icon_rs">Respuesta de seguridad</label>
+								        </div>
+	
 									</div>
 								</div>
 							</div>
