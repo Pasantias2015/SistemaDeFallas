@@ -15,7 +15,8 @@ class UnidadController extends Controller {
 	public function index()
 	{
 		//
-		return view('Unidades.create');
+		//return view('Unidades.registrarunidad');
+		return view('Servicios.registrarservicio');
 	}
 
 	/**

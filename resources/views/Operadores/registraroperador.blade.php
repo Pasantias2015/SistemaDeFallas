@@ -74,7 +74,7 @@
 				<div class="col-md-6">
 							<!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
 							
-							<div class="col-md-6" style="padding-left: 0px">
+							<div class="col-md-12" style="padding-left: 0px">
 							
 								<div class="scenter">
 								
@@ -87,6 +87,8 @@
 							
 							</div>
 
+
+
 					
 				</div>
 
@@ -98,10 +100,13 @@
 						          <label for="icon_telephone">Telefono Laboral</label>
 						    </div>			
 				</div>
+
+
 				<div class="row col-md-12">
 					
 				</div>
 			</div>
+
 	<div class="row">
 		<div class="col-md-offset-5 col-md-5 form-group">
 			<button type="button" class="btn btn-success">Guardar</button>

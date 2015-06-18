@@ -15,7 +15,7 @@ class FallaController extends Controller {
 	public function index()
 	{
 		//
-		return view('Fallas.create');
+		return view('Fallas.registrarfallaunidadoperador');
 	}
 
 	/**
