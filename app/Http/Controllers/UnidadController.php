@@ -15,9 +15,9 @@ class UnidadController extends Controller {
 	public function index()
 	{
 		//
-		return view('Unidades.create');
+		return view('Unidades.registrarunidad');
 	}
-
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -36,6 +36,10 @@ class UnidadController extends Controller {
 	public function store()
 	{
 		//
+		//return view('Unidades.unidadoperador');
+		// return view('Unidades.registrarfalla');
+		//return view('Unidades.registrartipofalla');
+		return view('Unidades.registrarcategoriafalla');
 	}
 
 	/**
