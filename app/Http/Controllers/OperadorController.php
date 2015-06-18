@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class UnidadController extends Controller {
+class OperadorController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,9 +15,9 @@ class UnidadController extends Controller {
 	public function index()
 	{
 		//
-		return view('Unidades.registrarunidad');
+		return view('Operadores.registraroperador');
 	}
-	
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -36,10 +36,6 @@ class UnidadController extends Controller {
 	public function store()
 	{
 		//
-		//return view('Unidades.unidadoperador');
-		// return view('Unidades.registrarfalla');
-		//return view('Unidades.registrartipofalla');
-		return view('Unidades.registrarcategoriafalla');
 	}
 
 	/**

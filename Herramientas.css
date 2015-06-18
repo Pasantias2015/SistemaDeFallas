@@ -1,2 +1,14 @@
 #################### Colores##########################
 rojo : #b71c1c
+
+<div class="col-md-6" style="padding-left: 0px">
+							
+<div class="scenter">
+								
+ <select name="sources" id="sources" class="custom-select sources" placeholder="Cargo" style="width: 296px;height: 70px">
+<option value="profile" disabled>Cargo</option>
+<option value="word">Word</option>
+<option value="hashtag">Hashtag</option>
+</select>
+</div>
+</div>
