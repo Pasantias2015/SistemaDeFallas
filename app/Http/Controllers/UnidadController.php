@@ -15,10 +15,15 @@ class UnidadController extends Controller {
 	public function index()
 	{
 		//
-		//return view('Unidades.registrarunidad');
-		return view('Servicios.registrarservicio');
-	}
 
+		//return view('Unidades.registrarunidad');
+		//return view('Servicios.registrarservicio');
+
+		//return view('Unidades.registrarunidad');
+		return view('Unidades.unidadoperador');
+
+	}
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -37,6 +42,7 @@ class UnidadController extends Controller {
 	public function store()
 	{
 		//
+		
 	}
 
 	/**
