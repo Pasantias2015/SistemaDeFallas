@@ -12,9 +12,18 @@ class CreateOperadorsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('operadors', function(Blueprint $table)
+		Schema::create('operadores', function(Blueprint $table)
 		{
-			$table->increments('id');
+			$table->string('cedula')->unique();
+			$table->string('pnombre',20);
+			$table->string('snombre',20);
+			$table->string('papellido',20);
+			$table->string('sapellido',20);
+			$table->date('fnacimiento');
+			$table->string('telefono',11);
+			$table->string('telefonolaboral',11);
+			$table->string('direccion',100);
+			$table->rememberToken();
 			$table->timestamps();
 		});
 	}
@@ -26,7 +35,7 @@ class CreateOperadorsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('operadors');
+		Schema::drop('operadores');
 	}
 
 }

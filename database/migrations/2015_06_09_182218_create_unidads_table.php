@@ -12,9 +12,19 @@ class CreateUnidadsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('unidads', function(Blueprint $table)
+		Schema::create('unidades', function(Blueprint $table)
 		{
-			$table->serial()->unique();
+			$table->string('serial',30)->unique();
+			$table->string('nidentificacion',30)->unique();
+			$table->string('vin',30)->unique();
+			$table->string('serialmotor',30)->unique();
+			$table->string('potenciamotor',10);
+			$table->integer('kilometraje');
+			$table->integer('cantpersona');
+			$table->integer('pesomax',5);
+			$table->string('fabricante',10);
+			$table->string('longitud',10);
+			$table->string('combustible',10);
 			$table->timestamps();
 		});
 	}
@@ -26,7 +36,7 @@ class CreateUnidadsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('unidads');
+		Schema::drop('unidades');
 	}
 
 }

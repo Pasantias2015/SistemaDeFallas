@@ -5,8 +5,10 @@
 
 
 @section('content')
+
 	
-	{!! Form::open() !!}
+	{!! Form::open(['route'=>'operadores.store']) !!}
+
 	<div class="col-md-10 col-md-offset-1">
 		
 		<div class=""><h3>Registar Operador</h3></div>
@@ -15,57 +17,63 @@
 				<div class="col-md-6">
 							<!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
 							
-							<div class="input-field ">
+						<div class="input-field ">
 					          <i class="mdi-action-picture-in-picture prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Documento de Identificacion</label>
+					          {!! Form::text('cedula','',['class'=>'validate']) !!}
+					          {!! Form::label('cedula','Documento de Identificacion') !!}
 					        </div>
 
 
 					       	<div class="input-field ">
 					          <i class="mdi-action-account-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="">
-					          <label for="icon_prefix">Primer Nombre</label>
+					          {!! Form::text('pnombre','',['class'=>'validate']) !!}
+					          {!! Form::label('pnombre','Primer Nombre') !!}
 					        </div>
 
 							
 							<div class="input-field ">
 					          <i class="mdi-action-account-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Primer Apellido</label>
+					          {!! Form::text('papellido','',['class'=>'validate']) !!}
+					          {!! Form::label('papellido','Primer Apellido') !!}
 					        </div>
 							
 							<div class="input-field ">
-					          <i class="fa fa-calendar-o prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Fecha de Nacimiento</label>
+					          <i class="mdi-social-cake prefix"></i>
+					          {!! Form::date('fnacimiento','Fecha de nacimiento',['class'=>'validate']) !!}
+					          
 					        </div>						
 				</div>
 
 				<div class="col-md-6">
-							<div class="input-field ">
-					          <i class="mdi-action-picture-in-picture prefix"></i>
-					          <input id="icon_prefix" type="text" class="validate">
-					          <label for="icon_prefix">Numero De Documento</label>
-					        </div>
+							
 						
 							<div class="input-field ">
 					          <i class="mdi-action-account-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="">
-					          <label for="icon_prefix">Segundo Nombre</label>
-					        </div>
-							
+					          {!! Form::text('snombre','',['class'=>'validate']) !!}
+					          {!! Form::label('snombre','Segundo Nombre') !!}
+					        </div>							
 							<div class="input-field ">
 					          <i class="mdi-action-account-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="">
-					          <label for="icon_prefix">Segundo Apellido</label>
+					          {!! Form::text('sapellido','',['class'=>'validate']) !!}
+					          {!! Form::label('sapellido','Segundo Apellido') !!}
 					        </div>
 			 
 			                <div class="input-field">
 						          <i class="mdi-communication-phone prefix"></i>
-						          <input id="icon_telephone" type="tel" class="validate">
-						          <label for="icon_telephone">Telefono</label>
+						          {!! Form::text('telefono','',['class'=>'validate']) !!}
+					          	  {!! Form::label('telofono','Telefono') !!}
 						    </div>			
+				</div>
+				<div class="col-md-12" style="padding-left:0px">
+					
+							<div class="input-field ">
+							<div class="col-md-1">
+					          <i class="fa fa-map-marker prefix" ></i>
+					    </div>
+					    	<div class="col-md-11">
+					          {!! Form::textarea('direccion',null,['rows'=>'4','class'=>'validate form-control floating-label', 'placeholder'=>'Direccion De Habitacion']) !!}
+					          </div>
+					        </div>
 				</div>
 			</div>
 
@@ -96,8 +104,8 @@
 										 
 			                <div class="input-field">
 						          <i class="mdi-communication-phone prefix"></i>
-						          <input id="icon_telephone" type="tel" class="validate">
-						          <label for="icon_telephone">Telefono Laboral</label>
+						          {!! Form::text('telefonolaboral','',['class'=>'validate']) !!}
+					          	  {!! Form::label('telofonolaboral','Telefono Laboral') !!}
 						    </div>			
 				</div>
 
@@ -107,19 +115,44 @@
 				</div>
 			</div>
 
-	<div class="row">
+<!--	<div class="row">
 		<div class="col-md-offset-5 col-md-5 form-group">
-			<button type="button" class="btn btn-success">Guardar</button>
-			<button type="button" class="btn btn-danger">Cancelar</button>	
+			<button type="submit" class="btn btn-success">Guardar</button>
+			<button type="submit" class="btn btn-danger">Cancelar</button>	
 		</div>
 	</div>
+	-->
 	</div>
+
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+
 
 	
 	
 
 	{!! Form::close() !!}
-	
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>	
 	
 
 @endsection

@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Operador;
 
 class OperadorController extends Controller {
 
@@ -15,7 +16,7 @@ class OperadorController extends Controller {
 	public function index()
 	{
 		//
-		return view('Operadores.registraroperador');
+		
 	}
 
 	/**
@@ -26,6 +27,7 @@ class OperadorController extends Controller {
 	public function create()
 	{
 		//
+		return view('Operadores.registraroperador');
 	}
 
 	/**
@@ -33,9 +35,12 @@ class OperadorController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+		$operador= Operador::create($request->all());
+
+		//return "dasdas";
 	}
 
 	/**

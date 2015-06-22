@@ -12,3 +12,13 @@ rojo :
 </select>
 </div>
 </div>
+
+al crear una migracion 
+$table->enum('cargo',['presidente','yo']);
+
+campos opcionales 
+nullable();
+valor entero sin signo unsigned();
+convencion de las claves foraneas singular_id
+$table->foreign('singular_id')->references('id')->on('tabla de referencia')->onUpdate('CASCADE')->onDelete('CASCADE');
+ver routes que existen  php artisan route:list

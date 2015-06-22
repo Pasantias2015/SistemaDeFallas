@@ -12,9 +12,10 @@
 	<!--'route'=> 'unidad.create -->
 	<div class="row well">
 		
-			<div class=" col-md-6">
+			<div class=" col-md-12">
 				<div class="form-group">
 					<input type="text" class="form-control floating-label" placeholder="Numero de Unidad: ">	
+					
 				</div>
 				<div class="form-group">
 					<input type="text" class="form-control floating-label" placeholder="Cedula del Operador">	

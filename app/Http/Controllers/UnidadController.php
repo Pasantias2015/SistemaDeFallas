@@ -19,8 +19,8 @@ class UnidadController extends Controller {
 		//return view('Unidades.registrarunidad');
 		//return view('Servicios.registrarservicio');
 
-		//return view('Unidades.registrarunidad');
-		return view('Unidades.unidadoperador');
+		return view('Unidades.registrarunidad');
+		//return view('Unidades.unidadoperador');
 
 	}
 	
