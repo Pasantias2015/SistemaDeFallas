@@ -21,10 +21,11 @@ class CreateUsersTable extends Migration {
 			$table->string('sapellido',20);
 			$table->date('fnacimiento');
 			$table->date('fingreso');
+			$table->string('cargo',10);
 			$table->string('telefono',11);
 			$table->string('direccion',100);
 			$table->string('usuario',10)->unique();
-			$table->string('cargo',10);
+			
 			
 			$table->string('contraseña',15);
 			$table->string('ccontraseña', 15);

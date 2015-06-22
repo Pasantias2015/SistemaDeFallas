@@ -21,7 +21,9 @@
 					@endif
 
 					<form class="form-horizontal com-md-12" role="form" method="POST" action="{{ url('/auth/register') }}">
-						<div class="row">
+				
+					<!--{!! Form::open(['route'=>'auth.register']) !!}	
+						--><div class="row">
 							<h3 class="title">
 							Datos Personales
 							</h3>
@@ -34,27 +36,27 @@
 						
 						<div class="input-field ">
 				          <i class="mdi-action-picture-in-picture prefix"></i>
-				          <input id="icon_prefix" type="text" class="validate">
+				          <input id="icon_prefix" name="tipodocumento" type="text" class="validate">
 				          <label for="icon_prefix">Documento de Identificacion</label>
 				        </div>
 
 
 				       	<div class="input-field ">
 				          <i class="mdi-action-account-circle prefix"></i>
-				          <input id="icon_prefix" type="text" class="">
+				          <input id="icon_prefix" name="pnombre" type="text" class="">
 				          <label for="icon_prefix">Primer Nombre</label>
 				        </div>
 
 						
 						<div class="input-field ">
 				          <i class="mdi-action-account-circle prefix"></i>
-				          <input id="icon_prefix" type="text" class="validate">
+				          <input id="icon_prefix" name="papellido" type="text" class="validate">
 				          <label for="icon_prefix">Primer Apellido</label>
 				        </div>
 						
 						<div class="input-field ">
 				          <i class="fa fa-calendar-o prefix"></i>
-				          <input id="icon_prefix" type="text" class="validate">
+				          <input id="icon_prefix" name="fnacimiento" type="text" class="validate">
 				          <label for="icon_prefix">Fecha de Nacimiento</label>
 				        </div>
 												
@@ -64,19 +66,19 @@
 						
 							<div class="input-field ">
 				          <i class="mdi-action-picture-in-picture prefix"></i>
-				          <input id="icon_prefix" type="text" class="validate">
+				          <input id="icon_prefix"  name="cedula" type="text" class="validate">
 				          <label for="icon_prefix">Numero De Documento</label>
 				        </div>
 						
 							<div class="input-field ">
 					          <i class="mdi-action-account-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="">
+					          <input id="icon_prefix" name="snombre" type="text" class="">
 					          <label for="icon_prefix">Segundo Nombre</label>
 					        </div>
 							
 							<div class="input-field ">
 					          <i class="mdi-action-account-circle prefix"></i>
-					          <input id="icon_prefix" type="text" class="">
+					          <input id="icon_prefix"  name="sapellido" type="text" class="">
 					          <label for="icon_prefix">Segundo Apellido</label>
 					        </div>
 							
@@ -85,7 +87,7 @@
 			                    
 			                   <div class="input-field">
 						          <i class="mdi-communication-phone prefix"></i>
-						          <input id="icon_telephone" type="tel" class="validate">
+						          <input id="icon_telephone" name="telefono" type="tel" class="validate">
 						          <label for="icon_telephone">Telefono</label>
 						        </div>
 							
@@ -93,7 +95,7 @@
 							<div class="row col-md-12" style="padding-left: 30px">
 								<div class="input-field">
          				 	  <i class="mdi-maps-place prefix"></i>
-				          	  <textarea id="textarea1" class="materialize-textarea"></textarea>
+				          	  <textarea id="textarea1" name="direccion" class="materialize-textarea"></textarea>
 					          <label for="textarea1">Direccion</label>
 					        </div>
 							</div>
@@ -108,7 +110,7 @@
 				                
 				                <div class="input-field ">
 						          <i class="fa fa-calendar-o prefix"></i>
-						          <input id="icon_prefix" type="text" class="validate">
+						          <input id="icon_prefix" name="fingreso" type="text" class="validate">
 						          <label for="icon_prefix">Fecha de Ingreso</label>
 						        </div>     
 							</div>
@@ -118,10 +120,12 @@
 							
 								<div class="scenter">
 								
-								  <select name="sources" id="sources" class="custom-select sources" placeholder="Cargo">
-								    <option value="profile" disabled-select>Cargo</option>
-								    <option value="word">Word</option>
-								    <option value="hashtag">Hashtag</option>
+								  <select name="cargo" id="sources" class="custom-select sources" placeholder="Cargo">
+								    <option disabled-select>Cargo</option>
+								    <option >Telecomunicaciones</option>
+								    <option >Presidencia</option>
+								    <option >CCO</option>
+								    <option >Taller</option>
 								  </select>
 								</div>
 							
@@ -132,19 +136,19 @@
 									<div class="col-md-6">
 										<div class="input-field">
 								          <i class="fa fa-user prefix"></i>
-								          <input id="icon_username" type="tel" class="validate">
+								          <input id="icon_username" name="usuario" type="tel" class="validate">
 								          <label for="icon_username">Nombre de Usuario</label>
 								        </div>
 
 								        <div class="input-field">
 								          <i class="fa fa-key prefix"></i>
-								          <input id="icon_key" type="password" class="validate">
+								          <input id="icon_key" name="contraseña" type="password" class="validate">
 								          <label for="icon_key">Contraseña</label>
 								        </div>
 
 								        <div class="input-field">
 								          <i class="fa fa-key prefix"></i>
-								          <input id="icon_keyc" type="password" class="validate">
+								          <input id="icon_keyc" type="password" name="ccontraseña" class="validate">
 								          <label for="icon_keyc">Confirmar contraseña</label>
 								        </div>
 								</div>
@@ -153,13 +157,13 @@
 									
 										<div class="input-field">
 								          <i class="fa fa-key prefix"></i>
-								          <input id="icon_ps" type="text" class="validate">
+								          <input id="icon_ps" type="text" name="preguntas" class="validate">
 								          <label for="icon_ps">Pregunta de seguridad</label>
 								        </div>
 
 								        <div class="input-field">
 								          <i class="fa fa-key prefix"></i>
-								          <input id="icon_rs" type="text" class="validate">
+								          <input id="icon_rs" type="text" name="respuestas" class="validate">
 								          <label for="icon_rs">Respuesta de seguridad</label>
 								        </div>
 	
@@ -181,7 +185,7 @@
 								</button>
 							</div>
 						</div>
-					</form>
+					{!! Form::close() !!}
 				</div>
 			</div>
 		</div>
