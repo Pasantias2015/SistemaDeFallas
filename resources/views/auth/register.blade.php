@@ -22,8 +22,8 @@
 
 					<form class="form-horizontal com-md-12" role="form" method="POST" action="{{ url('/auth/register') }}">
 				
-					<!--{!! Form::open(['route'=>'auth.register']) !!}	
-						--><div class="row">
+						
+						<div class="row">
 							<h3 class="title">
 							Datos Personales
 							</h3>
@@ -185,7 +185,7 @@
 								</button>
 							</div>
 						</div>
-					{!! Form::close() !!}
+					</form>
 				</div>
 			</div>
 		</div>

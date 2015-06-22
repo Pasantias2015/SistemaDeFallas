@@ -33,6 +33,8 @@ class CreateUsersTable extends Migration {
 			$table->string('respuestas',10);
 			$table->rememberToken();
 			$table->timestamps();
+
+			$table->primary('cedula'); 	
 		});
 	}
 

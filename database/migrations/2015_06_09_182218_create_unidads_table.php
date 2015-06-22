@@ -24,7 +24,7 @@ class CreateUnidadsTable extends Migration {
 			$table->integer('pesomax',5);
 			$table->string('fabricante',10);
 			$table->date('ffabricacion');
-			$table->('longitud',10);
+			$table->string('longitud',10);
 			$table->string('combustible',10);			
 			$table->rememberToken();
 			$table->timestamps();
