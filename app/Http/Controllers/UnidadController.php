@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Unidad;
 
 class UnidadController extends Controller {
 
@@ -32,6 +33,8 @@ class UnidadController extends Controller {
 	public function create()
 	{
 		//
+		return view('Unidades.registrarunidad');
+
 	}
 
 	/**
@@ -39,10 +42,11 @@ class UnidadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
-		
+		$unidad = Unidad::create($request->all());
+		return "lsito"		;
 	}
 
 	/**

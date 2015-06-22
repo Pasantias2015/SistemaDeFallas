@@ -23,8 +23,9 @@ Route::get('home', 'HomeController@index');
 //Route::get('operador', 'OperadorController@index');
 
 
-//Route::controllers([
-//	'auth' => 'Auth\AuthController',
-//	'password' => 'Auth\PasswordController',
-//]);
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
 resource('operadores','OperadorController');
+resource('unidades','UnidadController');

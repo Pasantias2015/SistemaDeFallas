@@ -18,7 +18,7 @@ class CreateOperadorsTable extends Migration {
 			$table->string('pnombre',20);
 			$table->string('snombre',20);
 			$table->string('papellido',20);
-			$table->string('sapellido',20);
+			$table->string('sapellido',20)->nullable();
 			$table->date('fnacimiento');
 			$table->string('telefono',11);
 			$table->string('telefonolaboral',11);

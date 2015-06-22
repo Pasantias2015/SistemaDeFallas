@@ -6,7 +6,7 @@
 
 @section('content')
 	
-	{!! Form::open() !!}
+	{!! Form::open(['route'=>'unidades.store']) !!}
 	<div class="col-md-offset-1 col-md-10">
 		<header ><h1>Registrar Unidades</h1></header>
 	<!--'route'=> 'unidad.create -->
@@ -14,72 +14,82 @@
 		
 			<div class=" col-md-6">
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Serial De La Unidad">	
+				{!! Form::text('serial','',['class'=>'form-control validate', 'placeholder'=>'Serial de la Unidad']) !!}
+				
+					
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Numero De Identificacion ejemplo: YM-124">	
+					<input type="text" class="form-control" name="nidentificacion" placeholder="Numero De Identificacion ejemplo: YM-124">	
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Numero De VIN">	
+					<input type="text" class="form-control" name="vin" placeholder="Numero De VIN">	
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Serial Del Motor">	
+					<input type="text" class="form-control" name ="serialmotor" placeholder="Serial Del Motor">	
 				</div>
 				<div class="row">
 					<div class="form-group">
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Potencia Del Motor">
+						{!! Form::text('potenciamotor','',['class'=>'form-control validate', 'placeholder'=>'Potencia Del Motor']) !!}
+							
 						</div>
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Kilometraje">
+							<input type="text" class="form-control" name="kilometraje" placeholder="Kilometraje">
 						</div>
 					</div>
 				</div>
 				
 			</div>
 			<div class=" col-md-6">
-			<div class="row">
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Cantidad De Personas">
+							<input type="text" class="form-control" name="cantpersona" placeholder="Cantidad De Personas">
 						</div>
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Peso Maximo ">
+							<input type="text" class="form-control" name="pesomax" placeholder="Peso Maximo ">
 						</div>
-			</div>
-			</br>
+			
+			
 			<div class="form-group">
-				<div class="input-group">
-  					<span class="input-group-addon" id="basic-addon1">Fecha De Fabricacion</span>
-                    <input type="date" class="form-control" >
-				</div>
+				
+  					<span class="">Fecha De Fabricacion</span>
+                    <input type="date" class="form-control"name='ffabricacion'>
+				
 			</div>
 
 				</br>
-				<div class="input-group">
-	                <span class="input-group-addon " id="basic-addon1">Fabricante</span>
-                    
-                    <select class="selectpicker show-tick" >
-					    <option>Yuton</option>
+
+				<div class="form-group">
+					<span class="col-md-4 sinpadding">Fabricante</span>
+					<select class="col-md-8" name='fabricante'>
+					    <option>Yutong</option>
+					    <option>Yutong2</option>
 					</select>
-
+				</div>
+				</br>	
+				<div class="form-group">
+					<span class="col-md-4 sinpadding"  >Combustible</span>
+					<select class="col-md-8" name="combustible">
+					    <option>Diesel</option>
+					    <option>Gasolina</option>
+					</select>
 				</div>
 				</br>
-
-			<div class="input-group">
-
-  					<span class="input-group-addon" id="basic-addon1">Tama;o</span>
-                    <select class="selectpicker col-md-offset-1 col-md-3 show-tick">
-					    <option>12 Metro</option>
-					    <option>8 Metros</option>					   
-				 	</select>	
-
-				 	<span class="input-group-addon col-md-offset-1 col-md-2" id="basic-addon1">Combustible</span>
-					<select class="selectpicker col-md-3" style="float:right">
-					    <option>Diesel</option>
-					    <option>Gasolina</option>					   
-				 	</select> 
+				
+				<div class="form-group">
+					<span class="col-md-4 sinpadding" >Tamaño</span>
+					<select class="col-md-8" name='longitud'>
+					<option>8 metros</option>
+					    <option>12 metros</option>
+					    
+					</select>
 				</div>
-			</div>
+				
+
+	                
+                    
+                    
+
+
 			
 			
 		</div>
@@ -87,7 +97,7 @@
 	
 	<div class="row">
 		<div class="col-md-offset-5 col-md-5 form-group">
-			<button type="button" class="btn btn-success">Guardar</button>
+			<button type="submit" class="btn btn-success">Guardar</button>
 			<button type="button" class="btn btn-danger">Cancelar</button>	
 		</div>
 	</div>

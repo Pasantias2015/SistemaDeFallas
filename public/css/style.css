@@ -150,3 +150,8 @@ left: 20px;
 .seleccionador{
   margin-top: 10px;
 }
+
+span.col-md-4.sinpadding{
+  padding-top: 15px;
+  padding-bottom: 11px;
+}

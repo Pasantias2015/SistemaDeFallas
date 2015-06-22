@@ -115,18 +115,16 @@
 				</div>
 			</div>
 
-<!--	<div class="row">
+	<div class="row">
 		<div class="col-md-offset-5 col-md-5 form-group">
 			<button type="submit" class="btn btn-success">Guardar</button>
 			<button type="submit" class="btn btn-danger">Cancelar</button>	
 		</div>
 	</div>
-	-->
+	
 	</div>
 
-	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
+
 
 
 
