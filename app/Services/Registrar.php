@@ -15,11 +15,12 @@ class Registrar implements RegistrarContract {
 	public function validator(array $data)
 	{
 		return Validator::make($data, [
-			'pnombre' => 'required|max:255',
-			/*'snombre' => 'required|max:255',
+			'cedula' => 'required|max:255'
+			/*'pnombre' => 'required|max:255',
+			'snombre' => 'required|max:255',
 			'papellido' => 'required|max:255',
 			'sapellido' => 'required|max:255',
-			'cedula' => 'required|max:255',
+			,
 			'usuario' => 'required|max:255',
 			'fnacimiento' => 'required|date|max:255',
 			'fingreso' => 'required|date|max:255',
@@ -40,8 +41,12 @@ class Registrar implements RegistrarContract {
 	{
 		
 		return User::create([
-			//'cedula' => $data['cedula'],
-			//'pnombre' => $data['pnombre'],
+			'cedula' => $data['cedula'],
+			'pnombre' => $data['pnombre'],
+			'snombre' => $data['snombre'],
+			'papellido' => $data['papellido'],
+			'sapellido' => $data['sapellido'],
+			'usuario' => $data['usuario'],
 			'contraseña' => bcrypt($data['contraseña']),
 		]);
 	}

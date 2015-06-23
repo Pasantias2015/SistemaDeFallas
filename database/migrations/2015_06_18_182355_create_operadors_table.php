@@ -25,6 +25,9 @@ class CreateOperadorsTable extends Migration {
 			$table->string('direccion',100);
 			$table->rememberToken();
 			$table->timestamps();
+			
+			$table->primary('cedula');
+
 		});
 	}
 
