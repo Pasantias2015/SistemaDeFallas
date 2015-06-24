@@ -109,10 +109,10 @@
 							<div class="input-field col-md-12">
 				                
 				                <div class="input-field ">
-						          <i class="fa fa-calendar-o prefix"></i>
-						          <input id="icon_prefix" name="fingreso" type="text" class="validate">
-						          <label for="icon_prefix">Fecha de Ingreso</label>
-						        </div>     
+				          <i class="fa fa-calendar-o prefix"></i>
+				          <input id="icon_prefix" name="fingreso" type="text" class="validate">
+				          <label for="icon_prefix">Fecha de Ingreso</label>
+				        </div>
 							</div>
 			                    
 							</div>
@@ -136,19 +136,19 @@
 									<div class="col-md-6">
 										<div class="input-field">
 								          <i class="fa fa-user prefix"></i>
-								          <input id="icon_username" name="usuario" type="tel" class="validate">
+								          <input id="icon_username" name="usuario" type="text" class="validate">
 								          <label for="icon_username">Nombre de Usuario</label>
 								        </div>
 
 								        <div class="input-field">
 								          <i class="fa fa-key prefix"></i>
-								          <input id="icon_key" name="contraseña" type="password" class="validate">
+								          <input id="icon_key" name="password" type="text" class="validate">
 								          <label for="icon_key">Contraseña</label>
 								        </div>
 
 								        <div class="input-field">
 								          <i class="fa fa-key prefix"></i>
-								          <input id="icon_keyc" type="password" name="ccontraseña" class="validate">
+								          <input id="icon_keyc" type="text" name="cpassword" class="validate">
 								          <label for="icon_keyc">Confirmar contraseña</label>
 								        </div>
 								</div>

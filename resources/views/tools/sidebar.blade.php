@@ -17,22 +17,13 @@
 <div class='sub-menu'>
   <ul>
   <a href="{{ url('operadores/create') }}"><li>Registrar Operador</li></a>
-	<li>Hillcrest Church of Christ</li>
-	<li>The Vineyard at Johnstown</li>
-	<li>Hillcrest Church of Christ</li>
-	<li>The Vineyard at Johnstown</li>
-	<li>Hillcrest Church of Christ</li>
   </ul>
 </div>
 <div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
 <div class='sub-menu'>
   <ul>
-  <a href=""><li>Registrar Usuario</li></a>
-	<li>Hillcrest Church of Christ</li>
-	<li>The Vineyard at Johnstown</li>
-	<li>Hillcrest Church of Christ</li>
-	<li>The Vineyard at Johnstown</li>
-	<li>Hillcrest Church of Christ</li>
+  <a href="{{ url('auth/register') }}"><li>Registrar Usuario</li></a>
+	
   </ul>
 </div>
 </div>

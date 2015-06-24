@@ -28,14 +28,14 @@ class CreateUsersTable extends Migration {
 			$table->string('usuario',10)->unique();
 			
 			
-			$table->string('contraseña',15);
-			$table->string('ccontraseña', 15);
+			$table->string('password',15);
+			$table->string('cpassword', 15);
 			$table->string('preguntas',30);
 			$table->string('respuestas',10);
 			$table->rememberToken();
 			$table->timestamps();
 
-			$table->primary('cedula'); 	
+			//$table->primary('cedula'); 	
 		});
 	}
 

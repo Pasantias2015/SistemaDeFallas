@@ -10,7 +10,7 @@ abstract class Controller extends BaseController {
 
 	 public function authenticate()
     {
-        if (Auth::attempt(['usuario' => $usuario, 'contraseña' => $contraseña])) { return redirect()->intended('dashboard'); 
+        if (Auth::attempt(['usuario' => $usuario, 'password' => $password])) { return redirect()->intended('dashboard'); 
     } 
 }
 

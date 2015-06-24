@@ -15,7 +15,7 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-//Route::get('unidad', 'UnidadController@index');
+Route::get('unidad', 'UnidadController@index');
 //Route::get('falla', 'FallaController@index');
 
 
