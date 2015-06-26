@@ -28,9 +28,15 @@ Route::controllers([
 
 //Route::post('login','LoginController@loginPostAdmin');
 
-//resource('operadores','OperadorController');
+resource('operadores','OperadorController');
 resource('unidades','UnidadController');
 resource('fallas','FallaController');
+
+
+/*Vistas De Operador*/
+//Route::get('roperador','OperadorController@registraroperador');
+//Route::get('operadores','OperadorController@operadores');
+
 
 /*Vistas De Fallas*/
 Route::get('rfalla','FallaController@registrarfalla');

@@ -50,11 +50,11 @@ class Registrar implements RegistrarContract {
 			'fnacimiento' => $data['fnacimiento'],
 			'cargo' => $data['cargo'],
 			'password' => bcrypt($data['password']),
-			'cpassword' => bcrypt($data['cpassword']),
+			'password_confirmation' => bcrypt($data['password_confirmation']),
 			'telefono' => $data['telefono'],
 			'preguntas' => $data['preguntas'],
 			'respuestas' => $data['respuestas'],
-			//'fingreso' => $data['fingreso'],
+			'fingreso' => $data['fingreso'],
 		]);
 	}
 

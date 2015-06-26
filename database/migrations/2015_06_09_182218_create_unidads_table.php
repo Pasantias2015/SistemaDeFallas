@@ -14,6 +14,7 @@ class CreateUnidadsTable extends Migration {
 	{
 		Schema::create('unidades', function(Blueprint $table)
 		{
+			$table->increments('id');
 			$table->string('serial')->unique();
 			$table->string('nidentificacion',30)->unique();
 			$table->string('vin',30)->unique();

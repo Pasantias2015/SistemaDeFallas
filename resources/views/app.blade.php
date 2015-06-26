@@ -49,7 +49,7 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="{{ url('/') }}">Inicio</a></li>
+					<li><a href="{{ url('/home') }}">Inicio</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">

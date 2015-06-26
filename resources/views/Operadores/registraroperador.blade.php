@@ -15,7 +15,7 @@
 		<div class="title"><h4>Datos Personales</h4></div>
 			<div class="col-md-12 well">
 				<div class="col-md-6">
-							<!--<input type="hidden" name="_token" value="{{ csrf_token() }}">-->
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							
 						<div class="input-field ">
 					          <i class="mdi-action-picture-in-picture prefix"></i>

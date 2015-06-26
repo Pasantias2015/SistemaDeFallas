@@ -8,6 +8,19 @@ use App\Operador;
 
 class OperadorController extends Controller {
 
+		/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -17,9 +30,13 @@ class OperadorController extends Controller {
 	{
 		
 		
-		$operadores = Operador::orderby('papellido','asc')->paginate();
-		return view('Operadores.operadores');
-		
+		$operadores = Operador::orderby('id','des')->paginate();
+		//$operadores = Operador::paginate();
+		//$operadores = Operador::find(14);
+		//$operadores = Operador::firstOrCreate(['pnombre' => 'pep']);
+		return view('Operadores.operadores',compact ('operadores'));
+		//return $operadores;
+		//dd($operadores);
 	}
 
 	/**
@@ -41,11 +58,9 @@ class OperadorController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		//
-		$operador= Operador::create($request->all());
-
-		return "/home";
-	}
+		
+		$operador = Operador::create($request->all());
+		return view('home');	}
 
 	/**
 	 * Display the specified resource.

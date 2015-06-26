@@ -9,23 +9,32 @@ use App\Unidad;
 class UnidadController extends Controller {
 
 	/**
+	 * Create a new controller instance.
+	 *
+	 * @return void
+	 */
+	
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+
+
+
+
+	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		//
- 
-		//return view('Unidades.registrarunidad');
-		//return view('Servicios.registrarservicio');
-		return view('Unidades.unidadoperador');
-		//return view('Unidades.registrarunidad');
-		//return view('Unidades.unidadoperador');
-
+		
+ 		$unidades = Unidad::paginate();
+ 		return view('Unidades.unidades',compact('unidades'));
 	}
-	public function registrarfalla()
-	{ return view('')}
+	
 	
 	/**
 	 * Show the form for creating a new resource.
@@ -34,9 +43,9 @@ class UnidadController extends Controller {
 	 */
 	public function create()
 	{
-		//
-		//return view('Unidades.registrarunidad');
-		return view('Unidades.unidadoperador');
+		
+		return view('Unidades.registrarunidad');
+		
 
 	}
 
@@ -49,7 +58,7 @@ class UnidadController extends Controller {
 	{
 		//
 		$unidad = Unidad::create($request->all());
-		return "lsito";
+		return view('home');
 	}
 
 	/**
