@@ -16,16 +16,24 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::get('unidad', 'UnidadController@index');
-//Route::get('falla', 'FallaController@index');
-
-
-
+Route::get('falla', 'FallaController@registrarfalla');
 //Route::get('operador', 'OperadorController@index');
+Route::get('operador', 'OperadorController@index');
 
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
-resource('operadores','OperadorController');
+
+//Route::post('login','LoginController@loginPostAdmin');
+
+//resource('operadores','OperadorController');
 resource('unidades','UnidadController');
+resource('fallas','FallaController');
+
+/*Vistas De Fallas*/
+Route::get('rfalla','FallaController@registrarfalla');
+Route::get('rcfalla','FallaController@registrarcategoriafalla');
+Route::get('rfuoperador','FallaController@registrarfallaunidadoperador');
+Route::get('rtfalla','FallaController@registrartipofalla');

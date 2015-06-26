@@ -27,10 +27,10 @@ class PasswordController extends Controller {
 	 * @param  \Illuminate\Contracts\Auth\PasswordBroker  $passwords
 	 * @return void
 	 */
-	public function __construct(Guard $auth, PasswordBroker $contraseñas)
+	public function __construct(Guard $auth, PasswordBroker $password)
 	{
 		$this->auth = $auth;
-		$this->contraseñas = $contraseñas;
+		$this->password = $password;
 
 		$this->middleware('guest');
 	}

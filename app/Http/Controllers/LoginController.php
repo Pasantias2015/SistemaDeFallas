@@ -2,31 +2,23 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\User;
 use Illuminate\Http\Request;
-use App\Unidad;
 
-class UnidadController extends Controller {
+class LoginController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		//
- 
-		//return view('Unidades.registrarunidad');
-		//return view('Servicios.registrarservicio');
-		return view('Unidades.unidadoperador');
-		//return view('Unidades.registrarunidad');
-		//return view('Unidades.unidadoperador');
-
-	}
-	public function registrarfalla()
-	{ return view('')}
 	
+		//
+
+public function index()
+	{
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -35,9 +27,6 @@ class UnidadController extends Controller {
 	public function create()
 	{
 		//
-		//return view('Unidades.registrarunidad');
-		return view('Unidades.unidadoperador');
-
 	}
 
 	/**
@@ -45,11 +34,9 @@ class UnidadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store()
 	{
 		//
-		$unidad = Unidad::create($request->all());
-		return "lsito";
 	}
 
 	/**

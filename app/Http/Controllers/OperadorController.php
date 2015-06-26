@@ -15,7 +15,10 @@ class OperadorController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		
+		
+		$operadores = Operador::orderby('papellido','asc')->paginate();
+		return view('Operadores.operadores');
 		
 	}
 
@@ -26,8 +29,9 @@ class OperadorController extends Controller {
 	 */
 	public function create()
 	{
-		//
-		return view('Operadores.registraroperador');
+		
+		  return view('Operadores.registraroperador');
+		
 	}
 
 	/**
@@ -40,7 +44,7 @@ class OperadorController extends Controller {
 		//
 		$operador= Operador::create($request->all());
 
-		//return "dasdas";
+		return "/home";
 	}
 
 	/**

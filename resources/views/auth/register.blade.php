@@ -136,8 +136,8 @@
 									<div class="col-md-6">
 										<div class="input-field">
 								          <i class="fa fa-user prefix"></i>
-								          <input id="icon_username" name="usuario" type="text" class="validate">
-								          <label for="icon_username">Nombre de Usuario</label>
+								          <input id="icon_username" name="email" type="text" class="validate">
+								          <label for="icon_username">Email</label>
 								        </div>
 
 								        <div class="input-field">
@@ -148,7 +148,7 @@
 
 								        <div class="input-field">
 								          <i class="fa fa-key prefix"></i>
-								          <input id="icon_keyc" type="text" name="cpassword" class="validate">
+								          <input id="icon_keyc" type="text" name="password_confirmation" class="validate">
 								          <label for="icon_keyc">Confirmar contraseña</label>
 								        </div>
 								</div>

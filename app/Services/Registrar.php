@@ -13,20 +13,20 @@ class Registrar implements RegistrarContract {
 	 * @return \Illuminate\Contracts\Validation\Validator
 	 */
 	public function validator(array $data)
-	{
+	{ 
 		return Validator::make($data, [
-			'cedula' => 'required|max:10',
-			'pnombre' => 'required|max:20',
-			'snombre' => 'required|max:20',
-			'papellido' => 'required|max:20',
-			'sapellido' => 'required|max:20',
-			'usuario' => 'required|max:20',
+			'cedula' => 'required|max:255|unique:users',
+			'pnombre' => 'required|max:255',
+			'snombre' => 'required|max:255',
+			'papellido' => 'required|max:255',
+			'sapellido' => 'required|max:255',
+			'email' => 'required|email|max:255|unique:users',
 			'fnacimiento' => 'required|date|max:11',
-			//'fingreso' => 'required|date|max:11',
-			'cpassword' => 'required|max:255',
-			'password'  => 'required|max:255',
-			'preguntas' => 'required|max:40',
-			'respuestas' => 'required|max:40'
+			'fingreso' => 'required|date|max:11',
+			'password_confirmation' => 'required|min:6',
+			'password'  => 'required|min:6',
+			'preguntas' => 'required|max:255',
+			'respuestas' => 'required|max:255'
 		]);
 	}
 
@@ -45,7 +45,7 @@ class Registrar implements RegistrarContract {
 			'snombre' => $data['snombre'],
 			'papellido' => $data['papellido'],
 			'sapellido' => $data['sapellido'],
-			'usuario' => $data['usuario'],
+			'email' => $data['email'],
 			'direccion' => $data['direccion'],
 			'fnacimiento' => $data['fnacimiento'],
 			'cargo' => $data['cargo'],
@@ -54,7 +54,7 @@ class Registrar implements RegistrarContract {
 			'telefono' => $data['telefono'],
 			'preguntas' => $data['preguntas'],
 			'respuestas' => $data['respuestas'],
-			'fingreso' => $data['fingreso'],
+			//'fingreso' => $data['fingreso'],
 		]);
 	}
 
