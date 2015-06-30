@@ -4,24 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Unidad;
 
-class UnidadController extends Controller {
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	
+class RegistrarController extends Controller {
 	public function __construct()
 	{
 		$this->middleware('auth');
 	}
-
-
-
-
 
 	/**
 	 * Display a listing of the resource.
@@ -30,17 +18,10 @@ class UnidadController extends Controller {
 	 */
 	public function index()
 	{
-		
- 		$unidades = Unidad::paginate();
- 		return view('Unidades.unidades',compact('unidades'));
-		
+		//
+		return view('auth.register');
 	}
-	public function asignarunidad()
-	{
-		return view ('Unidades.unidadoperador');
-	}
-	
-	
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -48,10 +29,7 @@ class UnidadController extends Controller {
 	 */
 	public function create()
 	{
-		
-		return view('Unidades.registrarunidad');
-		
-
+		//
 	}
 
 	/**
@@ -59,11 +37,9 @@ class UnidadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store()
 	{
 		//
-		$unidad = Unidad::create($request->all());
-		return view('home');
 	}
 
 	/**

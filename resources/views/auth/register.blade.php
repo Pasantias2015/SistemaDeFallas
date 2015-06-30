@@ -136,8 +136,8 @@
 									<div class="col-md-6">
 										<div class="input-field">
 								          <i class="fa fa-user prefix"></i>
-								          <input id="icon_username" name="email" type="text" class="validate">
-								          <label for="icon_username">Email</label>
+								          <input id="icon_username" name="usuario" type="text" class="validate">
+								          <label for="icon_username">Usuario</label>
 								        </div>
 
 								        <div class="input-field">

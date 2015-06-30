@@ -31,13 +31,15 @@ Route::controllers([
 resource('operadores','OperadorController');
 resource('unidades','UnidadController');
 resource('fallas','FallaController');
-
+/*Vista de Usuarios*/
+Route::get('rusuario','RegistrarController@index');
 
 /*Vistas De Operador*/
 //Route::get('roperador','OperadorController@registraroperador');
 //Route::get('operadores','OperadorController@operadores');
 
-
+/*Vistas De Unidades*/
+Route::get('uoperador','UnidadController@asignarunidad');
 /*Vistas De Fallas*/
 Route::get('rfalla','FallaController@registrarfalla');
 Route::get('rcfalla','FallaController@registrarcategoriafalla');

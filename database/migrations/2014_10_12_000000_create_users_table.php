@@ -25,8 +25,9 @@ class CreateUsersTable extends Migration {
 			$table->string('cargo',10);
 			$table->string('telefono',11);
 			$table->string('direccion',100);
-			$table->string('email')->unique();
-			
+			/*$table->string('email')->unique();
+			*/
+			$table->string('usuario')->unique();
 			
 			$table->string('password',60);
 			$table->string('password_confirmation',60);

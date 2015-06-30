@@ -51,7 +51,7 @@
 			
 			<div class="form-group">
 				
-  					<span class="">Fecha De Fabricacion</span>
+  					<span class="col-md-12">Fecha De Fabricacion</span>
                     <input type="date" class="form-control"name='ffabricacion'>
 				
 			</div>
@@ -86,8 +86,8 @@
 		</div>
 	
 	
-	<div class="row">
-		<div class="col-md-offset-5 col-md-5 form-group">
+	<div class="col-md-12">
+		<div class="col-md-offset-4 col-md-8 form-group">
 			<button type="submit" class="btn btn-success">Guardar</button>
 			<button type="button" class="btn btn-danger">Cancelar</button>	
 		</div>
