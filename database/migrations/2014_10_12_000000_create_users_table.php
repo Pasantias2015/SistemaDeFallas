@@ -22,13 +22,10 @@ class CreateUsersTable extends Migration {
 			$table->string('sapellido',20);
 			$table->date('fnacimiento');
 			$table->date('fingreso');
-			$table->string('cargo',10);
+			$table->string('cargo');
 			$table->string('telefono',11);
 			$table->string('direccion',100);
-			/*$table->string('email')->unique();
-			*/
 			$table->string('usuario')->unique();
-			
 			$table->string('password',60);
 			$table->string('password_confirmation',60);
 			$table->string('preguntas',30);

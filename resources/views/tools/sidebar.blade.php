@@ -8,9 +8,9 @@
 <div class='sub-menu'>
   <ul>      
   <a href="{{ url('unidades/create') }}"><li>Registrar Unidad</li></a>
-	<a href="{{ url('unidades/') }}"><li>Unidades</li></a>
+	<a href="{{ url('unidades/') }}"><li>Consultar Unidades</li></a>
 	<a href="{{ url('uoperador') }}"><li>Asignar Unidad</li></a>
-	<a href="#"><li> Reportar</li></a>
+	
   </ul>
 </div>
 <div class='sidebar-menu'><i class="fa fa-exclamation-triangle left"></i></i>Fallas<div class='expand'><i class="fa fa-angle-left"></i></div></div>
@@ -37,6 +37,16 @@
   <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
   <a href=" "><li>Usuarios Registrado</li></a>
 	
+  </ul>
+
+</div>
+
+<div class='sidebar-menu' ><i class="fa fa-file-pdf-o left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+<div class='sub-menu'>
+  <ul>
+  <a href="{{ url('') }}"><li>Unidades</li></a>
+  
+  
   </ul>
 
 </div>

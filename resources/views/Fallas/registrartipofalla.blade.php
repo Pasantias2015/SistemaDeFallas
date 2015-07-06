@@ -13,13 +13,13 @@
 	<div class="row well">
 	
 				<div class="form-group">
-					<input type="text" class="form-control floating-label" placeholder= "Descripcion tipo de falla">	
+					<input type="text" class="" placeholder= "Descripcion tipo de falla">	
 				</br> 
 				<!--Aqui es un listado de tipo de fallas-->
-				  <table>
+				  <table class="table table-bordered">
         <thead>
           <tr>
-              <th data-field="id">lista de tipo falla</th>
+              <th data-field="id">Lista de tipo falla</th>
           </tr>
         </thead>
 

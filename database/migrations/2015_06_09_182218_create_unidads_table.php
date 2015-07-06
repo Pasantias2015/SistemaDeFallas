@@ -22,7 +22,7 @@ class CreateUnidadsTable extends Migration {
 			$table->string('potenciamotor',10);
 			$table->integer('kilometraje');
 			$table->integer('cantpersona');
-			$table->integer('pesomax',5);
+			$table->integer('pesomax');
 			$table->string('fabricante',10);
 			$table->date('ffabricacion');
 			$table->string('longitud',10);

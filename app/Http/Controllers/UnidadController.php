@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Unidad;
+
 
 class UnidadController extends Controller {
 
@@ -16,7 +16,7 @@ class UnidadController extends Controller {
 	
 	public function __construct()
 	{
-		$this->middleware('auth');
+		//$this->middleware('auth');
 	}
 
 
@@ -37,7 +37,19 @@ class UnidadController extends Controller {
 	}
 	public function asignarunidad()
 	{
-		return view ('Unidades.unidadoperador');
+
+
+$html =
+  '<html>Title<body>'.
+  '<p>Perro Cagon</p>'.
+  '</body></html>';
+
+$dompdf = new \DOMPDF();
+$dompdf->load_html($html);
+$dompdf->render();
+$dompdf->stream("Reporte.pdf");
+
+//		return view ('Reportes.consultarfalla');
 	}
 	
 	

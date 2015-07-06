@@ -14,19 +14,19 @@
 		
 			<div class=" col-md-12">
 				<div class="form-group">
-					<input type="text" class="form-control floating-label" placeholder="Numero de Unidad: ">	
+					<input type="text" class="" placeholder="Numero de Unidad: ">	
 					
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control floating-label" placeholder="Cedula del Operador">	
+					<input type="text" class="" placeholder="Cedula del Operador">	
 				</div>
 				<div class="row">
 					<div class="form-group">
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Nombre">
+							<input type="text" class="" placeholder="Nombre" disabled>
 						</div>
 						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Apellido">
+							<input type="text" class="" placeholder="Apellido" disabled>
 						</div>
 					</div>
 				</br>
@@ -39,10 +39,10 @@
 				</div>
 				</br>
 				<div class="form-group">
-					<input type="text" class="form-control " placeholder="Hora de asigancion ">	
+					<input type="text" class=" " placeholder="Hora de asigancion ">	
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control " placeholder="Hora de devolucion: ">	
+					<input type="text" class="" placeholder="Hora de devolucion: ">	
 				</div>
 				</br>
 			<div class="input-group">
@@ -56,7 +56,7 @@
 				</div>
 				</br>
 			<div class="form-group">
-					<input type="text" class="form-control" placeholder= "Descripcion breve del recorrido ">	
+					<input type="text" class="" placeholder= "Descripcion breve del recorrido ">	
 				</div>
 
 			</div>

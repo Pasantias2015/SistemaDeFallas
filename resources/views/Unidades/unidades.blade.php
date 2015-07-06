@@ -6,7 +6,7 @@
 		<div class="col-md-10">
 			<div class="panel panel-danger">
 				<div class="panel-heading">Listado De Unidades</div>
-				<div class="panel panel-default"><p>Hay {{ $unidades->total() }} Unidades</p></div>
+				
 					
 					<table class="table table-bordered table-striped">
 						<tr>
@@ -32,6 +32,7 @@
 
 				
 			</div>
+			<div class="panel panel-default"><p>Hay {{ $unidades->total() }} Unidades</p></div>
 		</div>
 	</div>
 	

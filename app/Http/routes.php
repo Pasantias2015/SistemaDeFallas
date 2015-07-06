@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
+//Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
 Route::get('unidad', 'UnidadController@index');
 Route::get('falla', 'FallaController@registrarfalla');
-//Route::get('operador', 'OperadorController@index');
 Route::get('operador', 'OperadorController@index');
 
 
@@ -26,17 +26,17 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-//Route::post('login','LoginController@loginPostAdmin');
 
-resource('operadores','OperadorController');
+//resource('operadores','OperadorController');
 resource('unidades','UnidadController');
 resource('fallas','FallaController');
+
 /*Vista de Usuarios*/
 Route::get('rusuario','RegistrarController@index');
 
 /*Vistas De Operador*/
-//Route::get('roperador','OperadorController@registraroperador');
-//Route::get('operadores','OperadorController@operadores');
+Route::get('roperador','OperadorController@registraroperador');
+Route::get('operadores','OperadorController@index');
 
 /*Vistas De Unidades*/
 Route::get('uoperador','UnidadController@asignarunidad');
