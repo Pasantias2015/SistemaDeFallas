@@ -12,36 +12,47 @@
 */
 
 //Route::get('/', 'WelcomeController@index');
-//Route::get('/', 'WelcomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('home', 'HomeController@index');
 
 Route::get('unidad', 'UnidadController@index');
 Route::get('falla', 'FallaController@registrarfalla');
-Route::get('operador', 'OperadorController@index');
+
 
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+	//'password' => 'Auth\PasswordController',
 ]);
 
 
 //resource('operadores','OperadorController');
-resource('unidades','UnidadController');
-resource('fallas','FallaController');
+
 
 /*Vista de Usuarios*/
 Route::get('rusuario','RegistrarController@index');
+Route::get('usuariosall','RegistrarController@index');
+Route::get('changepassword','RegistrarController@change');
+
 
 /*Vistas De Operador*/
-Route::get('roperador','OperadorController@registraroperador');
-Route::get('operadores','OperadorController@index');
+//Route::get('roperador','OperadorController@registraroperador');
+//Route::get('operadores','OperadorController@index');
 
 /*Vistas De Unidades*/
 Route::get('uoperador','UnidadController@asignarunidad');
+Route::get('uupdate','UnidadController@update');
+
 /*Vistas De Fallas*/
 Route::get('rfalla','FallaController@registrarfalla');
 Route::get('rcfalla','FallaController@registrarcategoriafalla');
 Route::get('rfuoperador','FallaController@registrarfallaunidadoperador');
 Route::get('rtfalla','FallaController@registrartipofalla');
+/*Vistas De Reportes*/
+
+resource('opciones','OpcionesController');
+resource('unidades','UnidadController');
+resource('operadores','OperadorController');
+resource('fallas','FallaController');
+resource('reportes','ReporteController');

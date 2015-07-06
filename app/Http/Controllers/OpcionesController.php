@@ -4,24 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Unidad;
 
-class UnidadController extends Controller {
-
-	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
-
-
-
+class OpcionesController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -30,29 +14,9 @@ class UnidadController extends Controller {
 	 */
 	public function index()
 	{
-		
- 		$unidades = Unidad::paginate();
- 		return view('Unidades.unidades',compact('unidades'));
-		
+		return view ('Opciones.opciones');
 	}
-	public function asignarunidad()
-	{
 
-	/*
-	$html =
-	  '<html>Title<body>'.
-	  '</body></html>';
-	 '<p>Perro Cagon</p>'.
-	 
-	$dompdf = new \DOMPDF();
-	$dompdf->load_html($html);
-	$dompdf->render();
-	$dompdf->stream("Reporte.pdf");
-	*/
-	return view ('Unidades.unidadoperador');
-	}
-	
-	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -60,10 +24,7 @@ class UnidadController extends Controller {
 	 */
 	public function create()
 	{
-		
-		return view('Unidades.registrarunidad');
-		
-
+		//
 	}
 
 	/**
@@ -71,11 +32,9 @@ class UnidadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store()
 	{
 		//
-		$unidad = Unidad::create($request->all());
-		return view('home');
 	}
 
 	/**
@@ -108,9 +67,9 @@ class UnidadController extends Controller {
 	 */
 	public function update($id)
 	{
-	
+		//
 	}
-	
+
 	/**
 	 * Remove the specified resource from storage.
 	 *

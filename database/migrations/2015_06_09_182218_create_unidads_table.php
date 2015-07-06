@@ -16,7 +16,7 @@ class CreateUnidadsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('serial')->unique();
-			$table->string('nidentificacion',30)->unique();
+			//$table->string('nidentificacion',30)->unique();
 			$table->string('vin',30)->unique();
 			$table->string('serialmotor',30)->unique();
 			$table->string('potenciamotor',10);

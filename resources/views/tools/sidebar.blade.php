@@ -44,7 +44,7 @@
 <div class='sidebar-menu' ><i class="fa fa-file-pdf-o left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
 <div class='sub-menu'>
   <ul>
-  <a href="{{ url('') }}"><li>Unidades</li></a>
+  <a href="{{ url('reportes') }}"><li>Fallas Unidades</li></a>
   
   
   </ul>

@@ -16,7 +16,7 @@ class OperadorController extends Controller {
 	
 	public function __construct()
 	{
-		//$this->middleware('auth');
+		$this->middleware('auth');
 	}
 
 
@@ -30,7 +30,7 @@ class OperadorController extends Controller {
 	{
 		
 		
-		$operadores = Operador::orderby('id','des')->paginate();
+		$operadores = Operador::orderby('id','asc')->paginate();
 		//$operadores = Operador::paginate();
 		//$operadores = Operador::find(14);
 		//$operadores = Operador::firstOrCreate(['pnombre' => 'pep']);
@@ -46,7 +46,7 @@ class OperadorController extends Controller {
 	 */
 	public function create()
 	{
-		
+			
 		  return view('Operadores.registraroperador');
 		
 	}

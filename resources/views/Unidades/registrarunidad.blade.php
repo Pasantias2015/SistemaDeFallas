@@ -19,9 +19,6 @@
 					
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" name="nidentificacion" placeholder="Numero De Identificacion ejemplo: YM-124">	
-				</div>
-				<div class="form-group">
 					<input type="text" class="form-control" name="vin" placeholder="Numero De VIN">	
 				</div>
 				<div class="form-group">

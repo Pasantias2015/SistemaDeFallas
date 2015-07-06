@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class RegistrarController extends Controller {
 	public function __construct()
 	{
-		//$this->middleware('guest');
+		$this->middleware('auth');
 	}
 
 	/**
@@ -16,10 +16,15 @@ class RegistrarController extends Controller {
 	 *
 	 * @return Response
 	 */
+
 	public function index()
 	{
-		//
+		
 		return view('auth.register');
+		
+	}
+	public function change(){
+		return view('Usuarios.cambiopassword');
 	}
 
 	/**

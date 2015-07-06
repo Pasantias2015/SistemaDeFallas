@@ -62,6 +62,7 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->pnombre }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
+								<li><a href="{{ url('changepassword') }}">Cambiar Contraseña</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Cerrar Sesion</a></li>
 							</ul>
 						</li>
@@ -75,7 +76,7 @@
 		@yield('sidebar')
 	
 
-	<div class="col-md-8">
+	<div class="col-md-9">
 		@yield('content')
 	</div>
 </div>
