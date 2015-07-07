@@ -34,7 +34,7 @@ class AuthController extends Controller {
 		$this->registrar = $registrar;
 		
 
-		$this->middleware('guest', ['except' => 'getLogout']);
+		//$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
 	public function postLogin(Request $request)

@@ -6,11 +6,18 @@
 <div class='sidebar-1'> 
   <div class='sidebar-menu'><i class="fa fa-car left"></i>Unidades<div class='expand'><i class="fa fa-angle-left"></i></div></div>
 <div class='sub-menu'>
-  <ul>      
+  <ul>
+  @foreach($results as $result)
+  <li>{{ $result->descripcion }}</li>
+  @endforeach   
+  <!--
+      ciclo opciones imprimir opciones-unidades
+
+    
   <a href="{{ url('unidades/create') }}"><li>Registrar Unidad</li></a>
 	<a href="{{ url('unidades/') }}"><li>Consultar Unidades</li></a>
 	<a href="{{ url('uoperador') }}"><li>Asignar Unidad</li></a>
-	
+	--> 
   </ul>
 </div>
 <div class='sidebar-menu'><i class="fa fa-exclamation-triangle left"></i></i>Fallas<div class='expand'><i class="fa fa-angle-left"></i></div></div>
