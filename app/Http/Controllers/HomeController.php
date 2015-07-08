@@ -40,9 +40,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$results = \DB::select('select o.descripcion from opciones as o, usuario_opcions as uo where (o.id = uo.opcion_id) and(uo.user_id = :userid)', ['userid' => \Auth::user()->id]);
+		/*$results = \DB::select('select o.descripcion from opciones as o, usuario_opcions as uo where (o.id = uo.opcion_id) and(uo.user_id = :userid)', ['userid' => \Auth::user()->id]);
 	
-		return view('home',compact('results'));
+		
+		return view('home',compact('results'));*/
+		return view('home');
+		
+	
 
 		
 	

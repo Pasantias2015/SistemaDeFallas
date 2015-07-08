@@ -11,10 +11,16 @@
 |
 */
 
-//Route::get('/', 'WelcomeController@index');
+
 Route::get('/', 'HomeController@index');
 
+
+
+
+
+
 Route::get('home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('unidad', 'UnidadController@index');
 Route::get('falla', 'FallaController@registrarfalla');
@@ -27,7 +33,7 @@ Route::controllers([
 ]);
 
 
-//resource('operadores','OperadorController');
+
 
 
 /*Vista de Usuarios*/
@@ -56,3 +62,4 @@ resource('unidades','UnidadController');
 resource('operadores','OperadorController');
 resource('fallas','FallaController');
 resource('reportes','ReporteController');
+resource('operadores','OperadorController');

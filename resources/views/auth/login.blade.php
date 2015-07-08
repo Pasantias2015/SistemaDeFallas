@@ -53,7 +53,7 @@
 
 						<div class="form-group">
 							<div class="col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Entrar</button>
+								<button type="submit" class="btn btn-success">Entrar</button>
 
 								<a class="btn btn-link" href="{{ url('/password/email') }}">Olvide su contraseña?</a>
 							</div>

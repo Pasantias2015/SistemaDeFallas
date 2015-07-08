@@ -103,3 +103,15 @@ return view('vista',["nombredeunavariable"=>$variable]);
 @endif 
 
 controlador plano  no restfull --plain sin metodos
+
+
+
+<!--
+     @foreach($results as $result)
+      <li>{{ $result->descripcion }}</li>
+      @endforeach   
+      
+      ciclo opciones imprimir opciones-unidades
+
+    -->
+  
