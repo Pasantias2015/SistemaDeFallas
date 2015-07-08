@@ -87,3 +87,19 @@ id  cedula  pnombre snombre papellido sapellido fnacimiento fingreso  cargo tele
 
 
 select descripcion from opciones as o , usuario_opcions as uo where (o.id=uo.opcion_id) and(uo.user_id=1 )
+use DB;
+$variable = DB::table('nombretabla')->paginate(5);
+$variable->setPath('nombretabla');
+return view('vista',["nombredeunavariable"=>$variable]);
+
+
+@inf(count($variable > 0)
+  codigo html
+  @foreach($varible as varible)
+  @endforeach
+  {{!! $variable->render !!}}  
+@else
+  codigo sino
+@endif 
+
+controlador plano  no restfull --plain sin metodos

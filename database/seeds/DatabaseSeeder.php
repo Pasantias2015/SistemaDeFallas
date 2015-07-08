@@ -14,7 +14,25 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('UserTableSeeder');
 	}
 
+}
+class UserTableSeeder extends Seeder
+{
+	public function run()
+	{
+		\DB::table('users')->insert(array (
+		'pnombre' =>'Leonardo',
+		'snombre' =>'Antonio',
+		'papellido' =>'Loyo',
+		'fnacimiento' =>'1991/03/14',
+		'fingreso' =>'2015/05/01',
+		'usuario' =>'leonardo',
+		'password' =>\Hash::make('123456789'),
+		'password_confirmation' =>\Hash::make('123456789'),
+		'direccion' =>'Tarabana'
+	
+		));
+	}
 }
