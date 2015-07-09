@@ -21,7 +21,11 @@ class ReporteController extends Controller {
 	public function index()
 	{
 		//
-		return view('Reportes.consultarfalla');
+		$results = \DB::select('select u.nidentificacion , uc.mes , uc.condicion from unidades as u, unidad_condiciones as uc where (u.id = uc.unidad_id) group by uc.mes');
+	
+		
+		return view('Reportes.unidades',compact('results'));
+		
 	}
 
 	/**

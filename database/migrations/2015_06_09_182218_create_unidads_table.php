@@ -15,19 +15,19 @@ class CreateUnidadsTable extends Migration {
 		Schema::create('unidades', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('serial')->unique();
-			//$table->string('nidentificacion',30)->unique();
-			$table->string('vin',30)->unique();
-			$table->string('serialmotor',30)->unique();
-			$table->string('potenciamotor',10);
-			$table->integer('kilometraje');
-			$table->integer('cantpersona');
-			$table->integer('pesomax');
-			$table->string('fabricante',10);
-			$table->date('ffabricacion');
-			$table->string('longitud',10);
-			$table->string('combustible',10);			
-			$table->rememberToken();
+			$table->string('serialcarroceria')->unique();
+			$table->string('nidentificacion')->unique();
+			$table->string('vin')->unique();
+			$table->string('serialmotor')->unique();
+			//$table->string('potenciamotor');
+			//$table->integer('kilometraje');
+			//$table->integer('cantpersona');
+			//$table->integer('pesomax');
+			//$table->string('fabricante',10);
+			//$table->date('ffabricacion');
+			//$table->string('longitud',10);
+			//$table->string('combustible',10);			
+			//$table->rememberToken();
 			$table->timestamps();
 		});
 	}

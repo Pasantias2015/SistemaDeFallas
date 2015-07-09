@@ -158,3 +158,8 @@ span.col-md-4.sinpadding{
   padding-top: 15px;
   padding-bottom: 11px;
 }
+/*estilos para los graficos*/
+#charts {
+  width: 100%;
+   min-height: 300px;
+}

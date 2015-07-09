@@ -102,6 +102,9 @@ return view('vista',["nombredeunavariable"=>$variable]);
   codigo sino
 @endif 
 
+<div class="panel panel-default"><p>Hay {{ $unidades->total() }} Unidades</p></div>
+
+
 controlador plano  no restfull --plain sin metodos
 
 
@@ -114,4 +117,53 @@ controlador plano  no restfull --plain sin metodos
       ciclo opciones imprimir opciones-unidades
 
     -->
-  
+
+<!--
+              <th>Potencia</th>
+              <th>Kilometrje</th>
+              <th>Cant. Personas</th>
+              <th>Peso Maximo</th>
+              <th>Fabricante</th>
+              <th>Fecha de Frabri.</th>
+              <th>Longitud</th>
+              <th>Combustible</th>
+              <th>Fecha de Registrado</th>
+              <th>Ultima Actualizacion</th>
+              -->
+
+              <!--
+              <td>{{ $unidad->potenciamotor }}</td>
+              <td>{{ $unidad->kilometraje }}</td>
+              <td>{{ $unidad->cantpersona }}</td>
+              <td>{{ $unidad->pesomax }}</td>
+              <td>{{ $unidad->fabricante }}</td>
+              <td>{{ $unidad->ffabricacion }}</td>
+              <td>{{ $unidad->longitud }}</td>
+              <td>{{ $unidad->combustible }}</td>
+              <td>{{ $unidad->created_at }}</td>
+              <td>{{ $unidad->Update_at }}</td>
+              -->
+
+
+
+
+
+
+              <table class="table table-bordered table-striped ">
+            <tr>
+              <th>ID</th>
+              <th>N° Identificacion</th>
+              <th>VIM</th>
+              <th>Serial de Carroceria</th>
+              <th>Serial del Motor</th>
+            </tr>
+            @foreach($unidades as $unidad)
+            <tr>
+              <td>{{ $unidad->id}}</td>
+              <td>{{ $unidad->nidentificacion}}</td>
+              <td>{{ $unidad->vin}}</td>
+              <td>{{ $unidad->serialcarroceria }}</td>
+              <td>{{ $unidad->serialmotor }}</td>
+            </tr>
+            @endforeach 
+          </table>  
