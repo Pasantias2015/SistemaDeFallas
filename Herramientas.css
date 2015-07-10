@@ -23,7 +23,7 @@ convencion de las claves foraneas singular_id
 $table->foreign('singular_id')->references('id')->on('tabla de referencia')->onUpdate('CASCADE')->onDelete('CASCADE');
 ver routes que existen  php artisan route:list
 
-
+http://codehero.co/laravel-4-desde-cero-eloquent-orm-ii/
 
 
 espina de pescado html

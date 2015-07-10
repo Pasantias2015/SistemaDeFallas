@@ -5,8 +5,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-
+use App\Persona;
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
+
 
 	use Authenticatable, CanResetPassword;
 
@@ -22,7 +23,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['cedula', 'pnombre', 'snombre','papellido','sapellido','fnacimiento','fingreso','cargo','telefono','direccion',/*'email'*/'usuario','password','password_confirmation','preguntas','respuestas'];
+	//protected $fillable = ['cedula', 'pnombre', 'snombre','papellido','sapellido','fnacimiento','fingreso','cargo','telefono','direccion',/*'email'*/'usuario','password','password_confirmation','preguntas','respuestas'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -31,7 +32,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 	
-	
+	public function Persona()
+	{
+		return $this->belongsTo('Persona');
+	}
 
 
 }

@@ -15,16 +15,10 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{	
 			$table->increments('id');
-			$table->string('cedula')->unique();
-			$table->string('pnombre',20);
-			$table->string('snombre',20);
-			$table->string('papellido',20);
-			$table->string('sapellido',20);
-			$table->date('fnacimiento');
-			$table->date('fingreso');
-			$table->string('cargo');
-			$table->string('telefono',11);
-			$table->string('direccion',100);
+			
+			$table->integer('persona_id')->unsigned();
+			$table->foreign('persona_id')->references('id')->on('personas');
+
 			$table->string('usuario')->unique();
 			$table->string('password',60);
 			$table->string('password_confirmation',60);
@@ -33,7 +27,8 @@ class CreateUsersTable extends Migration {
 			$table->rememberToken();
 			$table->timestamps();
 
-			//$table->primary('cedula'); 	
+			
+			 	
 		});
 	}
 

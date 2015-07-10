@@ -15,19 +15,10 @@ class CreateOperadorsTable extends Migration {
 		Schema::create('operadores', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('cedula')->unique();
-			$table->string('pnombre',20);
-			$table->string('snombre',20);
-			$table->string('papellido',20);
-			$table->string('sapellido',20)->nullable();
-			$table->date('fnacimiento');
-			$table->string('telefono',11);
-			$table->string('telefonolaboral',11);
-			$table->string('direccion',100);
-			$table->rememberToken();
+			$table->integer('persona_id')->unsigned();
+			$table->foreign('persona_id')->references('id')->on('personas');
+			$table->string('telefono_laboral')->unique();
 			$table->timestamps();
-			
-			//$table->primary('cedula');
 
 		});
 	}

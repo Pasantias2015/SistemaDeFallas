@@ -17,7 +17,8 @@ class CreateUnidadCondicionsTable extends Migration {
 			$table->increments('id');
 			$table->integer('unidad_id')->unsigned();
 			$table->foreign('unidad_id')->references('id')->on('unidades');
-			$table->string('condicion');
+			$table->integer('operativa')->unsigned();
+			$table->integer('inoperativa')->unsigned();
 			$table->string('mes');
 
 			

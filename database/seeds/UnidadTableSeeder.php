@@ -32,16 +32,19 @@ class UnidadTableSeeder extends Seeder
 			{
 				if($r % 2)
 				{
-					$cond = 'Operativa';
+					$operativa = 1;
+					$inoperativa = 0;
 				}
 				else{
-					$cond = 'Inoperativa';
+					$operativa = 0;
+					$inoperativa = 1;
 				}
 			
 				$unidades = [
 								'unidad_id' => $j,
 								'mes'		=> $meses[$r],
-								'condicion' => $cond			
+								'operativa' => $operativa,			
+								'inoperativa' => $inoperativa			
 								];
 				\DB::table('unidad_condiciones')->insert($unidades);	
 			}

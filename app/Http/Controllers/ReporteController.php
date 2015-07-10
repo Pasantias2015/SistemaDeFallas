@@ -21,10 +21,11 @@ class ReporteController extends Controller {
 	public function index()
 	{
 		//
-		$results = \DB::select('select u.nidentificacion , uc.mes , uc.condicion from unidades as u, unidad_condiciones as uc where (u.id = uc.unidad_id) group by uc.mes');
+		$operativa = \DB::select('select mes, sum(operativa) as cant from unidad_condiciones group by mes order by id');
+		$inoperativa = \DB::select('select mes, sum(inoperativa) as cant from unidad_condiciones group by mes order by id');
 	
 		
-		return view('Reportes.unidades',compact('results'));
+		return view('Reportes.unidades',compact('inoperativa','operativa'));
 		
 	}
 

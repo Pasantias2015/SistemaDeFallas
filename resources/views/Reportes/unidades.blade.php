@@ -7,11 +7,7 @@
 			<div class="panel-heading">
 				Reporte
 			</div>
-			@foreach($results as $result)
-				{{ $result->nidentificacion}}
-				{{ $result->condicion}}
-				{{ $result->mes}}
-			@endforeach
+			
 			<script src="js/googlechart.js"></script>
 			<script>
 			
@@ -20,33 +16,33 @@
 				
 				function dibujar() {
 			        var data = google.visualization.arrayToDataTable([
-			          ['Meses', 'Unidades Operativas', 'Unidades Inoperativas'],
-			          ['Enero',  10,0],
-			          ['Febrero', 10,0],
-			          ['Marzo',  8,2],
-			          ['Abril',  10,0],
-			          ['Mayo',  7,3],
-			          ['Junio',  6,4],
-			          ['Julio',  4,6],
-			          ['Agosto',  7,3],
-			          ['Septiembre',  8,2],
-			          ['Octubre',  9,1],
-			          ['Noviembre',  10,0],
-			          ['Diciembre',  10,0],
+			          ['Meses', 'Unidades Operativas','Unidades Inoperativas'],
+			          
+						@foreach ($operativa as $index => $op)
+						
+
+						['{{ $op->mes}}',{{ $op->cant }},{{ $inoperativa[$index]->cant }}],
+						
+						
+						@endforeach
+			          
 			        ]);
 					var opciones = {
-									'title':'Informe De Unidades'
-									
-									};
+					                  'title': 'Reporte anual de estado de las Unidades',					        
+					        };
 					var grafica = new google.visualization.AreaChart(document.getElementById('charts'));
 					//var grafica = new google.visualization.LineChart(document.getElementById('charts'));
+					
+					
 					grafica.draw(data,opciones);
 				}
 
 				
 			</script>
-			<div id="charts"></div>
-			
+			<div id="charts">
+				
+			</div>
+			<button class="btn btn-danger">Exportar a Pdf</button>
 		</div>
 	</div>
 </div>
