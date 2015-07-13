@@ -6,9 +6,7 @@ class Unidad extends Model {
 
 	//
 	 protected $table = 'unidades';
-	 protected $fillable = [
-	 						'id',
-	 						'serialcarroceria',
+	 protected $fillable = ['serialcarroceria',
 	 						'nidentificacion',
 	 						'vin',
 	 						'serialmotor',

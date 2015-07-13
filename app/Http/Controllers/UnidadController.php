@@ -1,9 +1,8 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
+use App\Http\Requests\CrearUnidadRequest;
+use App\Http\Requests\EditUnidadRequest;
 use App\Unidad;
 
 class UnidadController extends Controller {
@@ -16,7 +15,9 @@ class UnidadController extends Controller {
 	
 	public function __construct()
 	{
+
 		$this->middleware('auth');
+
 	}
 
 
@@ -71,9 +72,9 @@ class UnidadController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(CrearUnidadRequest $request)
 	{
-		//
+
 		$unidad = Unidad::create($request->all());
 		return view('home');
 	}
@@ -96,19 +97,26 @@ class UnidadController extends Controller {
 	 * @return Response
 	 */
 	public function edit($id)
-	{
-		//
-	}
+    {
+        $unidad = Unidad::findOrFail($id);
+        return view('Unidades.edit',compact('unidad'));
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
+    /*
+     * 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+    /**
+     * @param $id
+     * @return \Illuminate\View\View
+     */
+    public function update(EditUnidadRequest $request,$id)
 	{
-	
+        $unidad = Unidad::findOrFail($id);
+        $unidad->fill($request->all());
+        $unidad->save();
+        return redirect()->back();
+
 	}
 	
 	/**

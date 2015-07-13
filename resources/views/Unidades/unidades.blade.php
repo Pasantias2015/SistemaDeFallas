@@ -19,14 +19,16 @@
 							<th>Numero VIM</th>
 							<th>Serial de Carroceria</th>
 							<th>Serial de Motor</th>
+                            <th>Accion</th>
 						</tr>
 						@foreach($unidades as $unidad)
 						<tr>
 							<td>{{ $unidad->id}}</td>
-							<td><a href="">{{ $unidad->nidentificacion}}</a></td>
+							<td>{{ $unidad->nidentificacion}}</td>
 							<td>{{ $unidad->vin}}</td>
 							<td>{{ $unidad->serialcarroceria}}</td>
 							<td>{{ $unidad->serialmotor}}</td>
+                            <td><a href="{{ route('unidades.edit',$unidad) }}">Editar</a></td>
 							
 						</tr>
 						@endforeach	

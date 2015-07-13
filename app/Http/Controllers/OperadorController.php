@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Persona;
 use Illuminate\Http\Request;
 use App\Operador;
 
@@ -60,7 +61,10 @@ class OperadorController extends Controller {
 	{
 		
 		$operador = Operador::create($request->all());
-		return view('home');	}
+
+		//return view('home');
+        return redirect()->route('home');
+    }
 
 	/**
 	 * Display the specified resource.
