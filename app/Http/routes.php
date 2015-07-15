@@ -61,5 +61,7 @@ resource('opciones','OpcionesController');
 resource('unidades','UnidadController');
 resource('operadores','OperadorController');
 resource('fallas','FallaController');
+resource('categorias','CategoriaController');
+resource('tipos','TipoController');
 resource('reportes','ReporteController');
 resource('operadores','OperadorController');

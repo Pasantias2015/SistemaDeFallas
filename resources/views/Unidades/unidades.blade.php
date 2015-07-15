@@ -9,7 +9,7 @@
 				<div class="panel-heading">Listado De Unidades</div>
 				
 				<div style="overflow-x:scroll">
-
+ 
 				
   
 					<table class="table table-bordered table-hover">

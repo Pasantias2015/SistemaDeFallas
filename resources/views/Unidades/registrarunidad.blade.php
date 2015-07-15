@@ -11,12 +11,13 @@
                 <div class="panel panel-danger">
                     <div class="panel-heading">Nueva Unidad</div>
                     <div class="panel-body">
-                        @include('tools.cabecera')
+                        @include('tools.errors')
                         {!! Form::open(['route'=>'unidades.store','method'=>'POST']) !!}
 
-
+ s
                                 <div class=" col-md-12">
                                     @include('Unidades.form.form')
+                                </div>
                                 <div class="col-md-12">
                                     <div class="col-md-offset-4 col-md-8 form-group">
                                         <button type="submit" class="btn btn-success">Crear</button>
@@ -28,11 +29,11 @@
 
                         {!! Form::close() !!}
 
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
 

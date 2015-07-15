@@ -2,21 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use App\Falla;
 use App\Tipo;
-use App\Categoria;
-use App\CategoriaTipo;
+use Illuminate\Http\Request;
 
+class TipoController extends Controller {
 
-class FallaController extends Controller {
-
-		/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	
 	public function __construct()
 	{
 		$this->middleware('auth');
@@ -27,42 +17,14 @@ class FallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-
-
-
-	public function registrarfalla(){
-		return view('Fallas.registrarfalla');
-	}
-	public function registrarfallaunidadoperador(){
-		return view('Fallas.registrarfallaunidadoperador');
-	}
-	public function registrarcategoriafalla(){
-		return view('Fallas.registrarcategoriafalla');
-	}
-	public function registrartipofalla(){
-		return view('Fallas.registrartipofalla');
-	}
-
-
 	public function index()
 	{
-			
+		//
 	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
+public function create()
 	{
-			$fallas  = Falla::all();
 			$tipos  = Tipo::all();
-			$categorias  = Categoria::all();
-			$tiposs = Categoria::find(1)->tipo;
-			
-		
-		return view('Fallas.create',compact('fallas','tipos','categorias'));
+		return view('Tipos.create',compact('tipos'));
 	}
 
 	/**
@@ -72,6 +34,9 @@ class FallaController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		$tipo = Tipo::create($request->all());
+
+		return redirect()->back();
 	}
 
 	/**
@@ -93,7 +58,8 @@ class FallaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$tipo = Tipo::findOrFail($id);
+        return view('Tipos.edit',compact('tipo'));
 	}
 
 	/**
@@ -102,9 +68,13 @@ class FallaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request,$id)
 	{
-		//
+        $tipo = Tipo::findOrFail($id);
+        $tipo->fill($request->all());
+        $tipo->save();
+        return redirect()->back();
+
 	}
 
 	/**
@@ -117,10 +87,4 @@ class FallaController extends Controller {
 	{
 		//
 	}
-
-
-
-
-
-	
 }

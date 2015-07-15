@@ -19,4 +19,3 @@
         {!! Form::text('serialmotor',null,['class'=>'form-control']) !!}
 </div>
 
-</div>

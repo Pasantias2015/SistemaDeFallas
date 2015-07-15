@@ -30,21 +30,20 @@
   <a href="{{ url('operadores/') }}"><li>Operadores</li></a>
   </ul>
 </div>
-<div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-<div class='sub-menu'>
-  <ul>
-  <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
-  <a href=" "><li>Usuarios Registrado</li></a>
-	
-  </ul>
-
-</div>
-
 <div class='sidebar-menu' ><i class="fa fa-file-pdf-o left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
 <div class='sub-menu'>
   <ul>
   <a href="{{ url('reportes') }}"><li>Unidades</li></a>
   
+  
+  </ul>
+
+</div>
+<div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+<div class='sub-menu'>
+  <ul>
+  <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
+  <a href=" "><li>Usuarios Registrado</li></a>
   
   </ul>
 

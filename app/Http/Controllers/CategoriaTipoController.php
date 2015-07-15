@@ -2,51 +2,19 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
-use App\Falla;
-use App\Tipo;
-use App\Categoria;
-use App\CategoriaTipo;
 
-
-class FallaController extends Controller {
-
-		/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
+class CategoriaTipoController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
-
-
-
-	public function registrarfalla(){
-		return view('Fallas.registrarfalla');
-	}
-	public function registrarfallaunidadoperador(){
-		return view('Fallas.registrarfallaunidadoperador');
-	}
-	public function registrarcategoriafalla(){
-		return view('Fallas.registrarcategoriafalla');
-	}
-	public function registrartipofalla(){
-		return view('Fallas.registrartipofalla');
-	}
-
-
 	public function index()
 	{
-			
+		//
 	}
 
 	/**
@@ -56,13 +24,7 @@ class FallaController extends Controller {
 	 */
 	public function create()
 	{
-			$fallas  = Falla::all();
-			$tipos  = Tipo::all();
-			$categorias  = Categoria::all();
-			$tiposs = Categoria::find(1)->tipo;
-			
-		
-		return view('Fallas.create',compact('fallas','tipos','categorias'));
+		//
 	}
 
 	/**
@@ -70,8 +32,9 @@ class FallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store()
 	{
+		//
 	}
 
 	/**
@@ -118,9 +81,4 @@ class FallaController extends Controller {
 		//
 	}
 
-
-
-
-
-	
 }

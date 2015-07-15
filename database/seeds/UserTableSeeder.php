@@ -30,8 +30,8 @@ class UserTableSeeder extends Seeder
 		\DB::table('users')->insert(array (
 						'persona_id'=>1,
 					    'usuario'=>'leonardo',
-					  'password'=>\Hash::make('123456789'),
-		 'password_confirmation'=>\Hash::make('123456789'),
+					  'password'=>\Hash::make('123456'),
+		 'password_confirmation'=>\Hash::make('123456'),
 		 'preguntas'=>'Alias',
 		 'respuestas'=>'chompira'
 	

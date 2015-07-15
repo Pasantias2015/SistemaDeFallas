@@ -31,7 +31,7 @@ class UnidadController extends Controller {
 	 */
 	public function index()
 	{
- 		$unidades = Unidad::paginate(8);
+ 		$unidades = Unidad::paginate(10);
  		$unidades->setPath('unidades');
  		return view('Unidades.unidades',['unidades'=>$unidades]);
 		
