@@ -6,11 +6,13 @@ class Falla extends Model {
 
 
 	protected $table = 'fallas';
+	protected $fillable = ['descripcion','id_categoriatipo'];
+	public $timestamps = false;
 
 
 	 public function CategoriaTipo()
     {
-        return $this->belongsTo('App\CategoriaTipo');
+        return $this->belongsTo('App\CategoriaTipo');  
     }
 	
 

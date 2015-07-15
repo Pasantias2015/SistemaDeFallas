@@ -14,7 +14,7 @@ class CategoriaTipo extends Model {
     public function Falla()
     {
         return $this->hasMany('App\Falla','id_categoriatipo'); 
-    }
+    } 
 
 
 

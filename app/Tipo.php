@@ -12,6 +12,6 @@ class Tipo extends Model {
 
 	public function Categoria()
     {
-        return $this->belongsToMany('App\Categoria','categoria_tipos'); 
+        return $this->belongsToMany('App\Categoria','categoria_tipos');  
     }
 }

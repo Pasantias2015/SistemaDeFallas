@@ -18,16 +18,16 @@
                                 <div class="col-md-12">
 									<div class="form-group">
 										<span>Seleccione una Categoria</span>
-										<select class="form-control" name="" id="">
+										<select class="form-control" name="categoria" id="">
 											@foreach($categorias as $categoria)
 											<option>{{ $categoria->descripcion }}</option>
 											@endforeach
-											<option>assdasd</option>
+											
 										</select>
 									</div>
 									<div class="form-group">
 										<span>Seleccione un Tipo</span>
-										<select class="form-control" name="" id="">
+										<select class="form-control" name="tipo" id="">
 											@foreach($tipos as $tipo)
 											<option>{{ $tipo->descripcion }}</option>
 											@endforeach
@@ -49,6 +49,7 @@
                                 <div class="col-md-12">
                                     <table class="table table-striped table-bordered">
                                         <tr>
+                                        <th>ID</th>
                                         <th>Categoria</th>
                                         <th>Tipo</th>
                                         <th>Descripcion</th>
@@ -57,13 +58,16 @@
                                         @foreach($fallas as $falla)
                                         <tr>
                                             <td>
-                                                {{ $falla->id_categoria  }}
+                                                {{ $falla->id  }}
                                             </td>
                                             <td>
-                                                {{ $falla->id_tipo  }}
+                                                {{ $falla->Categoria  }}
                                             </td>
                                             <td>
-                                                {{ $falla->descripcion  }}
+                                                {{ $falla->Tipo  }}
+                                            </td>
+                                            <td>
+                                                {{ $falla->Falla  }}
                                             </td>
                                             <td>
                                                 <a href="{{ route('fallas.edit',$falla) }}">Editar</a>

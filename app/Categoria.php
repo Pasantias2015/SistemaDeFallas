@@ -12,7 +12,7 @@ class Categoria extends Model {
 
     public function Tipo()
     {
-        return $this->belongsToMany('App\Tipo','categoria_tipos'); 
+        return $this->belongsToMany('App\Tipo','categoria_tipos');  
     }
 
 }

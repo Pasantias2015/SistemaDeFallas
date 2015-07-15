@@ -17,7 +17,7 @@ class CreateFallasTable extends Migration {
 			$table->increments('id');
 			$table->string('descripcion')->unique();
 			
-			$table->integer('id_categoriatipo')->unsigned();
+			$table->integer('id_categoriatipo')->unsigned(); 
 			$table->foreign('id_categoriatipo')->references('id')->on('categoria_tipos');
 			
 		});

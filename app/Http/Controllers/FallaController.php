@@ -9,6 +9,7 @@ use App\Categoria;
 use App\CategoriaTipo;
 
 
+
 class FallaController extends Controller {
 
 		/**
@@ -56,10 +57,17 @@ class FallaController extends Controller {
 	 */
 	public function create()
 	{
-			$fallas  = Falla::all();
+			
+			$fallas = \DB::select( 'select f.id, c.descripcion as Categoria, t.descripcion as Tipo, f.descripcion as Falla from fallas as f, categorias as c, tipos as t, categoria_tipos as ct where (f.id = ct.id) and (ct.categoria_id = c.id) and (ct.tipo_id = t.id)' );
+
+
+			
 			$tipos  = Tipo::all();
+			
+			
+			
 			$categorias  = Categoria::all();
-			$tiposs = Categoria::find(1)->tipo;
+			
 			
 		
 		return view('Fallas.create',compact('fallas','tipos','categorias'));
@@ -72,6 +80,29 @@ class FallaController extends Controller {
 	 */
 	public function store(Request $request)
 	{
+		$tipo = Tipo::whereRaw('descripcion = ?', [$request->tipo])->get();
+		$categoria = Categoria::whereRaw('descripcion = ?', [$request->categoria])->get();
+	
+		$idt = $tipo[0]->id;
+		$idc = $categoria[0]->id;
+
+		$categoriatipo = new CategoriaTipo;
+		$categoriatipo->categoria_id = $idc;
+		$categoriatipo->tipo_id 	 = $idt;
+		$categoriatipo->save();
+		//return $categoriatipo->id;
+
+	
+
+		$fallas = new Falla;
+		$fallas->descripcion =$request->descripcion;
+		$fallas->id_categoriatipo = $categoriatipo->id;
+		$fallas->save();
+		//return $fallas;
+
+		return Redirect()->back();
+
+
 	}
 
 	/**
