@@ -56,23 +56,23 @@
                                         <th>Accion</th>
                                         </tr>
                                         @foreach($fallas as $falla)
+                                        
+                                        
+                                        
+                                        
                                         <tr>
+                                            <td>{{ $falla->id }}</td>
+                                            <td>{{ $falla->Categoria }}</td>
+                                            <td>{{ $falla->Tipo }}</td>
+                                            <td>{{ $falla->Falla }}</td>
                                             <td>
-                                                {{ $falla->id  }}
-                                            </td>
-                                            <td>
-                                                {{ $falla->Categoria  }}
-                                            </td>
-                                            <td>
-                                                {{ $falla->Tipo  }}
-                                            </td>
-                                            <td>
-                                                {{ $falla->Falla  }}
-                                            </td>
-                                            <td>
-                                                <a href="{{ route('fallas.edit',$falla) }}">Editar</a>
+                                            <a href="{{ route('fallas.edit',$falla->id) }}" class="label label-success">Editar</a>
+                                            <a href="#" class="label label-danger">Eliminar</a>
                                             </td>
                                         </tr>
+
+
+
                                         @endforeach
                                     </table>
                                 </div>

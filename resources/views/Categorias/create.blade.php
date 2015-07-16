@@ -40,7 +40,8 @@
                                                 {{ $categoria->descripcion  }}
                                             </td>
                                             <td>
-                                                <a href="{{ route('categorias.edit',$categoria) }}">Editar</a>
+                                                <a href="{{ route('categorias.edit',$categoria) }}" class="label label-success">Editar</a>
+                                                <a href="#" class="label label-danger">Eliminar</a>
                                             </td>
                                         </tr>
                                         @endforeach

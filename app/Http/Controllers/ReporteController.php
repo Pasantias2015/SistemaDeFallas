@@ -24,8 +24,8 @@ class ReporteController extends Controller {
 		$operativa = \DB::select('select mes, sum(operativa) as cant from unidad_condiciones group by mes order by id');
 		$inoperativa = \DB::select('select mes, sum(inoperativa) as cant from unidad_condiciones group by mes order by id');
 	
-		
-		return view('Reportes.unidades',compact('inoperativa','operativa'));
+		var_dump($operativa);
+		//return view('Reportes.unidades',compact('inoperativa','operativa'));
 		
 	}
 

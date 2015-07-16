@@ -15,9 +15,9 @@
 <div class='sidebar-menu'><i class="fa fa-exclamation-triangle left"></i></i>Fallas<div class='expand'><i class="fa fa-angle-left"></i></div></div>
 <div class='sub-menu'>
   <ul>
-  <a href="{{ url('rfalla') }}"><li>Nueva Falla</li></a>
-  <a href="{{ url('rtfalla') }}"><li>Nuevo Tipo de Falla</li></a>
-  <a href="{{ url('rcfalla') }}"><li>Nueva Categoria de Falla</li></a>
+  <a href="{{ route('fallas.create') }}"><li>Nueva Falla</li></a>
+  <a href="{{ route('tipos.create') }}"><li>Nuevo Tipo de Falla</li></a>
+  <a href="{{ route('categorias.create') }}"><li>Nueva Categoria de Falla</li></a>
   <a href="{{ url('rfuoperador') }}"><li>Registrar Falla</li></a>
   
  

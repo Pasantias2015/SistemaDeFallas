@@ -57,20 +57,12 @@ class FallaController extends Controller {
 	 */
 	public function create()
 	{
-			
-			$fallas = \DB::select( 'select f.id, c.descripcion as Categoria, t.descripcion as Tipo, f.descripcion as Falla from fallas as f, categorias as c, tipos as t, categoria_tipos as ct where (f.id = ct.id) and (ct.categoria_id = c.id) and (ct.tipo_id = t.id)' );
-
 
 			
+			$fallas = \DB::select( 'select f.id as id, c.descripcion as Categoria, t.descripcion as Tipo, f.descripcion as Falla from fallas as f, categorias as c, tipos as t, categoria_tipos as ct where (f.id_categoriatipo = ct.id) and (ct.categoria_id = c.id) and (ct.tipo_id = t.id)' );
 			$tipos  = Tipo::all();
-			
-			
-			
 			$categorias  = Categoria::all();
-			
-			
-		
-		return view('Fallas.create',compact('fallas','tipos','categorias'));
+			return view('Fallas.create',compact('fallas','tipos','categorias'));
 	}
 
 	/**
@@ -90,16 +82,13 @@ class FallaController extends Controller {
 		$categoriatipo->categoria_id = $idc;
 		$categoriatipo->tipo_id 	 = $idt;
 		$categoriatipo->save();
-		//return $categoriatipo->id;
-
+		
 	
 
 		$fallas = new Falla;
 		$fallas->descripcion =$request->descripcion;
 		$fallas->id_categoriatipo = $categoriatipo->id;
 		$fallas->save();
-		//return $fallas;
-
 		return Redirect()->back();
 
 
@@ -124,7 +113,11 @@ class FallaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$falla = Falla::findOrFail($id);
+		$tipos  = Tipo::all();
+		$categorias  = Categoria::all();
+        return view('Fallas.edit',compact('falla','categorias','tipos'));
+    
 	}
 
 	/**
@@ -133,9 +126,15 @@ class FallaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
-	{
-		//
+	public function update(Request $request,$id)
+	{ 
+		// solo modifico la descripcion de la falla mas no la categoria y el tipo
+		$falla = Falla::findOrFail($id);
+	    $falla->fill($request->all());
+        $falla->save();
+        
+        return redirect()->intended();
+
 	}
 
 	/**
