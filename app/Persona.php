@@ -10,4 +10,4 @@ class Persona extends Model {
 	{
         return $this->hasOne('User', 'id');
 	}
-}
+} 

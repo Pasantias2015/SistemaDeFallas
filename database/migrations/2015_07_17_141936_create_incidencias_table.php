@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOperadorsTable extends Migration {
+class CreateIncidenciasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,11 @@ class CreateOperadorsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('operadores', function(Blueprint $table)
+		Schema::create('incidencias', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('persona_id')->unsigned();
-			$table->foreign('persona_id')->references('id')->on('personas');
-			$table->string('telefono_laboral')->unique();
+			$table->string('descripcion');
 			$table->timestamps();
-
 		});
 	}
 
@@ -30,7 +27,7 @@ class CreateOperadorsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('operadores');
+		Schema::drop('incidencias');
 	}
 
-} 
+}

@@ -8,3 +8,4 @@ class Operador extends Model {
 	//protected $fillable = ['id','cedula', 'pnombre','snombre', 'papellido', 'sapellido','fnacimiento', 'telefono', 'telefonolaboral', 'direccion'];
 
 }
+ 

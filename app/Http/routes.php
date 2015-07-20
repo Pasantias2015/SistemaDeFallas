@@ -60,6 +60,7 @@ Route::get('rtfalla','FallaController@registrartipofalla');
 resource('opciones','OpcionesController');
 resource('unidades','UnidadController');
 resource('operadores','OperadorController');
+resource('unidadoperadores','UnidadOperadorController');
 resource('fallas','FallaController');
 resource('categorias','CategoriaController');
 resource('tipos','TipoController');

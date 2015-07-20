@@ -46,4 +46,4 @@ class CreatePersonasTable extends Migration {
 		Schema::drop('personas');
 	}
 
-}
+} 

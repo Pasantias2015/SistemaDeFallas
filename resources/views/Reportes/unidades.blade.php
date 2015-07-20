@@ -30,8 +30,9 @@
 					var opciones = {
 					                  'title': 'Reporte anual de estado de las Unidades',					        
 					        };
-					var grafica = new google.visualization.AreaChart(document.getElementById('charts'));
+					//var grafica = new google.visualization.AreaChart(document.getElementById('charts'));
 					//var grafica = new google.visualization.LineChart(document.getElementById('charts'));
+					var grafica = new google.visualization.ColumnChart(document.getElementById('charts'));
 					
 					
 					grafica.draw(data,opciones);

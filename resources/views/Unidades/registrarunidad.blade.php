@@ -14,7 +14,7 @@
                         @include('tools.errors')
                         {!! Form::open(['route'=>'unidades.store','method'=>'POST']) !!}
 
- s
+ 
                                 <div class=" col-md-12">
                                     @include('Unidades.form.form')
                                 </div>

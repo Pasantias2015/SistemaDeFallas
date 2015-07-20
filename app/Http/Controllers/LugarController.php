@@ -5,13 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class ReporteController extends Controller {
-
-		public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
+class LugarController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -21,12 +15,6 @@ class ReporteController extends Controller {
 	public function index()
 	{
 		//
-		$operativa = \DB::select('select mes, sum(operativa) as cant from unidad_condiciones group by mes order by id');
-		$inoperativa = \DB::select('select mes, sum(inoperativa) as cant from unidad_condiciones group by mes order by id');
-	
-		//var_dump($operativa);
-		return view('Reportes.unidades',compact('inoperativa','operativa'));
-		
 	}
 
 	/**

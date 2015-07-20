@@ -43,8 +43,11 @@
 <div class='sub-menu'>
   <ul>
   <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
-  <a href=" "><li>Usuarios Registrado</li></a>
   
+  
+
+
+
   </ul>
 
 </div>

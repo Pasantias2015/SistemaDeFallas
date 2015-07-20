@@ -32,12 +32,9 @@ class OperadorController extends Controller {
 		
 		
 		$operadores = Operador::orderby('id','asc')->paginate();
-		//$operadores = Operador::paginate();
-		//$operadores = Operador::find(14);
-		//$operadores = Operador::firstOrCreate(['pnombre' => 'pep']);
+		
 		return view('Operadores.operadores',compact ('operadores'));
-		//return $operadores;
-		//dd($operadores);
+		
 	}
 
 	/**
