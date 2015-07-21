@@ -15,8 +15,8 @@ class CreateIncidenciasTable extends Migration {
 		Schema::create('incidencias', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('unidad_operador_id')->unsigned();
-			$table->foreign('unidad_operador_id')->references('id')->on('unidad_operadores');
+			$table->integer('unidadoperador_id')->unsigned();
+			$table->foreign('unidadoperador_id')->references('id')->on('unidad_operadores');
 			$table->integer('falla_id')->unsigned();
 			$table->foreign('falla_id')->references('id')->on('fallas');
 			$table->string('descripcion');
