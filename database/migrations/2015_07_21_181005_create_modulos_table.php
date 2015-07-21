@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsuarioOpcionsTable extends Migration {
+class CreateModulosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,13 @@ class CreateUsuarioOpcionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('usuario_opciones', function(Blueprint $table)
+		Schema::create('modulos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->timestamps();
+			$table->integer('rol_id')->unsigned();
+			$table->foreign('rol_id')->references('id')->on('personas');
+			$table->string('descripcion');
+			
 		});
 	}
 
@@ -26,7 +29,7 @@ class CreateUsuarioOpcionsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('usuario_opciones');
+		Schema::drop('modulos');
 	}
 
 }

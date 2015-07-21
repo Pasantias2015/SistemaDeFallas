@@ -29,9 +29,12 @@ class OperadorController extends Controller {
 	 */
 	public function index()
 	{
+		/*$result = Persona::first();
+		dd($result->operador);
+		/**/
 		
-		
-		$operadores = Operador::orderby('id','asc')->paginate();
+		$operadores = \DB::select('select * from operadores,personas where (operadores.persona_id = personas.id)');
+	
 		
 		return view('Operadores.operadores',compact ('operadores'));
 		

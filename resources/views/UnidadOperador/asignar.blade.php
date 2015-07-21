@@ -52,12 +52,14 @@
                                 <span class="label label-success">Unidades Asignadas</span>
                                     <table class="table table-bordered table-striped">
                                         <tr>
+                                            <th>Fecha</th>
                                             <th>Servicio</th>
                                             <th>Unidad</th>
                                             <th>Operador</th>
                                             <th>Accion</th>
                                         </tr>
                                         <tr>
+                                            <td>22/07/2015</td>
                                             <td>Linea 1</td>
                                             <td>Y-001</td>
                                             <td>21295782-Ruben Aguirre</td>
@@ -67,6 +69,7 @@
                                             </td>
                                         </tr>
                                         <tr>
+                                            <td>22/07/2015</td>
                                             <td>Linea 2</td>
                                             <td>Y-002</td>
                                             <td>25844625-Carlos Mendoza</td>

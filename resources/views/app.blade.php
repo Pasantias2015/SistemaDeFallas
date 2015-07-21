@@ -62,7 +62,7 @@
 						-->
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->usuario }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->rol_id}} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('changepassword') }}">Cambiar Contraseña</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Cerrar Sesion</a></li>
@@ -73,12 +73,12 @@
 			</div>
 		</div>
 	</nav>
-<div class="row col-md-12">
+<div class="col-md-12">
 	
 		@yield('sidebar')
 	
 
-	<div class="col-md-9">
+	<div class="col-md-9 over-hidden">
 		@yield('content')
 	</div>
 </div>

@@ -5,7 +5,18 @@ use Illuminate\Database\Eloquent\Model;
 class Operador extends Model {
 
 	protected $table = 'operadores';
-	//protected $fillable = ['id','cedula', 'pnombre','snombre', 'papellido', 'sapellido','fnacimiento', 'telefono', 'telefonolaboral', 'direccion'];
+	protected $fillable = ['telefonolaboral', 'status'];
 
-}
+	public function persona()
+	{
+		return $this->belongsTo('Persona');
+	}
+
+	public function unidadoperador()
+	 {
+	 	return $this->belongsMany('App\UnidadOperador');
+	 }
+	
+
+} 
  

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePuestopatiosTable extends Migration {
+class CreatePuestosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,13 @@ class CreatePuestopatiosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('puestopatios', function(Blueprint $table)
+		Schema::create('puestos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->timestamps();
+			$table->string('descripcion');
+			$table->integer('patio_id')->unsigned();
+			$table->foreign('patio_id')->references('id')->on('patios');
+			
 		});
 	}
 
@@ -26,7 +29,7 @@ class CreatePuestopatiosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('puestopatios');
+		Schema::drop('puestos');
 	}
 
 }

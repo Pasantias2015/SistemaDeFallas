@@ -163,3 +163,6 @@ span.col-md-4.sinpadding{
   width: 100%;
    min-height: 300px;
 }
+.over-hidden{
+  overflow: hidden;
+}

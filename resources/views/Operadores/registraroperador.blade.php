@@ -14,6 +14,12 @@
 						@include('tools.errors')
 						{!! Form::open(['route'=>'operadores.store','method'=>'POST']) !!}
 							@include('Personas.create')
+							<div class="col-md-6">
+								<div class="form-group">
+							      <span>Telefono Laboral</span>
+							          {!! Form::text('telefono_laboral',null,['class'=>'form-control']) !!}
+							  	</div>
+						  	</div>
 							<div class="col-md-12">
 								<div class="col-md-offset-4 col-md-8 form-group">
 									<button type="submit" class="btn btn-success">Crear</button>

@@ -44,6 +44,8 @@ class HomeController extends Controller {
 	
 		
 		return view('home',compact('results'));*/
+		
+		$op = Modulo::all()->opcion;
 		return view('home');
 		
 	

@@ -10,7 +10,7 @@
 		<tr>
 			<th>id</th>
 			<th>Cedula</th>
-			<th>Nombre</th>
+			<th>Nombre Completo</th>
 			<th>Direccion</th>
 			<th>Tel. Laboral</th>
 			<th>Accion</th>
@@ -22,19 +22,16 @@
 		
 			<td>{{ $operador->id}}</td>
 			<td>{{ $operador->cedula}}</td>
-			<td>{{ $operador->pnombre.' '.$operador->papellido}}</td>
+			<td>{{ $operador->pnombre." ".$operador->papellido}}</td>
 			<td>{{ $operador->direccion}}</td>
-			<td>{{ $operador->telefonolaboral}}</td>
-			<td>
-				<a href="">Eliminar</a>
-				<a href="">Editar</a>
-			</td>
+			<td>{{ $operador->telefono_laboral}}</td>
+			<td><a href="" class="label label-success">Ver</a></td>
 		
 		</tr>
 		@endforeach
 		</tbody>
 	</table>
-	{!! $operadores->render() !!}
+	
 </div>
 </div>
 </div>

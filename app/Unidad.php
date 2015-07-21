@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Unidad extends Model {
 
-	//
+	
 	 protected $table = 'unidades';
 	 protected $fillable = ['serialcarroceria',
 	 						'nidentificacion',
@@ -20,5 +20,14 @@ class Unidad extends Model {
 	 						'combustible'*/
 	 						];
 
+	 public function puestounidad()
+	 {
+	 	return $this->belongsMany('App\PuestoUnidad');
+	 }
+
+	 public function unidadoperador()
+	 {
+	 	return $this->belongsMany('App\UnidadOperador');
+	 }
 
 }

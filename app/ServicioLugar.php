@@ -2,9 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Puestopatio extends Model {
+class ServicioLugar extends Model {
 
 	//
-	protected $table = 'puestopatios';
 
 }
