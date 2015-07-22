@@ -8,7 +8,7 @@ class UserTableSeeder extends Seeder
 {
 	public function run()
 	{
-		/*\DB::table('personas')->insert(array (
+		\DB::table('personas')->insert(array (
 					    'cedula'=>'21295782',
 					    'rif'=>'v212957824',
 					    'pasaporte'=>'123456789',
@@ -24,7 +24,7 @@ class UserTableSeeder extends Seeder
 					    'ciudad'=>1,
 					    'direccion'=>'Tarabana II',
 					    'telefono'=>'04245177331'
-					   		));*/
+					   		));
 
 
 		\DB::table('users')->insert(array (
