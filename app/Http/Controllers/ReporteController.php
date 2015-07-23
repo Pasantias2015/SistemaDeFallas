@@ -26,9 +26,10 @@ class ReporteController extends Controller {
 	
 		//var_dump($operativa);
 		return view('Reportes.unidades',compact('inoperativa','operativa'));
+		//return view('Reportes.consultarfalla');
 		
 	}
-
+	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -36,7 +37,7 @@ class ReporteController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view ('Reportes.incidencias');
 	}
 
 	/**
@@ -44,9 +45,15 @@ class ReporteController extends Controller {
 	 *
 	 * @return Response
 	 */
+	public function incidenciaunidad()
+	{
+		
+		return view ('Reportes.incidenciaunidad');
+	}
 	public function store()
 	{
-		//
+		
+		
 	}
 
 	/**

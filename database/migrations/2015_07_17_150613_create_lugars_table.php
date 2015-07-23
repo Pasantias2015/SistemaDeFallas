@@ -15,10 +15,6 @@ class CreateLugarsTable extends Migration {
 		Schema::create('lugares', function(Blueprint $table)
 		{
 			$table->increments('id');
-			
-			$table->integer('servicio_id')->unsigned();
-			$table->foreign('servicio_id')->references('id')->on('servicios');
-
 			$table->string('descripcion');
 			$table->string('estatus');
 			

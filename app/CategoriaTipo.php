@@ -10,6 +10,15 @@ class CategoriaTipo extends Model {
 
     public $timestamps = false;
 
+    public function categoria()
+    {
+        return $this->hasMany('App\Tipo','categoria_id'); 
+    }
+
+    public function tipo()
+    {
+        return $this->hasMany('App\Tipo','tipo_id'); 
+    }
 
     public function Falla()
     {

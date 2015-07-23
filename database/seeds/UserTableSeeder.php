@@ -25,6 +25,8 @@ class UserTableSeeder extends Seeder
 					    'direccion'=>'Tarabana II',
 					    'telefono'=>'04245177331'
 					   		));
+		\DB::table('modulos')->insert(array (	'descripcion'=>'Gestion De Operaciones'));
+		\DB::table('roles')->insert(array (	'modulo_id'=>1,'descripcion'=>'Supervisor'));
 
 
 		\DB::table('users')->insert(array (

@@ -1,7 +1,7 @@
 @extends('app')
 @include('tools.sidebar')
 @section('content')
-<div class="row">
+
 	<div class="col-md-12">
 		<div class="panel panel-danger">
 			<div class="panel-heading">
@@ -11,6 +11,7 @@
 			<script src="js/googlechart.js"></script>
 			<script>
 			
+
 				google.load("visualization", "1.01", {"packages" :["corechart"]});
 				google.setOnLoadCallback(dibujar);
 				
@@ -38,6 +39,10 @@
 					grafica.draw(data,opciones);
 				}
 
+
+		
+			
+				
 				
 			</script>
 			<div id="charts">
@@ -46,5 +51,5 @@
 			<button class="btn btn-danger">Exportar a Pdf</button>
 		</div>
 	</div>
-</div>
+
 @endsection

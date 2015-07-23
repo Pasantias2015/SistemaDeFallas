@@ -34,6 +34,7 @@
 <div class='sub-menu'>
   <ul>
   <a href="{{ url('reportes') }}"><li>Unidades</li></a>
+  <a href="{{ route('reportes.create') }}"><li>Incidencias</li></a>
   
   
   </ul>

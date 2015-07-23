@@ -22,7 +22,7 @@ class CreateUnidadOperadorsTable extends Migration {
 			$table->foreign('operador_id')->references('id')->on('operadores');
 			
 			$table->integer('servicio_id')->unsigned();
-			$table->foreign('servicio_id')->references('id')->on('servicios');
+			$table->foreign('servicio_id')->references('id')->on('servicio_lugares');
 
 			
 

@@ -1,6 +1,8 @@
 <?php namespace App\Http\Controllers;
 use App\Usuario_Opcion;
 use App\User;
+use App\Persona;
+
 use App\Opcion;
 use App\Database;
 use App\Auth;
@@ -46,6 +48,7 @@ class HomeController extends Controller {
 		return view('home',compact('results'));*/
 		
 		//$op = Modulo::all()->opcion;
+		//dd(User::first()->persona->nombrecompleto);
 		return view('home');
 		
 	

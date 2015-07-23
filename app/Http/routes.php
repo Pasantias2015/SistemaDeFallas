@@ -55,6 +55,7 @@ Route::get('rfalla','FallaController@registrarfalla');
 Route::get('rcfalla','FallaController@registrarcategoriafalla');
 Route::get('rfuoperador','FallaController@registrarfallaunidadoperador');
 Route::get('rtfalla','FallaController@registrartipofalla');
+Route::get('incidenciaunidad','ReporteController@incidenciaunidad');
 /*Vistas De Reportes*/
 
 resource('opciones','OpcionesController');
