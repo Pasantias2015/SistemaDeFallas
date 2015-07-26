@@ -39,6 +39,10 @@ class ReporteController extends Controller {
 	{
 		return view ('Reportes.incidencias');
 	}
+	public function cedula()
+	{
+		return view ('Reportes.cedula');
+	}
 
 	/**
 	 * Store a newly created resource in storage.

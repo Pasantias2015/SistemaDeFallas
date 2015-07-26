@@ -2,7 +2,7 @@
 @include('tools.sidebar')
 @section('content')
 
-	<div class="col-md-12">
+	<div class="row">
 		<div class="panel panel-danger">
 			<div class="panel-heading">
 				Reporte

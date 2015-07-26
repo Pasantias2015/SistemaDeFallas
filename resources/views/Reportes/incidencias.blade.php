@@ -1,8 +1,7 @@
 @extends('app')
 @include('tools.sidebar')
 @section('content')
-<div class="container">
-		<div class="col-md-12">
+		<div class="row">
 			<div class="panel panel-danger">
 				<div class="panel-heading">Reporte De Incidencias</div>
 
@@ -20,13 +19,12 @@
 						<td> Y-001 </td>
 						<td> Si </td>
 						<td>3</td>
-						<td><a href="{{ url('incidenciaunidad')}}" class="label label-success">Ver listado</a></td>
+						<td><a href="{{ url('incidenciaunidad')}}"><button type="button" class="btn btn-success" >Ver Listado</button></a>
+						
 					</tr>
 
-					
 				</table>
 
 			</div>
 		</div>
-</div>
 @endsection

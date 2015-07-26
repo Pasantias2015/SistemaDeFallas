@@ -167,3 +167,23 @@ controlador plano  no restfull --plain sin metodos
             </tr>
             @endforeach 
           </table>  
+
+
+
+          
+  /*  if(!class_exists('SearchCurl'))
+      { include 'SearchCurl.php';
+
+ $curls = new \SearchCurl();
+return $curls->SearchCNE('V',21295782);
+//$curls->SearchCNE('V', 21295782);
+
+
+      return "perro1"; }
+/*
+      Include("SearchCurl.php");
+      $curl = new SearchCurl();
+      return $curl->searchCNE('V',21295782);
+*/
+
+    /*

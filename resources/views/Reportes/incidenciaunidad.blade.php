@@ -1,13 +1,13 @@
 @extends('app')
 @include('tools.sidebar')
 @section('content')
-<div class="container">
-		<div class="col-md-12">
+		<div class="row">
 			<div class="panel panel-danger">
 				<div class="panel-heading">Reporte de incidencias de la unidad: Y-001</div>
 
 				<table class="table table-bordered table-striped">
 					<tr>
+						
 						<th>Servicio</th>
 						<th>Fecha</th>
 						<th>Incidencia</th>
@@ -40,7 +40,15 @@
 				</table>
 
 				
-  <!-- Modal -->
+  
+			</div>
+		</div>
+
+
+
+
+@endsection
+<!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -73,11 +81,3 @@
       
     </div>
   </div>
-
-			</div>
-		</div>
-</div>
-
-
-
-@endsection

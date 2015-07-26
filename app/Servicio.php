@@ -20,4 +20,9 @@ class Servicio extends Model {
 		return $this->belongsMany('App\UnidadOperador');
 	}
 
+	public function unidadservicio()
+	{
+		return $this->belongsMany('App\UnidadOperador');
+	}
+
 }
