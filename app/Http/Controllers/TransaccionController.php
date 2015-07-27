@@ -3,6 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Servicio;
+use App\UnidadServicio;
+use App\ServicioOperador;
 
 use Illuminate\Http\Request;
 
@@ -12,16 +14,17 @@ class TransaccionController extends Controller {
 	public function servicio_operador()
 	{
 		$servicios = Servicio::all();
-		
-		return view('Transacciones.serviciooperador',compact('servicios'));
+		$operadores = ServicioOperador::all();
+				
+		return view('Transacciones.serviciooperador',compact('operadores','servicios'));
 
 	}
 	public function servicio_unidad()
 	{
 		$servicios = Servicio::all();
-		$opc = true;
+		$unidades = UnidadServicio::all();
 		
-		return view('Transacciones.serviciounidad',compact('servicios','opc'));
+		return view('Transacciones.serviciounidad',compact('servicios','unidades'));
 	}
 
 

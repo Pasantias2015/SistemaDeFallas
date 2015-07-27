@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Transbarca</title>
-	
+	{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
 <!--
 {!! Html::style('materialize/css/materialize.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material.min.css') !!}
@@ -84,7 +84,7 @@
 	<!-- Scripts -->
 
 
-	{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
+	
 	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
 	{!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
 	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
@@ -92,12 +92,7 @@
 	
 	{!! Html::script('materialize/js/materialize.min.js') !!}
 	
-<script>
-	$(document).ready(function(){
-		$.material.init();
 
-	});
-</script>
 
 </body>
 </html>

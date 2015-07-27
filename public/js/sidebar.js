@@ -36,3 +36,17 @@ $(document).ready(function () {
   
 });
 
+/* script de tabla dinamica*/
+$(document).ready(function(){
+    $("button[name|='asignar']").toggle();
+    $("select[name|='servicio']").toggle();
+});
+function selector(id){
+    $('#asignar'+id).toggle();
+    $('#editar'+id).toggle();
+    $('#servicio'+id).toggle();
+    $('#label'+id).text($("#servicio"+id+" option:selected").text()).toggle();  
+    };
+
+
+

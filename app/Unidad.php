@@ -19,20 +19,21 @@ class Unidad extends Model {
 	 						'longitud',
 	 						'combustible'*/
 	 						];
-
+/*
 	 public function puestounidad()
 	 {
-	 	return $this->belongsMany('App\PuestoUnidad');
+	 	return $this->belongsMany('App\PuestoUnidad','id');
 	 }
 
 	 public function unidadoperador()
 	 {
-	 	return $this->belongsMany('App\UnidadOperador');
+	 	return $this->belongsMany('App\UnidadOperador','id');
 	 }
 
+*/
 	 public function unidadservicio()
 	 {
-	 	return $this->belongsMany('App\unidadServicio');
+	 	return $this->belongsTo('App\UnidadServicio','id');
 	 }
 
 }

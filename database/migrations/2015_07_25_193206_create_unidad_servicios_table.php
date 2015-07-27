@@ -22,7 +22,7 @@ class CreateUnidadServiciosTable extends Migration {
 			$table->foreign('unidad_id')->references('id')->on('unidades');
 
 		});
-	}
+	} 
 
 	/**
 	 * Reverse the migrations.

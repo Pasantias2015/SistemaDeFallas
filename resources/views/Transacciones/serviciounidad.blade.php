@@ -1,4 +1,4 @@
-@extends('app')
+@extends('app') 
 
 @include('tools.sidebar')
 
@@ -19,23 +19,25 @@
                                 <th>Unidad</th>
                                 <th>Accion</th>
                             </tr>
-                            <tr>
-                            @if($opc)
-                                <td><select class="selectpicker show-tick form-control" >
+                            @foreach($unidades as $unidad)
+                            <tr id="row{{ $unidad->id }}">
+                                <td>
+                                    <label  id="label{{ $unidad->id }}">{{ $unidad->servicio->descripcion }}</label>
+                                    <select name="servicio" id="servicio{{ $unidad->id }}" name="select" class="form-control">
                                         @foreach($servicios as $servicio)
                                         <option value="{{ $servicio->id }}">{{ $servicio->descripcion }}</option>
                                         @endforeach
-                                    </select></td> 
-                            @else
-                                <td>Linea 1</td>
-                            @endif
-                                                               
-                                <td>Y-001</td>                                
+                                    </select>
+                                </td>
+                                <td>{{ $unidad->unidad->nidentificacion }}</td>
                                 <td>
-                                    <button class="btn btn-info" onclick="Asignar()">Asignar</button>
-                                    <button class="btn btn-danger" >Eliminar</button>
-                                </td>                                
+                                    <button  class="btn btn-success" onclick="selector({{ $unidad->id }})" id="editar{{ $unidad->id }}">Editar</button>
+                                    <button class="btn btn-info"     onclick="selector({{ $unidad->id }})" name="asignar" id="asignar{{ $unidad->id }}">Asignar</button>
+                                    <button class="btn btn-danger"   onclick="eliminar()" id="eliminar">Eliminar</button>
+                                </td>
                             </tr>
+                                
+                            @endforeach
                         </table>          
                                 
 
@@ -46,13 +48,5 @@
             </div>
         </div>
     </div>
-    <script>
-function Asignar() {
-
-    alert("asignastes");
-}
-</script>
-
-
-
 @endsection
+

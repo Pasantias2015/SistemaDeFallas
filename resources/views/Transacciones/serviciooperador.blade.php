@@ -10,7 +10,7 @@
                     <div class="panel-heading">Operadores por Servicios</div>
                     <div class="panel-body">
                         @include('tools.errors')
-                        {!! Form::open() !!}
+                        
                         <div class="col-md-12">
                             
                         <table class="table table-bordered table-striped">
@@ -18,28 +18,32 @@
                                 <th>Servicio</th>
                                 <th>Cedula</th>
                                 <th>Nombre</th>
-                                <th>Accion</th>
                             </tr>
-                            <tr>
-                            @if(Auth::guest())
-                                <td><select class="selectpicker show-tick form-control" >
+                            @foreach($operadores as $operador)
+                            <tr id="row{{ $operador->id }}">
+                                <td>
+                                    <label  id="label{{ $operador->id }}">{{ $operador->servicio->descripcion }}</label>
+                                    <select name="servicio" id="servicio{{ $operador->id }}" name="select" class="form-control">
                                         @foreach($servicios as $servicio)
                                         <option value="{{ $servicio->id }}">{{ $servicio->descripcion }}</option>
                                         @endforeach
-                                    </select></td> 
-                            @else
-                                <td>Linea 1</td>
-                            @endif
-                                                               
-                                <td>21295782</td>                                
-                                <td>Leonardo Antonio Loyo</td>                                
-                                <td><a href=""><button class="btn btn-info">Asignar</button></a></td>                                
+                                    </select>
+                                </td>
+                                <td>{{ $operador->persona->cedula }}</td>
+                                <td>{{ $operador->persona->nombrecompleto }}</td>
+                                <td>
+                                    <button  class="btn btn-success" onclick="selector({{ $operador->id }})" id="editar{{ $operador->id }}">Editar</button>
+                                    <button class="btn btn-info"     onclick="selector({{ $operador->id }})" name="asignar" id="asignar{{ $operador->id }}">Asignar</button>
+                                    <button class="btn btn-danger"   onclick="eliminar()" id="eliminar">Eliminar</button>
+                                </td>
                             </tr>
-                        </table>               
+                                
+                            @endforeach
+                        </table>                
                         
                                 
 
-                        {!! Form::close() !!}
+                            
 
                     </div>
                 </div>

@@ -9,7 +9,7 @@ class Incidencia extends Model {
 	
 	public function unidadoperador()
 	{
-	 return $this->belongs	
+	
 	}
 
 }
