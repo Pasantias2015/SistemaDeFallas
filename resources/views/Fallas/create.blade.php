@@ -12,16 +12,16 @@
                     <div class="panel-heading">Nueva Falla</div>
                     <div class="panel-body">
                         @include('tools.errors')
-                        {!! Form::open(['route'=>'fallas.store','method'=>'POST']) !!}
+                        {!! Form::open(['route'=>'fallas.store','method'=>'POST','files'=>'true']) !!}
 
 
                                 <div class="col-md-12">
 									<div class="form-group">
 										<span>Seleccione una Categoria</span>
-										<select class="form-control" name="categoria" id="">
+										<select class="form-control" name="categoria" id="categoria">
 											@foreach($categorias as $categoria)
-											<option>{{ $categoria->descripcion }}</option>
-											@endforeach
+											<option value="{{ $categoria->id }}">{{ $categoria->descripcion }}</option>
+											@endforeach 
 											
 										</select>
 									</div>
@@ -29,7 +29,7 @@
 										<span>Seleccione un Tipo</span>
 										<select class="form-control" name="tipo" id="">
 											@foreach($tipos as $tipo)
-											<option>{{ $tipo->descripcion }}</option>
+											<option value="{{ $tipo->id }}">{{ $tipo->descripcion }}</option>
 											@endforeach
 										</select>
 									</div>
@@ -89,7 +89,14 @@
                     </div>
                 </div>
             </div>
+<script>
+    $('#categoria').on('change',function(e){
+        colsole.log(e);
+        var cat_id = e.target.value;
 
+        $.get('/ajax-tipo');
+    });
+</script>
 
 
 @endsection

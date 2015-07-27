@@ -14,4 +14,4 @@ class Tipo extends Model {
     {
         return $this->belongsToMany('App\Categoria','categoria_tipos');  
     }
-}
+} 

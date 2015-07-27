@@ -15,4 +15,4 @@ class Categoria extends Model {
         return $this->belongsToMany('App\Tipo','categoria_tipos');  
     }
 
-}
+} 

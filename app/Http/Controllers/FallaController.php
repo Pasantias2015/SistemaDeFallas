@@ -62,8 +62,9 @@ class FallaController extends Controller {
 			$fallas = \DB::select( 'select f.id as id, c.descripcion as Categoria, t.descripcion as Tipo, f.descripcion as Falla from fallas as f, categorias as c, tipos as t, categoria_tipos as ct where (f.id_categoriatipo = ct.id) and (ct.categoria_id = c.id) and (ct.tipo_id = t.id)' );
 			$tipos  = Tipo::all();
 			$categorias  = Categoria::all();
+			//return view('Incidencias.create');
 			return view('Fallas.create',compact('fallas','tipos','categorias'));
-	}
+	 }
 
 	/**
 	 * Store a newly created resource in storage.

@@ -26,5 +26,5 @@ class CategoriaTipo extends Model {
     } 
 
 
-
+ 
 }

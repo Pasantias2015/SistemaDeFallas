@@ -58,6 +58,9 @@ Route::get('rtfalla','FallaController@registrartipofalla');
 Route::get('incidenciaunidad','ReporteController@incidenciaunidad');
 Route::get('cedula','ReporteController@cedula');
 /*Vistas De Reportes*/
+/*Vistas De Transacciones*/
+Route::get('servicios/operadores','TransaccionController@servicio_operador');
+Route::get('servicios/unidades','TransaccionController@servicio_unidad');
 
 resource('opciones','OpcionesController');
 resource('unidades','UnidadController');

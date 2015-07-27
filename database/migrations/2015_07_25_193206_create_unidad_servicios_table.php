@@ -15,10 +15,10 @@ class CreateUnidadServiciosTable extends Migration {
 		Schema::create('unidad_servicios', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('servicio_id');
+			$table->integer('servicio_id')->unsigned();
 			$table->foreign('servicio_id')->references('id')->on('servicios');
 			
-			$table->integer('unidad_id');
+			$table->integer('unidad_id')->unsigned();
 			$table->foreign('unidad_id')->references('id')->on('unidades');
 
 		});

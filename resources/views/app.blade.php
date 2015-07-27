@@ -17,8 +17,6 @@
     {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
 
 {!! Html::style('css/style.css') !!}
-{!! Html::style('css/sidebar.css') !!}
-
 
 	<link rel="stylesheet"  href="{!! url('css/app.css') !!}"/>
 	
@@ -38,7 +36,7 @@
 	<![endif]-->
 </head>
 <body>
-	<nav class="navbar colornav " >
+	<nav class="navbar colornav text-blanco" >
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -52,7 +50,7 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="{{ url('/home') }}">Inicio</a></li>
+					<li><a href="{{ url('/home') }}" class="text-blanco">Inicio</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -63,7 +61,7 @@
 						-->
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><b>Bienvenido</b> {{ Auth::user()->persona->nombrecompleto }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle text-blanco" data-toggle="dropdown" role="button" aria-expanded="false">Bienvenido {{ Auth::user()->persona->nombrecompleto }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('changepassword') }}">Cambiar Contraseña</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Cerrar Sesion</a></li>
@@ -75,11 +73,11 @@
 		</div>
 	</nav>
 <div class="col-md-12">
-	
+	<div class="col-md-3">
 		@yield('sidebar')
-	
+	</div>	
 
-	<div class="col-md-9 over-hidden">
+	<div class="col-md-9">
 		@yield('content')
 	</div>
 </div>

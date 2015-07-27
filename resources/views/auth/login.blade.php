@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-8 col-md-offset-5">
+		<div class="col-md-8">
 			<div class="panel panel-danger">
 				<div class="panel-heading">Ingreso Al Sistema</div>
 				<div class="panel-body">
@@ -13,12 +13,7 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<!--<label class="col-md-4 control-label">Email</label>
-							<div class="col-md-6">
-								<input type="text" class="form-control" name="email">
-							</div>-->
-
-								<label class="col-md-4 control-label">Usuario</label>
+							<label class="col-md-4 control-label">Usuario</label>
 							<div class="col-md-6">
 								<input type="text" class="form-control" name="usuario">
 							</div>
