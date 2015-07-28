@@ -8,7 +8,7 @@ class Persona extends Model {
 	protected $fillable = ['cedula','rif','pasaporte','pnombre','snombre','papellido','sapellido','fnacimiento','sexo','estadocivil','correo-electronico','pais','estado','ciudad','direccion','telefono'];
 
 	public function getnombrecompletoAttribute(){
-		return $this->pnombre.' '.$this->snombre;
+		return $this->pnombre.' '.$this->papellido;
 
 	}
 

@@ -200,3 +200,31 @@ return $curls->SearchCNE('V',21295782);
 */
 
     /*
+
+
+
+    git config --gloabl user.name "Jaissel tale"
+    git config --gloabl user.email "correo"
+    git init 
+    git clone url 
+    git checkout Jaissel 
+    git status los cambios realizados
+    git add .<> agregar esos cambios al repositorio
+    git commit -m "" confirmar  el archivo en el repositorio
+    git pull origin <branchs> actualizar el repositorio
+    git push origin <branchs> subir al repositorio remoto 
+
+
+    php artisan serve  inciar el sistema
+    php artisan route:list  
+    php artisan make:model;
+    php artisan make:controller;
+    php artisan make:request;
+    php artisan db:seed;
+    php artisan migrate;
+    php artisan migrate:rollback;
+    php artisan migrate:refresh;
+
+    composer update 
+    composer dump-autoload 
+
