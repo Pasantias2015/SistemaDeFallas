@@ -14,9 +14,9 @@ class TransaccionController extends Controller {
 	public function servicio_operador()
 	{
 		$servicios = Servicio::all();
-		$operadores = ServicioOperador::all();
+		//$operadores = ServicioOperador::all();
 				
-		return view('Transacciones.serviciooperador',compact('operadores','servicios'));
+		return view('Transacciones.serviciooperador',compact('servicios'));
 
 	}
 	public function servicio_unidad()
