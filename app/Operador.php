@@ -5,16 +5,16 @@ use Illuminate\Database\Eloquent\Model;
 class Operador extends Model {
 
 	protected $table = 'operadores';
-	protected $fillable = ['telefonolaboral', 'status'];
+	protected $fillable = ['telefonolaboral'];
 
 	public function persona()
 	{
 		return $this->belongsTo('Persona');
 	}
 
-	public function unidadoperador()
+	public function servicio()
 	 {
-	 	return $this->belongsMany('App\UnidadOperador');
+	 	return $this->belongsTo('App\ServicioUnidadOperador','id');
 	 }
 	
 
