@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
-use App\Usuario_Opcion;
+
 use App\User;
 use App\Persona;
 
+use App\OpcionRol;
 use App\Opcion;
 use App\Database;
 use App\Auth;
@@ -30,7 +31,6 @@ class HomeController extends Controller {
 	public function __construct()
 	{
 		$this->middleware('auth');
-
 
 	}
 
@@ -69,4 +69,13 @@ class HomeController extends Controller {
 
 
 }
+
+	public function index() 
+	{	
+		/*@foreach(Auth::user()->rol->rolopcion as $key)
+							Bienvenido {{ $key->opcion->descripcion }}
+							@endforeach*/
+		return view('home');
+	}
+
 }

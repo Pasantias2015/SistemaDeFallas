@@ -10,13 +10,9 @@ class Modulo extends Model {
 
 	public function opciones()
 	{
-        return $this->hasMany('App\Opcion', 'id');
+        return $this->hasMany('App\Opcion','id');
 	}
 
-	public function rol()
-	{
-        return $this->belongsTo('App\Rol');
-	}
-
+	
 
 }

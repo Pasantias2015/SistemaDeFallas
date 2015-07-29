@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Transbarca</title>
-	{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
+	
 <!--
 {!! Html::style('materialize/css/materialize.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material.min.css') !!}
@@ -57,15 +57,11 @@
 					<li><a href="{{ url('/home') }}" class="text-blanco">Inicio</a></li>
 				</ul>
 
+				
 				<ul class="nav navbar-nav navbar-right">
-					@if (Auth::guest())
-						
-						<!--
-						<li><a href="{{ url('/auth/register') }}">Registrarse</a></li>
-						-->
-					@else
+					@if (!Auth::guest())
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle text-blanco" data-toggle="dropdown" role="button" aria-expanded="false">Bienvenido {{ Auth::user()->persona->nombrecompleto }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle text-blanco" data-toggle="dropdown" role="button" aria-expanded="false">Bienvenido {{ Auth::user()->persona->nombrecompleto }}<span class="caret"></span</a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('changepassword') }}">Cambiar Contraseña</a></li>
 								<li><a href="{{ url('/auth/logout') }}">Cerrar Sesion</a></li>
@@ -90,7 +86,12 @@
 
 	
 	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
+
+	{!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
+	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
 	
+	{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
+
 	{!! Html::script('js/sidebar.js') !!}
 	
 	{!! Html::script('materialize/js/materialize.min.js') !!}
@@ -100,9 +101,6 @@
 	{!! Html::script('js/raphael-min.js') !!}
 	{!! Html::script('js/morris.min.js') !!}
 	
-
-
-  
 
 
 </body>

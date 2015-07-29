@@ -1,23 +1,24 @@
 {
  "name": "Sistema De Control Y Gestion De Fallas",
- "version": "0.0.1",
- "homepage": "https://github.com/Pasantias2015/SistemaDeFallas",
- "authors": [
-   "Leonardo Loyo <cyberedward@gmail.com>"
- ],
- "description": "Paquetes",
- "moduleType": [
-   "globals"
- ],
- "license": "MIT",
- "ignore": [
-   "**/.*",
-   "node_modules",
-   "bower_components",
-   "test",
-   "tests"
- ],
- "dependencies": {
-   "bootstrap": "~3.3.5"
- }
+  "version": "0.0.1",
+  "homepage": "https://github.com/Pasantias2015/SistemaDeFallas",
+  "authors": [
+    "Leonardo Loyo <cyberedward@gmail.com>"
+  ],
+  "description": "Paquetes",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
 }
+

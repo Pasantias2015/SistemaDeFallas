@@ -18,8 +18,7 @@ class CreateOperadorsTable extends Migration {
 			$table->integer('persona_id')->unsigned();
 			$table->foreign('persona_id')->references('id')->on('personas');
 			$table->string('telefono_laboral')->unique();
-			$table->timestamps();
-
+			
 		});
 	}
 
