@@ -1,8 +1,9 @@
 <?php namespace App\Http\Controllers;
-use App\Usuario_Opcion;
+
 use App\User;
 use App\Persona;
 
+use App\OpcionRol;
 use App\Opcion;
 use App\Database;
 use App\Auth;
@@ -31,7 +32,6 @@ class HomeController extends Controller {
 	{
 		$this->middleware('auth');
 
-
 	}
 
 	
@@ -40,33 +40,11 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
-		/*$results = \DB::select('select o.descripcion from opciones as o, usuario_opcions as uo where (o.id = uo.opcion_id) and(uo.user_id = :userid)', ['userid' => \Auth::user()->id]);
-	
-		
-		return view('home',compact('results'));*/
-		
-		//$op = Modulo::all()->opcion;
-		//dd(User::first()->persona->nombrecompleto);
+	public function index() 
+	{	
+		/*@foreach(Auth::user()->rol->rolopcion as $key)
+							Bienvenido {{ $key->opcion->descripcion }}
+							@endforeach*/
 		return view('home');
-		
-	
-
-		
-	
-
-	
-	
-	    /*
-			buscar en la tabla usuario/opciones todas las opciones (id del usuario que ingresa)
-			manda a la vista home una variable con todas las opciones 
-			unidades 
-
-
-		*/
-	
-
-
-}
+	}
 }

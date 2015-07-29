@@ -13,4 +13,9 @@ class Opcion extends Model {
 		return $this->belongsTo('App\Modulo');
 	}
 
+	public function rolopcion()
+	{
+		return $this->hasMany('App\OpcionRol','id');
+	}
+
 }

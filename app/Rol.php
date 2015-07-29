@@ -17,4 +17,9 @@ class Rol extends Model {
     {
         return $this->hasMany('App\Modulo');
     }
+
+    public function rolopcion()
+    {
+        return $this->hasMany('App\OpcionRol');
+    }
 }
