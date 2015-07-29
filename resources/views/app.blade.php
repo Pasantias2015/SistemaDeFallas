@@ -95,6 +95,5 @@
 	{!! Html::script('materialize/js/materialize.min.js') !!}
 	
 
-
 </body>
 </html>
