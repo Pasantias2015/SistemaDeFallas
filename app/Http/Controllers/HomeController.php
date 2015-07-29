@@ -45,6 +45,7 @@ class HomeController extends Controller {
 		/*@foreach(Auth::user()->rol->rolopcion as $key)
 							Bienvenido {{ $key->opcion->descripcion }}
 							@endforeach*/
-		return view('home');
+		//return view('home');
+		return view('Reportes.cedula');
 	}
 }

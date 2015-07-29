@@ -4,7 +4,7 @@
       <div class='sub-menu'>
     <ul>
     @foreach(Auth::user()->rol->rolopcion as $key)
-              <li>{{ $key->opcion->descripcion }}</li>   
+             <li>{{ $key->opcion->descripcion }}</li> 
               @endforeach
     </ul>
      
