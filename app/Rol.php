@@ -13,8 +13,8 @@ class Rol extends Model {
         return $this->hasMany('App\User');
     }
 
-    public function modulo()
+    public function rolopcion()
     {
-        return $this->hasMany('App\Modulo');
+        return $this->hasMany('App\OpcionRol');
     }
 }

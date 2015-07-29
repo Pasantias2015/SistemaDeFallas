@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateServicioOperadorsTable extends Migration {
+class CreateServicioUnidadOperadorsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,15 +12,17 @@ class CreateServicioOperadorsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('servicio_operadores', function(Blueprint $table)
+		Schema::create('servicio_unidad_operadores', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('servicio_id')->unsigned();
-			$table->foreign('servicio_id')->references('id')->on('servicios');
-
 			$table->integer('operador_id')->unsigned();
 			$table->foreign('operador_id')->references('id')->on('operadores');
+
+			$table->integer('servicio_id')->unsigned();
+			$table->foreign('servicio_id')->references('id')->on('operadores');
 			
+			$table->integer('unidad_id')->unsigned();
+			$table->foreign('unidad_id')->references('id')->on('operadores');
 		});
 	}
 
@@ -31,7 +33,7 @@ class CreateServicioOperadorsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('servicio_operadores');
+		Schema::drop('servicio_unidad_operadores');
 	}
 
 }

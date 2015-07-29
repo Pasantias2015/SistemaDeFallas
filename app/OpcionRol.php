@@ -4,18 +4,21 @@ use Illuminate\Database\Eloquent\Model;
 
 class OpcionRol extends Model {
 
-	protected $table= 'opcion_rol';
+	protected $table= 'opcion_roles';
 	public $timestamp = false;
 
 	protected $fillable = ['opcion_id','rol_id'];
 
-	public function opcion()
-    {
-        return $this->hasOne('App\Opcion','id');
-    }
+	   
+
     public function rol()
     {
-        return $this->hasOne('App\Rol','id');
+        return $this->belongsTo('App\Rol');
+    }
+
+    public function opcion()
+    {
+        return $this->belongsTo('App\Opcion');
     }
 
 }
