@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Transbarca</title>
-	
+{!! Html::script('js/jquery-1.11.3.min.js') !!}	
 <!--
 {!! Html::style('materialize/css/materialize.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material.min.css') !!}
@@ -85,14 +85,11 @@
 		@yield('content')
 	</div>
 </div>
-	<!-- Scripts {!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
-	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}-->
-
-
+	<!-- Scripts -->
 	
 	
 	<!--Morris Charts-->
-	{!! Html::script('js/jquery-1.11.3.min.js') !!}
+	
 	{!! Html::script('js/raphael-min.js') !!}
 	{!! Html::script('js/morris.min.js') !!}
 	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
