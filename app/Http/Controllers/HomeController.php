@@ -49,8 +49,8 @@ class HomeController extends Controller {
 		
 		//$op = Modulo::all()->opcion;
 		//dd(User::first()->persona->nombrecompleto);
-		return view('home');
-		
+		//return view('home');
+		return view('Reportes.cedula');
 	
 
 		
