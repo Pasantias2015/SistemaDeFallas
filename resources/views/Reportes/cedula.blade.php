@@ -4,7 +4,7 @@
 		<div class="row">
 			<div class="panel panel-danger">
 				
-				 <script>
+				 <script >
                         $(document).ready(function(){
 
                         	var valor = 70;

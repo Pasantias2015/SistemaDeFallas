@@ -69,11 +69,11 @@ class HomeController extends Controller {
 
 
 }
-	public function index() 
+	/*public function index() 
 	{	
 		/*@foreach(Auth::user()->rol->rolopcion as $key)
 							Bienvenido {{ $key->opcion->descripcion }}
-							@endforeach*/
+							@endforeach
 		return view('home');
-	}
+	}*/
 }

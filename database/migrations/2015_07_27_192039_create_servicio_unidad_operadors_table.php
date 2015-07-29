@@ -19,10 +19,10 @@ class CreateServicioUnidadOperadorsTable extends Migration {
 			$table->foreign('operador_id')->references('id')->on('operadores');
 
 			$table->integer('servicio_id')->unsigned();
-			$table->foreign('servicio_id')->references('id')->on('operadores');
+			$table->foreign('servicio_id')->references('id')->on('servicios');
 			
 			$table->integer('unidad_id')->unsigned();
-			$table->foreign('unidad_id')->references('id')->on('operadores');
+			$table->foreign('unidad_id')->references('id')->on('unidades');
 		});
 	}
 

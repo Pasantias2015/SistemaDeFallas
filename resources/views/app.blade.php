@@ -14,6 +14,8 @@
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css') !!}
 {!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
 	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
+
+	
 -->
     {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
 
@@ -81,27 +83,18 @@
 		@yield('content')
 	</div>
 </div>
-	<!-- Scripts -->
-
-
-	
-	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
-	
-	{!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
-	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
-	
-	{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
-	{!! Html::script('js/sidebar.js') !!}
-	
-	{!! Html::script('materialize/js/materialize.min.js') !!}
-
-	<!--Morris Charts-->
+	<!-- Scripts {!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}-->
 	{!! Html::script('js/jquery-1.11.3.min.js') !!}
+
 	{!! Html::script('js/raphael-min.js') !!}
 	{!! Html::script('js/morris.min.js') !!}
+	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
+
+	{!! Html::script('js/sidebar.js') !!}
 	
-
-
+			
+	<!--Morris Charts-->
+	
   
 </body>
 </html>
