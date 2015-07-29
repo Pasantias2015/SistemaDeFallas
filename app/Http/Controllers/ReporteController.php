@@ -12,6 +12,13 @@ class ReporteController extends Controller {
 		$this->middleware('auth');
 	}
 
+//Morris
+
+	public function grafica()
+	{
+		
+		return view ('Reportes.graficas');
+	}
 
 	/**
 	 * Display a listing of the resource.

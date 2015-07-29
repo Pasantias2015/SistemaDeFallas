@@ -12,7 +12,8 @@
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/ripples.min.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/roboto.min.css') !!}
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css') !!}
-
+{!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
+	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
 -->
     {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
 
@@ -23,6 +24,9 @@
 
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,900' rel='stylesheet' type='text/css'>
+
+	<!--Morris Charts-->
+	<link rel="stylesheet" href="{!! url('css/morris.css') !!}">
 
 	<!-- Fonts -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
@@ -82,18 +86,20 @@
 	</div>
 </div>
 	<!-- Scripts {!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
-	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}-->
+	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}-->
 
 
-	{!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
+	
+	
+	<!--Morris Charts-->
+	{!! Html::script('js/jquery-1.11.3.min.js') !!}
+	{!! Html::script('js/raphael-min.js') !!}
+	{!! Html::script('js/morris.min.js') !!}
 	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
-	
+
 	{!! Html::script('js/sidebar.js') !!}
-	
-	
-	
-	{!! Html::script('materialize/js/materialize.min.js') !!}
-	
+
+
 
 </body>
 </html>
