@@ -9,9 +9,7 @@
 				<div class="panel-heading">Listado De Unidades</div>
 				
 				<div style="overflow-x:scroll">
- 
-				
-  
+   
 					<table class="table table-bordered table-hover">
 						<tr>
 							<th>ID</th>
@@ -36,6 +34,8 @@
 					
 				</div>	
 							{!! $unidades->render() !!}
+							<!--Total unidades-->
+					<div>Unidades registradas: <label><?php echo $total=count($unidades)?></label> 
 					@else
 					<div class="panel-heading">Ninguna unidad registrada</div>
 					@endif

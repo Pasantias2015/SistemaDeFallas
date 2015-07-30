@@ -26,16 +26,17 @@ class OperadorController extends Controller {
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
-	 */
-	public function index()
+	 */ 
+
+	 //Filtros
+	public function index(Request $request)
 	{
 		/*$result = Persona::first();
 		dd($result->operador);
 		/**/
-		
+		//dd($request->get('pnombre')); $operadores = Operadores::pnombre($request->get('pnombre'))->orderBy('id'.'DESC')->pag
 		$operadores = \DB::select('select * from operadores,personas where (operadores.persona_id = personas.id)');
-	
-		
+
 		return view('Operadores.operadores',compact ('operadores'));
 		
 	}

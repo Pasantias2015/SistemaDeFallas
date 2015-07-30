@@ -16,7 +16,11 @@ class Operador extends Model {
 	 {
 	 	return $this->belongsTo('App\ServicioUnidadOperador','id');
 	 }
-	
+	public function scopename($query, $name)
+	{
+		dd("scope: ". $name);
+		$query->where('pnombre', $name); //llamar el primer nombre
+	}
 
 } 
  
