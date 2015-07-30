@@ -16,7 +16,7 @@
 					</tr>
 					<tr>
 						<td> Linea 1 </td>
-						<td> Y-001 </td>
+						<td><a href="{{ url('transacciones') }}"> Y-001</a></td>
 						<td> Si </td>
 						<td>3</td>
 						<td><a href="{{ url('incidenciaunidad')}}"><button type="button" class="btn btn-success" >Ver Listado</button></a>

@@ -35,7 +35,7 @@ class TransaccionController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		return view('Reportes.cedula');
 	}
 
 	/**

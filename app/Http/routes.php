@@ -74,3 +74,4 @@ resource('categorias','CategoriaController');
 resource('tipos','TipoController');
 resource('reportes','ReporteController');
 resource('operadores','OperadorController');
+resource('transacciones','TransaccionController');
