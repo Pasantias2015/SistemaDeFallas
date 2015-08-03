@@ -16,7 +16,7 @@ class CreateLugarsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('descripcion');
-			$table->string('estatus');
+			$table->enum('estado',array('activo','inactivo'));
 			
 		});
 	}
