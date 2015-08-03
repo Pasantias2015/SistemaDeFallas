@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CrearUnidadRequest extends Request {
+class CrearLugarRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,10 +22,7 @@ class CrearUnidadRequest extends Request {
 	public function rules()
 	{
 		return [
-            'serialcarroceria' =>'required|unique:unidades,serialcarroceria',
-            'nidentificacion'  =>'required|unique:unidades,nidentificacion',
-            'vin'              =>'required|unique:unidades,vin',
-            'serialmotor'      =>'required|unique:unidades,serialmotor'
+				'descripcion' =>'required|unique:lugares,descripcion'
 		];
 	}
 

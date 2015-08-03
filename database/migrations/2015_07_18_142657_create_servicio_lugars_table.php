@@ -19,7 +19,7 @@ class CreateServicioLugarsTable extends Migration {
 			$table->foreign('lugar_id')->references('id')->on('lugares');
 			$table->integer('servicio_id')->unsigned();
 			$table->foreign('servicio_id')->references('id')->on('servicios');
-			
+			$table->enum('estado',array('activo','inactivo'));			 
 		});
 	}
 

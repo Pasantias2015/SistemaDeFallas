@@ -14,12 +14,12 @@
 {!! Html::style('bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css') !!}
 {!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
 	{!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
+	
 -->
-    {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
-
+{!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
 {!! Html::style('css/style.css') !!}
-
-	<link rel="stylesheet"  href="{!! url('css/app.css') !!}"/>
+<link rel="stylesheet"  href="{!! url('css/app.css') !!}"/>
+	
 	
 
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -76,7 +76,7 @@
             </div>
         </div>
     </nav>
-<div class="col-md-12">
+<div class="row">
 	<div class="col-sm-12 col-md-3">
 		@yield('sidebar')
 	</div>	
@@ -93,7 +93,6 @@
 	{!! Html::script('js/raphael-min.js') !!}
 	{!! Html::script('js/morris.min.js') !!}
 	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
-
 	{!! Html::script('js/sidebar.js') !!}
 
 
