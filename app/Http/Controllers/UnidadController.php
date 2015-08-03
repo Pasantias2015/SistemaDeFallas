@@ -30,7 +30,8 @@ class UnidadController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{$unidades = Unidad::paginate(10);
+	{
+		$unidades = Unidad::paginate(10);
  		$unidades->setPath('unidades');
  		return view('Unidades.unidades',['unidades'=>$unidades]);
 		

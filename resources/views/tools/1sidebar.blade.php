@@ -33,7 +33,6 @@
       <a href="{{ route('reportes.create') }}"><li>Incidencias</li></a>
       
       
-      
       </ul>
       </div>
     <div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>

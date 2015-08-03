@@ -1,15 +1,15 @@
-Pantalla :         Controlador   
-Unidad
-**registrarunidad
-**unidadoperador
-Falla
-**registrarcategoriafalla  == medio arrecho y regulario
-**registrarfalla
-**registrarfallaunidadoperador
-**registrartipofalla
-Operador
-**registraroperador
-Servicio
-**registrarservicio
-Puesto
-**puesto
+@extends('app')
+@include('tools.sidebar')
+@section('content')
+<div class="col-md-8 col-md-offset-1">
+    <div class="panel panel-danger">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+         @include('tools.errors')
+         
+        </div>
+
+    </div>
+
+</div>
+@endsection

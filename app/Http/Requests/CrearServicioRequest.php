@@ -22,7 +22,11 @@ class CrearServicioRequest extends Request {
 	public function rules()
 	{
 		return [
+<<<<<<< HEAD
 			  'descripcion' =>'required|unique:servicios,descripcion'
+=======
+            'descripcion' =>'required|unique:servicios,descripcion'
+>>>>>>> b4a00a98088474016041f640610e8a4853dc812c
 		];
 	}
 

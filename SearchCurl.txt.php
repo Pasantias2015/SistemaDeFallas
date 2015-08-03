@@ -80,6 +80,6 @@ class SearchCurl  {
 
 }
 
-/*$curls = new SearchCurl();
+$curls = new SearchCurl();
 echo $curls->SearchCNE('V', 21295782);
-*/?>
+?>

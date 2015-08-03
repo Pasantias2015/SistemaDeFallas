@@ -14,7 +14,7 @@
 						<tr>
 							<th>ID</th>
 							<th>Numero de Identificacion</th>
-							<th>Numero VIM</th>
+							<th>Numero VIN</th>
 							<th>Serial de Carroceria</th>
 							<th>Serial de Motor</th>
                             <th>Accion</th>

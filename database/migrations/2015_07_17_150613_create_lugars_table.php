@@ -20,7 +20,7 @@ class CreateLugarsTable extends Migration {
 			
 		});
 	}
-
+ 
 	/**
 	 * Reverse the migrations.
 	 *

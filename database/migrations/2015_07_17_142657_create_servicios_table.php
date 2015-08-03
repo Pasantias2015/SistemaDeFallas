@@ -18,7 +18,7 @@ class CreateServiciosTable extends Migration {
 			$table->string('descripcion');
 			$table->enum('estado',array('activo','inactivo'));
 		});
-	}
+	} 
 
 	/**
 	 * Reverse the migrations.

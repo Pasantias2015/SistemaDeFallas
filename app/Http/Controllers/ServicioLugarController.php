@@ -2,31 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Servicio;
-use App\UnidadServicio;
-use App\ServicioOperador;
-
 use Illuminate\Http\Request;
+use App\ServicioLugar;
+use App\Servicio;
+use App\Lugar;
 
-class TransaccionController extends Controller {
-
-
-	public function servicio_operador()
-	{
-		$servicios = Servicio::all();
-		//$operadores = ServicioOperador::all();
-				
-		return view('Transacciones.serviciooperador',compact('servicios'));
-
-	}
-	public function servicio_unidad()
-	{
-		$servicios = Servicio::all();
-		$unidades = UnidadServicio::all();
-		
-		return view('Transacciones.serviciounidad',compact('servicios','unidades'));
-	}
-
+class ServicioLugarController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -35,7 +16,9 @@ class TransaccionController extends Controller {
 	 */
 	public function index()
 	{
-		return view('Reportes.cedula');
+		$servicios = Servicio::all();
+		$lugares = Lugar::all();
+		return view('Servicios.servicios',compact('servicios','lugares'));
 	}
 
 	/**

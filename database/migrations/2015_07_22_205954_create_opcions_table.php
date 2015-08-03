@@ -16,8 +16,8 @@ class CreateOpcionsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('descripcion');
-			$table->integer('modulo_id')->unsigned();
-			$table->foreign('modulo_id')->references('id')->on('modulos');
+			$table->string('url');
+			
 			
 			
 			$table->timestamps();
