@@ -18,6 +18,7 @@
 	{!! Html::style('css/app.css') !!}
 	-->
 	{!! Html::script('js/jquery-1.11.3.min.js') !!}	
+	{!! Html::script('js/jasny-bootstrap.min.js') !!}	
 	{!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
 	{!! Html::style('css/style.css') !!}
 

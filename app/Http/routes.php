@@ -17,8 +17,6 @@ Route::get('/', 'HomeController@index');
 
 
 
-
-
 Route::get('home', 'HomeController@index');
 Route::get('/', 'HomeController@index');
 
@@ -26,13 +24,10 @@ Route::get('unidad', 'UnidadController@index');
 Route::get('falla', 'FallaController@registrarfalla');
 
 
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	//'password' => 'Auth\PasswordController',
 ]);
-
-
 
 
 

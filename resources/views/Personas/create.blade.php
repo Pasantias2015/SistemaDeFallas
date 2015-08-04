@@ -1,14 +1,19 @@
 <div class=" col-md-6">
-  <div class="form-group contenedor-foto">
-    <img src="" alt="" class="foto-perfil" >
-  </div>
 
-  <div class="form-group">
-      <div class="custom-input-file btn btn-info form-control">
-          <input type="file" size="1" class="input-file">
-          Subir archivo    
-      </div>  
+
+
+
+<div class="form-group contenedor-foto">
+  <div class="fileinput  fileinput-new" data-provides="fileinput">
+    <div class="foto-perfil fileinput-preview thumbnail " data-trigger="fileinput" ></div>
+  <div class="custom-input-file btn btn-info form-control">
+        <input type="file" src="" name="foto" size="1" class="input-file">
+        Subir archivo 
+    </div>
   </div>
+</div>
+
+
   
   <div class="form-group">
       <span>Rif</span>
