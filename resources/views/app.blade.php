@@ -52,7 +52,6 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="{{ url('/home') }}" class="text-blanco">Inicio</a></li>
                 </ul>
-
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
                         

@@ -79,3 +79,4 @@ resource('servicios','ServicioController');
 resource('serviciolugares','ServicioLugarController');
 resource('lugares','LugarController');
 resource('patios','PatioController');
+resource('puestos','PuestoController');

@@ -6,6 +6,8 @@ class Puesto extends Model {
 
 
 	protected $table = 'puestos';
+	protected $fillable = ['descripcion','patio_id'];
+	public $timestamps = false;
 
 
 	 public function puestounidad()

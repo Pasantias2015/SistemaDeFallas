@@ -42,6 +42,7 @@
       <a href="{{ route('servicios.index') }}"><li>Registrar Servicios</li></a>
       <a href="{{ route('lugares.index') }}"><li>Registrar Lugares</li></a>
       <a href="{{ route('patios.index') }}"><li>Registrar Patio</li></a>
+      <a href="{{ route('puestos.index') }}"><li>Registrar Puesto</li></a>
       
       <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
      
