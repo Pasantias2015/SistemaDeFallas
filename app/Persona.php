@@ -6,7 +6,7 @@ class Persona extends Model {
 
 	protected $table = 'personas';
 	protected $fillable = ['cedula','pnombre','snombre','papellido','sapellido','direccion','fnacimiento','estadocivil','telefono-hab','telefono-mov','correo-electronico','rif','sexo','estatura','peso',
-	'camisa','pantalon','zapato','profesion_id','nivel','parroquia_id','hijos','foto','tipo-personal'];
+    'camisa','pantalon','zapato','profesion_id','nivel','parroquia_id','hijos','foto','tipo-personal'];
 
 	public function getnombrecompletoAttribute(){
 		return $this->pnombre.' '.$this->papellido;
@@ -14,12 +14,13 @@ class Persona extends Model {
 	}
 	public function profesion()
 	{
-		return $this->belongTo('App\Profesion','id');
+		return $this->belongTo('App\Profesion');
 	}
 	public function parroquia()
 	{
-		return $this->belongTo('App\Parroquia','id');
+		return $this->belongTo('App\Parroquia');
 	}
+
 	public function usuario()
 	{
         return $this->hasOne('App\User', 'id');

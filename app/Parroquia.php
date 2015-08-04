@@ -11,6 +11,4 @@ class Parroquia extends Model {
 	{
 		return $this->hasMany('App\Persona','id');
 	}
-
-
 }

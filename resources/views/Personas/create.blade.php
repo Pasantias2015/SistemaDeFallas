@@ -1,8 +1,15 @@
 <div class=" col-md-6">
-  <div class="form-group">
-      <span>Cedula</span>
-          {!! Form::text('cedula',null,['class'=>'form-control']) !!}
+  <div class="form-group contenedor-foto">
+    <img src="" alt="" class="foto-perfil" >
   </div>
+
+  <div class="form-group">
+      <div class="custom-input-file btn btn-info form-control">
+          <input type="file" size="1" class="input-file">
+          Subir archivo    
+      </div>  
+  </div>
+  
   <div class="form-group">
       <span>Rif</span>
           {!! Form::text('rif',null,['class'=>'form-control']) !!}
@@ -30,6 +37,29 @@
   
 </div>
 <div class="col-md-6">
+<h3>Datos Basicos</h3>
+      <span>Cedula de identidad</span>
+  <div class="form-group">
+  
+      <select name="nacionalidad" id="nacionalidad" class="form-control">
+                <option value=" ">V</option>
+          <option value=" ">E</option>
+      </select>
+          {!! Form::text('cedula',null,['class'=>'form-control']) !!}
+  </div>
+
+  <div class="form-group">
+        <strong>  dasdasd</strong>      
+          {!! Form::text('rif',null,['class'=>'form-control']) !!}
+  </div>
+  <div class="form-group">
+      <span>Pasaporte</span>
+          {!! Form::text('pasaporte',null,['class'=>'form-control']) !!}
+  </div>
+
+
+
+
   <div class="form-group">
     <span>Fecha De Nacimiento</span>
       {!! Form::date('fnacimiento','Fecha de nacimiento',['class'=>'form-control']) !!}
