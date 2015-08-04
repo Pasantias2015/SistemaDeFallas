@@ -1,11 +1,19 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\CrearServicioRequest;
+use App\Http\Requests\EditarServicioRequest;
 use App\Http\Controllers\Controller;
+use App\Servicio;
 
 use Illuminate\Http\Request;
 
 class ServicioController extends Controller {
+
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +22,10 @@ class ServicioController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$servicios = Servicio::paginate(5);
+		
+		return view('Servicios\Servicio.crear',compact('servicios'));		
+
 	}
 
 	/**
@@ -32,9 +43,10 @@ class ServicioController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CrearServicioRequest $request)
 	{
-		//
+		$servicio = Servicio::create($request->all());
+		return view('home');
 	}
 
 	/**
@@ -56,7 +68,8 @@ class ServicioController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$servicio = Servicio::findOrFail($id);
+        return view('Servicios\Servicio.editar',compact('servicio'));
 	}
 
 	/**
@@ -65,9 +78,12 @@ class ServicioController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(EditarServicioRequest $request,$id)
 	{
-		//
+		$servicio = Servicio::findOrFail($id);
+        $servicio->fill($request->all());
+        $servicio->save();
+        return redirect('servicios');
 	}
 
 	/**

@@ -17,10 +17,11 @@
 	
 	{!! Html::style('css/app.css') !!}
 	-->
-	
+	{!! Html::script('js/jquery-1.11.3.min.js') !!}	
 	{!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
 	{!! Html::style('css/style.css') !!}
-	
+
+	 <link rel="stylesheet"  href="{!! url('css/app.css') !!}"/>
 	
 	
 
@@ -71,7 +72,7 @@
             </div>
         </div>
     </nav>
-<div class="col-md-12">
+<div class="row">
 	<div class="col-sm-12 col-md-3">
 		@yield('sidebar')
 	</div>	
@@ -84,7 +85,7 @@
 	
 	
 	<!--Morris Charts-->
-	{!! Html::script('js/jquery-1.11.3.min.js') !!}
+
 	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
 	{!! Html::script('js/raphael-min.js') !!}
 	{!! Html::script('js/morris.min.js') !!}

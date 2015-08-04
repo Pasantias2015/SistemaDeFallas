@@ -6,23 +6,13 @@ class Servicio extends Model {
 
 	protected $table = 'servicios';
 
-	protected $fillable =['descripcion'];
+	protected $fillable =['descripcion','estado'];
 
 	public $timestamps = false;
 
 	public function serviciolugar()
 	{
+		// un servicio pertenece a un servicio lugar
 		return $this->belongsMany('App\ServicioLugar');
 	}
-
-	public function unidadoperador()
-	{
-		return $this->belongsMany('App\UnidadOperador');
-	}
-
-	public function unidadservicio()
-	{
-		return $this->belongsMany('App\UnidadOperador');
-	}
-
 }
