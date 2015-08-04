@@ -8,22 +8,24 @@ class UserTableSeeder extends Seeder
 {
     public function run()
     {
+        \DB::table('profesiones')->insert(array ('descripcion'=>'chofer'));
+        \DB::table('parroquias')->insert(array ('descripcion' => 'cabudare'));
+        
+
         \DB::table('personas')->insert(array (
                         'cedula'=>'21295782',
                         'rif'=>'v212957824',
-                        'pasaporte'=>'123456789',
                         'pnombre'=>'Leonardo',
                         'snombre'=>'Antonio',
                         'papellido'=>'Loyo',
                         'fnacimiento'=>'1991-03-14',
-                        'sexo'=>'M',
+                        'sexo'=>'masculino',
                         'estadocivil'=>'soltero(a)',
                         'correo-electronico'=>'leonardo.l_91@hotmail.com',
-                        'pais'=>1,
-                        'estado'=>1,
-                        'ciudad'=>1,
                         'direccion'=>'Tarabana II',
-                        'telefono'=>'04245177331'
+                        'telefono-mov'=>'04245177331',
+                        'profesion_id' => 1,
+                        'parroquia_id' => 1
                                ));
         \DB::table('modulos')->insert(array (    'descripcion'=>'Gestion De Operaciones'));
         \DB::table('roles')->insert(array (    'descripcion'=>'Supervisor'));

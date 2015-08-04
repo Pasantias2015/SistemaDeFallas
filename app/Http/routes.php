@@ -74,11 +74,10 @@ resource('categorias','CategoriaController');
 resource('tipos','TipoController');
 resource('reportes','ReporteController');
 resource('operadores','OperadorController');
-<<<<<<< HEAD
 resource('servicios','ServicioController');
-=======
 resource('transacciones','TransaccionController');
 resource('servicios','ServicioController');
 resource('serviciolugares','ServicioLugarController');
->>>>>>> b4a00a98088474016041f640610e8a4853dc812c
 resource('lugares','LugarController');
+resource('patios','PatioController');
+resource('puestos','PuestoController');

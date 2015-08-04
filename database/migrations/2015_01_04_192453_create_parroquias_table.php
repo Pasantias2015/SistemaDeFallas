@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePatiosTable extends Migration {
+class CreateParroquiasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,11 @@ class CreatePatiosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('patios', function(Blueprint $table)
+		Schema::create('parroquias', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('descripcion');
+            $table->integer('ciudad_id')->unsigned();
+            $table->string('descripcion');
 		});
 	}
 
@@ -26,7 +27,7 @@ class CreatePatiosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('patios');
+		Schema::drop('parroquias');
 	}
 
 }

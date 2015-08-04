@@ -2,7 +2,6 @@
 @include('tools.sidebar')
 @section('content')
 <div class="col-md-8 col-md-offset-1">
-<<<<<<< HEAD
     <div class="panel panel-danger">
         <div class="panel-heading">Editar Servicio : {{ $servicio->descripcion }}</div>
        <div class="panel-body">
@@ -33,7 +32,6 @@
 
        </div>
     </div>
-=======
 	<div class="panel panel-danger">
 		<div class="panel-heading">Editar Servicio : {{ $servicio->descripcion }}</div>
         <div class="panel-body">
@@ -65,6 +63,5 @@
 
         </div>
 	</div>
->>>>>>> b4a00a98088474016041f640610e8a4853dc812c
 </div>
 @endsection
