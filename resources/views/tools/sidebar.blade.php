@@ -39,7 +39,13 @@
     <div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
+      <a href="{{ route('servicios.index') }}"><li>Registrar Servicios</li></a>
+      <a href="{{ route('lugares.index') }}"><li>Registrar Lugares</li></a>
+      <a href="{{ route('patios.index') }}"><li>Registrar Patio</li></a>
+      <a href="{{ route('puestos.index') }}"><li>Registrar Puesto</li></a>
+      
       <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
+     
       
       
 
