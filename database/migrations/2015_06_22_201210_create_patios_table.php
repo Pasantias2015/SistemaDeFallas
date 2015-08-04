@@ -15,7 +15,7 @@ class CreatePatiosTable extends Migration {
 		Schema::create('patios', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('descipcion');
+			$table->string('descripcion');
 		});
 	}
 

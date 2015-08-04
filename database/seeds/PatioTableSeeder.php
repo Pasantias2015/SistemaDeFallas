@@ -11,7 +11,7 @@ class PatioTableSeeder extends Seeder
 		$arr = [];
 		for($i = 1;$i<=3;$i++)
 		{
-			$array[] = ['descipcion'=>'Patio '.$i];
+			$array[] = ['descripcion'=>'Patio '.$i];
 
 		}
 		\DB::table('patios')->insert($array);

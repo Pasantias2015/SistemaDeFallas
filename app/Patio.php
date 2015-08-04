@@ -7,6 +7,7 @@ class Patio extends Model {
 	
 	protected $table = 'patios';
 	protected $fillable = ['descripcion'];
+	public $timestamps =false;
 
 	public function puesto()
 	{
