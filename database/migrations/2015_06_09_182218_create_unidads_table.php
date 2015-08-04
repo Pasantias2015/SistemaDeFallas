@@ -19,6 +19,7 @@ class CreateUnidadsTable extends Migration {
 			$table->string('nidentificacion')->unique();
 			$table->string('vin')->unique();
 			$table->string('serialmotor')->unique();
+			$table->integer('modelo_id')->unsigned();
 			//$table->string('potenciamotor');
 			//$table->integer('kilometraje');
 			//$table->integer('cantpersona');
@@ -28,7 +29,7 @@ class CreateUnidadsTable extends Migration {
 			//$table->string('longitud',10);
 			//$table->string('combustible',10);			
 			//$table->rememberToken();
-			$table->timestamps();
+			//$table->timestamps();
 		});
 	}
 

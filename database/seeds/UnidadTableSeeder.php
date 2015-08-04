@@ -16,7 +16,8 @@ class UnidadTableSeeder extends Seeder
 				'serialcarroceria' => 'ZXCVBNM'.$i,
 				'nidentificacion'  => 'Y-00'.$i,
 				'serialmotor' 	   => '12345678'.$i,
-				'vin'			   => 'ZXCASDQWE'.$i
+				'vin'			   => 'ZXCASDQWE'.$i,
+				'modelo_id'        => $i
 			];
 		}
 		

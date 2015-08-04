@@ -18,4 +18,3 @@
         <span>Serial del Motor</span>
         {!! Form::text('serialmotor',null,['class'=>'form-control']) !!}
 </div>
-

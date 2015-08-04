@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Requests\CrearUnidadRequest;
 use App\Http\Requests\EditUnidadRequest;
 use App\Unidad;
+use App\Modelo;
 
 class UnidadController extends Controller {
 
@@ -31,9 +32,11 @@ class UnidadController extends Controller {
 	 */
 	public function index()
 	{
+		
+		
 		$unidades = Unidad::paginate(10);
- 		$unidades->setPath('unidades');
- 		return view('Unidades.unidades',['unidades'=>$unidades]);
+ 
+ 		return view('Unidades.unidades',compact('unidades','modelos'));
 		
 	}
 	public function asignarunidad()

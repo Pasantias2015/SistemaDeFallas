@@ -10,6 +10,7 @@ class Unidad extends Model {
 	 						'nidentificacion',
 	 						'vin',
 	 						'serialmotor',
+	 						'modelo_id'
 	 						/*'kilometraje',
 	 						'cantpersona',
 	 						'pesomax',
@@ -20,6 +21,10 @@ class Unidad extends Model {
 	 						'combustible'*/
 	 						];
 
+	 public function modelo()
+	 {
+	 	return $this->belongsMany('App\Modelo','id');
+	 }
 	 public function puesto()
 	 {
 	 	return $this->belongsMany('App\PuestoUnidad','id');
