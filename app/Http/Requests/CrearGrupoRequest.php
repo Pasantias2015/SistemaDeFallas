@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CrearServicioRequest extends Request {
+class CrearGrupoRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,8 +22,9 @@ class CrearServicioRequest extends Request {
 	public function rules()
 	{
 		return [
-
-			  'descripcion' =>'required|unique:servicios,descripcion'
+			'codigo' =>'required|unique:grupos,codigo',
+			'descripcion' =>'required',
+			'seccion_id'=>'required'
 		];
 	}
 

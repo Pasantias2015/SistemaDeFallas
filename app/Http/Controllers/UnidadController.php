@@ -32,12 +32,9 @@ class UnidadController extends Controller {
 	 */
 	public function index()
 	{
-		
-		
+		$modelos= Modelo::all();
 		$unidades = Unidad::paginate(10);
- 
  		return view('Unidades.unidades',compact('unidades','modelos'));
-		
 	}
 	public function asignarunidad()
 	{
@@ -64,10 +61,8 @@ class UnidadController extends Controller {
 	 */
 	public function create()
 	{
-		
-		return view('Unidades.registrarunidad');
-		
-
+		$modelos= Modelo::all();
+		return view('Unidades.registrarunidad',compact('modelos'));
 	}
 
 	/**

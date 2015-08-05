@@ -5,7 +5,7 @@
 
 
 <div class="form-group">
-       <span>Numero de VIM</span>
+       <span>Numero de VIN</span>
         {!! Form::text('vin',null,['class'=>'form-control']) !!}
 </div>
 

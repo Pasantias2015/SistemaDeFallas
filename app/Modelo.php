@@ -8,7 +8,7 @@ class Modelo extends Model {
 
     public $timestamps = false;
 
-    protected $fillable=['descripcion'];
+    protected $fillable=['descripcion','combustible','dimension','year','transmision'];
 
     public function unidad()
     {

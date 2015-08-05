@@ -20,10 +20,11 @@ class Unidad extends Model {
 	 						'longitud',
 	 						'combustible'*/
 	 						];
+	 public $timestamps = false; 
 
 	 public function modelo()
 	 {
-	 	return $this->belongsMany('App\Modelo','id');
+	 	return $this->hasOne('App\Modelo','id');
 	 }
 	 public function puesto()
 	 {

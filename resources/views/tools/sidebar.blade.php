@@ -46,8 +46,11 @@
       
       <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
      
-      
-      
+      <a href="{{ url('modelos') }}"><li>Registrar Modelo</li></a>
+      <a href="{{ url('secciones') }}"><li>Registrar Seccion</li></a>
+      <a href="{{ url('grupos') }}"><li>Registrar Grupo</li></a>
+     
+            
 
 
 

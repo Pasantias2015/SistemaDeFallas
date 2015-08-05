@@ -20,6 +20,7 @@ class CreateUnidadsTable extends Migration {
 			$table->string('vin')->unique();
 			$table->string('serialmotor')->unique();
 			$table->integer('modelo_id')->unsigned();
+			$table->foreign('modelo_id')->references('id')->on('modelos');
 			//$table->string('potenciamotor');
 			//$table->integer('kilometraje');
 			//$table->integer('cantpersona');

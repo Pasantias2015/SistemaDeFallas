@@ -22,7 +22,7 @@ class CrearModeloRequest extends Request {
 	public function rules()
 	{
 		return [
-			'descripcion' =>'required|unique:modelos,descripcion'
+			'descripcion' =>'required' //validar combinacion
 		];
 	}
 

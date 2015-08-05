@@ -220,8 +220,8 @@ return $curls->SearchCNE('V',21295782);
     php artisan make:model;
     php artisan make:controller;
     php artisan make:request;
-    php artisan db:seed;
     php artisan migrate;
+    php artisan db:seed;
     php artisan migrate:rollback;
     php artisan migrate:refresh;
 

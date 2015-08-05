@@ -14,16 +14,17 @@
                         @include('tools.errors')
                         {!! Form::open(['route'=>'unidades.store','method'=>'POST']) !!}
 
- 
                                 <div class=" col-md-12">
+
                                     @include('Unidades.form.form')
+
                                     <div class="form-group">
                                             <span>Modelo: </span>
-                                                <select name="modelo_id" class="form-control">
+                                            <select name="modelo_id" class="form-control">
                                                  @foreach($modelos as $modelo)
-                                                    <option value="{{ $modelo->id }}">{{ $modelo->descripcion }}</option>    
+                                                    <option value="{{ $modelo->id }}">{{ $modelo->descripcion." - ".$modelo->combustible." - ".$modelo->year." - ".$modelo->dimension." - ".$modelo->transmision }}</option>    
                                                  @endforeach
-                                             </select>
+                                            </select>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -33,10 +34,7 @@
                                     </div>
                                 </div>
 
-
-
                         {!! Form::close() !!}
-
                     </div>
                 </div>
             </div>

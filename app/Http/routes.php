@@ -76,3 +76,5 @@ resource('lugares','LugarController');
 resource('patios','PatioController');
 resource('puestos','PuestoController');
 resource('modelos','ModeloController');
+resource('secciones','SeccionController');
+resource('grupos','GrupoController');
