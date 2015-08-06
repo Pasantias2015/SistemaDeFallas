@@ -6,6 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Persona;
 use Illuminate\Http\Request;
 use App\Operador;
+use App\User;
+use App\Rol;
+use App\Profesion;
+use App\Pais;
+use App\Estado;
+use App\Ciudad;
+use App\Municipio;
+use App\Parroquia;
 
 class OperadorController extends Controller {
 
@@ -47,8 +55,13 @@ class OperadorController extends Controller {
 	 */
 	public function create()
 	{
-			
-		  return view('Operadores.registraroperador');
+			$roles=Rol::all();
+			$profesiones=Profesion::all();
+			$paises=Pais::all();
+			$estados=Estado::all();
+			$ciudades=Ciudad::all();
+			$parroquias=Parroquia::all();
+		  return view('Operadores.registraroperador',compact('roles','profesiones','paises','ciudades','estados','parroquias'));
 		
 	}
 
@@ -59,10 +72,14 @@ class OperadorController extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		
+		$persona = Persona::create($request->all());
+		$Operador=$
+		$Operador = Operador::create($request->all());
+		return ($Operador->persona->foto);
 		$operador = Operador::create($request->all());
-
-		//return view('home');
+		
+		
+        //return view('home');
         return redirect()->route('home');
     }
 

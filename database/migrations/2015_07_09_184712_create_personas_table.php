@@ -41,8 +41,6 @@ class CreatePersonasTable extends Migration {
 			$table->foreign('parroquia_id')->references('id')->on('parroquias');
 			$table->integer('hijos')->unsigned();
 			$table->binary('foto');
-			$table->enum('tipo-personal',array('operador','usuario'));
-
 		});
 	}
 

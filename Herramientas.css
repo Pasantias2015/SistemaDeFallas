@@ -228,3 +228,6 @@ return $curls->SearchCNE('V',21295782);
     composer update 
     composer dump-autoload 
 
+@foreach($parroquias as $parroquia)
+            <option value="{{ $parroquia->id }}">{{ $parroquia->descripcion }}</option> 
+          @endforeach   

@@ -6,6 +6,7 @@ class Operador extends Model {
 
 	protected $table = 'operadores';
 	protected $fillable = ['telefonolaboral'];
+	public $timestamps=false;
 
 	public function persona()
 	{

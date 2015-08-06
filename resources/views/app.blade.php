@@ -17,11 +17,12 @@
 	
 	{!! Html::style('css/app.css') !!}
 	-->
+	{!! Html::style('css/style.css') !!}
+
 	{!! Html::script('js/jquery-1.11.3.min.js') !!}	
 	{!! Html::script('js/jasny-bootstrap.min.js') !!}	
 	{!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
-	{!! Html::style('css/style.css') !!}
-
+	
 	 <link rel="stylesheet"  href="{!! url('css/app.css') !!}"/>
 	
 	
@@ -38,7 +39,7 @@
 </head>
 <body>
 	<nav class="navbar colornav text-blanco" >
-        <div class="container-fluid">
+        <div class="container-fluid " >
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle Navigation</span>
