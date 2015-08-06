@@ -15,11 +15,12 @@ class CreateModelosTable extends Migration {
 		Schema::create('modelos', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('descripcion');
-			$table->string('combustible');
-			$table->string('dimension');
+			$table->string('codigo'); //codigo del modelo que traen por defecto los vehiculos
+			$table->string('descripcion'); //si es bus, grua u otro
+			$table->string('combustible'); //diesel o gas
+			$table->string('dimension'); //tamaño 
 			$table->string('year');
-			$table->string('transmision');
+			$table->string('transmision'); //automatico o sincronico
 		});
 	}
 

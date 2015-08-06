@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-8 col-md-offset-1">
     <div class="panel panel-danger">
-        <div class="panel-heading">Editar Modelo : {{ $modelo->descripcion }}</div>
+        <div class="panel-heading">Editar Modelo : {{ $modelo->codigo }}</div>
        <div class="panel-body">
        @include('tools.errors')
                 
@@ -11,6 +11,10 @@
 
                 <div class="col-md-12">
 
+                   <div class="form-group">
+                       <span>Codigo: </span>
+                       {!! Form::text('codigo',null,['class'=>'form-control']) !!}
+                   </div>
                    <div class="form-group">
                        <span>Descripcion: </span>
                        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}

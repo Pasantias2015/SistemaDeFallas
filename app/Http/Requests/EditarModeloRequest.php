@@ -27,7 +27,12 @@ class EditarModeloRequest extends Request {
 	public function rules()
 	{
 		return [
-				'descripcion' =>'required|unique:modelos,descripcion,'.$this->route->getParameter('modelos')
+				'codigo'  =>'required',
+				'descripcion' =>'required',
+				'combustible' =>'required',
+				'transmision' =>'required',
+				'dimension' =>'required',
+				'year' =>'required'
 		];
 	}
 

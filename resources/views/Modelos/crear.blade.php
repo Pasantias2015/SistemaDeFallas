@@ -1,7 +1,7 @@
 @extends('app')
 @include('tools.sidebar')
 @section('content')
-<div class="col-md-8 col-md-offset-1">
+<div class="col-md-9 col-md-offset-1">
     <div class="panel panel-danger">
         <div class="panel-heading">Modelos</div>
         <div class="panel-body">
@@ -9,6 +9,10 @@
             {!! Form::open(['route'=>'modelos.store','method'=>'POST']) !!}
 
                 <div class="col-md-12">
+                    <div class="form-group">
+                        <span>Codigo del Modelo: </span>
+                        {!! Form::text('codigo',null,['class'=>'form-control']) !!}
+                    </div>
                     <div class="form-group">
                         <span>Descripcion: </span>
                         {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
@@ -41,6 +45,7 @@
                     <table class="table table-bordered table-striped">
                         <tr>
                             <th>ID</th>
+                            <th>Codigo</th>
                             <th>Descripcion</th>
                             <th>Tipo de Combustible</th>
                             <th>Tipo de Transmision</th>
@@ -52,6 +57,7 @@
                         @foreach($modelos as $modelo)
                         <tr>                            
                             <td>{{ $modelo->id }}</td>
+                            <td>{{ $modelo->codigo }}</td>
                             <td>{{ $modelo->descripcion }}</td>
                             <td>{{ $modelo->combustible }}</td>
                             <td>{{ $modelo->transmision }}</td>

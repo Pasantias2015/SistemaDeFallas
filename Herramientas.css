@@ -203,8 +203,8 @@ return $curls->SearchCNE('V',21295782);
 
 
 
-    git config --gloabl user.name "Jaissel tale"
-    git config --gloabl user.email "correo"
+    git config --global user.name "Jaissel tale"
+    git config --global user.email "correo"
     git init 
     git clone url 
     git checkout Jaissel 

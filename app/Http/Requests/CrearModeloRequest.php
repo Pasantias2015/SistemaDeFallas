@@ -22,7 +22,12 @@ class CrearModeloRequest extends Request {
 	public function rules()
 	{
 		return [
-			'descripcion' =>'required' //validar combinacion
+				'codigo'  =>'required',
+				'descripcion' =>'required',
+				'combustible' =>'required',
+				'transmision' =>'required',
+				'dimension' =>'required',
+				'year' =>'required' //validar combinacion
 		];
 	}
 
