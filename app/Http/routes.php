@@ -79,3 +79,7 @@ resource('modelos','ModeloController');
 resource('secciones','SeccionController');
 resource('grupos','GrupoController');
 resource('piezas','PiezaController');
+resource('mantenimiento','MantenimientoController');
+resource('herramientas','HerramientaController');
+resource('almacen','AlmacenController');
+resource('asignar','AsignarController');

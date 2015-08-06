@@ -19,6 +19,9 @@ class CreateUnidadsTable extends Migration {
 			$table->string('nidentificacion')->unique();
 			$table->string('vin')->unique();
 			$table->string('serialmotor')->unique();
+			$table->string('codigosistema');
+			$table->string('uso');
+			$table->integer('year')->unsigned();
 			$table->integer('modelo_id')->unsigned();
 			$table->foreign('modelo_id')->references('id')->on('modelos');
 			//$table->string('potenciamotor');

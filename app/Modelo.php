@@ -8,12 +8,12 @@ class Modelo extends Model {
 
     public $timestamps = false;
 
-    protected $fillable=['codigo','descripcion','combustible','dimension','year','transmision'];
+    protected $fillable=['codigo','descripcion','combustible','dimension','transmision'];
 
     public function unidad()
     {
         // un modelo pertenece a muchas unidades
-        return $this->belongsMany('App\Unidad');
+        return $this->hasMany('App\Unidad','id');
     }
 
 }

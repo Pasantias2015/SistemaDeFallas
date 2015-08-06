@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CrearModeloRequest extends Request {
+class CrearMantenimientoRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,11 +22,8 @@ class CrearModeloRequest extends Request {
 	public function rules()
 	{
 		return [
-				'codigo'  =>'required',
-				'descripcion' =>'required',
-				'combustible' =>'required',
-				'transmision' =>'required',
-				'dimension' =>'required'
+			'nombre' =>'required|unique:mantenimientos,nombre',
+			'descripcion' =>'required'
 		];
 	}
 

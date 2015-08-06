@@ -37,11 +37,6 @@
                         <span>Tamaño(Dimension): </span>
                         {!! Form::text('dimension',null,['class'=>'form-control']) !!}
                     </div>
-                    <div class="form-group">
-                        <span>Año: </span>
-                        {!! Form::text('year',null,['class'=>'form-control']) !!}
-                    </div>
-
                </div>
            @include('tools.botones-actualizar')
            {!! Form::close() !!}

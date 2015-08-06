@@ -19,7 +19,6 @@ class CreateModelosTable extends Migration {
 			$table->string('descripcion'); //si es bus, grua u otro
 			$table->string('combustible'); //diesel o gas
 			$table->string('dimension'); //tamaño 
-			$table->string('year');
 			$table->string('transmision'); //automatico o sincronico
 		});
 	}

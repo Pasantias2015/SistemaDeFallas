@@ -31,9 +31,8 @@ class EditarModeloRequest extends Request {
 				'descripcion' =>'required',
 				'combustible' =>'required',
 				'transmision' =>'required',
-				'dimension' =>'required',
-				'year' =>'required'
-		];
+				'dimension' =>'required'
+				];
 	}
 
 }

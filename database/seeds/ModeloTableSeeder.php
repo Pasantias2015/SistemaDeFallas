@@ -14,7 +14,6 @@ class ModeloTableSeeder extends Seeder
 			$array[] = ['descripcion'=>'Modelo '.$i,
 			'combustible'=>'Diesel',
 			'dimension'=>'12 Mt',
-			'year'=>'2015',
 			'transmision'=>'Sincronico'];
 
 		}

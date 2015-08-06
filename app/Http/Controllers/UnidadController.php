@@ -32,9 +32,9 @@ class UnidadController extends Controller {
 	 */
 	public function index()
 	{
-		$modelos= Modelo::all();
+
 		$unidades = Unidad::paginate(10);
- 		return view('Unidades.unidades',compact('unidades','modelos'));
+		return view('Unidades.unidades',compact('unidades'));
 	}
 	public function asignarunidad()
 	{
@@ -52,8 +52,6 @@ class UnidadController extends Controller {
 	*/
 	return view ('Unidades.unidadoperador');
 	}
-	
-	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -114,7 +112,6 @@ class UnidadController extends Controller {
         $unidad->fill($request->all());
         $unidad->save();
         return redirect()->back();
-
 	}
 	
 	/**
