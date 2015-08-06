@@ -78,3 +78,4 @@ resource('puestos','PuestoController');
 resource('modelos','ModeloController');
 resource('secciones','SeccionController');
 resource('grupos','GrupoController');
+resource('piezas','PiezaController');

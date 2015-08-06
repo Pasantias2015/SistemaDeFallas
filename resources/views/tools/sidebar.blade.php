@@ -36,6 +36,7 @@
       
       </ul>
       </div>
+    
     <div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
@@ -49,8 +50,8 @@
       <a href="{{ url('modelos') }}"><li>Registrar Modelo</li></a>
       <a href="{{ url('secciones') }}"><li>Registrar Seccion</li></a>
       <a href="{{ url('grupos') }}"><li>Registrar Grupo</li></a>
-     
-            
+      <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
+                
 
 
 
