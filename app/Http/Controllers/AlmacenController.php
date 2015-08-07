@@ -2,7 +2,14 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\CrearAlmacenRequest;
+use App\Http\Requests\EditarAlmacenRequest;
+use App\Almacen;
+use App\Herramienta;
+use App\Pieza;
+use App\Grupo;
+use App\Seccion;
+use App\Modelo;	
 use Illuminate\Http\Request;
 
 class AlmacenController extends Controller {
@@ -18,7 +25,13 @@ class AlmacenController extends Controller {
 	 */
 	public function index()
 	{
-		return view('Almacen.almacen');
+		$herramientas = Herramienta::all();
+		$piezas = Pieza::all();
+		$grupos = Grupo::all();
+		$secciones = Seccion::all();
+		$modelos = Modelo::all();
+		$almacenes = Almacen::paginate(10);
+        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes'));
 	}
 
 	/**
@@ -36,9 +49,16 @@ class AlmacenController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CrearAlmacenRequest $request)
 	{
-		//
+		$almacen = Almacen::create($request->all());
+		$herramientas = Herramienta::all();
+		$piezas = Pieza::all();
+		$grupos = Grupo::all();
+		$secciones = Seccion::all();
+		$modelos = Modelo::all();
+		$almacenes = Almacen::paginate(10);
+        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes'));
 	}
 
 	/**
@@ -58,9 +78,10 @@ class AlmacenController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit( $id)
 	{
-		//
+		$almacen =  Almacen::findOrFail($id);
+        return view('Almacen.actualizarAlmacen',compact('almacen'));
 	}
 
 	/**
@@ -69,9 +90,12 @@ class AlmacenController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(EditarAlmacenRequest $request,$id)
 	{
-		//
+		$almacen = Almacen::findOrFail($id);
+        $almacen->fill($request->all());
+        $almacen->save();
+        return redirect('almacen');
 	}
 
 	/**

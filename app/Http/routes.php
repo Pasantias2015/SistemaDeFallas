@@ -83,3 +83,5 @@ resource('mantenimiento','MantenimientoController');
 resource('herramientas','HerramientaController');
 resource('almacen','AlmacenController');
 resource('asignar','AsignarController');
+resource('cajas','CajaController');
+resource('coordinaciones','CoordinacionController');

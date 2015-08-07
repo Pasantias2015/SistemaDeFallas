@@ -17,7 +17,13 @@
 	
 	{!! Html::style('css/app.css') !!}
 	-->
-	{!! Html::script('js/jquery-1.11.3.min.js') !!}	
+	{!! Html::script('js/jquery-1.11.3.min.js') !!}		
+	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
+	{!! Html::script('js/raphael-min.js') !!}
+	{!! Html::script('js/morris.min.js') !!}
+	{!! Html::script('js/sidebar.js') !!}
+
+	
 	{!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
 	{!! Html::style('css/style.css') !!}
 
@@ -85,10 +91,6 @@
 	
 	<!--Morris Charts-->
 
-	{!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
-	{!! Html::script('js/raphael-min.js') !!}
-	{!! Html::script('js/morris.min.js') !!}
-	{!! Html::script('js/sidebar.js') !!}
 
 
 

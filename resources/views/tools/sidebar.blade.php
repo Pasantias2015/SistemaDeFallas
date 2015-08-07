@@ -55,6 +55,8 @@
       <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
       <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
       <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
+      <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
+      <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
                 
 
 
