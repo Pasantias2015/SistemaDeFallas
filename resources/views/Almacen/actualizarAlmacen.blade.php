@@ -21,10 +21,14 @@
                    <div class="form-group">
                        <span>Tipo: </span>
                         <input type="text" disabled value="{{$almacen->tipo}}" class="form-control">
+                   </div>
+                   <div class="form-group" style="display:none">
+                       <span>Cantidad Actual: </span>
+                       {!! Form::text('cantidad',null,['class'=>'form-control']) !!}
                    </div> 
                     <div class="form-group">
-                       <span>Cantidad: </span>
-                       {!! Form::text('cantidad',null,['class'=>'form-control']) !!}
+                       <span>Cantidad a Ingresar: </span>
+                       {!! Form::text('cantidadnueva',null,['class'=>'form-control']) !!}
                    </div> 
                          
                </div>

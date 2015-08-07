@@ -92,8 +92,10 @@ class AlmacenController extends Controller {
 	 */
 	public function update(EditarAlmacenRequest $request,$id)
 	{
+		 return $request->cantidad+$request->cantidadnueva;
+		$hola=array('cant' => $request->cantidad+$request->cantidadnueva);
 		$almacen = Almacen::findOrFail($id);
-        $almacen->fill($request->all());
+		$almacen->fill($request->cantidad+$request->cantidadnueva);
         $almacen->save();
         return redirect('almacen');
 	}
