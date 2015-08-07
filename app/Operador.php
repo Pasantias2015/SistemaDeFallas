@@ -10,7 +10,7 @@ class Operador extends Model {
 
 	public function persona()
 	{
-		return $this->belongsTo('Persona');
+		return $this->belongsTo('App\Persona');
 	}
 
 	public function servicio()

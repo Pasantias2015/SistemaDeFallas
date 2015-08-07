@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\CrearPersonaRequest;
 use App\Http\Controllers\Controller;
 
 use App\Persona;
@@ -37,12 +38,16 @@ class OperadorController extends Controller {
 	 */
 	public function index()
 	{
-		/*$result = Persona::first();
-		dd($result->operador);
-		/**/
+	// Establecer la cabecera de tipo de contenido - en este caso image/jpeg
+
+
+		$persona = Persona::find(9);
+		header('Content-Type: image/jpg');
+
+// Imprimir la imagen
+imagejpeg($persona->foto);
 		
-		$operadores = \DB::select('select * from operadores,personas where (operadores.persona_id = personas.id)');
-	
+		
 		
 		return view('Operadores.operadores',compact ('operadores'));
 		
@@ -61,7 +66,7 @@ class OperadorController extends Controller {
 			$estados=Estado::all();
 			$ciudades=Ciudad::all();
 			$parroquias=Parroquia::all();
-		  return view('Operadores.registraroperador',compact('roles','profesiones','paises','ciudades','estados','parroquias'));
+		  return view('Operadores.crear',compact('roles','profesiones','paises','ciudades','estados','parroquias'));
 		
 	}
 
@@ -70,17 +75,15 @@ class OperadorController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(CrearPersonaRequest $request)
 	{
 		$persona = Persona::create($request->all());
-		$Operador=$
-		$Operador = Operador::create($request->all());
-		return ($Operador->persona->foto);
-		$operador = Operador::create($request->all());
-		
-		
-        //return view('home');
-        return redirect()->route('home');
+		if($request->rol == 'Supervisor')
+		$operador = new Operador;
+		$operador->persona_id =$persona->id;
+		$operador->telefono_laboral = $request->telefono_laboral;
+		$operador->save();
+		return redirect()->route('home');
     }
 
 	/**

@@ -11,7 +11,6 @@
 			<th>id</th>
 			<th>Cedula</th>
 			<th>Nombre Completo</th>
-			<th>Direccion</th>
 			<th>Tel. Laboral</th>
 			<th>Accion</th>
 
@@ -21,9 +20,8 @@
 		<tr>
 		
 			<td>{{ $operador->id}}</td>
-			<td>{{ $operador->cedula}}</td>
-			<td>{{ $operador->pnombre." ".$operador->papellido}}</td>
-			<td>{{ $operador->direccion}}</td>
+			<td><img src="{{ $operador->persona->foto}}" alt=""></td>
+			<td>{{ $operador->persona->nombrecompleto}}</td>
 			<td>{{ $operador->telefono_laboral}}</td>
 			<td><a href="" class="label label-success">Ver</a></td>
 		

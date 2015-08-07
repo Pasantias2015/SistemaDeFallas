@@ -19,7 +19,7 @@
                             @include('Unidades.form.form')
                             </div>
 
-                            @include('tools.botones')
+                            @include('tools.botones-actualizar')
                             {!! Form::close() !!}
 
                         </div>

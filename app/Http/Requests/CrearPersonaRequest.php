@@ -24,12 +24,13 @@ class CrearPersonaRequest extends Request {
 		return [
 		'pnombre' =>'required',
 		'papellido' =>'required',
-		'cedula' =>'required|numeric,unique:personas,cedula',
-		'fnacimiento' =>'required',
+		'cedula' =>'required|unique:personas,cedula',
+		'rif' =>'required|unique:personas,cedula',
+		'fnacimiento' =>'required|date|max:11',
 		'sexo' =>'required',
 		'telefono-hab' =>'required',
-		'telefono-mov' =>'required',
-		
+		'estadocivil' =>'required'
+			
 		];
 	}
 

@@ -24,11 +24,11 @@ class Persona extends Model {
 
 	public function usuario()
 	{
-        return $this->hasOne('App\User', 'id');
+        return $this->hasOne('App\User','id');
 	}
 
 	public function operador()
 	{
-        return $this->hasOne('App\Operador', 'id');
+        return $this->hasOne('App\Operador','id');
 	}
 }  
