@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateParroquiasTable extends Migration {
+class CreatePiezasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,14 @@ class CreateParroquiasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('parroquias', function(Blueprint $table)
+		Schema::create('piezas', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('ciudad_id')->unsigned();
+			$table->string('codigo');
 			$table->string('descripcion');
+			$table->integer('cantidad')->unsigned();
+			$table->integer('grupo_id')->unsigned();
+			$table->foreign('grupo_id')->references('id')->on('grupos');
 		});
 	}
 
@@ -27,7 +30,7 @@ class CreateParroquiasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('parroquias');
+		Schema::drop('piezas');
 	}
 
 }

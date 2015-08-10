@@ -7,9 +7,9 @@
 			<div class="panel panel-danger">
 				@if(count($unidades) > 0)
 				<div class="panel-heading">Listado De Unidades</div>
-				
+			
 				<div style="overflow-x:scroll">
-   
+
 					<table class="table table-bordered table-hover">
 						<tr>
 							<th>ID</th>
@@ -17,6 +17,8 @@
 							<th>Numero VIN</th>
 							<th>Serial de Carroceria</th>
 							<th>Serial de Motor</th>
+							<th>Modelo</th>
+							<th>Año</th>
                             <th>Accion</th>
 						</tr>
 						@foreach($unidades as $unidad)
@@ -26,7 +28,10 @@
 							<td>{{ $unidad->vin}}</td>
 							<td>{{ $unidad->serialcarroceria}}</td>
 							<td>{{ $unidad->serialmotor}}</td>
-                            <td><a href="{{ route('unidades.edit',$unidad) }}">Editar</a></td>
+							<td>{{ $unidad->modelo->codigo." - ".$unidad->modelo->descripcion}}</td>
+							<td>{{ $unidad->year}}</td>
+							
+                            <td><a >Editar</a></td>
 							
 						</tr>
 						@endforeach	

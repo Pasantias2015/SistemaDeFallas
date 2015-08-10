@@ -6,6 +6,8 @@
     <a href="{{ url('unidades/create') }}"><li>Registrar Unidad</li></a>
   	<a href="{{ url('unidades/') }}"><li>Consultar Unidades</li></a>
   	<a href="{{ url('unidadoperadores') }}"><li>Asignar Unidad</li></a>
+    <a href="{{ url('asignar') }}"><li>Asignar Codigo del Sistema</li></a>
+
     </ul>
       </div>
     <div class='sidebar-menu'><i class="fa fa-exclamation-triangle left"></i></i>Fallas<div class='expand'><i class="fa fa-angle-left"></i></div></div>
@@ -36,6 +38,7 @@
       
       </ul>
       </div>
+    
     <div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
@@ -46,8 +49,16 @@
       
       <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
      
-      
-      
+      <a href="{{ url('modelos') }}"><li>Registrar Modelo</li></a>
+      <a href="{{ url('secciones') }}"><li>Registrar Seccion</li></a>
+      <a href="{{ url('grupos') }}"><li>Registrar Grupo</li></a>
+      <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
+      <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
+      <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
+      <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
+      <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
+      <a href="{{ url('almacen') }}"><li>Almacen </li></a>
+                
 
 
 

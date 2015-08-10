@@ -29,13 +29,13 @@
             			<tr>
             				<th>ID</th>
             				<th>Descripcion</th>
-                                    <th>Patio</th>
+                            <th>Patio</th>
             				<th>Accion</th>
             			</tr>
             			@foreach($puestos as $puesto)
             			<tr>            				
             				<td>{{ $puesto->id }}</td>
-                                    <td>{{ $puesto->descripcion }}</td>
+                            <td>{{ $puesto->descripcion }}</td>
             				<td>{{ $puesto->patio->descripcion }}</td>
             				<td>
             					<a href="{{ route('puestos.edit',$puesto) }}" class="btn btn-info">Modificar</a>

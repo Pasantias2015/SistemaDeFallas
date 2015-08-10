@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Requests\CrearUnidadRequest;
 use App\Http\Requests\EditUnidadRequest;
 use App\Unidad;
+use App\Modelo;
 
 class UnidadController extends Controller {
 
@@ -31,10 +32,9 @@ class UnidadController extends Controller {
 	 */
 	public function index()
 	{
+
 		$unidades = Unidad::paginate(10);
- 		$unidades->setPath('unidades');
- 		return view('Unidades.unidades',['unidades'=>$unidades]);
-		
+		return view('Unidades.unidades',compact('unidades'));
 	}
 	public function asignarunidad()
 	{
@@ -52,8 +52,6 @@ class UnidadController extends Controller {
 	*/
 	return view ('Unidades.unidadoperador');
 	}
-	
-	
 	/**
 	 * Show the form for creating a new resource.
 	 *
@@ -61,10 +59,8 @@ class UnidadController extends Controller {
 	 */
 	public function create()
 	{
-		
-		return view('Unidades.registrarunidad');
-		
-
+		$modelos= Modelo::all();
+		return view('Unidades.registrarunidad',compact('modelos'));
 	}
 
 	/**
@@ -116,7 +112,6 @@ class UnidadController extends Controller {
         $unidad->fill($request->all());
         $unidad->save();
         return redirect()->back();
-
 	}
 	
 	/**

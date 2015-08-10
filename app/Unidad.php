@@ -10,6 +10,11 @@ class Unidad extends Model {
 	 						'nidentificacion',
 	 						'vin',
 	 						'serialmotor',
+	 						'modelo_id',
+	 						'codigosistema',
+	 						'uso',
+	 						'year'
+	 						//para monitero 
 	 						/*'kilometraje',
 	 						'cantpersona',
 	 						'pesomax',
@@ -19,7 +24,12 @@ class Unidad extends Model {
 	 						'longitud',
 	 						'combustible'*/
 	 						];
+	 public $timestamps = false; 
 
+	 public function modelo()
+	 {
+	 	return $this->belongsTo('App\Modelo');
+	 }
 	 public function puesto()
 	 {
 	 	return $this->belongsMany('App\PuestoUnidad','id');
@@ -27,7 +37,7 @@ class Unidad extends Model {
 
 	 public function servicio()
 	 {
-	 	return $this->belongsTo('App\ServicioUnidadOperador','id');
+	 	return $this->belongsTo('App\ServicioUnidadOperador');
 	 }
 
 }
