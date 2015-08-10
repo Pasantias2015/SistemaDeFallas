@@ -91,3 +91,5 @@ resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
 resource('item','itemController');
+
+

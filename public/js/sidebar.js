@@ -37,6 +37,7 @@ $(document).ready(function () {
 });
 
 /* script de tabla dinamica*/
+
 $(document).ready(function(){
     $("button[name|='asignar']").toggle();
     $("select[name|='servicio']").toggle();

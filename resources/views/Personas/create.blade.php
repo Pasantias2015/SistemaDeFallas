@@ -1,114 +1,235 @@
-<div class=" col-md-6">
-  <div class="form-group contenedor-foto">
-    <img src="" alt="" class="foto-perfil" >
+<div class="row">
+  
+  <div class=" col-md-6">
+    <div class="form-group contenedor-foto">
+      <div class="fileinput  fileinput-new" data-provides="fileinput">
+        <div class="foto-perfil fileinput-preview thumbnail " data-trigger="fileinput" ></div>
+          <div class="custom-input-file btn btn-info form-control">
+            <input type="file" src="/images/perfil.jpg" name="foto" size="1" class="input-file">
+            Subir archivo 
+          </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-6">
+    <h4>Datos Basicos</h4>
+    <!-- cedula -->
+    <div class="form-group row">
+        <div class="col-md-12 "><span>Cedula De identidad</span></div>
+        <div class="col-md-3 ">  
+          <select name="letracedula" id="letracedula" class="form-control">
+            <option  value="V-">V</option>              
+            <option value="E-">E</option>
+          </select>
+        </div>
+
+      <div class="col-md-9 spl">
+        {!! Form::text('cedula',null,['class'=>'form-control']) !!}
+      </div>
+
+    </div>
+      <!--     rif -->
+    <div class="form-group row">
+        <div class="col-md-12 "><span>Numero De Registro Fiscal</span></div>
+        <div class="col-md-3 ">  
+          <select name="letrarif" id="letrarif" class="form-control">
+            <option  value="V-">J</option>              
+            <option value="E-">G</option>
+            <option value="E-">V</option>
+          </select>
+        </div>
+
+        <div class="col-md-9 spl">
+          {!! Form::text('rif',null,['class'=>'form-control']) !!}
+        </div>
+
+      </div>
+       <!-- fecha de nacimiento -->
+       <div class="form-group row">
+           <div class="col-md-6"><span>Fecha De Nacimiento</span>  </div> 
+           <div class="col-md-6">{!! Form::date('fnacimiento','Fecha de nacimiento',['class'=>'form-control']) !!}  </div>  
+       </div>
+
+      <!-- sexo -->
+     <div class="form-group row">
+         <div class="col-md-5"><span>Sexo</span></div> 
+          <div class="col-md-7">
+              <select name="sexo" id="sexo" class="form-control">
+             <option  value="Masculino">Masculino</option>              
+             <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>  
+      </div>   
   </div>
 
-  <div class="form-group">
-      <div class="custom-input-file btn btn-info form-control">
-          <input type="file" size="1" class="input-file">
-          Subir archivo    
-      </div>  
-  </div>
-  
-  <div class="form-group">
-      <span>Rif</span>
-          {!! Form::text('rif',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-      <span>Pasaporte</span>
-          {!! Form::text('pasaporte',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-      <span>Primer Nombre</span>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group row">
+      <div class="col-md-5"><span>Primer Nombre</span>  </div>
+       <div class="col-md-7">    
           {!! Form::text('pnombre',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-      <span>Segundo Nombre</span>
-          {!! Form::text('snombre',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-      <span>Primer Apellido</span>
+       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Primer Apellido</span>  </div>
+       <div class="col-md-7">    
           {!! Form::text('papellido',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-      <span>Segundo Apellido</span>
-          {!! Form::text('sapellido',null,['class'=>'form-control']) !!}
-  </div>
+       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Estado Civil</span>  </div>
+       <div class="col-md-7">    
+          <select name="estadocivil" id="estadocivil" class="form-control">
+            <option value="soltero(a)">soltero(a)</option>
+            <option value="casado(a)">casado(a)</option>
+            <option value="divorciado(a)">divorciado(a)</option>
+            <option value="viudo(a)">viudo(a)</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Numero De Hijos</span>  </div>
+       <div class="col-md-7">    
+          {!! Form::text('correo-electronico',null,['class'=>'form-control']) !!}
+       </div>
+    </div>
+    
+    <div class="form-group row">
+      <div class="col-md-5"><span>Profesion</span>  </div>
+       <div class="col-md-7">    
+          <select name="profesion_id" id="profesion_id" class="form-control">
+          @foreach($profesiones as $profesion)
+            <option value="{{ $profesion->id}}">{{ $profesion->descripcion }}</option>
+          @endforeach
+            </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Telf. Movil</span>  </div>
+       <div class="col-md-7">    
+          {!! Form::text('telefono-mov',null,['class'=>'form-control']) !!}
+       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Estado</span>  </div>
+       <div class="col-md-7">    
+          <select name="estado" id="estado" class="form-control">
+            <option value="ninguno">Venezuela</option>            
+          </select>
+      </div>
+    </div>
+     <div class="form-group row">
+      <div class="col-md-5"><span>Municipio</span>  </div>
+       <div class="col-md-7">    
+          <select name="municipio" id="municipio" class="form-control">
+            <option value="ninguno">Palavecino</option>            
+          </select>
+      </div>
+    </div>
+
+
+  </div> 
   
+
+  <div class="col-md-6">
+    <div class="form-group row">
+      <div class="col-md-5"><span>Segundo Nombre</span>  </div>
+       <div class="col-md-7">    
+          {!! Form::text('snombre',null,['class'=>'form-control']) !!}
+       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Segundo Apellido</span>  </div>
+       <div class="col-md-7">    
+          {!! Form::text('sapellido',null,['class'=>'form-control']) !!}
+       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Email</span>  </div>
+       <div class="col-md-7">    
+          {!! Form::text('correo-electronico',null,['class'=>'form-control']) !!}
+       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Nivel De Estudio</span>  </div>
+       <div class="col-md-7">    
+          <select name="nivel" id="nivel" class="form-control">
+            <option value="ninguno">ninguno</option>
+            <option value="bachiller">bachiller</option>
+            <option value="universitario">universitario</option>
+            <option value="viudo(a)">viudo(a)</option>
+          </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Telf. Habitacion</span>  </div>
+       <div class="col-md-7">    
+          {!! Form::text('telefono-hab',null,['class'=>'form-control']) !!}
+       </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Pais</span>  </div>
+       <div class="col-md-7">    
+          <select name="pais" id="pais" class="form-control">
+            @foreach($paises as $pais)
+          <option value="{{$pais->id}}">{{$pais->descripcion}}</option>
+          @endforeach          
+          </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Ciudad</span>  </div>
+       <div class="col-md-7">    
+          <select name="ciudad" id="ciudad" class="form-control">
+            @foreach($ciudades as $ciudad)
+          <option value="{{$ciudad->id}}">{{$ciudad->descripcion}}</option>
+          @endforeach          
+          </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Parroquia</span>  </div>
+       <div class="col-md-7">    
+          <select name="parroquia_id" id="parroquia" class="form-control">
+          @foreach($parroquias as $parroquia)
+          <option value="{{ $parroquia->id }}">{{ $parroquia->descripcion }}</option>
+          @endforeach        
+          </select>
+      </div>
+    </div>
+  </div> 
+
+</div>  
+<div class="col-md-12">
+  <div class="form-group row">
+      <span>Direccion Exacta</span>
+          {!! Form::textarea('snombre',null,['class'=>'form-control','rows'=>3]) !!}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+  <div class="form-group row">
+      <div class="col-md-5"><strong>Coordinacion</strong>  </div>
+       <div class="col-md-7">    
+          <select name="coordinacion" id="coordinacion" class="form-control">
+            <option value="">Tecnologia</option>            
+          </select>
+      </div>
+    </div>
 </div>
 <div class="col-md-6">
-<h3>Datos Basicos</h3>
-      <span>Cedula de identidad</span>
-  <div class="form-group">
-  
-      <select name="nacionalidad" id="nacionalidad" class="form-control">
-                <option value=" ">V</option>
-          <option value=" ">E</option>
-      </select>
-          {!! Form::text('cedula',null,['class'=>'form-control']) !!}
-  </div>
-
-  <div class="form-group">
-        <strong>  dasdasd</strong>      
-          {!! Form::text('rif',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-      <span>Pasaporte</span>
-          {!! Form::text('pasaporte',null,['class'=>'form-control']) !!}
-  </div>
-
-
-
-
-  <div class="form-group">
-    <span>Fecha De Nacimiento</span>
-      {!! Form::date('fnacimiento','Fecha de nacimiento',['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-    <span>Sexo</span>
-    <select name="sexo" id="">
-      <option>Hombre</option>
-      <option>Mujer</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <span>Estado Civil</span>
-    <select name="estadocivil" id="">
-      <option>casado(a)</option>
-      <option>divorciado(a)</option>
-      <option>soltero(a)</option>
-      <option>viudo(a)</option>
-    </select>
-  </div>
-  <div class="form-group">
-      <span>Correo-Electronico</span>
-          {!! Form::text('sapellido',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-    <span>Pais</span>
-    <select name="pais" id="">
-      <option>Venezuela</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <span>Estado</span>
-    <select name="estado" id="">
-      <option>Lara</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <span>Ciudad</span>
-    <select name="ciudad" id="">
-      <option>Cabudare</option>
-    </select>
-  </div>
-  <div class="form-group">
-      <span>Direccion</span>
-          {!! Form::text('direccion',null,['class'=>'form-control']) !!}
-  </div>
-  <div class="form-group">
-      <span>Telefono</span>
-          {!! Form::text('telefono',null,['class'=>'form-control']) !!}
+  <div class="form-group row">
+    <div class="col-md-5"><strong>Cargo</strong>  </div>
+       <div class="col-md-7">    
+          <select name="rol" id="rol" class="form-control">
+          @foreach($roles as $rol)
+            <option value="{{ $rol->id }}">{{ $rol->descripcion }}</option>            
+          @endforeach
+          </select>
+      </div>
   </div>
 </div>
-
+</div>

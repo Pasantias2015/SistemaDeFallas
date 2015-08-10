@@ -5,11 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 class Operador extends Model {
 
 	protected $table = 'operadores';
-	protected $fillable = ['telefonolaboral'];
+	public $timestamps=false;
 
 	public function persona()
 	{
-		return $this->belongsTo('Persona');
+		return $this->belongsTo('App\Persona');
 	}
 
 	public function servicio()

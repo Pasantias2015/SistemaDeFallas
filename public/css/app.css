@@ -4616,6 +4616,7 @@ a.badge:focus {
 .thumbnail a > img {
   margin-left: auto;
   margin-right: auto;
+  height: inherit;
 }
 a.thumbnail:hover,
 a.thumbnail:focus,
