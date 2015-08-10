@@ -17,14 +17,7 @@
 
 							<div class="row">
 								<div class="col-md-6">
-									<div class="form-group row operador">
-									      <div class="col-md-5"><strong>Telefono Laboral</strong></div>
-									       <div class="col-md-7">    
-									          
-									          <input type="text" id="telefono_laboral" name="telefono_laboral" >
-									      </div>
-								    </div>
-								    <div class="form-group row usuario">
+									<div class="form-group row usuario">
 									      <div class="col-md-5"><strong>Usuario</strong></div>
 									       <div class="col-md-7">    
 									          {!! Form::text('usuario',null,['class'=>'form-control']) !!}
@@ -34,12 +27,7 @@
 							  		</div>
 						  	</div>
 
-							<div class="col-md-12">
-								<div class="col-md-offset-4 col-md-8 form-group">
-									<button type="submit" class="btn btn-success">Crear</button>
-									<button type="button" class="btn btn-danger" onclick="usuario()" >Cancelar</button>
-								</div>
-							</div>
+							@include('tools.botones-registrar')
 						{!! Form::close() !!}
 					</div>
 				</div>
@@ -48,23 +36,19 @@
 	</div>
 	<script>
 	$(document).ready(function(){
+		$('#pais').on('change',function(e){
 		
-    
-    $(".operador").toggle();
-    
-
-	   $('#rol').on('change', function() {
-	   	 if(this.value == 2){
-	   $(".usuario").toggle();
-	   $(".operador").toggle();
-	   }
-	   else{
-	   	$(".usuario").toggle();
-	   $(".operador").toggle();
-	   };
-	   	    
-    
+		var pais_id = e.target.value;
+		$.get('/ajax-subcat?pais_id='+pais_id,function(data){
+			$('#estado').empty();
+			$.each(data,function(index,estadoObj){
+				$('#estado').append('<option value="'+estadoObj.id+'">'+estadoObj.name+'</option>');
+			});
+		});
+	console.log(e);});
 });
-});</script>
+	
+
+	</script>
 @endsection
 

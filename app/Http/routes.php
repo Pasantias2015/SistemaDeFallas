@@ -1,5 +1,6 @@
 <?php
-
+use App\Estado;
+use App\Pais;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,7 +18,11 @@ Route::get('/', 'HomeController@index');
 
 
 
-Route::get('home', 'HomeController@index');
+Route::get('home','HomeController@index');
+Route::get('home',function(){
+	 $estado = Estado::first();
+	 return $estado->pais;
+});
 Route::get('/', 'HomeController@index');
 
 Route::get('unidad', 'UnidadController@index');
@@ -91,3 +96,13 @@ resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
 resource('item','itemController');
+/*combo*/
+Route::get('/ajax-subcat',function(){
+$estado = Estado::where('pais_id','=',\Input::get('pais_id'))->get();
+	 return $estado;
+
+$pais_id = \Input::get('pais_id');
+	$estado = Estado::where('pais_id','=',$pais_id);
+	
+return response()->json($estado);
+});

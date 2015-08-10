@@ -1,3 +1,6 @@
+@foreach($estados as $estado)
+            <option value="{{ $estado->id}}">{{ $estado->descripcion }}</option>
+          @endforeach
 <script>
 $(document).ready(function(){
     $("button[name|='asignar']").toggle();

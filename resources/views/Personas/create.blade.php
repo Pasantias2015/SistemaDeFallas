@@ -117,7 +117,7 @@
       <div class="col-md-5"><span>Estado</span>  </div>
        <div class="col-md-7">    
           <select name="estado" id="estado" class="form-control">
-            <option value="ninguno">Venezuela</option>            
+            <option value=""></option>          
           </select>
       </div>
     </div>
@@ -125,7 +125,9 @@
       <div class="col-md-5"><span>Municipio</span>  </div>
        <div class="col-md-7">    
           <select name="municipio" id="municipio" class="form-control">
-            <option value="ninguno">Palavecino</option>            
+            @foreach($municipios as $municipio)
+            <option value="{{ $municipio->id}}">{{ $municipio->descripcion }}</option>
+          @endforeach           
           </select>
       </div>
     </div>

@@ -64,8 +64,9 @@ imagejpeg($persona->foto);
             $paises=Pais::all();
             $estados=Estado::all();
             $ciudades=Ciudad::all();
+            $municipios=Municipio::all();
             $parroquias=Parroquia::all();
-          return view('Operadores.crear',compact('roles','profesiones','paises','ciudades','estados','parroquias'));
+          return view('Operadores.crear',compact('roles','profesiones','paises','ciudades','estados','municipios','parroquias'));
         
     }
 
@@ -78,10 +79,12 @@ imagejpeg($persona->foto);
     {
         $persona = Persona::create($request->all());
         if($request->rol == 'Supervisor')
-        $operador = new Operador;
-        $operador->persona_id =$persona->id;
-        $operador->telefono_laboral = $request->telefono_laboral;
-        $operador->save();
+        {
+            $operador = new Operador;
+            $operador->persona_id =$persona->id;
+            $operador->save();
+        }
+       
         return redirect()->route('home');
    }
 
