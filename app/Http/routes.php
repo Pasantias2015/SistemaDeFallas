@@ -25,8 +25,8 @@ Route::get('falla', 'FallaController@registrarfalla');
 
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	//'password' => 'Auth\PasswordController',
+    'auth' => 'Auth\AuthController',
+    //'password' => 'Auth\PasswordController',
 ]);
 
 
@@ -52,9 +52,14 @@ Route::get('rfuoperador','FallaController@registrarfallaunidadoperador');
 Route::get('rtfalla','FallaController@registrartipofalla');
 Route::get('incidenciaunidad','ReporteController@incidenciaunidad');
 Route::get('cedula','ReporteController@cedula');
+
 /*Vistas De Reportes*/
 //morris
 Route::get('grafica','ReporteController@grafica');
+
+//selects Dependientes
+Route::get('listaModelos','AlmacenController@listaModelos');
+Route::get('listaSeccion','AlmacenController@listaSeccion');
 
 /*Vistas De Transacciones
 Route::get('servicios/operadores','TransaccionController@servicio_operador');
@@ -75,3 +80,14 @@ resource('serviciolugares','ServicioLugarController');
 resource('lugares','LugarController');
 resource('patios','PatioController');
 resource('puestos','PuestoController');
+resource('modelos','ModeloController');
+resource('secciones','SeccionController');
+resource('grupos','GrupoController');
+resource('piezas','PiezaController');
+resource('mantenimiento','MantenimientoController');
+resource('herramientas','HerramientaController');
+resource('almacen','AlmacenController');
+resource('asignar','AsignarController');
+resource('cajas','CajaController');
+resource('coordinaciones','CoordinacionController');
+resource('item','itemController');

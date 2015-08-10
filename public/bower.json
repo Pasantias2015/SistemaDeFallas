@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "name": "Sistema De Control Y Gestion De Fallas",
+=======
  "name": "Sistema De Control Y Gestion De Fallas",
+>>>>>>> b4a00a98088474016041f640610e8a4853dc812c
   "version": "0.0.1",
   "homepage": "https://github.com/Pasantias2015/SistemaDeFallas",
   "authors": [
@@ -21,4 +25,7 @@
     "bootstrap": "~3.3.5"
   }
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> b4a00a98088474016041f640610e8a4853dc812c

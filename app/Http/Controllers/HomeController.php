@@ -40,6 +40,12 @@ class HomeController extends Controller {
 	 *
 	 * @return Response
 	 */
+<<<<<<< HEAD
+	public function index()
+	{
+		/*$results = \DB::select('select o.descripcion from opciones as o, usuario_opcions as uo where (o.id = uo.opcion_id) and(uo.user_id = :userid)', ['userid' => \Auth::user()->id]);
+	
+=======
 
 
 	public function index() 
@@ -48,7 +54,19 @@ class HomeController extends Controller {
 							Bienvenido {{ $key->opcion->descripcion }}
 							@endforeach*/
 		return view('home');
+>>>>>>> b4a00a98088474016041f640610e8a4853dc812c
 		
 	}
 
 }
+<<<<<<< HEAD
+	/*public function index() 
+	{	
+		/*@foreach(Auth::user()->rol->rolopcion as $key)
+							Bienvenido {{ $key->opcion->descripcion }}
+							@endforeach
+		return view('home');
+	}*/
+}
+=======
+>>>>>>> b4a00a98088474016041f640610e8a4853dc812c
