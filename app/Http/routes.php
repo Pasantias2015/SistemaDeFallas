@@ -52,9 +52,14 @@ Route::get('rfuoperador','FallaController@registrarfallaunidadoperador');
 Route::get('rtfalla','FallaController@registrartipofalla');
 Route::get('incidenciaunidad','ReporteController@incidenciaunidad');
 Route::get('cedula','ReporteController@cedula');
+
 /*Vistas De Reportes*/
 //morris
 Route::get('grafica','ReporteController@grafica');
+
+//selects Dependientes
+Route::get('listaModelos','AlmacenController@listaModelos');
+Route::get('listaSeccion','AlmacenController@listaSeccion');
 
 /*Vistas De Transacciones
 Route::get('servicios/operadores','TransaccionController@servicio_operador');
@@ -85,3 +90,4 @@ resource('almacen','AlmacenController');
 resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
+resource('item','itemController');

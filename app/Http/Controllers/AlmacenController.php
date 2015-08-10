@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CrearAlmacenRequest;
 use App\Http\Requests\EditarAlmacenRequest;
+use Response;
 use App\Almacen;
 use App\Herramienta;
 use App\Pieza;
@@ -92,10 +93,9 @@ class AlmacenController extends Controller {
 	 */
 	public function update(EditarAlmacenRequest $request,$id)
 	{
-		 return $request->cantidad+$request->cantidadnueva;
-		$hola=array('cant' => $request->cantidad+$request->cantidadnueva);
+		$cantidadActual=$request->cantidad+$request->cantidadnueva; //buscar!
 		$almacen = Almacen::findOrFail($id);
-		$almacen->fill($request->cantidad+$request->cantidadnueva);
+		$almacen->cantidad = $cantidadActual;
         $almacen->save();
         return redirect('almacen');
 	}
@@ -110,5 +110,24 @@ class AlmacenController extends Controller {
 	{
 		//
 	}
+
+	// funcion para regresar la información de los modelos al Select de los modelos
+	public function listaModelos()
+    {
+    	// Buscamos todos los modelos de nuetra base
+        $modelos = Modelo::all();
+        // Regresamos los modelos obtenidos de la consulta
+        return Response::json($modelos);
+    }
+// funcion para regresar la información de las seccion que pertenecen al modelo selecionado
+    public function listaSeccion()
+    {
+    	// Recibimos ID del modelo selecionado
+        $id = Request::input('id');
+        // buscamos las seccion que pertenecen al estado
+        $seccion = Seccion::where('seccion_id',$id)->get();
+	//  Regresamos las seccion obtenidas de la consulta
+        return Response::json($seccion);
+    }
 
 }

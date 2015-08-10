@@ -47,69 +47,6 @@
 </div>
 @endsection
 
-<!-- Modal Pieza-->
-<div class="modal fade" id="pieza" role="dialog">
-    <div class="modal-dialog">
-      <!-- Modal content-->
-      <div class="modal-content panel panel-danger">
-        <div class="modal-header panel-heading">
-           Ingresar Pieza al Almacen
-        </div>
-        <div class="modal-body">
-        {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
-            <div class="form-group">
-                <span>Modelo: </span> 
-                <select name="modelos" class="form-control">
-                    @foreach($modelos as $modelo)
-                        <option value="{{ $modelo->id }}">{{ $modelo->codigo."-".$modelo->descripcion."-".$modelo->combustible."-".$modelo->transmision."-".$modelo->dimension }}</option>    
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <span>Sistema: </span>
-                <select name="seccion" class="form-control">
-                    @foreach($secciones as $seccion)
-                        <option value="{{ $seccion->id }}">{{ $seccion->codigo."-".$seccion->descripcion }}</option>    
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <span>Grupo: </span> 
-                <select name="grupo" class="form-control">
-                @foreach($grupos as $grupo)
-                    <option value="{{ $grupo->id }}">{{ $grupo->codigo."-".$grupo->descripcion }}</option>    
-                @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <span>Pieza: </span>
-                <select name="codigo" class="form-control">
-                    @foreach($piezas as $pieza)
-                        <option value="{{ $pieza->codigo." : ".$pieza->descripcion}}">{{ $pieza->codigo."-".$pieza->descripcion }}</option>    
-                   @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <span>Descripcion: </span>
-                {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
-            </div>
-            <div class="form-group">
-                <span>Cantidad: </span>
-                {!! Form::text('cantidad',null,['class'=>'form-control']) !!}
-            </div> 
-            <div class="form-group">
-                    <input type="hidden" name="tipo" value="Pieza">
-            </div>       
-        </div>
-        <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Registrar</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
-        </div>
-      {!! Form::close() !!}
-      </div>
-    </div>
-</div>
-
 <!-- Modal Herramienta-->
 <div class="modal fade" id="herramienta" role="dialog">
     <div class="modal-dialog">
@@ -183,3 +120,87 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Pieza-->
+<div class="modal fade" id="pieza" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      
+      <div class="modal-content panel panel-danger">
+        <div class="modal-header panel-heading">
+           Ingresar Pieza al Almacen
+        </div>
+        <div class="modal-body">
+        {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
+            <div class="form-group">
+                <span>Modelo: </span> 
+                <select name="modelo_id" class="form-control">
+                     <option>Seleccione un Modelo</option> 
+                     @foreach($modelos as $modelo)
+                        <option value="{{ $modelo->id }}">{{ $modelo->codigo."-".$modelo->descripcion."-".$modelo->combustible."-".$modelo->transmision."-".$modelo->dimension }}</option>    
+                    @endforeach   
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Sistema: </span>
+                <select name="seccion_id" class="form-control">
+                        <option>Seleccione Primero un Modelo</option>    
+                </select>
+            </div>
+
+
+            <!-- <div class="form-group">
+                <span>Modelo: </span> 
+                <select name="modelo_id" class="form-control">
+                    @foreach($modelos as $modelo)
+                        <option value="{{ $modelo->id }}">{{ $modelo->codigo."-".$modelo->descripcion."-".$modelo->combustible."-".$modelo->transmision."-".$modelo->dimension }}</option>    
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Sistema: </span>
+                <select name="seccion_id" class="form-control">
+                    @foreach($secciones as $seccion)
+                        <option value="{{ $seccion->id }}">{{ $seccion->codigo."-".$seccion->descripcion }}</option>    
+                    @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Grupo: </span> 
+                <select name="grupo_id" class="form-control">
+                @foreach($grupos as $grupo)
+                    <option value="{{ $grupo->id }}">{{ $grupo->codigo."-".$grupo->descripcion }}</option>    
+                @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Pieza: </span>
+                <select name="codigo_id" class="form-control">
+                    @foreach($piezas as $pieza)
+                        <option value="{{ $pieza->codigo." : ".$pieza->descripcion}}">{{ $pieza->codigo."-".$pieza->descripcion }}</option>    
+                   @endforeach
+                </select>
+            </div> -->
+            <div class="form-group">
+                <span>Descripcion: </span>
+                {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
+            </div>
+            <div class="form-group">
+                <span>Cantidad: </span>
+                {!! Form::text('cantidad',null,['class'=>'form-control']) !!}
+            </div> 
+            <div class="form-group">
+                    <input type="hidden" name="tipo" value="Pieza">
+            </div>       
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+        </div>
+      {!! Form::close() !!}
+      </div>
+    </div>
+
+
+</div>
+
