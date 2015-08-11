@@ -1,6 +1,5 @@
 <?php
-use App\Estado;
-use App\Pais;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -19,10 +18,7 @@ Route::get('/', 'HomeController@index');
 
 
 Route::get('home','HomeController@index');
-Route::get('home',function(){
-	 $estado = Estado::first();
-	 return $estado->pais;
-});
+
 Route::get('/', 'HomeController@index');
 
 Route::get('unidad', 'UnidadController@index');
@@ -95,14 +91,11 @@ resource('almacen','AlmacenController');
 resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
-resource('item','itemController');
-/*combo*/
-Route::get('/ajax-subcat',function(){
-$estado = Estado::where('pais_id','=',\Input::get('pais_id'))->get();
-	 return $estado;
+resource('items','ItemController');
+resource('personasver','PersonaController@show');
 
-$pais_id = \Input::get('pais_id');
-	$estado = Estado::where('pais_id','=',$pais_id);
-	
-return response()->json($estado);
-});
+/*combo*/
+Route::get('/ajax-estado','CargaController@cargarestados');
+Route::get('/ajax-ciudad','CargaController@cargarciudades');
+Route::get('/ajax-municipio','CargaController@cargarmunicipios');
+Route::get('/ajax-parroquia','CargaController@cargarparroquias');

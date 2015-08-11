@@ -7,14 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Persona;
 use Illuminate\Http\Request;
 use App\Operador;
-use App\User;
-use App\Rol;
-use App\Profesion;
-use App\Pais;
-use App\Estado;
-use App\Ciudad;
-use App\Municipio;
-use App\Parroquia;
+
 
 class OperadorController extends Controller {
 
@@ -59,15 +52,7 @@ imagejpeg($persona->foto);
      */
     public function create()
     {
-            $roles=Rol::all();
-            $profesiones=Profesion::all();
-            $paises=Pais::all();
-            $estados=Estado::all();
-            $ciudades=Ciudad::all();
-            $municipios=Municipio::all();
-            $parroquias=Parroquia::all();
-          return view('Operadores.crear',compact('roles','profesiones','paises','ciudades','estados','municipios','parroquias'));
-        
+                    
     }
 
     /**
@@ -78,6 +63,7 @@ imagejpeg($persona->foto);
     public function store(CrearPersonaRequest $request)
     {
         $persona = Persona::create($request->all());
+        return redirect()->route('home');
         if($request->rol == 'Supervisor')
         {
             $operador = new Operador;
@@ -85,7 +71,7 @@ imagejpeg($persona->foto);
             $operador->save();
         }
        
-        return redirect()->route('home');
+        
    }
 
     /**
