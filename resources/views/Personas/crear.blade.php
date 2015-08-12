@@ -1,19 +1,15 @@
 @extends('app') 
-
 @include('tools.sidebar')
-
-
-
 @section('content')
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
 				<div class="panel panel-danger">
-					<div class="panel-heading">Registro De Operador</div>
+					<div class="panel-heading">Registro de Personas</div>
 					<div class="panel-body">
 						@include('tools.errors')
-						{!! Form::open(['route'=>'operadores.store','method'=>'POST']) !!}
-							@include('Personas.create')
+						{!! Form::open(['route'=>'personas.store','method'=>'POST']) !!}
+							@include('Personas.datos')
 							@include('tools.botones-registrar')
 						{!! Form::close() !!}
 					</div>
@@ -56,9 +52,35 @@
 			});
 			console.log(e);
 		});
-});
-	
+		$('#municipio').on('change',function(e){
+		
+			var municipio_id = e.target.value;
+			$.get('/ajax-parroquia?municipio_id='+municipio_id,function(data){
+				$('#parroquia').empty();
+				$.each(data,function(index,parroquiaObj){
+					$('#parroquia').append('<option value="'+parroquiaObj.id+'">'+parroquiaObj.descripcion+'</option>');
+				});
+			});
+			console.log(e);
+		});
+	});
+	 function soloLetras(e){
+       key = e.keyCode || e.which;
+       tecla = String.fromCharCode(key).toLowerCase();
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+       especiales = "8-37-39-46";
 
+       tecla_especial = false
+       for(var i in especiales){
+            if(key == especiales[i]){
+                tecla_especial = true;
+                break;
+            }
+        }
+
+        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+            return false;
+        }
+    }
 	</script>
 @endsection
-

@@ -13,4 +13,4 @@ public function estado()
 	{
         return $this->hasMany('App\Estado', 'id');
 	}
-	}
+}

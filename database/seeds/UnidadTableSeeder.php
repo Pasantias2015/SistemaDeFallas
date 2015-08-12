@@ -8,6 +8,8 @@ class UnidadTableSeeder extends Seeder
 {
 	public function run()
 	{
+		
+
 		$arr = [];
 
 		for ($i = 0; $i < 10; $i++)

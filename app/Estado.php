@@ -6,7 +6,7 @@ class Estado extends Model {
 
 	protected $table = 'estados';
 	public $timestamps = false;
-	protected $fillable=['descripcion'];
+	protected $fillable=['descripcion','pais_id'];
 
 	public function pais()
 	{

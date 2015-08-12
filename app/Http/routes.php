@@ -17,7 +17,8 @@ Route::get('/', 'HomeController@index');
 
 
 
-Route::get('home', 'HomeController@index');
+Route::get('home','HomeController@index');
+
 Route::get('/', 'HomeController@index');
 
 Route::get('unidad', 'UnidadController@index');
@@ -92,3 +93,10 @@ resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
 resource('items','ItemController');
+resource('personasver','PersonaController@show');
+
+/*combo*/
+Route::get('/ajax-estado','CargaController@cargarestados');
+Route::get('/ajax-ciudad','CargaController@cargarciudades');
+Route::get('/ajax-municipio','CargaController@cargarmunicipios');
+Route::get('/ajax-parroquia','CargaController@cargarparroquias');

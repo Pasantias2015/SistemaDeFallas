@@ -25,7 +25,7 @@
         </div>
 
       <div class="col-md-9 spl">
-        {!! Form::text('cedula',null,['class'=>'form-control']) !!}
+      <input type="text"  name="cedula" onkeypress='return event.charCode >= 48 && event.charCode <= 57'class="form-control"></input>
       </div>
 
     </div>
@@ -41,14 +41,14 @@
         </div>
 
         <div class="col-md-9 spl">
-          {!! Form::text('rif',null,['class'=>'form-control']) !!}
+          <input type="text"  name="rif" onkeypress='return event.charCode >= 48 && event.charCode <= 57'class="form-control"></input>
         </div>
 
       </div>
        <!-- fecha de nacimiento -->
        <div class="form-group row">
            <div class="col-md-6"><span>Fecha De Nacimiento</span>  </div> 
-           <div class="col-md-6">{!! Form::date('fnacimiento','Fecha de nacimiento',['class'=>'form-control']) !!}  </div>  
+           <div class="col-md-6"><input type="date" class="form-control" name="fnacimiento" min="01-01-1915" max="01-01-2000"></div>  
        </div>
 
       <!-- sexo -->
@@ -70,13 +70,13 @@
     <div class="form-group row">
       <div class="col-md-5"><span>Primer Nombre</span>  </div>
        <div class="col-md-7">    
-          {!! Form::text('pnombre',null,['class'=>'form-control']) !!}
+          <input type="text" name="pnombre" class="form-control" onkeypress="return soloLetras(event)">
        </div>
     </div>
     <div class="form-group row">
       <div class="col-md-5"><span>Primer Apellido</span>  </div>
        <div class="col-md-7">    
-          {!! Form::text('papellido',null,['class'=>'form-control']) !!}
+          <input type="text" name="papellido" class="form-control" onkeypress="return soloLetras(event)">
        </div>
     </div>
     <div class="form-group row">
@@ -117,6 +117,7 @@
       <div class="col-md-5"><span>Estado</span>  </div>
        <div class="col-md-7">    
           <select name="estado" id="estado" class="form-control">
+          <option default>Seleccione</option>
             <option value=""></option>          
           </select>
       </div>
@@ -125,10 +126,8 @@
       <div class="col-md-5"><span>Municipio</span>  </div>
        <div class="col-md-7">    
           <select name="municipio" id="municipio" class="form-control">
-            @foreach($municipios as $municipio)
-            <option value="{{ $municipio->id}}">{{ $municipio->descripcion }}</option>
-          @endforeach           
-          </select>
+            <option value=""></option>
+           </select>
       </div>
     </div>
 
@@ -140,13 +139,13 @@
     <div class="form-group row">
       <div class="col-md-5"><span>Segundo Nombre</span>  </div>
        <div class="col-md-7">    
-          {!! Form::text('snombre',null,['class'=>'form-control']) !!}
+          <input type="text" name="snombre" class="form-control" onkeypress="return soloLetras(event)">
        </div>
     </div>
     <div class="form-group row">
       <div class="col-md-5"><span>Segundo Apellido</span>  </div>
        <div class="col-md-7">    
-          {!! Form::text('sapellido',null,['class'=>'form-control']) !!}
+          <input type="text" name="sapellido" class="form-control" onkeypress="return soloLetras(event)">
        </div>
     </div>
     <div class="form-group row">
@@ -176,9 +175,10 @@
       <div class="col-md-5"><span>Pais</span>  </div>
        <div class="col-md-7">    
           <select name="pais" id="pais" class="form-control">
+            <option default>Seleccione</option>
             @foreach($paises as $pais)
-          <option value="{{$pais->id}}">{{$pais->descripcion}}</option>
-          @endforeach          
+            <option value="{{$pais->id}}">{{$pais->descripcion}}</option>
+            @endforeach          
           </select>
       </div>
     </div>
@@ -186,9 +186,8 @@
       <div class="col-md-5"><span>Ciudad</span>  </div>
        <div class="col-md-7">    
           <select name="ciudad" id="ciudad" class="form-control">
-            @foreach($ciudades as $ciudad)
-          <option value="{{$ciudad->id}}">{{$ciudad->descripcion}}</option>
-          @endforeach          
+          <option default>Seleccione</option>
+           <option value=""></option>
           </select>
       </div>
     </div>
@@ -196,10 +195,9 @@
       <div class="col-md-5"><span>Parroquia</span>  </div>
        <div class="col-md-7">    
           <select name="parroquia_id" id="parroquia" class="form-control">
-          @foreach($parroquias as $parroquia)
-          <option value="{{ $parroquia->id }}">{{ $parroquia->descripcion }}</option>
-          @endforeach        
-          </select>
+          <option default>Seleccione</option>
+          <option value=""></option>
+         </select>
       </div>
     </div>
   </div> 
