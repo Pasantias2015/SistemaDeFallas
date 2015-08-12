@@ -92,7 +92,7 @@ resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
 resource('items','ItemController');
-resource('personasver','PersonaController@show');
+resource('personas','PersonaController');
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');

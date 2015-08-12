@@ -22,14 +22,15 @@ class CrearPersonaRequest extends Request {
 	public function rules()
 	{
 		return [
-		'pnombre' =>'required',
-		'papellido' =>'required',
-		'cedula' =>'required|unique:personas,cedula',
-		'rif' =>'required|unique:personas,cedula',
-		'fnacimiento' =>'required|date|max:11',
-		'sexo' =>'required',
-		'telefono-hab' =>'required',
-		'estadocivil' =>'required'
+		// 'pnombre' =>'required',
+		// 'papellido' =>'required',
+		 'cedula' =>'required|unique:personas,cedula',
+		// 'rif' =>'required|unique:personas,cedula',
+		// 'fnacimiento' =>'required|date|max:11',
+		// 'sexo' =>'required',
+		// 'telefono-hab' =>'required',
+		// 'estadocivil' =>'required',
+		'foto'       => 'required|image|mimes:png'
 			
 		];
 	}
