@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CrearItemRequest;
 use App\Http\Requests\EditarItemRequest;
 use App\Item;
+use App\Mantenimiento;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller {
@@ -16,9 +17,9 @@ class ItemController extends Controller {
 	 */
 	public function index()
 	{
-		
+		$mantenimientos = Mantenimiento::all();
 		$items = Item::paginate(5);
-        return view('Item.crear',compact('items'));
+        return view('Items.crear',compact('items','mantenimientos'));
 	}
 
 	/**
@@ -39,8 +40,9 @@ class ItemController extends Controller {
 	public function store(CrearItemRequest $request)
 	{
 		$item = Item::create($request->all());
+		$mantenimientos = Mantenimiento::all();
 		$items = Item::paginate(5);
-        return view('item.crear',compact('items'));
+        return view('Items.crear',compact('items','mantenimientos'));
 	}
 
 	/**
@@ -63,7 +65,7 @@ class ItemController extends Controller {
 	public function edit($id)
 	{
 		$item = Item::findOrFail($id);
-        return view('Item.editar',compact('item'));
+        return view('Items.editar',compact('item'));
 	}
 
 	/**
@@ -77,7 +79,7 @@ class ItemController extends Controller {
 		$item = Item::findOrFail($id);
         $item->fill($request->all());
         $item->save();
-        return redirect('item');
+        return redirect('items');
 	}
 
 	/**

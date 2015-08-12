@@ -5,10 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class Caja extends Model {
 
 	protected $table = 'cajas';
-	protected $fillable = ['descripcion'];
+	protected $fillable = ['descripcion','mecanico'];
 	public $timestamps = false;
-
-
 
 }
 

@@ -60,6 +60,7 @@ Route::get('grafica','ReporteController@grafica');
 //selects Dependientes
 Route::get('listaModelos','AlmacenController@listaModelos');
 Route::get('listaSeccion','AlmacenController@listaSeccion');
+Route::get('preventivo','MantenimientoController@preventivo');
 
 /*Vistas De Transacciones
 Route::get('servicios/operadores','TransaccionController@servicio_operador');
@@ -90,4 +91,4 @@ resource('almacen','AlmacenController');
 resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
-resource('item','itemController');
+resource('items','ItemController');

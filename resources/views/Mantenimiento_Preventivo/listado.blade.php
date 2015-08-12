@@ -1,0 +1,40 @@
+@extends('app')
+@include('tools.sidebar')
+@section('content')
+<div class="col-md-8 col-md-offset-1">
+      <div class="panel panel-danger">
+            <div class="panel-heading">Mantenimientos Preventivos </div>
+            <div class="panel-body">
+             @include('tools.errors')
+             <!-- ['route'=>'item.store','method'=>'POST'] {{ route('item.edit',$item) }}-->
+            {!! Form::open() !!}
+                  <div class="col-md-12">
+                        <table class="table table-bordered table-striped">
+                              <tr>
+                                    <th>ID</th>
+                                    <th>Fecha</th>
+                                    <th>Unidad</th>
+                                    <th>Observaciones</th>
+                                    <th>Accion</th>
+                              </tr>
+                              @foreach($preventivos as $preventivo)
+                              <tr>                                
+                                <td>{{ $preventivo->id }}</td>
+                                <td>{{ $preventivo->fecha }}</td>
+                                <td>{{ $preventivo->unidad_id }}</td>
+                                <td>{{ $preventivo->observaciones}}</td>
+                                <td>
+                                  <a href="" class="btn btn-info">Ver</a>
+                                </td>                               
+                              </tr>
+                              @endforeach
+                        </table>
+                        {!! $preventivo->render() !!}
+                  </div>
+                  {!! Form::close() !!}
+            </div>
+
+      </div>
+
+</div>
+@endsection

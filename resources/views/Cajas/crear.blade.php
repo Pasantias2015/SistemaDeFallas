@@ -14,6 +14,11 @@
                                 <span>Descripcion: </span>
                                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                         </div>
+                        <div class="form-group">
+                                <span>Mecanico: </span>
+                                {!! Form::text('mecanico',null,['class'=>'form-control']) !!}
+                                                  <!-- llamar mecanico -->
+                        </div>
 					@include('tools.botones-registrar')
             	</div>
             	<div class="col-md-12">
@@ -21,12 +26,14 @@
             			<tr>
             				<th>ID</th>
                             <th>Descripcion</th>
+                            <th>Mecanico</th>
             				<th>Accion</th>
             			</tr>
             			@foreach($cajas as $caja)
             			<tr>            				
                             <td>{{ $caja->id }}</td>
                             <td>{{ $caja->descripcion }}</td>
+                            <td>{{ $caja->mecanico }}</td>
             				<td>
             					<a href="{{ route('cajas.edit',$caja) }}" class="btn btn-info">Modificar</a>
             					<a href="" class="btn btn-danger">Eliminar</a>

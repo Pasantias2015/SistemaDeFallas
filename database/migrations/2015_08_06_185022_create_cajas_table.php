@@ -16,6 +16,9 @@ class CreateCajasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('descripcion');
+			$table->string('mecanico'); 
+			// $table->integer('mecanico_id')->unsigned();
+			// $table->foreign('mecanico_id')->references('id')->on('mecanicos');
 		});
 	}
 

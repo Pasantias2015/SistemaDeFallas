@@ -12,6 +12,7 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza">Pieza</button>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#herramienta">Herramienta</button>
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#articulo">Articulo</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#caja">Caja</button>
             </div>
             <div class="col-md-12">
                     <table class="table table-bordered table-striped">
@@ -110,6 +111,45 @@
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="tipo" value="Articulo">
+                    </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-warning">Registrar</button>
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+            </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+</div>
+ 
+<!--  Modal Caja -->
+<div class="modal fade" id="caja" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+        <div class="modal-content panel panel-danger">
+            <div class="modal-header panel-heading">
+                Ingresar Articulo al Almacen
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
+                    <div class="form-group">
+                        <span>Caja: </span>
+                        <select name="codigo" class="form-control">
+                            @foreach($cajas as $caja)
+                                <option value="{{ $caja->id." : ".$caja->descripcion }}">{{ $caja->id."-".$caja->descripcion }}</option>    
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span>Descripcion: </span>
+                        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        <span>Cantidad: </span>
+                         {!! Form::text('cantidad',null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="tipo" value="Caja">
                     </div>
             </div>
             <div class="modal-footer">

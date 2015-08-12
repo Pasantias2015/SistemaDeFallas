@@ -58,6 +58,7 @@
       <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
       <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
       <a href="{{ url('almacen') }}"><li>Almacen </li></a>
+      <a href="{{ url('items') }}"><li>Registrar Item </li></a>
                 
 
 

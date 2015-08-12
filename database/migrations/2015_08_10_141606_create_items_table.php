@@ -15,8 +15,9 @@ class CreateItemsTable extends Migration {
 		Schema::create('items', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('codigo');
-			$table->string('descripcion');
+			$table->string('nombre');
+			$table->integer('mantenimiento_id')->unsigned();
+			$table->foreign('mantenimiento_id')->references('id')->on('mantenimientos');
 			$table->string('estatus');
 			
 		});
