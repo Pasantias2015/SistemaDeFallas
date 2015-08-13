@@ -41,8 +41,8 @@ class MantenimientoPreventivoController extends Controller {
 	public function store(CrearMantenimientoPreventivoRequest $request)
 	{
 		MantenimientoPreventivo::create($request->all());
-		$unidades =  Unidad::all();
 		$usuarios =  User::all();
+		$unidades =  ServicioUnidadOperador::all();
 		return view('Mantenimiento_Preventivo.crear',compact('unidades','usuarios'));
 	}
 	/**

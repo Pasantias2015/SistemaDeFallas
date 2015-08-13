@@ -21,8 +21,24 @@ class CrearMantenimientoDiarioRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [
-			//
+		return [		'usuario_id'=>'required',
+                        'fecha'=>'required',
+    					'serviciounidadoperador_id'=>'required',
+    					'cnaceitem'=>'required',
+    					'cnarefrigerante'=>'required',
+    					'airene'=>'required',
+    					'cncomb'=>'required',
+    					'ceiasientos'=>'required',
+    					'ceicarroceria'=>'required',
+    					'ceeunidad'=>'required',
+    					'cfrenos'=>'required',
+    					'ccorrea'=>'required',
+    					'cradiador'=>'required',
+    					'ceseguridad'=>'required',
+    					'cbornes'=>'required',
+    					'cefluces'=>'required'
+    					'celuces'=>'required',
+    					'celucesem'=>'required'
 		];
 	}
 

@@ -18,12 +18,12 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                        <div class="col-md-5"><span>Unidad:</span></div>
-                        <div class="col-md-6">   
-                            <select name="unidad_id" class="form-control">
-                                    @foreach($unidades as $unidad)
-                                    <option value="{{ $unidad->id }}">{{ $unidad->nidentificacion }}</option>    
-                                    @endforeach
+                        <div class="col-md-3"><span>Unidad:</span></div>
+                        <div class="col-md-9">   
+                            <select name="serviciounidadoperador_id" class="form-control">
+                                @foreach($unidades as $unidad)
+                                    <option value="{{ $unidad->id }}">{{ $unidad->servicio->descripcion."-".$unidad->unidad->nidentificacion."-".$unidad->operador->persona->pnombre }}</option>    
+                                @endforeach
                             </select>
                         </div>
                     </div>
