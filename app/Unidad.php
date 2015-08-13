@@ -39,5 +39,10 @@ class Unidad extends Model {
 	 {
 	 	return $this->belongsTo('App\ServicioUnidadOperador');
 	 }
+	 
+	 public function preventivo()
+    {
+        return $this->hasMany('App\MantenimientoPreventivo','id');
+    }
 
 }

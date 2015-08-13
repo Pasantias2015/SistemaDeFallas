@@ -11,7 +11,8 @@ class ModeloTableSeeder extends Seeder
 		$arr = [];
 		for($i = 1;$i<=3;$i++)
 		{
-			$array[] = ['descripcion'=>'Modelo '.$i,
+			$array[] = ['codigo'=> 'ZK68'.$i,
+			'descripcion'=>'Modelo '.$i,
 			'combustible'=>'Diesel',
 			'dimension'=>'12 Mt',
 			'transmision'=>'Sincronico'];

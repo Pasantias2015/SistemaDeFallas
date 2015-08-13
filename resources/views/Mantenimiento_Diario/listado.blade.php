@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-8 col-md-offset-1">
       <div class="panel panel-danger">
-            <div class="panel-heading">Mantenimientos Preventivos </div>
+            <div class="panel-heading">Mantenimientos Diarios </div>
             <div class="panel-body">
              @include('tools.errors')
             {!! Form::open() !!}
@@ -12,23 +12,21 @@
                               <tr>
                                     <th>ID</th>
                                     <th>Fecha</th>
-                                    <th>Unidad</th>
-                                    <th>Kilometraje</th>
+                                    <th>Servicio - Unidad - Operador</th>
                                     <th>Accion</th>
                               </tr>
-                              @foreach($preventivos as $preventivo)
+                              @foreach($diarios as $diario)
                               <tr>                                
-                                <td>{{ $preventivo->id }}</td>
-                                <td>{{ $preventivo->fecha }}</td>
-                                <td>{{ $preventivo->unidad->nidentificacion }}</td>
-                                <td>{{ $preventivo->kilometraje }}</td>
+                                <td>{{ $diario->id }}</td>
+                                <td>{{ $diario->fecha }}</td>
+                                <td>{{ $diario->serviciounidadoperador_id }}</td>
                                 <td>
-                                  <a href="{{ route('preventivo.edit',$preventivo) }}" class="btn btn-info">Ver</a>
+                                  <a href="{{ route('diario.edit',$diario) }}" class="btn btn-info">Ver</a>
                                 </td>                               
                               </tr>
                               @endforeach
                         </table>
-                        {!! $preventivos->render() !!}
+                        {!! $diarios->render() !!}
                   </div>
                   {!! Form::close() !!}
             </div>

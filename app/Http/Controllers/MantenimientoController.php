@@ -93,10 +93,5 @@ class MantenimientoController extends Controller {
 	{
 		//
 	}
-	public function preventivo()
-	{
-		return view('Mantenimiento_Preventivo.crear');
-
-	}
 
 }

@@ -61,7 +61,6 @@ Route::get('grafica','ReporteController@grafica');
 //selects Dependientes
 Route::get('listaModelos','AlmacenController@listaModelos');
 Route::get('listaSeccion','AlmacenController@listaSeccion');
-Route::get('preventivo','MantenimientoController@preventivo');
 
 /*Vistas De Transacciones
 Route::get('servicios/operadores','TransaccionController@servicio_operador');
@@ -94,6 +93,10 @@ resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
 resource('items','ItemController');
 resource('personasver','PersonaController@show');
+resource('preventivo','MantenimientoPreventivoController');
+resource('lpreventivos','MantenimientoPreventivoController@listado');
+resource('diario','MantenimientoDiarioController');
+resource('ldiario','MantenimientoDiarioController@listado');
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');

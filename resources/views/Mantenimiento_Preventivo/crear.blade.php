@@ -5,24 +5,26 @@
     <div class="panel panel-danger">
         <div class="panel-heading">Mantenimiento Preventivo</div>
         <div class="panel-body">
-         @include('tools.errors')<!-- ['route'=>'mantenimiento.store','method'=>'POST'] -->
-            {!! Form::open() !!}
+         @include('tools.errors')
+            {!! Form::open(['route'=>'preventivo.store','method'=>'POST']) !!}
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group row">
                         <div class="col-md-5"><span>Fecha:</span></div>
                         <div class="col-md-6">    
-                            {!! Form::text('fecha',null,['class'=>'form-control']) !!}
+                        {!! Form::date('fecha','Fecha',['class'=>'form-control']) !!}
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group row">
-                         <div class="form-group row">
-                            <div class="col-md-5"><span>Unidad:</span></div>
-                            <div class="col-md-6">   
-                                <input type="text" disabled value="" class="form-control">
-                            </div>
+                        <div class="col-md-5"><span>Unidad:</span></div>
+                        <div class="col-md-6">   
+                            <select name="unidad_id" class="form-control">
+                                    @foreach($unidades as $unidad)
+                                    <option value="{{ $unidad->id }}">{{ $unidad->nidentificacion }}</option>    
+                                    @endforeach
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -103,6 +105,13 @@
                             <div class="col-md-3">    
                                 <span>Si:</span>{!! Form::radio('rcorrea', 'Si', true) !!} 
                                 <span>No:</span>{!! Form::radio('rcorrea', 'No', false) !!} 
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>Cambio: Correa</span></div>
+                            <div class="col-md-3">    
+                                <span>Si:</span>{!! Form::radio('ccorrea', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('ccorrea', 'No', false) !!} 
                             </div>
                         </div>
                         <div class="form-group row">
@@ -246,7 +255,7 @@
                      <div class="panel panel-danger">
                         <div class="panel-heading">Arbol de Suspensión</div>
                             <div class="form-group row">
-                                <div class="col-md-8 col-md-offset-1"><span>Revisión: Arbol y Junta de Transmisión:</span></div>
+                                <div class="col-md-8 col-md-offset-1"><span>Revisión: Arbol y Junta de Transmisión</span></div>
                                 <div class="col-md-3">    
                                     <span>Si:</span>{!! Form::radio('rarboljunta', 'Si', true) !!} 
                                     <span>No:</span>{!! Form::radio('rarboljunta', 'No', false) !!} 
@@ -283,43 +292,57 @@
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Rotación de Baterias</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('RBaterias', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('RBaterias', 'No', false) !!} 
+                                    <span>Si:</span>{!! Form::radio('rbaterias', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('rbaterias', 'No', false) !!} 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Cambio de Baterias</span></div>
+                                <div class="col-md-3">    
+                                    <span>Si:</span>{!! Form::radio('cbaterias', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('cbaterias', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Chequeo: Nivel de Agua de Baterias</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('CAguaBat', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('CAguaBat', 'No', false) !!} 
+                                    <span>Si:</span>{!! Form::radio('caguabat', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('caguabat', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Medición de Voltaje</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('MVoltaje', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('MVoltaje', 'No', false) !!} 
+                                    <span>Si:</span>{!! Form::radio('mvoltaje', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('mvoltaje', 'No', false) !!} 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Cambio: Bornes de Baterias</span></div>
+                                <div class="col-md-3">    
+                                    <span>Si:</span>{!! Form::radio('cbornes', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('cbornes', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Ajuste y Limpieza: Bornes de Baterias</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('ALBornes', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('ALBornes', 'No', false) !!} 
+                                    <span>Si:</span>{!! Form::radio('albornes', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('albornes', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Revisión y Chequeo: Luces</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('RCLuces', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('RCLuces', 'No', false) !!} 
+                                    <span>Si:</span>{!! Form::radio('rcluces', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('rcluces', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Chequeo: Funcionamiento del Indicador de Destino</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('CDestino', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('CDestino', 'No', false) !!} 
+                                    <span>Si:</span>{!! Form::radio('cdestino', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('cdestino', 'No', false) !!} 
                                 </div>
                             </div>
                     </div>
@@ -328,8 +351,8 @@
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Chequeo y Ajustes: Bandas de Frenos</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('Bandas', 'Si', true) !!} 
-                                <span>No:</span>{!! Form::radio('Bandas', 'No', false) !!} 
+                                <span>Si:</span>{!! Form::radio('bandas', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('bandas', 'No', false) !!} 
                             </div>
                         </div>
                     </div>
@@ -343,19 +366,19 @@
                                 <div class="form-group row">
                                     <div class="col-md-4 col-md-offset-1"><span>Mecanico:</span></div>
                                     <div class="col-md-6">    
-                                        {!! Form::text('Mecanico',null,['class'=>'form-control']) !!}
+                                        {!! Form::text('mecanico',null,['class'=>'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4 col-md-offset-1"><span>Tec. Mecanico:</span></div>
                                     <div class="col-md-6">    
-                                        {!! Form::text('tecMecanico',null,['class'=>'form-control']) !!}
+                                        {!! Form::text('tecmecanico',null,['class'=>'form-control']) !!}
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4 col-md-offset-1"><span>Ayud. Mecanico:</span></div>
                                     <div class="col-md-6">    
-                                        {!! Form::text('AyudMecanico',null,['class'=>'form-control']) !!}
+                                        {!! Form::text('ayudmecanico',null,['class'=>'form-control']) !!}
                                     </div>
                                 </div>
                             </div>                            
@@ -363,7 +386,17 @@
                         <div class="col-md-6">
                             <div class="panel panel-danger">
                                 <div class="panel-heading">Recibido y Revisado Por:</div>
-                                {!! Form::text('revisado',null,['class'=>'form-control']) !!}
+                                {!! Form::text('recibido',null,['class'=>'form-control']) !!}
+                                 <div class="form-group row">
+                                    <div class="col-md-5"><span>Usuario:</span></div>
+                                    <div class="col-md-6">   
+                                        <select name="usuario_id" class="form-control">
+                                                @foreach($usuarios as $usuario)
+                                                <option value="{{ $usuario->id }}">{{ $usuario->usuario }}</option>    
+                                                @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                             </div>                       
                         </div>
                 </div>
