@@ -21,7 +21,8 @@ class CrearMantenimientoDiarioRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [		'usuario_id'=>'required',
+		return [		
+		// 'usuario_id'=>'required',
                         'fecha'=>'required',
     					'serviciounidadoperador_id'=>'required',
     					'cnaceitem'=>'required',
@@ -36,7 +37,7 @@ class CrearMantenimientoDiarioRequest extends Request {
     					'cradiador'=>'required',
     					'ceseguridad'=>'required',
     					'cbornes'=>'required',
-    					'cefluces'=>'required'
+    					'cefluces'=>'required',
     					'celuces'=>'required',
     					'celucesem'=>'required'
 		];

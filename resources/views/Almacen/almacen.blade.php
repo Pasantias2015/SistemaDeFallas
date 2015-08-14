@@ -46,6 +46,57 @@
 	</div>
 
 </div>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('#marca').on('change',function(e){
+        
+            var marca_id = e.target.value;
+            $.get('/ajax-modelo?marca_id='+marca_id,function(data){
+                $('#modelo').empty();
+                $.each(data,function(index,modeloObj){
+                    $('#modelo').append('<option value="'+modeloObj.id+'">'+modeloObj.codigo+'</option>');
+                });
+            });
+            console.log(e);
+        });
+        $('#modelo').on('change',function(e){
+        
+            var modelo_id = e.target.value;
+            $.get('/ajax-seccion?modelo_id='+modelo_id,function(data){
+                $('#seccion').empty();
+                $.each(data,function(index,seccionObj){
+                    $('#seccion').append('<option value="'+seccionObj.id+'">'+seccionObj.descripcion+'</option>');
+                });
+            });
+            console.log(e);
+        });
+        $('#seccion').on('change',function(e){
+                
+            var seccion_id = e.target.value;
+            $.get('/ajax-grupo?seccion_id='+seccion_id,function(data){
+                $('#grupo').empty();
+                $.each(data,function(index,grupoObj){
+                    $('#grupo').append('<option value="'+grupoObj.id+'">'+grupoObj.descripcion+'</option>');
+                });
+            });
+            console.log(e);
+        });
+        $('#grupo').on('change',function(e){
+                
+            var grupo_id = e.target.value;
+            $.get('/ajax-pieza?grupo_id='+grupo_id,function(data){
+                $('#pieza').empty();
+                $.each(data,function(index,piezaObj){
+                    $('#pieza').append('<option value="'+piezaObj.id+'">'+piezaObj.descripcion+'</option>');
+                });
+            });
+            console.log(e);
+        });
+
+    });
+
+</script>
 @endsection
 
 <!-- Modal Herramienta-->
@@ -171,56 +222,44 @@
            Ingresar Pieza al Almacen
         </div>
         <div class="modal-body">
-        {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
+            {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
             <div class="form-group">
-                <span>Modelo: </span> 
-                <select name="modelo_id" class="form-control">
-                     <option>Seleccione un Modelo</option> 
-                     @foreach($modelos as $modelo)
-                        <option value="{{ $modelo->id }}">{{ $modelo->codigo."-".$modelo->descripcion."-".$modelo->combustible."-".$modelo->transmision."-".$modelo->dimension }}</option>    
-                    @endforeach   
+                <span>Marca: </span>
+                <select name="marca" id="marca" class="form-control">
+                    <option default>Seleccione</option>
+                        @foreach($marcas as $marca)
+                        <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>    
+                        @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Modelo: </span>
+                <select name="modelo" id="modelo" class="form-control">
+                    <option default>Seleccione</option>
+                    <option value=""></option>
                 </select>
             </div>
             <div class="form-group">
                 <span>Sistema: </span>
-                <select name="seccion_id" class="form-control">
-                        <option>Seleccione Primero un Modelo</option>    
-                </select>
-            </div>
-
-
-            <!-- <div class="form-group">
-                <span>Modelo: </span> 
-                <select name="modelo_id" class="form-control">
-                    @foreach($modelos as $modelo)
-                        <option value="{{ $modelo->id }}">{{ $modelo->codigo."-".$modelo->descripcion."-".$modelo->combustible."-".$modelo->transmision."-".$modelo->dimension }}</option>    
-                    @endforeach
-                </select>
+                <select name="seccion" id="seccion" class="form-control">
+                  <option default>Seleccione</option>
+                    <option value=""></option>          
+                  </select>
             </div>
             <div class="form-group">
-                <span>Sistema: </span>
-                <select name="seccion_id" class="form-control">
-                    @foreach($secciones as $seccion)
-                        <option value="{{ $seccion->id }}">{{ $seccion->codigo."-".$seccion->descripcion }}</option>    
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <span>Grupo: </span> 
-                <select name="grupo_id" class="form-control">
-                @foreach($grupos as $grupo)
-                    <option value="{{ $grupo->id }}">{{ $grupo->codigo."-".$grupo->descripcion }}</option>    
-                @endforeach
-                </select>
+                <span>Grupo: </span>
+                <select name="grupo" id="grupo" class="form-control">
+                  <option default>Seleccione</option>
+                    <option value=""></option>          
+                  </select>
             </div>
             <div class="form-group">
                 <span>Pieza: </span>
-                <select name="codigo_id" class="form-control">
-                    @foreach($piezas as $pieza)
-                        <option value="{{ $pieza->codigo." : ".$pieza->descripcion}}">{{ $pieza->codigo."-".$pieza->descripcion }}</option>    
-                   @endforeach
-                </select>
-            </div> -->
+                <select name="pieza_id" id="pieza" class="form-control">
+                  <option default>Seleccione</option>
+                    <option value=""></option>          
+                  </select>
+            </div>
             <div class="form-group">
                 <span>Descripcion: </span>
                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
@@ -240,7 +279,5 @@
       {!! Form::close() !!}
       </div>
     </div>
-
-
 </div>
 

@@ -15,7 +15,8 @@ class ModeloTableSeeder extends Seeder
 			'descripcion'=>'Modelo '.$i,
 			'combustible'=>'Diesel',
 			'dimension'=>'12 Mt',
-			'transmision'=>'Sincronico'];
+			'transmision'=>'Sincronico'
+			'marca_id'=>$i];
 
 		}
 		\DB::table('modelos')->insert($array);

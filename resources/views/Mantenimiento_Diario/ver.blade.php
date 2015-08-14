@@ -10,7 +10,7 @@
           <div class="row">
             <div class="col-md-6">
               <div class="form-group row">
-                <div class="col-md-5"><span>Fecha:</span></div>
+                <div class="col-md-4 col-md-offset-1"><span>Fecha:</span></div>
                 <div class="col-md-6">
                   <input type="text" disabled value="{{$diario->fecha}}" class="form-control">
                 </div>
@@ -18,9 +18,9 @@
             </div>
             <div class="col-md-6">
               <div class="form-group row">
-                <div class="col-md-5"><span>Unidad:</span></div>
+                <div class="col-md-6"><span>Servicio-Unidad-Operador:</span></div>
                 <div class="col-md-6">   
-                    <input type="text" disabled value="{{$diario->serviciounidadoperador_id}}" class="form-control">
+                    <input type="text" disabled value="{{$diario->serviciounidadoperador->servicio->descripcion." - ".$diario->serviciounidadoperador->unidad->nidentificacion." - ".$diario->serviciounidadoperador->operador->persona->pnombre}}" class="form-control">
                 </div>
               </div>
             </div>

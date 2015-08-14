@@ -12,6 +12,7 @@ use App\Pieza;
 use App\Grupo;
 use App\Seccion;
 use App\Modelo;	
+use App\Marca;	
 use Illuminate\Http\Request;
 
 class AlmacenController extends Controller {
@@ -30,11 +31,12 @@ class AlmacenController extends Controller {
 		$herramientas = Herramienta::all();
 		$cajas = Caja::all();
 		$piezas = Pieza::all();
+		$marcas = Marca::all();
 		$grupos = Grupo::all();
 		$secciones = Seccion::all();
 		$modelos = Modelo::all();
 		$almacenes = Almacen::paginate(10);
-        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas'));
+        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas','marcas'));
 	}
 
 	/**
@@ -54,16 +56,18 @@ class AlmacenController extends Controller {
 	 */
 	public function store(CrearAlmacenRequest $request)
 	{
-		$herramientas = Herramienta::all();
 		$almacen = Almacen::create($request->all());
+		$herramientas = Herramienta::all();
 		$cajas = Caja::all();
 		$piezas = Pieza::all();
+		$marcas = Marca::all();
 		$grupos = Grupo::all();
 		$secciones = Seccion::all();
 		$modelos = Modelo::all();
 		$almacenes = Almacen::paginate(10);
-        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas'));
-}
+        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas','marcas'));
+	}
+
 
 	/**
 	 * Display the specified resource.

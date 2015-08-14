@@ -22,8 +22,8 @@ class CrearMantenimientoPreventivoRequest extends Request {
 	public function rules()
 	{
 		return [
-						'usuario_id'=>'required'
-					    'serviciounidadoperador_id'=>'required',
+						// 'usuario_id'=>'required'
+					 //    'serviciounidadoperador_id'=>'required',
 					    'fecha'=>'required',
 					    'kilometraje'=>'required',
 					    'combustible'=>'required',

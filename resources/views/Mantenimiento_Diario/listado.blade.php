@@ -19,7 +19,7 @@
                               <tr>                                
                                 <td>{{ $diario->id }}</td>
                                 <td>{{ $diario->fecha }}</td>
-                                <td>{{ $diario->serviciounidadoperador_id }}</td>
+                                <td>{{ $diario->serviciounidadoperador->servicio->descripcion." - ".$diario->serviciounidadoperador->unidad->nidentificacion." - ".$diario->serviciounidadoperador->operador->persona->pnombre }}</td>
                                 <td>
                                   <a href="{{ route('diario.edit',$diario) }}" class="btn btn-info">Ver</a>
                                 </td>                               
