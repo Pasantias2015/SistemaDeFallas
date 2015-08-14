@@ -20,7 +20,7 @@
                               <tr>                                
                                 <td>{{ $preventivo->id }}</td>
                                 <td>{{ $preventivo->fecha }}</td>
-                                <td>{{ $preventivo->serviciounidadoperador_id }}</td>
+                                <td>{{ $preventivo->serviciounidadoperador->servicio->descripcion." - ".$preventivo->serviciounidadoperador->unidad->nidentificacion." - ".$preventivo->serviciounidadoperador->operador->persona->pnombre  }}</td>
                                 <td>{{ $preventivo->kilometraje }}</td>
                                 <td>
                                   <a href="{{ route('preventivo.edit',$preventivo) }}" class="btn btn-info">Ver</a>

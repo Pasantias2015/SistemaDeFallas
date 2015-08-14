@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-11">
     <div class="panel panel-danger">
-        <div class="panel-heading">Ver Mantenimiento : {{ $diario->fecha }}</div>
+        <div class="panel-heading">Ver Mantenimiento Diario: {{ $diario->fecha }}</div>
         <div class="panel-body">
         @include('tools.errors')
         {!! Form::model($diario) !!}                  
