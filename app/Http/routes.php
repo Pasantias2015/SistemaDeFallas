@@ -92,12 +92,14 @@ resource('asignar','AsignarController');
 resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
 resource('items','ItemController');
+resource('personas','PersonaController');
 resource('preventivo','MantenimientoPreventivoController');
 resource('lpreventivos','MantenimientoPreventivoController@listado');
 resource('diario','MantenimientoDiarioController');
 resource('ldiario','MantenimientoDiarioController@listado');
 resource('marcas','MarcaController');
 resource('rdiario','MantenimientoDiarioController@reporte');
+
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');
