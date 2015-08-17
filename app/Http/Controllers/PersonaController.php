@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CrearPersonaRequest;
 
 use Illuminate\Http\Request;
 use App\Persona;
@@ -25,7 +26,9 @@ class PersonaController extends Controller {
 	 */
 	public function index()
 	{
-		//
+		$per = Persona::findorfail(2)->foto;
+       return view ('Personas.persona',compact('persona'));
+
 	}
 
 	/**
@@ -46,10 +49,21 @@ class PersonaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request)
+	public function store(CrearPersonaRequest $request)
 	{
-		$persona = Persona::create($request->all());
-        return redirect()->route('home');
+	
+	
+	$persona = Persona::create($request->all());
+	$file = $request->file('foto');
+     
+	if($persona->save()){
+        	//guardamos la imagen en public/imgs con el nombre original
+        	$file->move("images",$persona->foto);
+			//redirigimos con un mensaje flash
+			return 'Te has registrado correctamente.';
+        } 
+		
+		
 	}
 
 	/**
@@ -60,10 +74,7 @@ class PersonaController extends Controller {
 	 */
 	public function show()
 	{
-		$persona = Persona::find(3);
-
-return view ('Personas.persona',compact('persona'));
-
+		
 
 		//return view('Personas.persona',compact('persona'));
 	}

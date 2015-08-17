@@ -7,15 +7,7 @@
 				<div class="panel panel-danger">
 					<div class="panel-heading">Registro de Personas</div>
 					<div class="panel-body">
-					<?php
-					header('Content-Type: image/jpeg');
-
-					
-
-					?>	
-      
-     <img src="images/{{$persona->foto}}" width="290" height="290">
-     
+					{{ HTML::image($persona->getProfileImage(), '', array('height' => '50px')) }}
 					</div>
 				</div>
 			</div>

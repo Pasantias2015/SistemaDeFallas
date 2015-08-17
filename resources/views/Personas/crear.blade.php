@@ -8,7 +8,7 @@
 					<div class="panel-heading">Registro de Personas</div>
 					<div class="panel-body">
 						@include('tools.errors')
-						{!! Form::open(['route'=>'personas.store','method'=>'POST']) !!}
+						{!! Form::open(['route'=>'personas.store','method'=>'POST','files'=>'true']) !!}
 							@include('Personas.datos')
 							@include('tools.botones-registrar')
 						{!! Form::close() !!}

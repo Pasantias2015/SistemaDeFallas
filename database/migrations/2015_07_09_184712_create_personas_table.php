@@ -40,7 +40,7 @@ class CreatePersonasTable extends Migration {
 			$table->integer('parroquia_id')->unsigned();
 			$table->foreign('parroquia_id')->references('id')->on('parroquias');
 			$table->integer('hijos')->unsigned();
-			$table->binary('foto');
+			$table->string('foto');
 		});
 	}
 

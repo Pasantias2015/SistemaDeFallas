@@ -5,9 +5,29 @@ use Illuminate\Database\Eloquent\Model;
 class Persona extends Model {
 
 	protected $table = 'personas';
-	protected $fillable = ['cedula','pnombre','snombre','papellido','sapellido','direccion','fnacimiento','estadocivil','telefono-hab','telefono-mov','correo-electronico','rif','sexo','estatura','peso',
-    'camisa','pantalon','zapato','profesion_id','nivel','parroquia_id','hijos','foto'];
+	protected $fillable = ['cedula','pnombre','snombre','papellido',
+							'sapellido','direccion','fnacimiento','estadocivil',
+							'telefono-hab','telefono-mov','correo-electronico',
+							'rif','sexo','estatura','peso',
+    						'camisa','pantalon','zapato',
+    						'profesion_id','nivel','parroquia_id','hijos','foto'];
     public $timestamps=false;
+
+    public function getProfileImage()
+    {	
+    	if(!empty($this->foto) && File::exists($this->foto))
+    	{		
+    		
+    		$subdomain = subdomain();
+
+    		// Get the filename from the full path
+    		$filename = basename($this->foto);
+
+    		return 'images/image.php?id='.$subdomain.'&imageid='.$filename;
+    	}
+
+        return 'images/missing.png';
+    }
 
 	public function getnombrecompletoAttribute(){
 		return $this->pnombre.' '.$this->papellido;
