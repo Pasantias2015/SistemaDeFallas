@@ -28,7 +28,7 @@ class UnidadTableSeeder extends Seeder
 		
 		\DB::table('unidades')->insert($arr);
 		
-		$unidadmes = [];
+		
 
 		$meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 

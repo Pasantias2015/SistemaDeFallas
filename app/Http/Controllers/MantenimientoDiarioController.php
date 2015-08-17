@@ -93,10 +93,38 @@ class MantenimientoDiarioController extends Controller {
 		$diarios = MantenimientoDiario::paginate(10);
 		return view('Mantenimiento_Diario.listado',compact('diarios'));
 	}
+	
+		
+
 	public function reporte()
 	{
-		$diarios = MantenimientoDiario::paginate(10);
-		return view('Reportes.diario',compact('diarios'));
+		$array =['cnaceitem','airene'];
+		$var = [];
+		
+function item($nombre){
+				$nombre1 = MantenimientoDiario::where($nombre,'=','Si')->count();
+					$nombre2= MantenimientoDiario::where($nombre,'=','No')->count();
+					
+					$var= ['item' =>$nombre ,
+					'Si'=> $nombre1,
+					'No'=> $nombre2 ];
+
+			}
+
+		for ($i=0; $i <count($array) ; $i++) { 
+			
+
+
+
+			item($array[$i]);			
+		}
+		return $var;
+		
+ 
+		
+		
+	
+		
 	}
 
 }
