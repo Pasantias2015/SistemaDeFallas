@@ -7,6 +7,7 @@ use App\MantenimientoDiario;
 use App\Http\Requests\CrearMantenimientoDiarioRequest;
 use Illuminate\Http\Request;
 use App\User;
+use App\Unidad;
 
 class MantenimientoDiarioController extends Controller {
 
@@ -40,6 +41,13 @@ class MantenimientoDiarioController extends Controller {
 	public function store(CrearMantenimientoDiarioRequest $request)
 	{
 		$diario = MantenimientoDiario::create($request->all());
+		
+		$actual = $request->kilometrajeactual;
+		$unidad = $diario->serviciounidadoperador->unidad->id;
+		$unidad = Unidad::findOrFail($unidad);
+		$unidad->kilometrajeactual = $actual;
+		$unidad->save();
+        
         $unidades =  ServicioUnidadOperador::all();
 		return view('Mantenimiento_Diario.crear',compact('unidades'));
 	}
@@ -98,33 +106,25 @@ class MantenimientoDiarioController extends Controller {
 
 	public function reporte()
 	{
-		$array =['cnaceitem','airene'];
+		$diarios = MantenimientoDiario::paginate(10);
+		return view('Reportes.diario',compact('diarios'));
+
+		$array =['cnaceitem','cnarefrigerante','airene','cncomb','ceiasientos','ceicarroceria','ceeunidad',
+				 'cfrenos','ccorrea','cradiador','ceseguridad','cbornes','cefluces','celuces','celucesem'];
 		$var = [];
 		
-function item($nombre){
+		function item($nombre){
 				$nombre1 = MantenimientoDiario::where($nombre,'=','Si')->count();
-					$nombre2= MantenimientoDiario::where($nombre,'=','No')->count();
-					
-					$var= ['item' =>$nombre ,
-					'Si'=> $nombre1,
-					'No'=> $nombre2 ];
-
+				$nombre2= MantenimientoDiario::where($nombre,'=','No')->count();
+				//echo $nombre.' = '.$nombre1.'-'.$nombre2.'---';
+				$var= ['item' => $nombre ,
+						'Si'=> $nombre1,
+						'No'=> $nombre2 ];	
 			}
-
 		for ($i=0; $i <count($array) ; $i++) { 
-			
-
-
 
 			item($array[$i]);			
 		}
 		return $var;
-		
- 
-		
-		
-	
-		
 	}
-
 }

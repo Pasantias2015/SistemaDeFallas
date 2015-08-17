@@ -64,6 +64,6 @@ class MantenimientoPreventivo extends Model {
     }
 	public function serviciounidadoperador()
     {
-       return $this->belongsTo('App\ServicioUnidadOperador','id');
+       return $this->belongsTo('App\ServicioUnidadOperador');
     }
 }

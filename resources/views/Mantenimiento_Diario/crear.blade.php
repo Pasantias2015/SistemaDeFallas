@@ -20,7 +20,7 @@
                     <div class="form-group row">
                         <div class="col-md-3"><span>Unidad:</span></div>
                         <div class="col-md-9">   
-                            <select name="serviciounidadoperador_id" class="form-control">
+                            <select name="serviciounidadoperador_id" id="unidad" class="form-control">
                                 @foreach($unidades as $unidad)
                                     <option value="{{ $unidad->id }}">{{ $unidad->servicio->descripcion."-".$unidad->unidad->nidentificacion."-".$unidad->operador->persona->pnombre }}</option>    
                                 @endforeach
@@ -30,20 +30,21 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group row">
-                        <div class="col-md-5"><span>Usuario:</span></div>
+                        <div class="col-md-5"><span>Kilometraje Actual:</span></div>
                         <div class="col-md-6">
-                        {!! Form::text('usuario',null,['class'=>'form-control']) !!}
+                            {!! Form::text('kilometrajeactual',null,['class'=>'form-control']) !!}
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="form-group row">
-                    <div class="col-md-5"><span>Kilometraje:</span></div>
-                    <div class="col-md-6">
-                        {!! Form::text('kilometraje',null,['class'=>'form-control']) !!}
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <input type="text" name="kilometrajebase" value="{{$unidad->unidad->kilometrajebase}}" class="form-control">
+                        </div>
                     </div>
-                </div>
+                </div>  
             </div>
             <div class="row">
             <div class="col-md-10 col-md-offset-1">

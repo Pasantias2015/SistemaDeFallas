@@ -8,7 +8,7 @@
         @include('tools.errors')
         {!! Form::model($diario) !!}                  
           <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-3">
               <div class="form-group row">
                 <div class="col-md-4 col-md-offset-1"><span>Fecha:</span></div>
                 <div class="col-md-6">
@@ -24,6 +24,14 @@
                 </div>
               </div>
             </div>
+            <div class="col-md-3">
+                    <div class="form-group row">
+                        <div class="col-md-5"><span>Kilometraje:</span></div>
+                        <div class="col-md-6">
+                            <input type="text" disabled value="{{$diario->serviciounidadoperador->unidad->kilometrajeactual}}" class="form-control">
+                        </div>
+                    </div>
+                </div>
           </div>
           <div class="row">
             <div class="col-md-10 col-md-offset-1">

@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\MantenimientoPreventivo;
 use App\Http\Requests\CrearMantenimientoPreventivoRequest;
 use App\ServicioUnidadOperador;
+use App\Unidad;
 use App\User;
 
 use Illuminate\Http\Request;
@@ -40,7 +41,14 @@ class MantenimientoPreventivoController extends Controller {
 	 */
 	public function store(CrearMantenimientoPreventivoRequest $request)
 	{
-		MantenimientoPreventivo::create($request->all());
+		$preventivo= MantenimientoPreventivo::create($request->all());
+		
+		$actual = $request->kilometraje;
+		$unidad = $preventivo->serviciounidadoperador->unidad->id;
+		$unidad = Unidad::findOrFail($unidad);
+		$unidad->kilometrajebase = $actual;
+		$unidad->save();
+
 		$usuarios =  User::all();
 		$unidades =  ServicioUnidadOperador::all();
 		return view('Mantenimiento_Preventivo.crear',compact('unidades','usuarios'));

@@ -34,7 +34,6 @@
                         $(document).ready(function(){
 
                         	var valor = 70;
-
 					    	  //Diagrama de Barras
 							var data = [
 							      { y: 'Aceite', a: 100, b: 98},

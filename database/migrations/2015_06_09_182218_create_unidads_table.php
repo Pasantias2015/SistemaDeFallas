@@ -24,8 +24,11 @@ class CreateUnidadsTable extends Migration {
 			$table->integer('year')->unsigned();
 			$table->integer('modelo_id')->unsigned();
 			$table->foreign('modelo_id')->references('id')->on('modelos');
+			$table->integer('kilometrajebase');
+			$table->integer('kilometrajeactual');
+			$table->string('operativa');
+			$table->string('preventivo');
 			//$table->string('potenciamotor');
-			//$table->integer('kilometraje');
 			//$table->integer('cantpersona');
 			//$table->integer('pesomax');
 			//$table->string('fabricante',10);

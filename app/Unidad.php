@@ -14,6 +14,10 @@ class Unidad extends Model {
 	 						'codigosistema',
 	 						'uso',
 	 						'year',
+	 						'kilometrajebase',
+							'kilometrajeactual',
+							'operativa',
+							'preventivo'
 	 						//'kilometraje'//para monitero 
 	 						/*'cantpersona',,
 	 						'pesomax',
