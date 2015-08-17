@@ -38,6 +38,14 @@
                 </div>
             </div>
             <div class="row">
+                <div class="form-group row">
+                    <div class="col-md-5"><span>Kilometraje:</span></div>
+                    <div class="col-md-6">
+                        {!! Form::text('kilometraje',null,['class'=>'form-control']) !!}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-danger">
                     <div class="panel-heading">Parametros a Revisar</div>

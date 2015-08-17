@@ -93,5 +93,10 @@ class MantenimientoDiarioController extends Controller {
 		$diarios = MantenimientoDiario::paginate(10);
 		return view('Mantenimiento_Diario.listado',compact('diarios'));
 	}
+	public function reporte()
+	{
+		$diarios = MantenimientoDiario::paginate(10);
+		return view('Reportes.diario',compact('diarios'));
+	}
 
 }

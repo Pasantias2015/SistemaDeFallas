@@ -13,10 +13,9 @@ class Unidad extends Model {
 	 						'modelo_id',
 	 						'codigosistema',
 	 						'uso',
-	 						'year'
-	 						//para monitero 
-	 						/*'kilometraje',
-	 						'cantpersona',
+	 						'year',
+	 						//'kilometraje'//para monitero 
+	 						/*'cantpersona',,
 	 						'pesomax',
 	 						'potenciamotor',
 	 						'fabricante',
@@ -42,7 +41,7 @@ class Unidad extends Model {
 	 
 	 public function preventivo()
     {
-        return $this->hasMany('App\MantenimientoPreventivo','id');
+        return $this->hasMany('App\MantenimientoPreventivo');
     }
 
 }

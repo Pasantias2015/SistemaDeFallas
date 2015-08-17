@@ -9,7 +9,7 @@
             {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!}          
             <div class="col-md-10">
                 <span>¿Que Desea Registrar en el Almacen?: </span>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza">Pieza</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza1">Pieza</button>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#herramienta">Herramienta</button>
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#articulo">Articulo</button>
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#caja">Caja</button>
@@ -69,7 +69,7 @@
                     $('#seccion').append('<option value="'+seccionObj.id+'">'+seccionObj.descripcion+'</option>');
                 });
             });
-            console.log(e);
+        
         });
         $('#seccion').on('change',function(e){
                 
@@ -80,7 +80,7 @@
                     $('#grupo').append('<option value="'+grupoObj.id+'">'+grupoObj.descripcion+'</option>');
                 });
             });
-            console.log(e);
+           
         });
         $('#grupo').on('change',function(e){
                 
@@ -88,10 +88,10 @@
             $.get('/ajax-pieza?grupo_id='+grupo_id,function(data){
                 $('#pieza').empty();
                 $.each(data,function(index,piezaObj){
-                    $('#pieza').append('<option value="'+piezaObj.id+'">'+piezaObj.descripcion+'</option>');
+                    $('#pieza').append('<option value="'+piezaObj.codigo+'">'+piezaObj.descripcion+'</option>');
                 });
             });
-            console.log(e);
+          
         });
 
     });
@@ -213,7 +213,7 @@
 </div>
 
 <!-- Modal Pieza-->
-<div class="modal fade" id="pieza" role="dialog">
+<div class="modal fade" id="pieza1" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       
@@ -235,28 +235,24 @@
             <div class="form-group">
                 <span>Modelo: </span>
                 <select name="modelo" id="modelo" class="form-control">
-                    <option default>Seleccione</option>
                     <option value=""></option>
                 </select>
             </div>
             <div class="form-group">
                 <span>Sistema: </span>
                 <select name="seccion" id="seccion" class="form-control">
-                  <option default>Seleccione</option>
                     <option value=""></option>          
                   </select>
             </div>
             <div class="form-group">
                 <span>Grupo: </span>
                 <select name="grupo" id="grupo" class="form-control">
-                  <option default>Seleccione</option>
                     <option value=""></option>          
                   </select>
             </div>
             <div class="form-group">
                 <span>Pieza: </span>
-                <select name="pieza_id" id="pieza" class="form-control">
-                  <option default>Seleccione</option>
+                <select name="codigo" id="pieza" class="form-control">
                     <option value=""></option>          
                   </select>
             </div>

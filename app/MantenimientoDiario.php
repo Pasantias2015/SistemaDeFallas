@@ -29,7 +29,7 @@ class MantenimientoDiario extends Model {
 
     public function serviciounidadoperador()
     {
-       return $this->belongsTo('App\ServicioUnidadOperador','id');
+       return $this->belongsTo('App\ServicioUnidadOperador');
     }
     public function usuario()
     {

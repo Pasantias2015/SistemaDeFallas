@@ -2,40 +2,30 @@
 @include('tools.sidebar')
 @section('content')
 <div class="row">
-			
-				
-				 
-                  <div id="graficos" class="col-md-6" style="height:250px"></div>
-			
-
-	              <div id="graficos1" class="col-md-6"style="height:250px"></div>
-
-
-				<div class="col-md-12">
-					<div class="panel panel-danger">
-						<div class="panel-heading">Historial de incidencias</div>
-							<table class="table table-bordered table-striped">
-								<tr>
-									<th>Fecha</th>
-									<th>Servicio</th>
-									<th>Lugar</th>
-									<th>Tipo De Falla</th>
-									<th>Mecanico</th>
-									<th>Diagnostico Del Mecanico</th>
-									<th>Fecha De Operatividad</th>
-									<th>Dias Inoperatividad</th>
-								</tr>
-								<tr>
-									<td>01/03/2015</td>
-									<td>Linea 1</td>
-									<td>Parque Del Este</td>
-									<td>Falla Electrica</td>
-									<td>Pedro Perez</td>
-									<td>Bujias Partidas</td>
-									<td>03/03/2015</td>
-									<td>2</td>
-								</tr>
-								</table>
+	<div id="graficos" class="col-md-6" style="height:250px"></div>
+	<div id="graficos1" class="col-md-6"style="height:250px"></div>
+	<div class="col-md-12">
+		<div class="panel panel-danger">
+			<div class="panel-heading">Mantenimientos Diarios Realizados</div>
+				<table class="table table-bordered table-striped">
+                              <tr>
+                                    <th>ID</th>
+                                    <th>Fecha</th>
+                                    <th>Servicio - Unidad - Operador</th>
+                                    <th>Accion</th>
+                              </tr>
+                              @foreach($diarios as $diario)
+                              <tr>                                
+                                <td>{{ $diario->id }}</td>
+                                <td>{{ $diario->fecha }}</td>
+                                <td>{{ $diario->serviciounidadoperador->servicio->descripcion." - ".$diario->serviciounidadoperador->unidad->nidentificacion." - ".$diario->serviciounidadoperador->operador->persona->pnombre }}</td>
+                                <td>
+                                  <a href="{{ route('diario.edit',$diario) }}" class="btn btn-info">Ver</a>
+                                </td>                               
+                              </tr>
+                              @endforeach
+                        </table>
+                        {!! $diarios->render() !!}
 						
 					</div>
 				</div>
