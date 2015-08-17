@@ -18,6 +18,14 @@
                         {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
+                        <span>Marca: </span>
+                        <select name="marca_id" class="form-control">
+                            @foreach($marcas as $marca)
+                                <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>    
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <span>Tipo de Combustible:</span>
                         <select name="combustible" id="" class="form-control">
                           <option>Gas</option>
@@ -43,6 +51,7 @@
                             <th>ID</th>
                             <th>Codigo</th>
                             <th>Descripcion</th>
+                            <th>Marca</th>
                             <th>Tipo de Combustible</th>
                             <th>Tipo de Transmision</th>
                             <th>Tamaño</th>                            
@@ -53,6 +62,7 @@
                             <td>{{ $modelo->id }}</td>
                             <td>{{ $modelo->codigo }}</td>
                             <td>{{ $modelo->descripcion }}</td>
+                            <td>{{ $modelo->marca->nombre }}</td>
                             <td>{{ $modelo->combustible }}</td>
                             <td>{{ $modelo->transmision }}</td>
                             <td>{{ $modelo->dimension }}</td>  

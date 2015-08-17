@@ -14,7 +14,7 @@
                                 <span>Modelo: </span>
                                 <select name="modelo_id" class="form-control">
                                       @foreach($modelos as $modelo)
-                                        <option value="{{ $modelo->id }}">{{ $modelo->descripcion." - ".$modelo->combustible." - ".$modelo->year." - ".$modelo->dimension." - ".$modelo->transmision }}</option>    
+                                        <option value="{{ $modelo->id }}">{{ $modelo->marca->nombre." - ".$modelo->descripcion." - ".$modelo->combustible." - ".$modelo->year." - ".$modelo->dimension." - ".$modelo->transmision }}</option>    
                                       @endforeach
                                 </select>
                         </div>

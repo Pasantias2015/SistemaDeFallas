@@ -2,13 +2,13 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CrearModeloRequest;
-use App\Http\Requests\EditarModeloRequest;
-use App\Modelo;
+use App\Http\Requests\CrearMarcaRequest;
+use App\Http\Requests\EditarMarcaRequest;
 use App\Marca;
+
 use Illuminate\Http\Request;
 
-class ModeloController extends Controller {
+class MarcaController extends Controller {
 
 	public function __construct()
     {
@@ -21,9 +21,8 @@ class ModeloController extends Controller {
 	 */
 	public function index()
 	{
-		$modelos = Modelo::paginate(5);
-		$marcas = Marca::all();
-        return view('Modelos.crear',compact('modelos','marcas'));
+		$marcas = Marca::paginate(10);
+        return view('Marcas.crear',compact('marcas'));
 	}
 
 	/**
@@ -41,12 +40,11 @@ class ModeloController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearModeloRequest $request)
+	public function store(CrearMarcaRequest $request)
 	{
-		$modelo = Modelo::create($request->all());
-		$modelos = Modelo::paginate(5);
-		$marcas = Marca::all();
-        return view('Modelos.crear',compact('modelos','marcas'));
+		$marca = Marca::create($request->all());
+		$marcas = Marca::paginate(5);
+        return view('Marcas.crear',compact('marcas'));
 	}
 
 	/**
@@ -68,8 +66,8 @@ class ModeloController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$modelo = Modelo::findOrFail($id);
-        return view('Modelos.editar',compact('modelo'));
+		$marca = Marca::findOrFail($id);
+        return view('Marcas.editar',compact('marca'));
 	}
 
 	/**
@@ -78,12 +76,12 @@ class ModeloController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(EditarModeloRequest $request,$id)
+	public function update(EditarMarcaRequest $request,$id)
 	{
-		$modelo = Modelo::findOrFail($id);
-        $modelo->fill($request->all());
-        $modelo->save();
-        return redirect('modelos');
+		$marca = Marca::findOrFail($id);
+        $marca->fill($request->all());
+        $marca->save();
+        return redirect('marcas');
 	}
 
 	/**

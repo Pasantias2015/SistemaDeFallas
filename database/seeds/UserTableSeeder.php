@@ -43,6 +43,22 @@ class UserTableSeeder extends Seeder
                        'profesion_id'=>1,
                        'parroquia_id'=>1,
                               ));
+       \DB::table('personas')->insert(array (
+                       'cedula'=>'21295488',
+                       'rif'=>'v212954884',
+                       'pnombre'=>'Jaissel',
+                       'snombre'=>'Nicol',
+                       'papellido'=>'Perez',
+                       'Sapellido'=>'Marten',
+                       'fnacimiento'=>'1992-04-02',
+                       'sexo'=>'femenino',
+                       'estadocivil'=>'soltero(a)',
+                       'correo-electronico'=>'jaissel92@hotmail.com',
+                       'direccion'=>'Tarabana II',
+                       'telefono-mov'=>'04245333255',
+                       'profesion_id'=>1,
+                       'parroquia_id'=>1,
+                              ));
        \DB::table('modulos')->insert(array (    'descripcion'=>'Gestion De Operaciones'));
        \DB::table('roles')->insert(array (    'descripcion'=>'Supervisor'));
        \DB::table('roles')->insert(array (    'descripcion'=>'Operador'));

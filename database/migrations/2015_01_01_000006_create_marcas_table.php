@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCajasTable extends Migration {
+class CreateMarcasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,10 @@ class CreateCajasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('cajas', function(Blueprint $table)
+		Schema::create('marcas', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('descripcion');
-			$table->string('mecanico'); 
-			// $table->integer('mecanico_id')->unsigned();
-			// $table->foreign('mecanico_id')->references('id')->on('mecanicos');
+			$table->string('nombre');
 		});
 	}
 
@@ -29,7 +26,7 @@ class CreateCajasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('cajas');
+		Schema::drop('marcas');
 	}
 
 }

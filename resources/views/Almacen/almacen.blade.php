@@ -9,9 +9,10 @@
             {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!}          
             <div class="col-md-10">
                 <span>¿Que Desea Registrar en el Almacen?: </span>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza">Pieza</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza1">Pieza</button>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#herramienta">Herramienta</button>
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#articulo">Articulo</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#caja">Caja</button>
             </div>
             <div class="col-md-12">
                     <table class="table table-bordered table-striped">
@@ -45,6 +46,57 @@
 	</div>
 
 </div>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $('#marca').on('change',function(e){
+        
+            var marca_id = e.target.value;
+            $.get('/ajax-modelo?marca_id='+marca_id,function(data){
+                $('#modelo').empty();
+                $.each(data,function(index,modeloObj){
+                    $('#modelo').append('<option value="'+modeloObj.id+'">'+modeloObj.codigo+'</option>');
+                });
+            });
+            console.log(e);
+        });
+        $('#modelo').on('change',function(e){
+        
+            var modelo_id = e.target.value;
+            $.get('/ajax-seccion?modelo_id='+modelo_id,function(data){
+                $('#seccion').empty();
+                $.each(data,function(index,seccionObj){
+                    $('#seccion').append('<option value="'+seccionObj.id+'">'+seccionObj.descripcion+'</option>');
+                });
+            });
+        
+        });
+        $('#seccion').on('change',function(e){
+                
+            var seccion_id = e.target.value;
+            $.get('/ajax-grupo?seccion_id='+seccion_id,function(data){
+                $('#grupo').empty();
+                $.each(data,function(index,grupoObj){
+                    $('#grupo').append('<option value="'+grupoObj.id+'">'+grupoObj.descripcion+'</option>');
+                });
+            });
+           
+        });
+        $('#grupo').on('change',function(e){
+                
+            var grupo_id = e.target.value;
+            $.get('/ajax-pieza?grupo_id='+grupo_id,function(data){
+                $('#pieza').empty();
+                $.each(data,function(index,piezaObj){
+                    $('#pieza').append('<option value="'+piezaObj.codigo+'">'+piezaObj.descripcion+'</option>');
+                });
+            });
+          
+        });
+
+    });
+
+</script>
 @endsection
 
 <!-- Modal Herramienta-->
@@ -120,9 +172,48 @@
         </div>
     </div>
 </div>
+ 
+<!--  Modal Caja -->
+<div class="modal fade" id="caja" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+        <div class="modal-content panel panel-danger">
+            <div class="modal-header panel-heading">
+                Ingresar Articulo al Almacen
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
+                    <div class="form-group">
+                        <span>Caja: </span>
+                        <select name="codigo" class="form-control">
+                            @foreach($cajas as $caja)
+                                <option value="{{ $caja->id." : ".$caja->descripcion }}">{{ $caja->id."-".$caja->descripcion }}</option>    
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <span>Descripcion: </span>
+                        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        <span>Cantidad: </span>
+                         {!! Form::text('cantidad',null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="tipo" value="Caja">
+                    </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-warning">Registrar</button>
+              <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+            </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+</div>
 
 <!-- Modal Pieza-->
-<div class="modal fade" id="pieza" role="dialog">
+<div class="modal fade" id="pieza1" role="dialog">
     <div class="modal-dialog">
       <!-- Modal content-->
       
@@ -131,56 +222,40 @@
            Ingresar Pieza al Almacen
         </div>
         <div class="modal-body">
-        {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
+            {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
             <div class="form-group">
-                <span>Modelo: </span> 
-                <select name="modelo_id" class="form-control">
-                     <option>Seleccione un Modelo</option> 
-                     @foreach($modelos as $modelo)
-                        <option value="{{ $modelo->id }}">{{ $modelo->codigo."-".$modelo->descripcion."-".$modelo->combustible."-".$modelo->transmision."-".$modelo->dimension }}</option>    
-                    @endforeach   
+                <span>Marca: </span>
+                <select name="marca" id="marca" class="form-control">
+                    <option default>Seleccione</option>
+                        @foreach($marcas as $marca)
+                        <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>    
+                        @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Modelo: </span>
+                <select name="modelo" id="modelo" class="form-control">
+                    <option value=""></option>
                 </select>
             </div>
             <div class="form-group">
                 <span>Sistema: </span>
-                <select name="seccion_id" class="form-control">
-                        <option>Seleccione Primero un Modelo</option>    
-                </select>
-            </div>
-
-
-            <!-- <div class="form-group">
-                <span>Modelo: </span> 
-                <select name="modelo_id" class="form-control">
-                    @foreach($modelos as $modelo)
-                        <option value="{{ $modelo->id }}">{{ $modelo->codigo."-".$modelo->descripcion."-".$modelo->combustible."-".$modelo->transmision."-".$modelo->dimension }}</option>    
-                    @endforeach
-                </select>
+                <select name="seccion" id="seccion" class="form-control">
+                    <option value=""></option>          
+                  </select>
             </div>
             <div class="form-group">
-                <span>Sistema: </span>
-                <select name="seccion_id" class="form-control">
-                    @foreach($secciones as $seccion)
-                        <option value="{{ $seccion->id }}">{{ $seccion->codigo."-".$seccion->descripcion }}</option>    
-                    @endforeach
-                </select>
-            </div>
-            <div class="form-group">
-                <span>Grupo: </span> 
-                <select name="grupo_id" class="form-control">
-                @foreach($grupos as $grupo)
-                    <option value="{{ $grupo->id }}">{{ $grupo->codigo."-".$grupo->descripcion }}</option>    
-                @endforeach
-                </select>
+                <span>Grupo: </span>
+                <select name="grupo" id="grupo" class="form-control">
+                    <option value=""></option>          
+                  </select>
             </div>
             <div class="form-group">
                 <span>Pieza: </span>
-                <select name="codigo_id" class="form-control">
-                    @foreach($piezas as $pieza)
-                        <option value="{{ $pieza->codigo." : ".$pieza->descripcion}}">{{ $pieza->codigo."-".$pieza->descripcion }}</option>    
-                   @endforeach
-                </select>
-            </div> -->
+                <select name="codigo" id="pieza" class="form-control">
+                    <option value=""></option>          
+                  </select>
+            </div>
             <div class="form-group">
                 <span>Descripcion: </span>
                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
@@ -200,7 +275,5 @@
       {!! Form::close() !!}
       </div>
     </div>
-
-
 </div>
 

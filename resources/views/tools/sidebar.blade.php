@@ -59,6 +59,12 @@
       <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
       <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
       <a href="{{ url('almacen') }}"><li>Almacen </li></a>
+      <a href="{{ url('items') }}"><li>Registrar Item </li></a>
+      <a href="{{ url('preventivo') }}"><li>Mantenimiento Preventivo </li></a>
+      <a href="{{ url('lpreventivos') }}"><li>Listado Mantenimiento Preventivo </li></a>
+      <a href="{{ url('diario') }}"><li>Mantenimiento Diario </li></a>
+      <a href="{{ url('ldiario') }}"><li>Listado Mantenimiento Diario </li></a>
+      <a href="{{ url('marcas') }}"><li>Registrar Marca</li></a>
                 
 
 

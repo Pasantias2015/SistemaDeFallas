@@ -42,6 +42,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->belongsTo('App\Rol');
 	}
+	public function preventivo()
+    {
+        return $this->hasMany('App\MantenimientoPreventivo','id');
+    }
 
 
 

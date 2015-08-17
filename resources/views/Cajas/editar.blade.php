@@ -8,14 +8,16 @@
        @include('tools.errors')   
 
            {!! Form::model($caja,['route'=>['cajas.update',$caja],'method'=>'PUT']) !!}
-
-                <div class="col-md-12">
-
-                   <div class="form-group">
-                       <span>Descripcion: </span>
-                       {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
-                   </div>       
-               </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <span>Descripcion: </span>
+                  {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
+                </div>   
+                <div class="form-group">
+                  <span>Mecanico: </span>
+                  {!! Form::text('mecanico',null,['class'=>'form-control']) !!} 
+                </div>     
+              </div>
 
            @include('tools.botones-actualizar')
            {!! Form::close() !!}

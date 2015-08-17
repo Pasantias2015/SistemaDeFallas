@@ -2,13 +2,14 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CrearItemRequest;
-use App\Http\Requests\EditarItemRequest;
-use App\Item;
-use App\Mantenimiento;
+use App\MantenimientoPreventivo;
+use App\Http\Requests\CrearMantenimientoPreventivoRequest;
+use App\ServicioUnidadOperador;
+use App\User;
+
 use Illuminate\Http\Request;
 
-class ItemController extends Controller {
+class MantenimientoPreventivoController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,9 +18,9 @@ class ItemController extends Controller {
 	 */
 	public function index()
 	{
-		$mantenimientos = Mantenimiento::all();
-		$items = Item::paginate(5);
-        return view('Items.crear',compact('items','mantenimientos'));
+		$usuarios =  User::all();
+		$unidades =  ServicioUnidadOperador::all();
+		return view('Mantenimiento_Preventivo.crear',compact('unidades','usuarios'));
 	}
 
 	/**
@@ -37,14 +38,13 @@ class ItemController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearItemRequest $request)
+	public function store(CrearMantenimientoPreventivoRequest $request)
 	{
-		$item = Item::create($request->all());
-		$mantenimientos = Mantenimiento::all();
-		$items = Item::paginate(5);
-        return view('Items.crear',compact('items','mantenimientos'));
+		MantenimientoPreventivo::create($request->all());
+		$usuarios =  User::all();
+		$unidades =  ServicioUnidadOperador::all();
+		return view('Mantenimiento_Preventivo.crear',compact('unidades','usuarios'));
 	}
-
 	/**
 	 * Display the specified resource.
 	 *
@@ -64,8 +64,8 @@ class ItemController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$item = Item::findOrFail($id);
-        return view('Items.editar',compact('item'));
+		$preventivo = MantenimientoPreventivo::findOrFail($id);
+        return view('Mantenimiento_Preventivo.ver',compact('preventivo'));
 	}
 
 	/**
@@ -74,12 +74,9 @@ class ItemController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(EditarItemRequest $request,$id)
+	public function update($id)
 	{
-		$item = Item::findOrFail($id);
-        $item->fill($request->all());
-        $item->save();
-        return redirect('items');
+		//
 	}
 
 	/**
@@ -91,6 +88,11 @@ class ItemController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+	public function listado()
+	{
+		$preventivos = MantenimientoPreventivo::paginate(10);
+		return view('Mantenimiento_Preventivo.listado',compact('preventivos'));
 	}
 
 }

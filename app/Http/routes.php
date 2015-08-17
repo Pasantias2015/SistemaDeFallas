@@ -93,9 +93,20 @@ resource('cajas','CajaController');
 resource('coordinaciones','CoordinacionController');
 resource('items','ItemController');
 resource('personas','PersonaController');
+resource('preventivo','MantenimientoPreventivoController');
+resource('lpreventivos','MantenimientoPreventivoController@listado');
+resource('diario','MantenimientoDiarioController');
+resource('ldiario','MantenimientoDiarioController@listado');
+resource('marcas','MarcaController');
+resource('rdiario','MantenimientoDiarioController@reporte');
+
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');
 Route::get('/ajax-ciudad','CargaController@cargarciudades');
 Route::get('/ajax-municipio','CargaController@cargarmunicipios');
 Route::get('/ajax-parroquia','CargaController@cargarparroquias');
+Route::get('/ajax-modelo','CargaController@cargarmodelos');
+Route::get('/ajax-seccion','CargaController@cargarsecciones');
+Route::get('/ajax-grupo','CargaController@cargargrupos');
+Route::get('/ajax-pieza','CargaController@cargarpiezas');

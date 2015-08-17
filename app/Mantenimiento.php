@@ -10,4 +10,9 @@ class Mantenimiento extends Model {
 
     protected $fillable=['nombre','descripcion'];
 
+    public function item()
+	{
+        return $this->hasMany('App\Item', 'id');
+	}
+
 }

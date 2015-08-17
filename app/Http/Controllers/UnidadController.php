@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Requests\CrearUnidadRequest;
 use App\Http\Requests\EditUnidadRequest;
 use App\Unidad;
-use App\Modelo;
+use App\Marca;
 
 class UnidadController extends Controller {
 
@@ -59,8 +59,8 @@ class UnidadController extends Controller {
 	 */
 	public function create()
 	{
-		$modelos= Modelo::all();
-		return view('Unidades.registrarunidad',compact('modelos'));
+		$marcas = Marca::all();
+		return view('Unidades.registrarunidad',compact('marcas'));
 	}
 
 	/**
