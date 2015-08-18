@@ -20,11 +20,9 @@
                     <div class="form-group row">
                         <div class="col-md-3"><span>Unidad:</span></div>
                         <div class="col-md-9">   
-                            <select name="serviciounidadoperador_id" class="form-control">
-                                @foreach($unidades as $unidad)
-                                    <option value="{{ $unidad->id }}">{{ $unidad->servicio->descripcion."-".$unidad->unidad->nidentificacion."-".$unidad->operador->persona->pnombre }}</option>    
-                                @endforeach
-                            </select>
+                            <input type="text" disabled value="{{$unidad->nidentificacion." - ".$unidad->modelo->marca->nombre." - ".$unidad->modelo->marca->nombre." - ".$serviciounidadoperador[0]->servicio->descripcion}}" class="form-control">
+                            <input type="hidden" name="unidad_id" value="{{$unidad->id}}" class="form-control">
+                            <input type="hidden" name="serviciounidadoperador_id" value="{{$serviciounidadoperador[0]->id}}" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -35,8 +33,9 @@
                             <div class="col-md-6">
                                 <div class="form-group row">
                                     <div class="col-md-5"><span>Kilometraje Actual:</span></div>
-                                    <div class="col-md-6">    
-                                        {!! Form::text('kilometraje',null,['class'=>'form-control']) !!}
+                                    <div class="col-md-6">
+                                        <input type="text" disabled value="{{$unidad->kilometrajeactual}}" class="form-control">
+                                        <input type="hidden" name="kilometraje" value="{{$unidad->kilometrajeactual}}" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -47,7 +46,7 @@
                                             <span>Tipo de Combustible:</span>
                                     </div>
                                     <div class="col-md-6">
-                                            {!! Form::text('combustible',null,['class'=>'form-control']) !!}
+                                        <input type="text" disabled value="{{$unidad->modelo->combustible}}" class="form-control">
                                     </div>
                                 </div>
                             </div>

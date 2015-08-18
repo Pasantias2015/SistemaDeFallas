@@ -99,6 +99,7 @@ resource('diario','MantenimientoDiarioController');
 resource('ldiario','MantenimientoDiarioController@listado');
 resource('marcas','MarcaController');
 resource('rdiario','MantenimientoDiarioController@reporte');
+resource('uniprev','MantenimientoPreventivoController@listadoPreventivo');
 
 
 /*combo*/

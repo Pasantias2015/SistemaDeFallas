@@ -25,8 +25,6 @@ class CrearMantenimientoPreventivoRequest extends Request {
 						// 'usuario_id'=>'required'
 					 //    'serviciounidadoperador_id'=>'required',
 					    'fecha'=>'required',
-					    'kilometraje'=>'required',
-					    'combustible'=>'required',
 					    'rlfiltroa'=>'required', //revision y limpieza filtro de aire
 					    'clubricante'=>'required', //cambio lubricante motor
 					    'cfaceite'=>'required', //cambio filtro de aceite

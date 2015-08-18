@@ -41,7 +41,7 @@
                 <div class="col-md-6">
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <input type="text" name="kilometrajebase" value="{{$unidad->unidad->kilometrajebase}}" class="form-control">
+                            <input type="hidden" name="kilometrajebase" value="" class="form-control">
                         </div>
                     </div>
                 </div>  

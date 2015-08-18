@@ -2,8 +2,8 @@
 @include('tools.sidebar')
 @section('content')
 <div class="row">
-	<div id="graficos" class="col-md-12" style=" height:250px"></div>
-	<div class="col-md-12">
+	<div id="graficos" class="col-md-11" style=" height:250px"></div>
+	<div class="col-md-11">
 		<div class="panel panel-danger">
 			<div class="panel-heading">Mantenimientos Diarios Realizados</div>
 				<table class="table table-bordered table-striped">

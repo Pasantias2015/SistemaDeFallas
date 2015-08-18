@@ -17,11 +17,12 @@ class MantenimientoPreventivoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($preventivo)
 	{
-		$usuarios =  User::all();
-		$unidades =  ServicioUnidadOperador::all();
-		return view('Mantenimiento_Preventivo.crear',compact('unidades','usuarios'));
+		// $unidad = Unidad::findOrFail($preventivo);
+		// $serviciounidadoperador = ServicioUnidadOperador::where('unidad_id','=',$preventivo)->get();
+		// $usuarios =  User::all();
+		// return view('Mantenimiento_Preventivo.crear',compact('unidad','usuarios','serviciounidadoperador'));
 	}
 
 	/**
@@ -42,16 +43,16 @@ class MantenimientoPreventivoController extends Controller {
 	public function store(CrearMantenimientoPreventivoRequest $request)
 	{
 		$preventivo= MantenimientoPreventivo::create($request->all());
-		
+		//Actualizando el kilometraje base 
 		$actual = $request->kilometraje;
-		$unidad = $preventivo->serviciounidadoperador->unidad->id;
+		$unidad = $request->unidad_id;
 		$unidad = Unidad::findOrFail($unidad);
-		$unidad->kilometrajebase = $actual;
+		$unidad->kilometrajebase = $unidad->kilometrajeactual;
+		$unidad->preventivo = "No";
 		$unidad->save();
 
-		$usuarios =  User::all();
-		$unidades =  ServicioUnidadOperador::all();
-		return view('Mantenimiento_Preventivo.crear',compact('unidades','usuarios'));
+		$preventivos = Unidad::where('preventivo','=','Si')->get();
+		return view('Mantenimiento_Preventivo.listadopreventivo',compact('preventivos'));
 	}
 	/**
 	 * Display the specified resource.
@@ -61,7 +62,10 @@ class MantenimientoPreventivoController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$unidad = Unidad::findOrFail($id);
+		$serviciounidadoperador = ServicioUnidadOperador::where('unidad_id','=',$unidad->id)->get();
+		$usuarios =  User::all();
+		return view('Mantenimiento_Preventivo.crear',compact('unidad','usuarios','serviciounidadoperador'));
 	}
 
 	/**
@@ -101,6 +105,11 @@ class MantenimientoPreventivoController extends Controller {
 	{
 		$preventivos = MantenimientoPreventivo::paginate(10);
 		return view('Mantenimiento_Preventivo.listado',compact('preventivos'));
+	}
+	public function listadoPreventivo()
+	{
+		$preventivos = Unidad::where('preventivo','=','Si')->get();
+		return view('Mantenimiento_Preventivo.listadopreventivo',compact('preventivos'));
 	}
 
 }

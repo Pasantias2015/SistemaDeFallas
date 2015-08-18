@@ -38,8 +38,20 @@
       
       </ul>
       </div>
-    
-    <div class='sidebar-menu'><i class="mdi-action-settings left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-wrench left"></i>Mantenimientos<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+      <div class='sub-menu'>
+        <ul>
+            <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
+            <a href="{{ url('diario') }}"><li>Mantenimiento Diario </li></a>
+            <a href="{{ url('ldiario') }}"><li>Listado Mantenimiento Diario </li></a>
+            <!-- <a href="{{ url('preventivo') }}"><li>Realizar Mantenimiento Preventivo </li></a> -->
+            <a href="{{ url('uniprev') }}"><li>Mantenimiento Preventivo Pendientes</li></a>
+            <a href="{{ url('lpreventivos') }}"><li>Mantenimiento Preventivo Realizados</li></a>
+            <a href="{{ url('rdiario') }}"><li>Reporte Mantenimiento Diario</li></a>
+            
+        </ul>
+      </div>
+    <div class='sidebar-menu'><i class="fa fa-cogs left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
       <a href="{{ route('servicios.index') }}"><li>Registrar Servicios</li></a>
@@ -49,23 +61,17 @@
       <a href="{{ route('puestos.index') }}"><li>Registrar Puesto</li></a>
       
       <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
-     
+      <a href="{{ url('marcas') }}"><li>Registrar Marca</li></a>
       <a href="{{ url('modelos') }}"><li>Registrar Modelo</li></a>
       <a href="{{ url('secciones') }}"><li>Registrar Seccion</li></a>
       <a href="{{ url('grupos') }}"><li>Registrar Grupo</li></a>
       <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
       <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
-      <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
       <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
       <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
       <a href="{{ url('almacen') }}"><li>Almacen </li></a>
       <a href="{{ url('items') }}"><li>Registrar Item </li></a>
-      <a href="{{ url('preventivo') }}"><li>Mantenimiento Preventivo </li></a>
-      <a href="{{ url('lpreventivos') }}"><li>Listado Mantenimiento Preventivo </li></a>
-      <a href="{{ url('diario') }}"><li>Mantenimiento Diario </li></a>
-      <a href="{{ url('ldiario') }}"><li>Listado Mantenimiento Diario </li></a>
-      <a href="{{ url('marcas') }}"><li>Registrar Marca</li></a>
-                
+                   
 
 
 

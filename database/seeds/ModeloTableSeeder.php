@@ -14,7 +14,7 @@ class ModeloTableSeeder extends Seeder
 			$array[] = ['codigo'=> 'ZK68'.$i,
 			'descripcion'=>'Modelo '.$i,
 			'combustible'=>'Diesel',
-			'dimension'=>'12 Mt',
+			'dimension'=>'12',
 			'transmision'=>'Sincronico',
 			'marca_id'=>$i];
 
