@@ -20,7 +20,7 @@
                     <div class="form-group row">
                         <div class="col-md-3"><span>Unidad:</span></div>
                         <div class="col-md-9">   
-                            <select name="unidad_id" id="unidad" class="form-control">
+                            <select name="serviciounidadoperador_id" id="unidad" class="form-control">
                                 @foreach($unidades as $unidad)
                                     <option value="{{ $unidad->id }}">{{$unidad->unidad->nidentificacion}}</option>    
                                 @endforeach
@@ -61,7 +61,8 @@
                     </div>
                         <div class="form-group row aceite">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Litros Completó?</strong></div>
-                            <div class="col-md-2">{!! Form::number('litrosa',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2">
+                            <input type="number" name="litrosa" id="litrosa" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span>Lts</span></div>
                         </div>
                     <div class="form-group row">
@@ -75,7 +76,7 @@
                     </div>
                         <div class="form-group row refrigerante">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Litros Completó?</strong></div>
-                            <div class="col-md-2">{!! Form::number('litrosr',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="litrosr" id="litrosr" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span>Lts</span></div>
                         </div>
                     <div class="form-group row">
@@ -98,7 +99,7 @@
                     </div>
                         <div class="form-group row neumaticos">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuanto Aire(psi/bar) Completó?</strong></div>
-                            <div class="col-md-2">{!! Form::number('aire',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="aire" id="aire" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span>(psi/bar)</span></div>
                         </div>
                     <div class="form-group row">
@@ -112,7 +113,7 @@
                     </div>
                         <div class="form-group row combustible">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuanto Combustible Completó?</strong></div>
-                            <div class="col-md-2">{!! Form::number('combust',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="combust" id="combust" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span>lts</span></div>
                         </div>
                     <div class="form-group row">
@@ -126,7 +127,7 @@
                     </div>
                         <div class="form-group row asientos">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Asientos En mal estado?</strong></div>
-                            <div class="col-md-2">{!! Form::number('asientosmal',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="asientosmal" id="asientosmal" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span></span></div>
                         </div>
                     <div class="form-group row">
@@ -140,10 +141,10 @@
                     </div>
                         <div class="form-group row carroceria">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Rayones/golpes detectó?</strong></div>
-                            <div class="col-md-2">{!! Form::number('rayones',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="rayones" id="asientosmal" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span></span></div>
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Vidrios Rotos detectó?</strong></div>
-                            <div class="col-md-2">{!! Form::number('vidrios',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="vidrios" id="asientosmal" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span></span></div>
                         </div>
                     <div class="form-group row">
@@ -196,7 +197,7 @@
                     </div>
                         <div class="form-group row lucesinternas">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuantas Luces Internas en Mal Estado?</strong></div>
-                            <div class="col-md-2">{!! Form::number('lucesimal',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="lucesimal" id="lucesimal" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span></span></div>
                         </div>
                     <div class="form-group row">
@@ -210,7 +211,7 @@
                     </div>
                         <div class="form-group row elucesinternas">
                             <div class="col-md-7 col-md-offset-1"><strong>¿Cuantas Luces Internas No Encienden?</strong></div>
-                            <div class="col-md-2">{!! Form::number('elucesimal',0,['class'=>'form-control']) !!}</div>
+                            <div class="col-md-2"><input type="number" name="elucesimal" id="elucesimal" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span></span></div>
                         </div>
                     <div class="form-group row">
@@ -280,129 +281,5 @@
         </div>
     </div>
 </div>
-<script>
-
-    $(document).ready(function(){
-        $(".aceite").toggle();
-        $(".refrigerante").toggle();
-        $(".neumaticos").toggle();
-        $(".combustible").toggle();
-        $(".asientos").toggle();
-        $(".carroceria").toggle();
-        $(".correa").toggle();
-        $(".equipo").toggle();
-        $(".lucesinternas").toggle();
-        $(".elucesinternas").toggle();
-        $(".lucesexternas").toggle();
-        $(".elucesexternas").toggle();
-        $(".elucesemexternas").toggle();
-
-        $('#cnaceitem').on('change', function() {
-            if(this.value == "No"){
-                $(".aceite").toggle();
-            }
-            else{
-                 $(".aceite").toggle();
-            };
-        });
-        $('#cnrefrigerante').on('change', function() {
-            if(this.value == "No"){
-                $(".refrigerante").toggle();
-            }
-            else{
-                 $(".refrigerante").toggle();
-            };
-        });
-        $('#airene').on('change', function() {
-            if(this.value == "No"){
-                $(".neumaticos").toggle();
-            }
-            else{
-                 $(".neumaticos").toggle();
-            };
-        });
-        $('#cncomb').on('change', function() {
-            if(this.value == "No"){
-                $(".combustible").toggle();
-            }
-            else{
-                 $(".combustible").toggle();
-            };
-        });
-        $('#ceiasientos').on('change', function() {
-            if(this.value == "No"){
-                $(".asientos").toggle();
-            }
-            else{
-                 $(".asientos").toggle();
-            };
-        });
-        $('#ceecarroceria').on('change', function() {
-            if(this.value == "No"){
-                $(".carroceria").toggle();
-            }
-            else{
-                 $(".carroceria").toggle();
-            };
-        });
-        $('#ccorrea').on('change', function() {
-            if(this.value == "No"){
-                $(".correa").toggle();
-            }
-            else{
-                 $(".correa").toggle();
-            };
-        });
-        $('#ceseguridad').on('change', function() {
-            if(this.value == "No"){
-                $(".equipo").toggle();
-            }
-            else{
-                 $(".equipo").toggle();
-            };
-        });
-        $('#ceflucesi').on('change', function() {
-            if(this.value == "No"){
-                $(".lucesinternas").toggle();
-            }
-            else{
-                 $(".lucesinternas").toggle();
-            };
-        });
-        $('#celucesi').on('change', function() {
-            if(this.value == "No"){
-                $(".elucesinternas").toggle();
-            }
-            else{
-                 $(".elucesinternas").toggle();
-            };
-        });
-        $('#celucese').on('change', function() {
-            if(this.value == "No"){
-                $(".lucesexternas").toggle();
-            }
-            else{
-                 $(".lucesexternas").toggle();
-            };
-        });
-        $('#celucesc').on('change', function() {
-            if(this.value == "No"){
-                $(".elucesexternas").toggle();
-            }
-            else{
-                 $(".elucesexternas").toggle();
-            };
-        });
-        $('#celucesem').on('change', function() {
-            if(this.value == "No"){
-                $(".elucesemexternas").toggle();
-            }
-            else{
-                 $(".elucesemexternas").toggle();
-            };
-        });
-    });
-</script>
-
-
+{!! Html::script('js/tooglediario.js') !!}    
 @endsection

@@ -28,7 +28,7 @@
                         </div>
                         <div class="form-group">
                                 <span>Cantidad: </span>
-                                {!! Form::text('cantidad',null,['class'=>'form-control']) !!}
+                                {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
                         </div>
 
 					@include('tools.botones-registrar')

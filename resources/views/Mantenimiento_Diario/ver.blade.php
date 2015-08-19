@@ -34,7 +34,7 @@
                 </div>
           </div>
           <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-md-12">
                 <div class="panel panel-danger">
                     <div class="panel-heading">Parametros a Revisar</div>
                     <div class="form-group row">
@@ -223,5 +223,3 @@
     <input action="action" type="button" value="Regresar" onclick="history.go(-1);" class="btn btn-danger" />
 </div>
 @endsection
-
-

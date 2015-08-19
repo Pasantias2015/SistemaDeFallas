@@ -1,7 +1,7 @@
 @extends('app')
 @include('tools.sidebar')
 @section('content')
-<div class="col-md-11">
+<div class="col-md-12">
     <div class="panel panel-danger">
         <div class="panel-heading">Mantenimiento Preventivo</div>
         <div class="panel-body">
@@ -20,7 +20,7 @@
                     <div class="form-group row">
                         <div class="col-md-3"><span>Unidad:</span></div>
                         <div class="col-md-9">   
-                            <input type="text" disabled value="{{$unidad->nidentificacion." - ".$unidad->modelo->marca->nombre." - ".$unidad->modelo->marca->nombre." - ".$serviciounidadoperador[0]->servicio->descripcion}}" class="form-control">
+                            <input type="text" disabled value="{{$unidad->nidentificacion." - ".$unidad->modelo->codigo." - ".$unidad->modelo->descripcion." - ".$unidad->modelo->marca->nombre." - ".$serviciounidadoperador[0]->servicio->descripcion}}" class="form-control">
                             <input type="hidden" name="unidad_id" value="{{$unidad->id}}" class="form-control">
                             <input type="hidden" name="serviciounidadoperador_id" value="{{$serviciounidadoperador[0]->id}}" class="form-control">
                         </div>
@@ -127,11 +127,18 @@
                                     <span>No:</span>{!! Form::radio('lavadom', 'No', false) !!} 
                                 </div>
                             </div>
+                        <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>Lavado: Filtro de Gases del Motor</span></div>
+                            <div class="col-md-3">    
+                                <span>Si:</span>{!! Form::radio('lfgases', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('lfgases', 'No', false) !!} 
+                            </div>
+                        </div>
                     </div>  
                     <div class="panel panel-danger">
                         <div class="panel-heading">Sistema de Dirección</div>
                         <div class="form-group row">
-                            <div class="col-md-8 col-md-offset-1"><span>Revisión: Salideros de Aceite:</span></div>
+                            <div class="col-md-8 col-md-offset-1"><span>Revisión: Fugas de Aceite:</span></div>
                             <div class="col-md-3">    
                                 <span>Si:</span>{!! Form::radio('rsalidaa', 'Si', true) !!} 
                                 <span>No:</span>{!! Form::radio('rsalidaa', 'No', false) !!} 
@@ -142,13 +149,6 @@
                             <div class="col-md-3">    
                                 <span>Si:</span>{!! Form::radio('rjuegovolante', 'Si', true) !!} 
                                 <span>No:</span>{!! Form::radio('rjuegovolante', 'No', false) !!} 
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-md-8 col-md-offset-1"><span>Revisión</span></div>
-                            <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('revision', 'Si', true) !!} 
-                                <span>No:</span>{!! Form::radio('revision', 'No', false) !!} 
                             </div>
                         </div>
                         <div class="form-group row">
@@ -174,16 +174,6 @@
                         </div>
                     </div>
                     <div class="panel panel-danger">
-                    <div class="panel-heading">Yutong</div>
-                        <div class="form-group row">
-                            <div class="col-md-8 col-md-offset-1"><span>Lavado: Filtro de Gases</span></div>
-                            <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('lfgases', 'Si', true) !!} 
-                                <span>No:</span>{!! Form::radio('lfgases', 'No', false) !!} 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-danger">
                         <div class="panel-heading">Sistema de Embrague</div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Chequeo y Engrase</span></div>
@@ -193,7 +183,6 @@
                             </div>
                         </div>
                     </div>
-                    
                     <div class="panel panel-danger">
                         <div class="panel-heading">Sistema de Enfriamiento</div>
                             <div class="form-group row">
@@ -210,6 +199,72 @@
                                     <span>No:</span>{!! Form::radio('cabmangueras', 'No', false) !!} 
                                 </div>
                             </div>
+                    </div>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading"> Luces </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Revisión y Chequeo: Luces</span></div>
+                                <div class="col-md-3">    
+                                    <span>Si:</span>{!! Form::radio('rcluces', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('rcluces', 'No', false) !!} 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Cambio De Luces Internas</span></div>
+                                <div class="col-md-3">
+                                    <select name="camlucesi" id="camlucesi" class="form-control">
+                                        <option value="Si">Si</option>              
+                                        <option value="No">No</option>
+                                    </select>    
+                                </div>
+                            </div>
+                                <div class="form-group row clucesinternas">
+                                    <div class="col-md-7 col-md-offset-1"><span>¿Cuantas Luces Internas Se Cambiaron?</span></div>
+                                    <div class="col-md-2"><input type="number" name="clucesi" id="clucesi" default="0" min="0" class="form-control"/></div>
+                                    <div class="col-md-2"><span>Luces</span></div>
+                                </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Cambio de Luces Externas</span></div>
+                                <div class="col-md-3">
+                                    <select name="camlucese" id="camlucese" class="form-control">
+                                        <option value="Si">Si</option>              
+                                        <option value="No">No</option>
+                                    </select>    
+                                </div>
+                            </div>
+                                <div class="form-group row clucesexternas">
+                                    <div class="col-md-7 col-md-offset-1"><span>¿Cuantas Luces Externas Se Cambiaron?</span></div>
+                                    <div class="col-md-2"><input type="number" name="clucese" id="clucese" default="0" min="0" class="form-control"/></div>
+                                    <div class="col-md-2"><span>Luces</span></div>
+                                </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Cambio de Luces Cruce</span></div>
+                                 <div class="col-md-3">
+                                    <select name="camlucesc" id="camlucesc" class="form-control">
+                                        <option value="Si">Si</option>              
+                                        <option value="No">No</option>
+                                    </select>    
+                                </div>
+                            </div>
+                                <div class="form-group row clucescruce">
+                                    <div class="col-md-7 col-md-offset-1"><span>¿Cuantas Luces de Cruce Se Cambiaron?</span></div>
+                                    <div class="col-md-2"><input type="number" name="clucesc" id="clucesc" default="0" min="0" class="form-control"/></div>
+                                    <div class="col-md-2"><span>Luces</span></div>
+                                </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Cambio de Luces Emergencia</span></div>
+                                <div class="col-md-3">
+                                    <select name="camlucesem" id="camlucesem" class="form-control">
+                                        <option value="Si">Si</option>              
+                                        <option value="No">No</option>
+                                    </select>    
+                                </div>
+                            </div>
+                                <div class="form-group row cluceseme">
+                                    <div class="col-md-7 col-md-offset-1"><span>¿Cuantas Luces de Emergencia Se Cambiaron?</span></div>
+                                    <div class="col-md-2"><input type="number" name="clucesem" id="clucesem" default="0" min="0" class="form-control"/></div>
+                                    <div class="col-md-2"><span>Luces</span></div>
+                                </div>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -271,7 +326,7 @@
                     <div class="panel panel-danger">
                         <div class="panel-heading">Eje y Rueda</div>
                             <div class="form-group row">
-                                <div class="col-md-8 col-md-offset-1"><span>Revisión: Salidero del Diferencial</span></div>
+                                <div class="col-md-8 col-md-offset-1"><span>Revisión: Fuga del Diferencial</span></div>
                                 <div class="col-md-3">    
                                     <span>Si:</span>{!! Form::radio('rsaliderod', 'Si', true) !!} 
                                     <span>No:</span>{!! Form::radio('rsaliderod', 'No', false) !!} 
@@ -331,17 +386,17 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-md-8 col-md-offset-1"><span>Revisión y Chequeo: Luces</span></div>
-                                <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('rcluces', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('rcluces', 'No', false) !!} 
-                                </div>
-                            </div>
-                            <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Chequeo: Funcionamiento del Indicador de Destino</span></div>
                                 <div class="col-md-3">    
                                     <span>Si:</span>{!! Form::radio('cdestino', 'Si', true) !!} 
                                     <span>No:</span>{!! Form::radio('cdestino', 'No', false) !!} 
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-md-8 col-md-offset-1"><span>Chequeo: Cornetas</span></div>
+                                <div class="col-md-3">    
+                                    <span>Si:</span>{!! Form::radio('cornetas', 'Si', true) !!} 
+                                    <span>No:</span>{!! Form::radio('cornetas', 'No', false) !!} 
                                 </div>
                             </div>
                     </div>
@@ -352,6 +407,30 @@
                             <div class="col-md-3">    
                                 <span>Si:</span>{!! Form::radio('bandas', 'Si', true) !!} 
                                 <span>No:</span>{!! Form::radio('bandas', 'No', false) !!} 
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>Chequeo y Ajustes: Discos de Frenos</span></div>
+                            <div class="col-md-3">    
+                                <span>Si:</span>{!! Form::radio('discos', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('discos', 'No', false) !!} 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Aire Acondicionado (A/A)</div>
+                        <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>Cambio: Filtro</span></div>
+                            <div class="col-md-3">    
+                                <span>Si:</span>{!! Form::radio('cambioaa', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('cambioaa', 'No', false) !!} 
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>Lavado: Filtro</span></div>
+                            <div class="col-md-3">    
+                                <span>Si:</span>{!! Form::radio('lavadoaa', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('lavadoaa', 'No', false) !!} 
                             </div>
                         </div>
                     </div>
@@ -401,11 +480,9 @@
                 </div>
             </div>
             @include('tools.botones-registrar')
-
             {!! Form::close() !!}
         </div>
-
     </div>
-
 </div>
+{!! Html::script('js/tooglediario.js') !!}
 @endsection
