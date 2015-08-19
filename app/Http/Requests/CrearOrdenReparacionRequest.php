@@ -1,10 +1,16 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Routing\Route;
 
-class CrearMantenimientoDiarioRequest extends Request {
 
-	/**
+class OrdenReparacionRequest extends Request {
+
+	 public function __construct(Route $route)
+   {
+       $this->route = $route;
+   }
+   /**
 	 * Determine if the user is authorized to make this request.
 	 *
 	 * @return bool
@@ -21,11 +27,8 @@ class CrearMantenimientoDiarioRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [		
-						'usuario_id'=>'required',
-                        'fecha'=>'required',
-    					'serviciounidadoperador_id'=>'required',
-
+		return [
+			'combustible' =>'required|unique:reparaciones,combustible'
 		];
 	}
 

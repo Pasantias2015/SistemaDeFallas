@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CrearMantenimientoDiarioRequest extends Request {
+class CrearMantenimientoCorrectivoRequez extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -21,11 +21,8 @@ class CrearMantenimientoDiarioRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [		
-						'usuario_id'=>'required',
-                        'fecha'=>'required',
-    					'serviciounidadoperador_id'=>'required',
-
+		return [
+			//
 		];
 	}
 

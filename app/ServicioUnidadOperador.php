@@ -31,5 +31,8 @@ class ServicioUnidadOperador extends Model {
 	public function preventivo(){
 		return $this->hasMany('App\MantenimientoPreventivo');
 	}
+	public function correctivo(){
+		return $this->hasMany('App\MantenimientoCorrectivo');
+	}
 
 }

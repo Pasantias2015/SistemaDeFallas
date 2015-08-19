@@ -43,7 +43,7 @@
         <ul>
             <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
             <a href="{{ url('diario') }}"><li>Mantenimiento Diario </li></a>
-            <a href="{{ url('ldiario') }}"><li>Listado Mantenimiento Diario </li></a>
+            <a href="{{ url('ldiario') }}"><li>Mantenimientos Diarios Realizados </li></a>
             <!-- <a href="{{ url('preventivo') }}"><li>Realizar Mantenimiento Preventivo </li></a> -->
             <a href="{{ url('uniprev') }}"><li>Mantenimiento Preventivo Pendientes</li></a>
             <a href="{{ url('lpreventivos') }}"><li>Mantenimiento Preventivo Realizados</li></a>

@@ -46,6 +46,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     {
         return $this->hasMany('App\MantenimientoPreventivo','id');
     }
+	public function diario()
+    {
+        return $this->hasMany('App\MantenimientoDiario','id');
+    }
 
 
 

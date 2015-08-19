@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-8 col-md-offset-1">
       <div class="panel panel-danger">
-            <div class="panel-heading">Mantenimientos Diarios </div>
+            <div class="panel-heading">Mantenimientos Diarios Realizados</div>
             <div class="panel-body">
              @include('tools.errors')
             {!! Form::open() !!}

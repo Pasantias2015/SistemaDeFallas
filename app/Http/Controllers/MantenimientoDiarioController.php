@@ -46,19 +46,27 @@ class MantenimientoDiarioController extends Controller {
 		$actual = $request->kilometrajeactual;
 		$idunidad = $diario->serviciounidadoperador->unidad->id;
 		$unidad = Unidad::findOrFail($idunidad);
-		$unidad->kilometrajeactual = $actual;
+		
+		if ($unidad->kilometrajeactual<$actual) {
+			$unidad->kilometrajeactual = $actual;
+		} else {
+			return view('Mantenimiento_Diario.error');
+		}
+		
 		$unidad->save();
 
 		//verificacion del kilometraje ¿llego al Limite?
 		if (($unidad->modelo->dimension)>10) {
 			if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=10000){
 				$unidad->preventivo = "Si";
+				// $unidad->operativo = "No";
 			} else {
 				$unidad->preventivo = "No";
 			}
 		} else {
 			if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=5000){
 				$unidad->preventivo = "Si";
+				// $unidad->operativo = "No";
 			} else {
 				$unidad->preventivo = "No";
 			}
