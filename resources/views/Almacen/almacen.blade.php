@@ -12,7 +12,8 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza1">Pieza</button>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#herramienta">Herramienta</button>
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#articulo">Articulo</button>
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#caja">Caja</button>
+                <button type="button" class="btn btn-default" data-toggle="modal" data-target="#caja">Caja</button>
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#fluidos">Fluidos</button>
             </div>
             <div class="col-md-12">
                     <table class="table table-bordered table-striped">
@@ -155,8 +156,42 @@
                     </div>
             </div>
             <div class="modal-footer">
-              <button type="submit" class="btn btn-warning">Registrar</button>
-              <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-default">Registrar</button>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+            {!! Form::close() !!}
+        </div>
+    </div>
+</div>
+
+<!-- Modal Fluidos -->
+<div class="modal fade" id="fluidos" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+        <div class="modal-content panel panel-danger">
+            <div class="modal-header panel-heading">
+                Ingresar Fluidos al Almacen
+            </div>
+            <div class="modal-body">
+                {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
+                    <div class="form-group">
+                        <span>Codigo: </span>
+                        {!! Form::text('codigo',null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                        <span>Descripcion: </span>
+                        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
+                    </div>
+                    <div class="form-group">
+                         <span>Cantidad(Lts): </span>{!! Form::number('cantidad',null,['class'=>'form-control']) !!} 
+                    </div>
+                    <div class="form-group">
+                        <input type="hidden" name="tipo" value="Fluidos">
+                    </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-info">Registrar</button>
+              <button type="button" class="btn btn-info" data-dismiss="modal">Cerrar</button>
             </div>
             {!! Form::close() !!}
         </div>

@@ -33,7 +33,6 @@ class CreateMantenimientoPreventivosTable extends Migration {
 			$table->string('lavadom'); //lavado de motor
 			$table->string('rsalidaa'); //Revisión: Salideros de Aceite
 			$table->string('rjuegovolante');//Revisión: Juego del Volante
-			$table->string('revision');//Revisión
 			$table->string('abarrasy');//Ajustamiento de las Barras Yoquis de Dirección
 			$table->string('raengrase');//Revisión, Ajuste y Engrase
 			$table->string('rnadireccion');//Revisión: Nivel de Aceite de Direccion
@@ -60,6 +59,18 @@ class CreateMantenimientoPreventivosTable extends Migration {
 			$table->string('ccorrea');//Cambio de Correa
 			$table->string('cbaterias'); //Cambio de Baterias
 			$table->string('cbornes'); //Cambio de Bornes
+			$table->string('camlucesi'); //Cambio De Luces Internas
+			$table->string('camlucese'); //Cambio de Luces Externas
+			$table->string('clucesi'); //¿Cuantas Luces Internas Se Cambiaron?
+			$table->string('clucese'); //¿Cuantas Luces Externas Se Cambiaron?
+			$table->string('camlucesc'); //Cambio de Luces Cruce
+			$table->string('clucesc'); //¿Cuantas Luces de Cruce Se Cambiaron?
+			$table->string('camlucesem'); //Cambio de Luces Emergencia
+			$table->string('clucesem'); //Cuantas Luces de Emergencia Se Cambiaron?
+			$table->string('cornetas'); //Chequeo: Cornetas
+			$table->string('discos'); //Chequeo y Ajustes: Discos de Frenos
+			$table->string('cambioaa'); //Cambio: Filtro A/A
+			$table->string('lavadoaa'); //Lavado: Filtro A/A
 			$table->string('mecanico');
 			$table->string('tecmecanico');
 			$table->string('ayudmecanico');

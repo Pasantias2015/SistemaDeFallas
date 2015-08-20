@@ -43,5 +43,16 @@ $(document).ready(function(){
             });
           
         });
+        $('#mecanico').on('change',function(e){
+        
+            var mecanico_id = e.target.value;
+            $.get('/ajax-mecanico?mecanico_id='+mecanico_id,function(data){
+                $('#cedula').empty();
+                $.each(data,function(index,cedulaObj){
+                    $('#cedula').append('<option value="'+cedulaObj.id+'">'+cedulaObj.cedula+'</option>');
+                });
+            });
+            console.log(e);
+        });
 
     });

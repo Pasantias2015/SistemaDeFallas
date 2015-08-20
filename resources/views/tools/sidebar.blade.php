@@ -33,6 +33,9 @@
       <ul>
       <a href="{{ url('reportes') }}"><li>Unidades</li></a>
       <a href="{{ route('reportes.create') }}"><li>Incidencias</li></a>
+      <a href="{{ url('rdiario') }}"><li>Mantenimiento Diario General</li></a>
+      <a href="{{ url('rdiario1') }}"><li>Reporte Mto Diario: Fluidos Usados</li></a>
+      <a href="{{ url('rdiario2') }}"><li>Reporte Mto Diario: Estado Fisico</li></a>
       
       
       
@@ -47,11 +50,19 @@
             <!-- <a href="{{ url('preventivo') }}"><li>Realizar Mantenimiento Preventivo </li></a> -->
             <a href="{{ url('uniprev') }}"><li>Mantenimiento Preventivo Pendientes</li></a>
             <a href="{{ url('lpreventivos') }}"><li>Mantenimiento Preventivo Realizados</li></a>
-            <a href="{{ url('rdiario') }}"><li>Reporte Mantenimiento Diario</li></a>
-            
+ 
         </ul>
       </div>
+    <div class='sidebar-menu'><i class="fa fa-archive left"></i>Almacen<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sub-menu'>
+      <ul>
+          <a href="{{ url('almacen') }}"><li>Ingresar Al Almacen </li></a>
+          <a href="{{ url('solicitud') }}"><li>Solicitud Al Almacen </li></a>
+      </ul>
+    </div>
+
     <div class='sidebar-menu'><i class="fa fa-cogs left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    
       <div class='sub-menu'>
       <ul>
       <a href="{{ route('servicios.index') }}"><li>Registrar Servicios</li></a>
@@ -69,7 +80,6 @@
       <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
       <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
       <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
-      <a href="{{ url('almacen') }}"><li>Almacen </li></a>
       <a href="{{ url('items') }}"><li>Registrar Item </li></a>
                    
 

@@ -98,8 +98,11 @@ resource('lpreventivos','MantenimientoPreventivoController@listado');
 resource('diario','MantenimientoDiarioController');
 resource('ldiario','MantenimientoDiarioController@listado');
 resource('marcas','MarcaController');
-resource('rdiario','MantenimientoDiarioController@reporte');
+resource('rdiario','MantenimientoDiarioController@reportegral');
 resource('uniprev','MantenimientoPreventivoController@listadoPreventivo');
+resource('solicitud','SolicitudController');
+resource('rdiario1','MantenimientoDiarioController@reporteuso');
+resource('rdiario2','MantenimientoDiarioController@reporteestado');
 
 
 /*combo*/
@@ -111,3 +114,4 @@ Route::get('/ajax-modelo','CargaController@cargarmodelos');
 Route::get('/ajax-seccion','CargaController@cargarsecciones');
 Route::get('/ajax-grupo','CargaController@cargargrupos');
 Route::get('/ajax-pieza','CargaController@cargarpiezas');
+Route::get('/ajax-mecanico','CargaController@cargarmecanico');

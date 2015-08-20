@@ -52,6 +52,18 @@ class MantenimientoPreventivo extends Model {
 					    'ccorrea',//Cambio de Correa
 					    'cbaterias', //Cambio de Baterias
 					    'cbornes', //Cambio de Bornes
+					    'camlucesi', //Cambio De Luces Internas
+					    'camlucese', //Cambio de Luces Externas
+					    'clucesi', //¿Cuantas Luces Internas Se Cambiaron?
+					    'clucese', //¿Cuantas Luces Externas Se Cambiaron?
+					    'camlucesc',//Cambio de Luces Cruce
+					    'clucesc',//¿Cuantas Luces de Cruce Se Cambiaron?
+					    'camlucesem',//Cambio de Luces Emergencia
+					    'clucesem',//¿Cuantas Luces de Emergencia Se Cambiaron?
+					    'cornetas',//Chequeo: Cornetas
+					    'discos',//Chequeo y Ajustes: Discos de Frenos
+					    'cambioaa',//Cambio: Filtro A/A
+					    'lavadoaa', //Lavado: Filtro A/A
 					    'mecanico',
 						'tecmecanico',
 						'ayudmecanico',

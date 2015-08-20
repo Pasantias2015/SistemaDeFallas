@@ -12,6 +12,7 @@ use App\Modelo;
 use App\Seccion;
 use App\Grupo;
 use App\Pieza;
+use App\Persona;
 
 class CargaController extends Controller {
 	public function __construct()
@@ -59,5 +60,10 @@ class CargaController extends Controller {
 		{	
 			$pieza = Pieza::where('grupo_id','=',\Input::get('grupo_id'))->get();
 			return response()->json($pieza);
+		}
+	public function cargarmecanico()
+		{	
+			$mecanico = Persona::where('id','=',\Input::get('mecanico_id'))->get();
+			return response()->json($mecanico);
 		}
 }

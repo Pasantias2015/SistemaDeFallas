@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-8 col-md-offset-1">
     <div class="panel panel-danger">
-        <div class="panel-heading">Actualizar: {{ $almacen->codigo }}</div>
+        <div class="panel-heading">Actualizar: {{ $almacen->codigo." - ".$almacen->tipo }}</div>
        <div class="panel-body">
        @include('tools.errors')   
 
@@ -28,7 +28,7 @@
                    </div> 
                     <div class="form-group">
                        <span>Cantidad a Ingresar: </span>
-                       {!! Form::text('cantidadnueva',null,['class'=>'form-control']) !!}
+                       {!! Form::number('cantidadnueva',null,['class'=>'form-control']) !!}
                    </div> 
                          
                </div>

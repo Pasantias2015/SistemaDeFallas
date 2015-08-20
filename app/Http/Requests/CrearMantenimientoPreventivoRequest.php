@@ -35,8 +35,7 @@ class CrearMantenimientoPreventivoRequest extends Request {
 					    'rtapasr'=>'required', //revision de las tapas de radiador
 					    'lavadom'=>'required', //lavado de motor
 					    'rsalidaa'=>'required', //Revisión: Salideros de Aceite
-					    'rjuegovolante'=>'required',//Revisión: Juego del Volante
-					    'revision'=>'required',//Revisión
+					    'rjuegovolante'=>'required',//Revisión: Juego del Volante					    
 					    'abarrasy'=>'required',//Ajustamiento de las Barras Yoquis de Dirección
 					    'raengrase'=>'required',//Revisión, Ajuste y Engrase
 					    'rnadireccion'=>'required',//Revisión: Nivel de Aceite de Direccion
