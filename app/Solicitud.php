@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Solicitud extends Model {
 	
 	protected $table = 'solicitudes';
-	protected $fillable = ['usuario_id','persona_id'];
+	protected $fillable = ['fecha','hora','usuario_id','persona_id',];
 	public $timestamps = false;
 
 

@@ -7,7 +7,7 @@ use App\User;
 use App\Almacen;
 use App\Mecanico;
 use App\Solicitud;
-
+use App\DetalleSolicitud;
 use Illuminate\Http\Request;
 
 class SolicitudController extends Controller {
@@ -25,12 +25,8 @@ class SolicitudController extends Controller {
 	{
 		$usuarios = User::all();
 		$mecanicos = Mecanico::all();
-		$herramientas = Almacen::where('tipo','=','Herramienta');
-		$articulos = Almacen::where('tipo','=','Articulo');
-		$cajas = Almacen::where('tipo','=','Caja');
-		$fluidos = Almacen::where('tipo','=','Fluidos');
-		$piezas = Almacen::where('tipo','=','Pieza');
-		return view('Almacen\solicitud',compact('usuarios','mecanicos','herramientas','articulos','cajas','fluidos','piezas'));
+		
+		return view('Almacen\solicitud',compact('usuarios','mecanicos'));
 	}
 
 	/**
@@ -51,8 +47,17 @@ class SolicitudController extends Controller {
 	public function store(CrearSolicitudRequest $request)
 	{
 		$solicitud = Solicitud::create($request->all());
+		
+		$herramientas = Almacen::where('tipo','=','Herramienta')->get();
+		$articulos = Almacen::where('tipo','=','Articulo')->get();
+		$cajas = Almacen::where('tipo','=','Caja')->get();
+		$fluidos = Almacen::where('tipo','=','Fluidos')->get();
+		$piezas = Almacen::where('tipo','=','Pieza')->get();
+		
 		$id = $solicitud->id;
-        return view('Almacen/detallesolicitud',compact('id'));
+		
+		$detalles = DetalleSolicitud::where('solicitud_id','=','$id')->get();
+        return view('Almacen/detallesolicitud',compact('detalles','herramientas','articulos','cajas','fluidos','piezas'));
 	}
 
 	/**

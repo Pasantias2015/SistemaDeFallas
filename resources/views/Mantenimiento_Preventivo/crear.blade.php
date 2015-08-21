@@ -12,7 +12,8 @@
                     <div class="form-group row">
                         <div class="col-md-5"><span>Fecha:</span></div>
                         <div class="col-md-6">    
-                        {!! Form::date('fecha','Fecha',['class'=>'form-control']) !!}
+                        <input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control">
+                        <input class="hidden" type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
                         </div>
                     </div>
                 </div>

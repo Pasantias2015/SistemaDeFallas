@@ -15,6 +15,8 @@ class CreateSolicitudsTable extends Migration {
 		Schema::create('solicitudes', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->date('fecha');
+			$table->time('hora');
 			$table->integer('usuario_id')->unsigned();
 			$table->foreign('usuario_id')->references('id')->on('users');
 			$table->integer('persona_id')->unsigned();
