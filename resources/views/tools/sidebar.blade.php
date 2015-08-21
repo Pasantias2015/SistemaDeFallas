@@ -1,6 +1,6 @@
 @section('sidebar')
   <div class='sidebar-1'> 
-    <div class='sidebar-menu'><i class="fa fa-car left"></i>Unidades<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-car fa-spin left"></i>Unidades<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
     <ul>
     <a href="{{ url('unidades/create') }}"><li>Registrar Unidad</li></a>
@@ -10,7 +10,7 @@
 
     </ul>
       </div>
-    <div class='sidebar-menu'><i class="fa fa-exclamation-triangle left"></i></i>Fallas<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-exclamation-triangle fa-spin left"></i></i>Fallas<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
         <ul>
         <a href="{{ route('fallas.create') }}"><li>Nueva Falla</li></a>
@@ -21,14 +21,14 @@
        
         </ul>
       </div>
-    <div class='sidebar-menu'><i class="fa fa-user  left"></i>Operadores<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-user fa-spin left"></i>Operadores<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
       <a href="{{ url('operadores/create') }}"><li>Registrar Operador</li></a>
       <a href="{{ url('operadores/') }}"><li>Operadores</li></a>
       </ul>
       </div>
-    <div class='sidebar-menu' ><i class="fa fa-file-pdf-o left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu' ><i class="fa fa-file-pdf-o fa-spin left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
       <a href="{{ url('reportes') }}"><li>Unidades</li></a>
@@ -36,12 +36,13 @@
       <a href="{{ url('rdiario') }}"><li>Mantenimiento Diario General</li></a>
       <a href="{{ url('rdiario1') }}"><li>Reporte Mto Diario: Fluidos Usados</li></a>
       <a href="{{ url('rdiario2') }}"><li>Reporte Mto Diario: Estado Fisico</li></a>
+      <a href="{{ url('rdiario6') }}"><li>Reporte Mto Diario: Unidad</li></a>
       
       
       
       </ul>
       </div>
-    <div class='sidebar-menu'><i class="fa fa-wrench left"></i>Mantenimientos<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-wrench fa-spin left"></i>Mantenimientos<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
         <ul>
             <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
@@ -53,7 +54,7 @@
  
         </ul>
       </div>
-    <div class='sidebar-menu'><i class="fa fa-archive left"></i>Almacen<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-archive fa-spin left"></i>Almacen<div class='expand'><i class="fa fa-angle-left"></i></div></div>
     <div class='sub-menu'>
       <ul>
           <a href="{{ url('almacen') }}"><li>Ingresar Al Almacen </li></a>
@@ -61,7 +62,7 @@
       </ul>
     </div>
 
-    <div class='sidebar-menu'><i class="fa fa-cogs left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-cog fa-spin left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
     
       <div class='sub-menu'>
       <ul>

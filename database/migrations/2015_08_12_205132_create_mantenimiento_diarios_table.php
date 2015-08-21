@@ -25,10 +25,13 @@ class CreateMantenimientoDiariosTable extends Migration {
 			$table->string('cnrefrigerante');//Chequeo Nivel de Refrigerante
 				$table->integer('litrosa'); //Litros Completados
 			$table->string('frefrigerante');//Existe Fuga de refrigerante
+				 $table->string('reparado');//reparacion de fuga al momento
 			$table->string('airene');//Chequeo de la Presión de Aire de los Neumáticos
 				$table->integer('aire');//Aire Completado
 			$table->string('cncomb');//Chequeo del Nivel de Combustible
-				$table->integer('combust');//litros Completados
+				$table->string('combust');//Tipo de Combustible
+				$table->integer('diesel');//litros Completados
+				$table->integer('gas');//MPa Completados
 			$table->string('ceiasientos');//Chequeo del Estado Interior de la Unidad: Asientos
 				$table->integer('asientosmal');//asientos en mal estado
 			$table->string('ceecarroceria');//Chequeo del Estado Exterior de la Unidad: Carroceria y Vidrios

@@ -16,10 +16,13 @@ class MantenimientoDiario extends Model {
                         'cnrefrigerante',//Chequeo Nivel de Refrigerante
     					   'litrosr', //Litros Completados
                         'frefrigerante',//Existe Fuga de refrigerante
+                            'reparado',//reparacion de fuga al momento
                         'airene',//Chequeo de la Presión de Aire de los Neumáticos
     					   'aire', //Aire Completado
                         'cncomb',//Chequeo del Nivel de Combustible
-    					   'combust',//litros Completados
+                           'combust',//Tipo de Combustible
+                           'diesel',//litros Completados
+    					   'gas',//MPa Completados
                         'ceiasientos',//Chequeo del Estado Interior de la Unidad: Asientos
     					   'asientosmal',//asientos en mal estado
                         'ceecarroceria',//Chequeo del Estado Exterior de la Unidad: Carroceria y Vidrios

@@ -12,7 +12,8 @@
                     <div class="form-group row">
                         <div class="col-md-4"><span>Fecha:</span></div>
                         <div class="col-md-7">
-                        {!! Form::date('fecha','Fecha',['class'=>'form-control']) !!}
+                        <input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control">
+                        <input class="hidden" type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,7 @@
                 <div class="panel panel-danger">
                     <div class="panel-heading">Parametros a Revisar</div>
                     <div class="form-group row">
-                        <div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Aceite del Motor.</span><strong>¿Buen Nivel?</strong></div>
+                        <div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Aceite del Motor.</span><strong>¿Esta en el Nivel Indicado?</strong></div>
                         <div class="col-md-2">
                             <select name="cnaceitem" id="cnaceitem" class="form-control">
                                 <option value="Si">Si</option>              
@@ -66,7 +67,7 @@
                             <div class="col-md-2"><span>Lts</span></div>
                         </div>
                     <div class="form-group row">
-                        <div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Refrigerante.</span><strong>¿Buen Nivel?</strong></div>
+                        <div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Refrigerante.</span><strong>¿Esta en el Nivel Indicado?</strong></div>
                         <div class="col-md-2">
                             <select name="cnrefrigerante" id="cnrefrigerante" class="form-control">
                                 <option value="Si">Si</option>              
@@ -88,6 +89,11 @@
                             </select>    
                         </div>
                     </div>
+                        <div class="form-group row reparado">
+                            <div class="col-md-7 col-md-offset-1"><strong>¿Reparado?</strong></div>
+                            <div class="col-md-2"><span>Si:</span>{!! Form::radio('reparado', 'Si') !!} 
+                                <span>No:</span>{!! Form::radio('reparado', 'No') !!}</div>
+                        </div>
                     <div class="form-group row">
                         <div class="col-md-8 col-md-offset-1"><span>Chequeo de la Presión de Aire de los Neumáticos.</span><strong>¿Presión Aceptable?</strong></div>
                         <div class="col-md-2">    
@@ -103,7 +109,7 @@
                             <div class="col-md-2"><span>(psi/bar)</span></div>
                         </div>
                     <div class="form-group row">
-                        <div class="col-md-8 col-md-offset-1"><span>Chequeo del Nivel de Combustible.</span><strong>¿Buen Nivel?</strong></div>
+                        <div class="col-md-8 col-md-offset-1"><span>Chequeo del Nivel de Combustible (o Gas).</span><strong>¿Esta en el Nivel Indicado?</strong></div>
                         <div class="col-md-2">    
                             <select name="cncomb" id="cncomb" class="form-control">
                                 <option value="Si">Si</option>              
@@ -111,10 +117,25 @@
                             </select>
                         </div>
                     </div>
-                        <div class="form-group row combustible">
-                            <div class="col-md-7 col-md-offset-1"><strong>¿Cuanto Combustible Completó?</strong></div>
-                            <div class="col-md-2"><input type="number" name="combust" id="combust" default="0" min="0" class="form-control"/></div>
+                        <div class="form-group row tipo">
+                            <div class="col-md-7 col-md-offset-1"><strong>Seleccione</strong></div>
+                            <div class="col-md-2">
+                                <select name="combust" id="combust" class="form-control">
+                                    <option>Seleccione</option>              
+                                    <option value="Gas">Gas</option>              
+                                    <option value="Diesel">Diesel</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row diesel">
+                            <div class="col-md-7 col-md-offset-1"><strong>¿Cuanto Diesel Completó?</strong></div>
+                            <div class="col-md-2"><input type="number" name="diesel" id="diesel" default="0" min="0" class="form-control"/></div>
                             <div class="col-md-2"><span>lts</span></div>
+                        </div>
+                        <div class="form-group row gas">
+                            <div class="col-md-7 col-md-offset-1"><strong>¿Cuanto Gas Completó?</strong></div>
+                            <div class="col-md-2"><input type="number" name="gas" id="gas" default="0" min="0" class="form-control"/></div>
+                            <div class="col-md-2"><span>MPa</span></div>
                         </div>
                     <div class="form-group row">
                         <div class="col-md-8 col-md-offset-1"><span>Chequeo del Estado Interior de la Unidad: Asientos.</span><strong>¿Buen Estado?</strong></div>

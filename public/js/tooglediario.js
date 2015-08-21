@@ -2,7 +2,7 @@
         $(".aceite").toggle();
         $(".refrigerante").toggle();
         $(".neumaticos").toggle();
-        $(".combustible").toggle();
+        $(".tipo").toggle();
         $(".asientos").toggle();
         $(".carroceria").toggle();
         $(".correa").toggle();
@@ -16,6 +16,9 @@
         $(".clucesexternas").toggle();
         $(".clucescruce").toggle();
         $(".cluceseme").toggle();
+        $(".reparado").toggle();
+        $(".diesel").toggle();
+        $(".gas").toggle();
 
         $('#cnaceitem').on('change', function() {
             if(this.value == "No"){
@@ -43,10 +46,10 @@
         });
         $('#cncomb').on('change', function() {
             if(this.value == "No"){
-                $(".combustible").toggle();
+                $(".tipo").toggle();
             }
             else{
-                 $(".combustible").toggle();
+                 $(".tipo").toggle();
             };
         });
         $('#ceiasientos').on('change', function() {
@@ -153,9 +156,20 @@
                  $(".cluceseme").toggle();
             };
         });
-
-
-
-
-
-    });
+        $('#frefrigerante').on('change', function() {
+            if(this.value == "Si"){
+                $(".reparado").toggle();
+            }
+            else{
+                 $(".reparado").toggle();
+            };
+        });
+        $('#combust').on('change', function() {
+            if(this.value == "Gas"){
+                $(".gas").toggle();
+            }
+            else{
+                 $(".diesel").toggle();
+            };
+        });
+});

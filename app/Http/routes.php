@@ -103,7 +103,11 @@ resource('uniprev','MantenimientoPreventivoController@listadoPreventivo');
 resource('solicitud','SolicitudController');
 resource('rdiario1','MantenimientoDiarioController@reporteuso');
 resource('rdiario2','MantenimientoDiarioController@reporteestado');
+resource('rdiario6','MantenimientoDiarioController@reporteunidad');
 
+resource('rdiario3','ReporteDiarioController');
+resource('rdiario4','ReporteDiarioEstadoController');
+resource('rdiario5','ReporteDiarioUnidadController');
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');

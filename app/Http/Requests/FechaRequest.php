@@ -22,7 +22,7 @@ class FechaRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'fechafin'=>'after:fechainicio'   
 		];
 	}
 
