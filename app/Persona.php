@@ -57,6 +57,6 @@ class Persona extends Model {
 	}
 	public function solicitud()
 	{
-        return $this->hasMany('App\Solicitud');
+        return $this->hasMany('App\Solicitud','id');
 	}
 }  

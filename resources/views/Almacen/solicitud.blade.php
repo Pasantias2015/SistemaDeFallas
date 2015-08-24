@@ -18,7 +18,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="form-group row">
                         <div class="col-md-4"><span>Hora:</span></div>
                         <div class="col-md-8">    
@@ -26,15 +26,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="form-group row">
-                        <div class="col-md-5"><span>Usuario:</span></div>
-                        <div class="col-md-6">   
-                            <select name="usuario_id" class="form-control">
-                                @foreach($usuarios as $usuario)
-                                <option value="{{ $usuario->id }}">{{ $usuario->usuario }}</option>    
-                                 @endforeach
-                            </select>
+                        <div class="col-md-4"><span>Usuario:</span></div>
+                        <div class="col-md-8"> 
+                            <input type="text" disabled value="{{ Auth::user()->persona->nombrecompleto }}" class="form-control">
+                            <input class="hidden" type="text" id="usuario_id" name="usuario_id" value="{{ Auth::user()->id }}" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -48,7 +45,7 @@
                             <div class="col-md-9">
                                 <select name="persona_id" id="mecanico" class="form-control">
                                 @foreach($mecanicos as $mecanico)
-                                <option value="{{ $mecanico->persona_id }}">{{ $mecanico->persona->pnombre." ".$mecanico->persona->snombre." ".$mecanico->persona->papellido." ".$mecanico->persona->sapellido  }}</option>    
+                                <option value="{{ $mecanico->persona->id}}">{{ $mecanico->persona->pnombre." ".$mecanico->persona->snombre." ".$mecanico->persona->papellido." ".$mecanico->persona->sapellido  }}</option>    
                                 @endforeach
                                 </select>
                             </div>

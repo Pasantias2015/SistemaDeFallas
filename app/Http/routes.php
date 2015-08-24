@@ -61,6 +61,8 @@ Route::get('grafica','ReporteController@grafica');
 //selects Dependientes
 Route::get('listaModelos','AlmacenController@listaModelos');
 Route::get('listaSeccion','AlmacenController@listaSeccion');
+Route::get('solicitudp','SolicitudController@listado');
+
 
 /*Vistas De Transacciones
 Route::get('servicios/operadores','TransaccionController@servicio_operador');
@@ -102,7 +104,7 @@ resource('rdiario','MantenimientoDiarioController@reportegral');
 resource('uniprev','MantenimientoPreventivoController@listadoPreventivo');
 resource('solicitud','SolicitudController');
 resource('dsolicitud','DetalleSolicitudController');
-resource('solicitudp','SolicitudController@listado');
+// resource('solicitudp','SolicitudController@listado');
 
 resource('rdiario1','MantenimientoDiarioController@reporteuso');
 resource('rdiario2','MantenimientoDiarioController@reporteestado');

@@ -11,9 +11,9 @@ class Solicitud extends Model {
 
 	public function usuario()
 	{
-	 	return $this->belongsTo('App\Usuario');
+	 	return $this->belongsTo('App\User','usuario_id');
 	}
-	public function mecanico()
+	public function persona()
 	{
 	 	return $this->belongsTo('App\Persona');
 	}

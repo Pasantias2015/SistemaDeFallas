@@ -6,6 +6,7 @@
             <div class="panel-heading">Solicitudes Pendientes</div>
             <div class="panel-body">
              @include('tools.errors')
+              {!! Form::open(['route'=>'solicitud.edit','method'=>'POST']) !!}
                   <div class="col-md-12">
                         <table class="table table-bordered table-striped">
                               <tr>
@@ -19,8 +20,8 @@
                               <tr>                                
                                 <td>{{ $solicitud->id }}</td>
                                 <td>{{ $solicitud->fecha." - ".$solicitud->hora }}</td>
-                                <td>{{ $solicitud->usuario_id }}</td>
-                                <td>{{ $solicitud->persona_id }}</td>
+                                <td>{{ $solicitud->usuario->persona->pnombre." ".$solicitud->usuario->persona->papellido }}</td>
+                                <td>{{ $solicitud->persona->pnombre." ".$solicitud->persona->papellido}}</td>
                                 <td>
                                   <a href="{{ route('solicitud.edit',$solicitud) }}" class="btn btn-info">Ver Detalle</a>
                                 </td>                               
@@ -28,6 +29,7 @@
                               @endforeach
                         </table>
                   </div>
+                  {!! Form::close() !!}
             </div>
       </div>
 </div>
