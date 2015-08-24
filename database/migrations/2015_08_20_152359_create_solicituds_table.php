@@ -21,6 +21,7 @@ class CreateSolicitudsTable extends Migration {
 			$table->foreign('usuario_id')->references('id')->on('users');
 			$table->integer('persona_id')->unsigned();
 			$table->foreign('persona_id')->references('id')->on('personas');
+			$table->string('estado');
 		});
 	}
 

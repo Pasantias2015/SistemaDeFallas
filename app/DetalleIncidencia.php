@@ -6,7 +6,7 @@ class DetalleIncidencia extends Model {
 
 	protected $table = 'detalle_incidencias';
 	protected $fillable =['incidencia_id','falla_id','diagnostico'];
-	public $timestamp = false;
+	public $timestamps = false;
 
 	public function incidencia()
 	{

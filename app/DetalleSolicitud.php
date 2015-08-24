@@ -5,16 +5,16 @@ use Illuminate\Database\Eloquent\Model;
 class DetalleSolicitud extends Model {
 
 	protected $table = 'detalle_solicitudes';
-	protected $fillable =['almacen_id','solicitud_id'];
-	public $timestamp = false;
+	protected $fillable =['almacen_id','solicitud_id','cantidad'];
+	public $timestamps = false;
 
 	public function almacen()
 	{
-		return $this->belongTo('App\Almacen');
+		return $this->belongsTo('App\Almacen');
 	}
 	public function solicitud()
 	{
-		return $this->belongTo('App\Solicitud');
+		return $this->belongsTo('App\Solicitud');
 	}
 
 }

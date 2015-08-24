@@ -19,6 +19,7 @@ class CreateDetalleSolicitudsTable extends Migration {
 			$table->foreign('solicitud_id')->references('id')->on('solicitudes');
 			$table->integer('almacen_id')->unsigned();
 			$table->foreign('almacen_id')->references('id')->on('almacenes');
+			$table->integer('cantidad')->unsigned();
 		});
 	}
 

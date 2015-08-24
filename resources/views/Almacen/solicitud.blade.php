@@ -14,6 +14,7 @@
                         <div class="col-md-8">    
                         <input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control">
                         <input class="hidden" type="date" id="fecha" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
+                        <input class="hidden" type="text" id="estado" name="estado" value="Pendiente" class="form-control">
                         </div>
                     </div>
                 </div>

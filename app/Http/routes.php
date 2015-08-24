@@ -101,6 +101,9 @@ resource('marcas','MarcaController');
 resource('rdiario','MantenimientoDiarioController@reportegral');
 resource('uniprev','MantenimientoPreventivoController@listadoPreventivo');
 resource('solicitud','SolicitudController');
+resource('dsolicitud','DetalleSolicitudController');
+resource('solicitudp','SolicitudController@listado');
+
 resource('rdiario1','MantenimientoDiarioController@reporteuso');
 resource('rdiario2','MantenimientoDiarioController@reporteestado');
 resource('rdiario6','MantenimientoDiarioController@reporteunidad');

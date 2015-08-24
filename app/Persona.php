@@ -51,4 +51,12 @@ class Persona extends Model {
 	{
         return $this->hasOne('App\Operador','id');
 	}
+	public function mecanico()
+	{
+        return $this->hasOne('App\Mecanico','id');
+	}
+	public function solicitud()
+	{
+        return $this->hasMany('App\Solicitud');
+	}
 }  

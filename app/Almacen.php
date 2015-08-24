@@ -8,4 +8,8 @@ class Almacen extends Model {
 	protected $fillable = ['codigo','descripcion','cantidad','tipo'];
 	public $timestamps = false;
 
+	public function DetalleSolicitud()
+	{
+		return $this->hasMany('App\DetalleSolicitud');
+	}
 }

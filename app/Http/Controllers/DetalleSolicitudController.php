@@ -1,34 +1,27 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use App\Http\Requests\CrearSolicitudRequest;
-use App\Http\Requests\EditarSolicitudRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CrearDetalleSolicitudRequest;
+use App\Http\Requests\EditarSolicitudRequest;
+use Illuminate\Http\Request;
 use App\User;
 use App\Persona;
 use App\Almacen;
 use App\Mecanico;
 use App\Solicitud;
 use App\DetalleSolicitud;
-use Illuminate\Http\Request;
 
-class SolicitudController extends Controller {
+class DetalleSolicitudController extends Controller {
 
-	 public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    /**
+	/**
 	 * Display a listing of the resource.
 	 *
-	 * @return Response     
+	 * @return Response
 	 */
 	public function index()
 	{
-		$usuarios = User::all();
-		$mecanicos = Mecanico::all();
-		
-		return view('Almacen\solicitud',compact('usuarios','mecanicos'));
+		//
 	}
 
 	/**
@@ -46,19 +39,21 @@ class SolicitudController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearSolicitudRequest $request)
+	public function store(CrearDetalleSolicitudRequest $request)
 	{
-		$solicitud = Solicitud::create($request->all());
+		$detsolicitud = DetalleSolicitud::create($request->all());
 		
 		$herramientas = Almacen::where('tipo','=','Herramienta')->get();
 		$articulos = Almacen::where('tipo','=','Articulo')->get();
 		$fluidos = Almacen::where('tipo','=','Fluidos')->get();
 		$piezas = Almacen::where('tipo','=','Pieza')->get();
 		
-		$id = $solicitud->id;
-		$detalles = DetalleSolicitud::where('solicitud_id','=','$id')->get();
+		$id= $detsolicitud->solicitud_id;
+		$detalles = DetalleSolicitud::where('solicitud_id','=',$id)->get();
 		
+		$solicitud = Solicitud::findOrFail($id);
         return view('Almacen/detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud'));
+
 	}
 
 	/**
@@ -67,9 +62,14 @@ class SolicitudController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show(EditarSolicitudRequest $request,$id)
 	{
-		//
+		$solicitud = Solicitud::findOrFail($id);
+        $solicitud->estado = "Entregado";
+        $solicitud->save();
+
+        $solicitudes = Solicitud::where('estado','=','Pendiente')->get();
+		return view('Almacen/listadopendiente',compact('solicitudes'));
 	}
 
 	/**
@@ -80,10 +80,7 @@ class SolicitudController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$solicitud = Solicitud::where('id','=',$id)->first();
-		$detalles = DetalleSolicitud::where('solicitud_id','=',$id)->get();
-		
-        return view('Almacen/verdetalle',compact('solicitud','detalles'));
+		//
 	}
 
 	/**
@@ -93,7 +90,8 @@ class SolicitudController extends Controller {
 	 * @return Response
 	 */
 	public function update()
-	{	
+	{
+		//
 	}
 
 	/**
@@ -105,11 +103,6 @@ class SolicitudController extends Controller {
 	public function destroy($id)
 	{
 		//
-	}
-	public function listado()
-	{
-		$solicitudes = Solicitud::where('estado','=','Pendiente')->get();
-		return view('Almacen/listadopendiente',compact('solicitudes'));
 	}
 
 }

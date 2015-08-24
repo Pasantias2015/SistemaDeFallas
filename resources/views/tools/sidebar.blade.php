@@ -48,7 +48,6 @@
             <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
             <a href="{{ url('diario') }}"><li>Mantenimiento Diario </li></a>
             <a href="{{ url('ldiario') }}"><li>Mantenimientos Diarios Realizados </li></a>
-            <!-- <a href="{{ url('preventivo') }}"><li>Realizar Mantenimiento Preventivo </li></a> -->
             <a href="{{ url('uniprev') }}"><li>Mantenimiento Preventivo Pendientes</li></a>
             <a href="{{ url('lpreventivos') }}"><li>Mantenimiento Preventivo Realizados</li></a>
  
@@ -59,6 +58,10 @@
       <ul>
           <a href="{{ url('almacen') }}"><li>Ingresar Al Almacen </li></a>
           <a href="{{ url('solicitud') }}"><li>Solicitud Al Almacen </li></a>
+          <a href="{{ url('solicitudp') }}"><li>Solicitudes Pendientes </li></a>
+          <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
+          <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
+          <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
       </ul>
     </div>
 
@@ -77,14 +80,9 @@
       <a href="{{ url('modelos') }}"><li>Registrar Modelo</li></a>
       <a href="{{ url('secciones') }}"><li>Registrar Seccion</li></a>
       <a href="{{ url('grupos') }}"><li>Registrar Grupo</li></a>
-      <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
-      <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
-      <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
+
       <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
-      <a href="{{ url('items') }}"><li>Registrar Item </li></a>
-                   
-
-
+               
 
       </ul>
       </div>
