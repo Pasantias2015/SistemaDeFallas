@@ -22,7 +22,8 @@
                     <div class="form-group row">
                         <div class="col-md-4"><span>Hora:</span></div>
                         <div class="col-md-8">    
-                        <input type="time" name="hora" id="hora" value="23:59:00" class="form-control">
+                        <input disabled value="<?php  echo date("h:i:s", time()+27000);?>" class="form-control">
+                        <input type="time" name="hora" id="hora" value="<?php  echo date("h:i:s", time()+27000);?>" class="hidden">
                         </div>
                     </div>
                 </div>
@@ -44,9 +45,10 @@
                             <div class="col-md-3"><span>Mecanico:</span></div>
                             <div class="col-md-9">
                                 <select name="persona_id" id="mecanico" class="form-control">
-                                @foreach($mecanicos as $mecanico)
-                                <option value="{{ $mecanico->persona->id}}">{{ $mecanico->persona->pnombre." ".$mecanico->persona->snombre." ".$mecanico->persona->papellido." ".$mecanico->persona->sapellido  }}</option>    
-                                @endforeach
+                                    <option>Seleccione un Mecanico</option>    
+                                    @foreach($mecanicos as $mecanico)
+                                    <option value="{{ $mecanico->persona->id}}">{{ $mecanico->persona->pnombre." ".$mecanico->persona->snombre." ".$mecanico->persona->papellido." ".$mecanico->persona->sapellido  }}</option>    
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

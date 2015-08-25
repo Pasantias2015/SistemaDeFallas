@@ -8,6 +8,7 @@ use App\User;
 use App\Persona;
 use App\Almacen;
 use App\Mecanico;
+use App\Entregado;
 use App\Solicitud;
 use App\DetalleSolicitud;
 use Illuminate\Http\Request;
@@ -65,7 +66,11 @@ class SolicitudController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$solicitud = Solicitud::where('id','=',$id)->first();
+		$detalles = DetalleSolicitud::where('solicitud_id','=',$id)->get();
+		$entregado = Entregado::where('solicitud_id','=',$id)->first();
+		
+        return view('Almacen/verentregado',compact('solicitud','detalles','entregado'));
 	}
 
 	/**
@@ -107,5 +112,11 @@ class SolicitudController extends Controller {
 		$solicitudes = Solicitud::where('estado','=','Pendiente')->get();
 		return view('Almacen/listadopendiente',compact('solicitudes'));
 	}
+	public function listadoentregado()
+	{
+		$solicitudes = Solicitud::where('estado','=','Entregado')->get();
+		return view('Almacen/listadoentregado',compact('solicitudes'));
+	}
+
 
 }

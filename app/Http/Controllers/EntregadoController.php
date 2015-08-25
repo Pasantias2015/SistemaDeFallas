@@ -2,19 +2,12 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CrearDetalleSolicitudRequest;
 use App\Http\Requests\CrearEntregadoRequest;
-use App\Http\Requests\EditarSolicitudRequest;
-use Illuminate\Http\Request;
-use App\User;
-use App\Persona;
-use App\Almacen;
-use App\Mecanico;
 use App\Solicitud;
 use App\Entregado;
-use App\DetalleSolicitud;
+use Illuminate\Http\Request;
 
-class DetalleSolicitudController extends Controller {
+class EntregadoController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -41,21 +34,17 @@ class DetalleSolicitudController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearDetalleSolicitudRequest $request)
+	public function store(CrearEntregadoRequest $request)
 	{
-		$detsolicitud = DetalleSolicitud::create($request->all());
+		$entregado = Entregado::create($request->all());
 		
-		$herramientas = Almacen::where('tipo','=','Herramienta')->get();
-		$articulos = Almacen::where('tipo','=','Articulo')->get();
-		$fluidos = Almacen::where('tipo','=','Fluidos')->get();
-		$piezas = Almacen::where('tipo','=','Pieza')->get();
-		
-		$id= $detsolicitud->solicitud_id;
-		$detalles = DetalleSolicitud::where('solicitud_id','=',$id)->get();
-		
+		$id = $request->solicitud_id;
 		$solicitud = Solicitud::findOrFail($id);
-        return view('Almacen/detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud'));
+        $solicitud->estado = "Entregado";
+        $solicitud->save();
 
+        $solicitudes = Solicitud::where('estado','=','Pendiente')->get();
+		return view('Almacen/listadopendiente',compact('solicitudes'));
 	}
 
 	/**
@@ -86,7 +75,7 @@ class DetalleSolicitudController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update()
+	public function update($id)
 	{
 		//
 	}

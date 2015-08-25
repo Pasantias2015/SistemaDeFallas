@@ -21,4 +21,9 @@ class Solicitud extends Model {
 	{
 	 	return $this->hasMany('App\DetalleSolicitud');
 	}
+	public function entregado()
+	{
+        return $this->hasMany('App\Entregado','id');
+	}
+
 }

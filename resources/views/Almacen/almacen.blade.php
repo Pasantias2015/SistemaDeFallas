@@ -33,7 +33,7 @@
                             <td>{{ $almacen->cantidad }}</td>
                             <td>{{ $almacen->tipo }}</td>
                             <td>
-                                <a href="{{ route('almacen.edit',$almacen) }}" class="btn btn-info">Modificar</a>
+                                <a href="{{ route('almacen.edit',$almacen) }}" class="btn btn-info">Actualizar Cantidad</a>
                                 <a href="" class="btn btn-danger">Eliminar</a>
                             </td>                           
                         </tr>
@@ -221,25 +221,25 @@
             <div class="form-group">
                 <span>Modelo: </span>
                 <select name="modelo" id="modelo" class="form-control">
-                    <option value=""></option>
+                    <option default>Seleccione</option>
                 </select>
             </div>
             <div class="form-group">
                 <span>Sistema: </span>
                 <select name="seccion" id="seccion" class="form-control">
-                    <option value=""></option>          
+                    <option default>Seleccione</option>
                   </select>
             </div>
             <div class="form-group">
                 <span>Grupo: </span>
                 <select name="grupo" id="grupo" class="form-control">
-                    <option value=""></option>          
+                    <option default>Seleccione</option>
                   </select>
             </div>
             <div class="form-group">
                 <span>Pieza: </span>
                 <select name="codigo" id="pieza" class="form-control">
-                    <option value=""></option>          
+                    <option default>Seleccione</option>
                   </select>
             </div>
             <div class="form-group">

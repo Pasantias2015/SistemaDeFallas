@@ -73,6 +73,7 @@
                     </table>
                 </div>
             </div>
+            <a action="action" href="{{ url('/home') }}" value="" class="btn btn-danger">Terminar</a>
         </div>
 	</div>
 </div>

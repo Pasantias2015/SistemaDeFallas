@@ -59,6 +59,7 @@
           <a href="{{ url('almacen') }}"><li>Ingresar Al Almacen </li></a>
           <a href="{{ url('solicitud') }}"><li>Solicitud Al Almacen </li></a>
           <a href="{{ url('solicitudp') }}"><li>Solicitudes Pendientes </li></a>
+          <a href="{{ url('solicitude') }}"><li>Solicitudes Entregadas </li></a>
           <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
           <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
           <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>

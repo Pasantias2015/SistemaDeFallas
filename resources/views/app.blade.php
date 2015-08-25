@@ -26,7 +26,7 @@
      <link rel="stylesheet"  href="{!! url('css/app.css') !!}"/>
     
     
-
+    <link href="/favicon.ico" rel="icon" type="image/x-icon" />
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,900' rel='stylesheet' type='text/css'>
 
