@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-			<button type="submit" class="btn btn-success glyphicon glyphicon-saved"> Aceptar</button>
+                 <button id="registrar"type="submit" class="btn btn-success glyphicon glyphicon-stats">  Generar</button>
 		{!! Form::close() !!}
 		</div>
 		<div class="col-md-11"><input action="action" type="button" value="Regresar" onclick="history.go(-1);" class="btn btn-danger" />

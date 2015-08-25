@@ -83,9 +83,14 @@
                         </div>
                     </div>
                         <div class="form-group row ">
-                            <div class="col-md-6 col-md-offset-2"><span>¿Cuantos Litros Completó?</span></div>
-                            <div class="col-md-2"><input type="text" disabled value="{{$diario->combust}}" class="form-control"></div>
+                            <div class="col-md-6 col-md-offset-2"><span>¿Cuantos Diesel Completó?</span></div>
+                            <div class="col-md-2"><input type="text" disabled value="{{ $diario->diesel }}" class="form-control"></div>
                             <div class="col-md-2"><span>Lts</span></div>
+                        </div>
+                        <div class="form-group row ">
+                            <div class="col-md-6 col-md-offset-2"><span>¿Cuanto Gas Completó?</span></div>
+                            <div class="col-md-2"><input type="text" disabled value="{{ $diario->gas }}" class="form-control"></div>
+                            <div class="col-md-2"><span>Mpa</span></div>
                         </div>
                     <div class="form-group row">
                         <div class="col-md-7 col-md-offset-1"><span>Chequeo del Estado Interior de la Unidad: Asientos. ¿Buen Estado?</span></div>
