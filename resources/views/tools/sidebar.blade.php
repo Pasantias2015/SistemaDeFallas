@@ -28,7 +28,7 @@
       <a href="{{ url('operadores/') }}"><li>Operadores</li></a>
       </ul>
       </div>
-    <div class='sidebar-menu' ><i class="fa fa-file-pdf-o fa-spin left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu' ><i class="fa fa-folder-open-o fa-spin left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
       <a href="{{ url('reportes') }}"><li>Unidades</li></a>

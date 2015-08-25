@@ -3,17 +3,17 @@
     <div class="col-md-5 col-md-offset-1">
         <div class="form-group row">
             <div class="col-md-5"><span>Fecha Inicio:</span></div>
-            <div class="col-md-6">    
-                {!! Form::date('fechainicio','Fecha',['class'=>'form-control']) !!}
-            </div>
+            <div class="col-md-6">   
+                <input  type="date" name="fechainicio" class="form-control" max="<?php echo date("Y-m-d");?>">
+             </div>
         </div>
     </div>
     <div class="col-md-5 ">
         <div class="form-group row">
             <div class="col-md-5"><span>Fecha Fin:</span></div>
-            <div class="col-md-6">    
-                {!! Form::date('fechafin','Fecha',['class'=>'form-control']) !!}
-            </div>
+            <div class="col-md-6">   
+               <input  type="date" name="fechafin" class="form-control" max="<?php echo date("Y-m-d");?>">
+             </div>
         </div>
     </div>
 </div>
