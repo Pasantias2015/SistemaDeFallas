@@ -75,6 +75,18 @@ class CreateMantenimientoPreventivosTable extends Migration {
 			$table->string('tecmecanico');
 			$table->string('ayudmecanico');
 			$table->string('recibido');
+			$table->integer('litrosr');//litros completado
+			$table->integer('litrosa');//litros aceite
+			$table->integer('litroscomb');//litros combustible
+			$table->string('fugarep');//fuga combustible
+			$table->string('fugaref');//fuga refrigerante
+			$table->string('ctapas');//cambio de tapas
+			$table->string('fugaceite');//fuga aceite
+			$table->string('grasa');//grasa
+			$table->string('abramague');//abrazaderas y embragues
+			$table->string('racamort');//aceite de los amortiguadores
+			$table->string('laceitedif');//aceite del diferencial
+			$table->string('batagua');//agua de baterias
 		});
 	}
 

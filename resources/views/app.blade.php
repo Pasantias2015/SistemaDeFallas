@@ -47,7 +47,7 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <span class="navbar-brand">Transbarca | <small>Sistema de Control y Gestion De Fallas</small></span>
+               <span class="navbar-brand"> <i class="fa fa-laptop fa-2x"></i> Transbarca | System</span>
            </div>
 
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

@@ -67,7 +67,19 @@ class MantenimientoPreventivo extends Model {
 					    'mecanico',
 						'tecmecanico',
 						'ayudmecanico',
-						'recibido'
+						'recibido',
+						'litrosr',//litros completado
+						'litrosa',//litros aceite
+						'litroscomb',//litros combustible
+						'fugarep',//fuga combustible
+						'fugaref',//fuga refrigerante
+						'ctapas',//cambio de tapas
+						'fugaceite',//fuga aceite
+						'grasa',//grasa
+						'abramague',//abrazaderas y embragues
+						'racamort',//aceite de los amortiguadores
+						'laceitedif',//aceite del diferencial
+						'batagua'//agua de baterias
     ];
 
     public function usuario()

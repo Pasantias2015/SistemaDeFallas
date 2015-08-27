@@ -1,4 +1,8 @@
 @section('sidebar')
+  <div class="col-md-10">
+      <a title="Transbar C.A." href="http://www.transbarca.gob.ve/" target="_blank">
+      <img src="/images/logo_transbarca.png" alt="Transbar C.A." target="_blank" class="img-responsive" /></a>
+    </div>
   <div class='sidebar-1'> 
     <div class='sidebar-menu'><i class="fa fa-car fa-spin left"></i>Unidades<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
@@ -9,18 +13,7 @@
     <a href="{{ url('asignar') }}"><li>Asignar Codigo del Sistema</li></a>
 
     </ul>
-      </div>
-    <div class='sidebar-menu'><i class="fa fa-exclamation-triangle fa-spin left"></i></i>Fallas<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-        <ul>
-        <a href="{{ route('fallas.create') }}"><li>Nueva Falla</li></a>
-        <a href="{{ route('tipos.create') }}"><li>Nuevo Tipo de Falla</li></a>
-        <a href="{{ route('categorias.create') }}"><li>Nueva Categoria de Falla</li></a>
-        <a href="{{ url('rfuoperador') }}"><li>Registrar Falla</li></a>
-        
-       
-        </ul>
-      </div>
+      </div>      
     <div class='sidebar-menu'><i class="fa fa-user fa-spin left"></i>Operadores<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
@@ -31,28 +24,35 @@
     <div class='sidebar-menu' ><i class="fa fa-folder-open-o fa-spin left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
       <ul>
-      <a href="{{ url('reportes') }}"><li>Unidades</li></a>
-      <a href="{{ route('reportes.create') }}"><li>Incidencias</li></a>
-      <a href="{{ url('rdiario') }}"><li>Mantenimiento Diario General</li></a>
-      <a href="{{ url('rdiario1') }}"><li>Reporte Mto Diario: Fluidos Usados</li></a>
-      <a href="{{ url('rdiario2') }}"><li>Reporte Mto Diario: Estado Fisico</li></a>
-      <a href="{{ url('rdiario6') }}"><li>Reporte Mto Diario: Unidad</li></a>
-      
-      
-      
+        <a href="{{ url('reportes') }}"><li>Unidades</li></a>
+        <a href="{{ route('reportes.create') }}"><li>Incidencias</li></a>
+        <a href="{{ url('rdiario') }}"><li>Mantenimiento Diario General</li></a>
+        <a href="{{ url('rdiario1') }}"><li>Reporte Mto Diario: Fluidos Usados</li></a>
+        <a href="{{ url('rdiario2') }}"><li>Reporte Mto Diario: Estado Fisico</li></a>
+        <a href="{{ url('rdiario6') }}"><li>Reporte Mto Diario: Unidad</li></a>
       </ul>
       </div>
-    <div class='sidebar-menu'><i class="fa fa-wrench fa-spin left"></i>Mantenimientos<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <div class='sidebar-menu'><i class="fa fa-calendar fa-spin left"></i>Mantenimientos Diario<div class='expand'><i class="fa fa-angle-left"></i></div></div>
       <div class='sub-menu'>
         <ul>
-            <a href="{{ url('mantenimiento') }}"><li>Registrar Mantenimiento</li></a>
             <a href="{{ url('diario') }}"><li>Mantenimiento Diario </li></a>
             <a href="{{ url('ldiario') }}"><li>Mantenimientos Diarios Realizados </li></a>
-            <a href="{{ url('uniprev') }}"><li>Mantenimiento Preventivo Pendientes</li></a>
-            <a href="{{ url('lpreventivos') }}"><li>Mantenimiento Preventivo Realizados</li></a>
- 
         </ul>
       </div>
+      <div class='sidebar-menu'><i class="fa fa-wrench fa-spin left"></i>Mantenimientos Preventivo<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+      <div class='sub-menu'>
+        <ul>
+            <a href="{{ url('uniprev') }}"><li>Mantenimiento Preventivo Pendientes</li></a>
+            <a href="{{ url('lpreventivos') }}"><li>Mantenimiento Preventivo Realizados</li></a>
+        </ul>
+      </div>
+      <div class='sidebar-menu'><i class="fa fa-wrench fa-spin left"></i>Mantenimientos Correctivo<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+      <!-- <div class='sub-menu'>
+        <ul>
+            <a href="{{ url('') }}"><li></li></a>
+            <a href="{{ url('') }}"><li></li></a>
+        </ul>
+      </div> -->
     <div class='sidebar-menu'><i class="fa fa-archive fa-spin left"></i>Almacen<div class='expand'><i class="fa fa-angle-left"></i></div></div>
     <div class='sub-menu'>
       <ul>
