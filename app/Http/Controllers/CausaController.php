@@ -2,13 +2,13 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CrearFallaRequest;
-use App\Http\Requests\EditarFallaRequest;
-use App\Unidad;
+use App\Http\Requests\CrearCausaRequest;
+use App\Http\Requests\EditarCausaRequest;
 use App\Falla;
+use App\Causa;
 use Illuminate\Http\Request;
 
-class FallaController extends Controller {
+class CausaController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,9 +17,9 @@ class FallaController extends Controller {
 	 */
 	public function index()
 	{
-		$unidades= Unidad::all();
-		$fallas = Falla::paginate(5);
-        return view('Falla.crear',compact('fallas','unidades'));
+		$fallas= Falla::all();
+		$causas = Causa::paginate(5);
+        return view('Causa.crear',compact('causas','fallas'));
 	}
 
 	/**
@@ -37,12 +37,12 @@ class FallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearFallaRequest $request)
+	public function store(CrearCausaRequest $request)
 	{
-		$falla = Falla::create($request->all());
-		$unidades= Unidad::all();
-		$fallas = Falla::paginate(5);
-        return view('Falla.crear',compact('fallas','unidades'));
+		$causa = Causa::create($request->all());
+		$fallas= Falla::all();
+		$causas = Causa::paginate(5);
+        return view('Causa.crear',compact('causas','fallas'));
 	}
 
 	/**
@@ -64,8 +64,8 @@ class FallaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$falla = Falla::findOrFail($id);
-        return view('Falla.editar',compact('falla'));
+		$causa = Causa::findOrFail($id);
+        return view('Causa.editar',compact('causa'));
 	}
 
 	/**
@@ -74,12 +74,12 @@ class FallaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(EditarFallaRequest $request,$id)
+	public function update(EditarCausaRequest $request,$id)
 	{
-		$falla = Falla::findOrFail($id);
-        $falla->fill($request->all());
-        $falla->save();
-        return redirect('fallas');
+		$causa = Causa::findOrFail($id);
+        $causa->fill($request->all());
+        $causa->save();
+        return redirect('causas');
 	}
 
 	/**

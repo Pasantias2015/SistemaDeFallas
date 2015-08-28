@@ -2,13 +2,13 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CrearFallaRequest;
-use App\Http\Requests\EditarFallaRequest;
-use App\Unidad;
-use App\Falla;
+use App\Http\Requests\CrearSolucionRequest;
+use App\Http\Requests\EditarSolucionRequest;
+use App\Solucion;
+use App\Causa;
 use Illuminate\Http\Request;
 
-class FallaController extends Controller {
+class SolucionController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -17,9 +17,9 @@ class FallaController extends Controller {
 	 */
 	public function index()
 	{
-		$unidades= Unidad::all();
-		$fallas = Falla::paginate(5);
-        return view('Falla.crear',compact('fallas','unidades'));
+		$causas= Causa::all();
+		$soluciones = Solucion::paginate(5);
+        return view('Solucion.crear',compact('soluciones','causas'));
 	}
 
 	/**
@@ -37,12 +37,12 @@ class FallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearFallaRequest $request)
+	public function store(CrearSolucionRequest $request)
 	{
-		$falla = Falla::create($request->all());
-		$unidades= Unidad::all();
-		$fallas = Falla::paginate(5);
-        return view('Falla.crear',compact('fallas','unidades'));
+		$solucion = Solucion::create($request->all());
+		$causas = Causa::all();
+		$soluciones = Solucion::paginate(5);
+        return view('Solucion.crear',compact('soluciones','causas'));
 	}
 
 	/**
@@ -64,8 +64,8 @@ class FallaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		$falla = Falla::findOrFail($id);
-        return view('Falla.editar',compact('falla'));
+		$solucion = Solucion::findOrFail($id);
+        return view('Solucion.editar',compact('solucion'));
 	}
 
 	/**
@@ -74,12 +74,12 @@ class FallaController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(EditarFallaRequest $request,$id)
+	public function update(EditarSolucionRequest $request,$id)
 	{
-		$falla = Falla::findOrFail($id);
-        $falla->fill($request->all());
-        $falla->save();
-        return redirect('fallas');
+		$solucion = Solucion::findOrFail($id);
+        $solucion->fill($request->all());
+        $solucion->save();
+        return redirect('soluciones');
 	}
 
 	/**

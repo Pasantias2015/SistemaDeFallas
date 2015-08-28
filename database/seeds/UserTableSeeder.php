@@ -9,22 +9,39 @@ class UserTableSeeder extends Seeder
    public function run()
    {
 
-       \DB::table('profesiones')->insert(array ('descripcion'=>'chofer'));
+       \DB::table('profesiones')->insert(array ('descripcion'=>'Chofer'));
+       \DB::table('profesiones')->insert(array ('descripcion'=>'Ingeniero'));
        \DB::table('paises')->insert(array ('descripcion'=>'VENEZUELA'));
        \DB::table('estados')->insert(array (
         'descripcion'=>'LARA',
+        'pais_id'=>1
+        ));
+       \DB::table('estados')->insert(array (
+        'descripcion'=>'ZULIA',
         'pais_id'=>1
         ));
        \DB::table('ciudades')->insert(array (
         'descripcion'=>'CABUDARE',
         'estado_id'=>1
         ));
+       \DB::table('ciudades')->insert(array (
+        'descripcion'=>'BARQUISIMETO',
+        'estado_id'=>1
+        ));
        \DB::table('municipios')->insert(array (
         'descripcion'=>'PALAVECINO',
         'ciudad_id'=>1
         ));
+       \DB::table('municipios')->insert(array (
+        'descripcion'=>'IRIBARREN',
+        'ciudad_id'=>2
+        ));
        \DB::table('parroquias')->insert(array (
         'descripcion'=>'AGUA VIVA',
+        'municipio_id'=>1
+        )); 
+       \DB::table('parroquias')->insert(array (
+        'descripcion'=>'JUAN DE VILLEGAS',
         'municipio_id'=>1
         ));
        

@@ -35,11 +35,11 @@ class Persona extends Model {
 	}
 	public function profesion()
 	{
-		return $this->belongTo('App\Profesion');
+		return $this->belongsTo('App\Profesion');
 	}
 	public function parroquia()
 	{
-		return $this->belongTo('App\Parroquia');
+		return $this->belongsTo('App\Parroquia');
 	}
 
 	public function usuario()

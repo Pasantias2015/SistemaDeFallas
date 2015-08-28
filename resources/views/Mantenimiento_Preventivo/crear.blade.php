@@ -96,7 +96,7 @@
                                 <div class="col-md-2"><span>Lts</span></div>
                             </div>
                         <div class="form-group row">
-                            <div class="col-md-8 col-md-offset-1"><span>Lavado: Filtro de Combustible. ¿Realizado?</span></div>
+                            <div class="col-md-8 col-md-offset-1"><span>Cambio: Filtro de Combustible. ¿Realizado?</span></div>
                             <div class="col-md-3">    
                                 <select name="lfcombustible" id="lfcombustible" class="form-control">
                                     <option value="No">No</option>              
@@ -150,13 +150,25 @@
                             <div class="col-md-8 col-md-offset-1"><span>Cambio: Correa. ¿Realizado?</span></div>
                             <div class="col-md-3">    
                                 <select name="ccorrea" id="ccorrea" class="form-control">
-                                    <option value="Si">Si</option>            
-                                    <option value="No">No</option>  
+                                    <option value="No">No</option>             
+                                    <option value="Si">Si</option> 
                                 </select>
                             </div>
                         </div>
+                             <div class="form-group row correas"> <!-- aqui -->
+                                <div class="col-md-7 col-md-offset-1"><strong>¿Cuantas Correas?</strong></div>
+                                <div class="col-md-2"><input type="number" name="correascamb" id="correascamb" default="0" min="0" class="form-control"/></div>
+                                <div class="col-md-2"><span> </span></div>
+                            </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Revisión: Tapas de Radiador. ¿Realizado?</span></div>
+                            <div class="col-md-3">    
+                                <span>Si:</span>{!! Form::radio('tapasr', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('tapasr', 'No', false) !!} 
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>Cambio: Tapas de Radiador. ¿Realizado?</span></div>
                             <div class="col-md-3">    
                                 <select name="rtapasr" id="rtapasr" class="form-control">
                                     <option value="No">No</option>          
@@ -165,9 +177,9 @@
                             </div>
                         </div>
                             <div class="form-group row ctapasr"> <!-- aqui -->
-                                <div class="col-md-7 col-md-offset-1"><strong>Cambio tapas?</strong></div>
-                                <div class="col-md-2"><span>Si:</span>{!! Form::radio('ctapas', 'Si', true) !!} </div>
-                                <div class="col-md-2"><span>No:</span>{!! Form::radio('ctapas', 'No', false) !!} </div>
+                                <div class="col-md-7 col-md-offset-1"><strong>Cuantas tapas Se Cambiaron?</strong></div>
+                                <div class="col-md-2"><input type="number" name="ctapas" id="ctapas" default="0" min="0" class="form-control"/></div>
+                                <div class="col-md-2"><span></span></div>
                             </div>
                         <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Lavado del Motor. ¿Realizado?</span></div>
@@ -179,8 +191,24 @@
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Lavado: Filtro de Gases del Motor. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('lfgases', 'Si', true) !!} 
-                                <span>No:</span>{!! Form::radio('lfgases', 'No', false) !!} 
+                                <select name="lfgases" id="lfgases" class="form-control">
+                                    <option value="No">No</option>          
+                                    <option value="Si">Si</option>    
+                                </select> 
+                            </div>
+                        </div>
+                             <div class="form-group row fluido"> <!-- aqui -->
+                                <div class="col-md-6 col-md-offset-1"><strong>Fluido Utilizado?</strong></div>
+                               <div class="col-md-5">    
+                                <span>Alcohol:</span>{!! Form::radio('flfiltro', 'Alcohol', true) !!} 
+                                <span>Gasolina:</span>{!! Form::radio('flfiltro', 'Gasolina', false) !!} 
+                                 </div>
+                            </div>
+                         <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>Cambio: Filtro de Gases del Motor. ¿Realizado?</span></div>
+                            <div class="col-md-3">    
+                                <span>Si:</span>{!! Form::radio('cambfiltro', 'Si', true) !!} 
+                                <span>No:</span>{!! Form::radio('cambfiltro', 'No', false) !!}
                             </div>
                         </div>
                     </div>  
@@ -265,9 +293,13 @@
                                 </div>
                             </div>
                                 <div class="form-group row abra"> <!-- aqui -->
-                                    <div class="col-md-7 col-md-offset-1"><strong>Cuantas cambio?</strong></div>
-                                     <div class="col-md-2"><input type="number" name="abramague" id="abramague" default="0" min="0" class="form-control"/></div>
-                                    <div class="col-md-2"><span>Total!</span></div>
+                                    <div class="col-md-7 col-md-offset-1"><strong>Cuantas Abrazaderas cambio?</strong></div>
+                                     <div class="col-md-2"><input type="number" name="abra" id="abra" default="0" min="0" class="form-control"/></div>
+                                    <div class="col-md-2"><span>Total</span></div>
+
+                                    <div class="col-md-7 col-md-offset-1"><strong>Centimetros de mangueras Sustituido?</strong></div>
+                                     <div class="col-md-2"><input type="number" name="mague" id="mague" default="0" min="0" class="form-control"/></div>
+                                    <div class="col-md-2"><span>cm</span></div>
                                 </div>
                     </div>
                     <div class="panel panel-danger">
@@ -393,12 +425,19 @@
                      <div class="panel panel-danger">
                         <div class="panel-heading">Arbol de Suspensión</div>
                             <div class="form-group row">
-                                <div class="col-md-8 col-md-offset-1"><span>Revisión: Arbol y Junta de Transmisión!</span></div>
+                                <div class="col-md-8 col-md-offset-1"><span>Revisión: Arbol y Junta de Transmisión. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('rarboljunta', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('rarboljunta', 'No', false) !!} 
+                                    <select name="rarboljunta" id="rarboljunta" class="form-control">
+                                        <option value="No">No</option>              
+                                        <option value="Si">Si</option>
+                                    </select> 
                                 </div>
                             </div>
+                                <div class="form-group row ajuste"> <!-- aqui -->
+                                    <div class="col-md-7 col-md-offset-1"><strong>Se Ajusto?</strong></div>
+                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('arbolajuste', 'Si', true) !!} </div>
+                                    <div class="col-md-2"><span>No:</span>{!! Form::radio('arbolajuste', 'No', false) !!} </div>
+                                </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Engrasar</span></div>
                                 <div class="col-md-3">    
@@ -436,7 +475,8 @@
                                     <div class="col-md-7 col-md-offset-1"><span>¿Cuantas Litros Completó?</span></div>
                                     <div class="col-md-2"><input type="number" name="laceitedif" id="laceitedif" default="0" min="0" class="form-control"/></div>
                                     <div class="col-md-2"><span>Lts</span></div>
-                                </div>          
+                                </div>
+                    </div>          
                     <div class="panel panel-danger">
                         <div class="panel-heading">Sistema Electrico</div>
                             <div class="form-group row">
@@ -477,10 +517,17 @@
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Cambio: Bornes de Baterias. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('cbornes', 'Si', true) !!} 
-                                    <span>No:</span>{!! Form::radio('cbornes', 'No', false) !!} 
+                                    <select name="cbornes" id="cbornes" class="form-control">
+                                        <option value="No">No</option>            
+                                        <option value="Si">Si</option>  
+                                    </select>
                                 </div>
                             </div>
+                                 <div class="form-group row bornes"> <!-- aqui -->
+                                    <div class="col-md-7 col-md-offset-1"><span>¿Cuantos Bornes?</span></div>
+                                    <div class="col-md-2"><input type="number" name="ctbornes" id="ctbornes" default="0" min="0" class="form-control"/></div>
+                                    <div class="col-md-2"><span></span></div>
+                                </div>  
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Ajuste y Limpieza: Bornes de Baterias. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
@@ -530,11 +577,17 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-md-8 col-md-offset-1"><span>Lavado: Filtro. ¿Realizado?</span></div>
+                            <div class="col-md-8 col-md-offset-1"><span>Lavado: Malla. ¿Realizado?</span></div>
                             <div class="col-md-3">    
                                 <span>Si:</span>{!! Form::radio('lavadoaa', 'Si', true) !!} 
                                 <span>No:</span>{!! Form::radio('lavadoaa', 'No', false) !!} 
                             </div>
+                        </div>                     
+                    </div>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">Observaciones:</div>
+                        <div class="form-group row">
+                            <div class="col-md-10 col-md-offset-1"><textarea name="observaciones" id="observaciones" class="form-control" rows="5"></textarea></div>
                         </div>
                     </div>
                 </div>
@@ -602,6 +655,10 @@
         $(".fugadif").toggle();
         $(".aceitedif").toggle();
         $(".agua").toggle();
+        $(".ajuste").toggle();
+        $(".fluido").toggle();
+        $(".bornes").toggle();
+        $(".correas").toggle();
 
         $('#clubricante').on('change', function() {
             if(this.value == "Si"){
@@ -716,8 +773,38 @@
                  $(".agua").toggle();
             };
         });
-         
-
+        $('#rarboljunta').on('change', function() {
+            if(this.value == "Si"){
+                $(".ajuste").toggle();
+            }
+            else{
+                 $(".ajuste").toggle();
+            };
+        });
+        $('#lfgases').on('change', function() {
+            if(this.value == "Si"){
+                $(".fluido").toggle();
+            }
+            else{
+                 $(".fluido").toggle();
+            };
+        });
+        $('#cbornes').on('change', function() {
+            if(this.value == "Si"){
+                $(".bornes").toggle();
+            }
+            else{
+                 $(".bornes").toggle();
+            };
+        });
+        $('#ccorrea').on('change', function() {
+            if(this.value == "Si"){
+                $(".correas").toggle();
+            }
+            else{
+                 $(".correas").toggle();
+            };
+        });
 });
 </script>
 @endsection

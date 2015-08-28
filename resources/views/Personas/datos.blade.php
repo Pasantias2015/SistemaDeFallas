@@ -126,6 +126,7 @@
       <div class="col-md-5"><span>Municipio</span>  </div>
        <div class="col-md-7">    
           <select name="municipio" id="municipio" class="form-control">
+                    <option default>Seleccione</option>
             <option value=""></option>
            </select>
       </div>
@@ -208,28 +209,3 @@
       <span>Direccion Exacta</span>
           {!! Form::textarea('snombre',null,['class'=>'form-control','rows'=>3]) !!}
   </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-  <div class="form-group row">
-      <div class="col-md-5"><strong>Coordinacion</strong>  </div>
-       <div class="col-md-7">    
-          <select name="coordinacion" id="coordinacion" class="form-control">
-            <option value="">Tecnologia</option>            
-          </select>
-      </div>
-    </div>
-</div>
-<div class="col-md-6">
-  <div class="form-group row">
-    <div class="col-md-5"><strong>Cargo</strong>  </div>
-       <div class="col-md-7">    
-          <select name="rol" id="rol" class="form-control">
-          @foreach($roles as $rol)
-            <option value="{{ $rol->id }}">{{ $rol->descripcion }}</option>            
-          @endforeach
-          </select>
-      </div>
-  </div>
-</div>
-</div>

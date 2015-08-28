@@ -2,7 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use App\Persona;
+use App\Coordinacion;
+use App\Rol;
 use Illuminate\Http\Request;
 
 class RegistrarController extends Controller {
@@ -34,7 +36,10 @@ class RegistrarController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		$personas = Persona::all();
+		$coords = Coordinacion::all();
+		$roles = Rol::all();
+		return view('Usuarios.crear',compact('personas','coords','roles'));
 	}
 
 	/**

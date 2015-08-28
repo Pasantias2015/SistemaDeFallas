@@ -41,41 +41,48 @@ class MantenimientoDiarioController extends Controller {
 	 */
 	public function store(CrearMantenimientoDiarioRequest $request)
 	{
-		$diario = MantenimientoDiario::create($request->all());
-		
+		$diario = $request->serviciounidadoperador_id;
+				
 		//Actualizacion del Kilometraje
 		$actual = $request->kilometrajeactual;
-		$idunidad = $diario->serviciounidadoperador->unidad->id;
+		$serv = ServicioUnidadOperador::findOrFail($diario);
+		$idunidad = $serv->unidad_id;
 		$unidad = Unidad::findOrFail($idunidad);
-		
-		if ($unidad->kilometrajeactual<$actual) {
+		$hola = MantenimientoDiario::where('serviciounidadoperador_id','=',$request->serviciounidadoperador_id)->where('fecha','=',$request->fecha)->get();
+	
+		if (count($hola)==0) {
+			if ($unidad->kilometrajeactual<$actual) {
 			$unidad->kilometrajeactual = $actual;
+				} else {
+					return view('Mantenimiento_Diario.error');
+				}
+				
+				$unidad->save();
+				//verificacion del kilometraje ¿llego al Limite?
+				if (($unidad->modelo->dimension)>10) {
+					if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=10000){
+						$unidad->preventivo = "Si";
+						// $unidad->operativo = "No";
+					} else {
+						$unidad->preventivo = "No";
+					}
+				} else {
+					if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=5000){
+						$unidad->preventivo = "Si";
+						// $unidad->operativo = "No";
+					} else {
+						$unidad->preventivo = "No";
+					}
+				}	
+				$unidad->save();
+				
+				$diario = MantenimientoDiario::create($request->all());
+		       
+		        $unidades =  ServicioUnidadOperador::all();
+				return view('Mantenimiento_Diario.crear',compact('unidades'));
 		} else {
-			return view('Mantenimiento_Diario.error');
-		}
-		
-		$unidad->save();
-
-		//verificacion del kilometraje ¿llego al Limite?
-		if (($unidad->modelo->dimension)>10) {
-			if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=10000){
-				$unidad->preventivo = "Si";
-				// $unidad->operativo = "No";
-			} else {
-				$unidad->preventivo = "No";
-			}
-		} else {
-			if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=5000){
-				$unidad->preventivo = "Si";
-				// $unidad->operativo = "No";
-			} else {
-				$unidad->preventivo = "No";
-			}
-		}	
-		$unidad->save();
-
-        $unidades =  ServicioUnidadOperador::all();
-		return view('Mantenimiento_Diario.crear',compact('unidades'));
+			return view('Mantenimiento_Diario.errorunidad');
+		}		
 	}
 
 	/**

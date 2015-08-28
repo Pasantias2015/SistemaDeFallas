@@ -19,10 +19,18 @@ class MantenimientoPreventivo extends Model {
 					    'cfaceite', //cambio filtro de aceite
 					    'lfcombustible', //lavado del filtro de combustible
 					    'rlineascom', //revision de las lineas combustible descarte de fuga
+					    'litroscom',
 					    'rrefrigerante', //revision (descarte de fuga) de refrigerante
 					    'rcorrea', //revision de correa
+					    'ccorrea',
+					    'correascamb',
+					    'tapasr',
 					    'rtapasr', //revision de las tapas de radiador
 					    'lavadom', //lavado de motor
+					    'lavadom',
+						'lfgases',
+						'flfiltro',
+						'cambfiltro',
 					    'rsalidaa', //Revisión: Salideros de Aceite
 					    'rjuegovolante',//Revisión: Juego del Volante
 					    'revision',//Revisión
@@ -33,16 +41,23 @@ class MantenimientoPreventivo extends Model {
 					    'ceembrague',//Chequeo y Engrase
 					    'lavador',//Lavado del Radiador
 					    'cabmangueras',//Chequeo: Abrazaderas y Mangueras
+					    'abra',
+					    'mague',
+					    'rcluces',
 					    'raamortiguador',//Revisión(Descarte de Fuga): Aceite Amortiguadores y Fijación Soporte
 					    'rmuelle',//Revisión: de Muelles
 					    'lubricar',//Lubricar
 					    'racamaras',//Revisión(Descarte de Fuga): Aire en las Cámaras
+					    'acamaras',
 					    'lbasesusp',//Limpieza: Base Suspensión del Aire
 					    'rarboljunta',//Revisión: Arbol y Junta de Transmisión
+					    'arbolajuste',
 					    'engrasar',//Engrasar
 					    'rsaliderod',//Revisión: Salidero del Diferencial
+					    'diferencia',
 					    'raceitedif',//Revisión: Nivel del Aceite Diferencial
 					    'rbaterias',//Rotación de Baterias
+					    'cbaterias',
 					    'caguabat',//Chequeo: Nivel de Agua de Baterias
 					    'mvoltaje',//Medición de Voltaje
 					    'albornes',//Ajuste y Limpieza: Bornes de Baterias
@@ -52,6 +67,11 @@ class MantenimientoPreventivo extends Model {
 					    'ccorrea',//Cambio de Correa
 					    'cbaterias', //Cambio de Baterias
 					    'cbornes', //Cambio de Bornes
+					    'ctbornes',
+					    'albornes',
+					    'bandas',
+					    'discos',
+					    'observaciones',
 					    'camlucesi', //Cambio De Luces Internas
 					    'camlucese', //Cambio de Luces Externas
 					    'clucesi', //¿Cuantas Luces Internas Se Cambiaron?
@@ -79,7 +99,7 @@ class MantenimientoPreventivo extends Model {
 						'abramague',//abrazaderas y embragues
 						'racamort',//aceite de los amortiguadores
 						'laceitedif',//aceite del diferencial
-						'batagua'//agua de baterias
+						'batagua'//agua de baterias					
     ];
 
     public function usuario()

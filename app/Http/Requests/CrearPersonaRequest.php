@@ -30,7 +30,7 @@ class CrearPersonaRequest extends Request {
 		// 'sexo' =>'required',
 		// 'telefono-hab' =>'required',
 		// 'estadocivil' =>'required',
-		'foto'       => 'required|image|mimes:png'
+		//'foto'       => 'required|image|mimes:png'
 			
 		];
 	}

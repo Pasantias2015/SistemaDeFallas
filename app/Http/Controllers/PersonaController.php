@@ -54,11 +54,11 @@ class PersonaController extends Controller {
 	
 	
 	$persona = Persona::create($request->all());
-	$file = $request->file('foto');
+	//$file = $request->file('foto');
      
 	if($persona->save()){
         	//guardamos la imagen en public/imgs con el nombre original
-        	$file->move("images",$persona->foto);
+        	//$file->move("images",$persona->foto);
 			//redirigimos con un mensaje flash
 			return 'Te has registrado correctamente.';
         } 
@@ -110,6 +110,11 @@ class PersonaController extends Controller {
 	public function destroy($id)
 	{
 		
+	}
+	public function listado()
+	{
+		$personas=Persona::all();
+        return view('Personas.listado',compact('personas'));
 	}
 
 }
