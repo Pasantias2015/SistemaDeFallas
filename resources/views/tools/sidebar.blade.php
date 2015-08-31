@@ -31,6 +31,7 @@
         <a href="{{ url('rdiario1') }}"><li>Reporte Mto Diario: Fluidos Usados</li></a>
         <a href="{{ url('rdiario2') }}"><li>Reporte Mto Diario: Estado Fisico</li></a>
         <a href="{{ url('rdiario6') }}"><li>Reporte Mto Diario: Unidad</li></a>
+        <a href="{{ url('rp1') }}"><li>Reporte Mto Preventivo: Fluidos Usados</li></a>
       </ul>
       </div>
     <div class='sidebar-menu'><i class="fa fa-pencil-square-o left"></i>Mantenimientos Diario<div class='expand'><i class="fa fa-angle-left"></i></div></div>

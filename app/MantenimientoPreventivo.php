@@ -9,97 +9,86 @@ class MantenimientoPreventivo extends Model {
     public $timestamps = false;
 
     protected $fillable=[
-					    'usuario_id',
+    					'fecha',
+    					'unidad_id',
 					    'serviciounidadoperador_id',
-					    'fecha',
 					    'kilometraje',
-					    'combustible',
 					    'rlfiltroa', //revision y limpieza filtro de aire
 					    'clubricante', //cambio lubricante motor
+					    'litrosr',//litros completado
 					    'cfaceite', //cambio filtro de aceite
-					    'lfcombustible', //lavado del filtro de combustible
+					    'litrosa',
+						'lfcombustible', //lavado del filtro de combustible
+						'litroscom',
 					    'rlineascom', //revision de las lineas combustible descarte de fuga
-					    'litroscom',
+					    'fugarep',//fuga combustible
 					    'rrefrigerante', //revision (descarte de fuga) de refrigerante
+					    'fugaref',//fuga refrigerante
 					    'rcorrea', //revision de correa
-					    'ccorrea',
+					    'ccorrea',//Cambio de Correa
 					    'correascamb',
 					    'tapasr',
 					    'rtapasr', //revision de las tapas de radiador
+					    'ctapas',//cambio de tapas
 					    'lavadom', //lavado de motor
-					    'lavadom',
-						'lfgases',
-						'flfiltro',
-						'cambfiltro',
-					    'rsalidaa', //Revisión: Salideros de Aceite
-					    'rjuegovolante',//Revisión: Juego del Volante
-					    'revision',//Revisión
-					    'abarrasy',//Ajustamiento de las Barras Yoquis de Dirección
-					    'raengrase',//Revisión, Ajuste y Engrase
-					    'rnadireccion',//Revisión: Nivel de Aceite de Direccion
 					    'lfgases',//Lavado: Filtro de Gases
+					    'flfiltro',
+						'cambfiltro',    
+					    'rsalidaa', //Revisión: Salideros de Aceite
+					    'fugaceite',//fuga aceite
+						'rjuegovolante',//Revisión: Juego del Volante
+						'abarrasy',//Ajustamiento de las Barras Yoquis de Dirección
+						'raengrase',//Revisión, Ajuste y Engrase
+					    'rnadireccion',//Revisión: Nivel de Aceite de Direccion
 					    'ceembrague',//Chequeo y Engrase
+					    'grasa',//grasa
 					    'lavador',//Lavado del Radiador
-					    'cabmangueras',//Chequeo: Abrazaderas y Mangueras
-					    'abra',
-					    'mague',
-					    'rcluces',
-					    'raamortiguador',//Revisión(Descarte de Fuga): Aceite Amortiguadores y Fijación Soporte
-					    'rmuelle',//Revisión: de Muelles
-					    'lubricar',//Lubricar
-					    'racamaras',//Revisión(Descarte de Fuga): Aire en las Cámaras
-					    'acamaras',
-					    'lbasesusp',//Limpieza: Base Suspensión del Aire
-					    'rarboljunta',//Revisión: Arbol y Junta de Transmisión
-					    'arbolajuste',
-					    'engrasar',//Engrasar
-					    'rsaliderod',//Revisión: Salidero del Diferencial
-					    'diferencia',
-					    'raceitedif',//Revisión: Nivel del Aceite Diferencial
-					    'rbaterias',//Rotación de Baterias
-					    'cbaterias',
-					    'caguabat',//Chequeo: Nivel de Agua de Baterias
-					    'mvoltaje',//Medición de Voltaje
-					    'albornes',//Ajuste y Limpieza: Bornes de Baterias
-					    'rcluces',//Revisión y Chequeo: Luces
-					    'cdestino',//Chequeo: Funcionamiento del Indicador de Destino
-					    'bandas',//Chequeo y ajustes de bandas de freno
-					    'ccorrea',//Cambio de Correa
-					    'cbaterias', //Cambio de Baterias
-					    'cbornes', //Cambio de Bornes
-					    'ctbornes',
-					    'albornes',
-					    'bandas',
-					    'discos',
-					    'observaciones',
-					    'camlucesi', //Cambio De Luces Internas
+					  	'cabmangueras',//Chequeo: Abrazaderas y Mangueras
+					    'abra' ,
+					   	'mague',
+					   	'rcluces',//Revisión y Chequeo: Luces
+					   	'camlucesi', //Cambio De Luces Internas
+					   	'clucesi', //¿Cuantas Luces Internas Se Cambiaron?
 					    'camlucese', //Cambio de Luces Externas
-					    'clucesi', //¿Cuantas Luces Internas Se Cambiaron?
 					    'clucese', //¿Cuantas Luces Externas Se Cambiaron?
 					    'camlucesc',//Cambio de Luces Cruce
 					    'clucesc',//¿Cuantas Luces de Cruce Se Cambiaron?
 					    'camlucesem',//Cambio de Luces Emergencia
 					    'clucesem',//¿Cuantas Luces de Emergencia Se Cambiaron?
-					    'cornetas',//Chequeo: Cornetas
-					    'discos',//Chequeo y Ajustes: Discos de Frenos
+					    'raamortiguador',//Revisión(Descarte de Fuga): Aceite Amortiguadores y Fijación Soporte
+						'racamort',//aceite de los Amortiguadores
+						'rmuelle',//Revisión: de Muelles
+						'lubricar',//Lubricar
+					    'racamaras',//Revisión(Descarte de Fuga): Aire en las Cámaras
+					     'acamaras',
+					    'lbasesusp',//Limpieza: Base Suspensión del Aire
+						'rarboljunta',//Revisión: Arbol y Junta de Transmisión
+						'arbolajuste',
+						'engrasar',//Engrasar	    
+						'rsaliderod',//Revisión: Salidero del Diferencial
+  						'diferencia',
+ 						'raceitedif',//Revisión: Nivel del Aceite Diferencial
+ 						'laceitedif',//aceite del diferencial
+					    'rbaterias',//Rotación de Baterias
+					    'cbaterias',//Cambio de Baterias
+						'caguabat',//Chequeo: Nivel de Agua de Baterias
+					    'batagua',//agua de baterias	
+						'mvoltaje',//Medición de Voltaje
+					   	'cbornes', //Cambio de Bornes
+					    'ctbornes',
+					    'albornes',//Ajuste y Limpieza: Bornes de Baterias
+						'cdestino',//Chequeo: Funcionamiento del Indicador de Destino
+						'cornetas',//Chequeo: Cornetas
+						'bandas',//Chequeo y ajustes de bandas de frenos
+						'discos',//Chequeo y Ajustes: Discos de Frenos
 					    'cambioaa',//Cambio: Filtro A/A
 					    'lavadoaa', //Lavado: Filtro A/A
-					    'mecanico',
+					    'observaciones',
+ 						'mecanico',
 						'tecmecanico',
 						'ayudmecanico',
 						'recibido',
-						'litrosr',//litros completado
-						'litrosa',//litros aceite
-						'litroscomb',//litros combustible
-						'fugarep',//fuga combustible
-						'fugaref',//fuga refrigerante
-						'ctapas',//cambio de tapas
-						'fugaceite',//fuga aceite
-						'grasa',//grasa
-						'abramague',//abrazaderas y embragues
-						'racamort',//aceite de los amortiguadores
-						'laceitedif',//aceite del diferencial
-						'batagua'//agua de baterias					
+						'usuario_id'				
     ];
 
     public function usuario()

@@ -111,5 +111,15 @@ class MantenimientoPreventivoController extends Controller {
 		$preventivos = Unidad::where('preventivo','=','Si')->get();
 		return view('Mantenimiento_Preventivo.listadopreventivo',compact('preventivos'));
 	}
+	public function reporteuso()
+	{
+		$preventivos = MantenimientoPreventivo::paginate(10);
+		return view('Reportes.preventivouso',compact('preventivos'));
+	}
+	public function reportegral()
+	{
+		$preventivos = MantenimientoPreventivo::paginate(10);
+		return view('Reportes.preventivogral',compact('preventivos'));
+	}
 
 }

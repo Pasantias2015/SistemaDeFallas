@@ -59,13 +59,11 @@
                      <div class="panel panel-danger">
                         <div class="panel-heading">Mantenimiento Motor</div>
                         <div class="form-group row">
-                            <div class="col-md-8 col-md-offset-1"><span>Revisión y Limpieza: Filtro de Aire. ¿Realizado?</span></div>
-                            <div class="col-md-3">    
-                                <select name="rlfiltroa" id="rlfiltroa" class="form-control">
-                                    <option value="Si">Si</option>            
-                                    <option value="No">No</option>  
-                                </select>
-                            </div>
+                            <div class="col-md-8 col-md-offset-1"><span>Revisión y Limpieza: Filtro de Aire. ¿Realizado?</span></div>   
+                                <div class="col-md-3">
+                                    <span>Si:</span>{!! Form::radio('rlfiltroa', 'Si', false) !!}
+                                    <span>No:</span>{!! Form::radio('rlfiltroa', 'No', false) !!}
+                                </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Cambio: Lubricante. ¿Realizado?</span></div>
@@ -120,7 +118,7 @@
                         </div>
                              <div class="form-group row fugacomb"> <!-- aqui -->
                                 <div class="col-md-7 col-md-offset-1"><strong>¿Reparada?</strong></div>
-                                <div class="col-md-2"><span>Si:</span>{!! Form::radio('fugarep', 'Si', true) !!} </div>
+                                <div class="col-md-2"><span>Si:</span>{!! Form::radio('fugarep', 'Si', false) !!} </div>
                                 <div class="col-md-2"><span>No:</span>{!! Form::radio('fugarep', 'No', false) !!} </div>
                             </div>
                         <div class="form-group row">
@@ -134,16 +132,14 @@
                         </div>
                             <div class="form-group row fugarefrig"> <!-- aqui -->
                                 <div class="col-md-7 col-md-offset-1"><strong>¿Reparada?</strong></div>
-                                <div class="col-md-2"><span>Si:</span>{!! Form::radio('fugaref', 'Si', true) !!} </div>
+                                <div class="col-md-2"><span>Si:</span>{!! Form::radio('fugaref', 'Si', false) !!} </div>
                                 <div class="col-md-2"><span>No:</span>{!! Form::radio('fugaref', 'No', false) !!} </div>
                             </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Revisión: Correa. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <select name="rcorrea" id="rcorrea" class="form-control">
-                                    <option value="Si">Si</option>            
-                                    <option value="No">No</option>  
-                                </select>
+                                    <span>Si:</span>{!! Form::radio('rcorrea', 'Si', false) !!}
+                                    <span>No:</span>{!! Form::radio('rcorrea', 'No', false) !!}
                             </div>
                         </div>
                         <div class="form-group row">
@@ -163,7 +159,7 @@
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Revisión: Tapas de Radiador. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('tapasr', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('tapasr', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('tapasr', 'No', false) !!} 
                             </div>
                         </div>
@@ -184,7 +180,7 @@
                         <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Lavado del Motor. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('lavadom', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('lavadom', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('lavadom', 'No', false) !!} 
                                 </div>
                             </div>
@@ -197,17 +193,17 @@
                                 </select> 
                             </div>
                         </div>
-                             <div class="form-group row fluido"> <!-- aqui -->
-                                <div class="col-md-6 col-md-offset-1"><strong>Fluido Utilizado?</strong></div>
-                               <div class="col-md-5">    
-                                <span>Alcohol:</span>{!! Form::radio('flfiltro', 'Alcohol', true) !!} 
+                            <div class="form-group row fluido"> <!-- aqui -->
+                            <div class="col-md-6 col-md-offset-1"><strong>Fluido Utilizado?</strong></div>
+                            <div class="col-md-5">    
+                                <span>Alcohol:</span>{!! Form::radio('flfiltro', 'Alcohol', false) !!} 
                                 <span>Gasolina:</span>{!! Form::radio('flfiltro', 'Gasolina', false) !!} 
                                  </div>
                             </div>
                          <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Cambio: Filtro de Gases del Motor. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('cambfiltro', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('cambfiltro', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('cambfiltro', 'No', false) !!}
                             </div>
                         </div>
@@ -225,34 +221,34 @@
                         </div>
                              <div class="form-group row fugaaceite"> <!-- aqui -->
                                 <div class="col-md-7 col-md-offset-1"><strong>¿Reparada?</strong></div>
-                                <div class="col-md-2"><span>Si:</span>{!! Form::radio('fugaceite', 'Si', true) !!} </div>
+                                <div class="col-md-2"><span>Si:</span>{!! Form::radio('fugaceite', 'Si', false) !!} </div>
                                 <div class="col-md-2"><span>No:</span>{!! Form::radio('fugaceite', 'No', false) !!} </div>
                             </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Revisión: Estado del Juego del Volante. ¿Buen Estado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('rjuegovolante', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('rjuegovolante', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('rjuegovolante', 'No', false) !!} 
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Ajustamiento de las Barras Yoquis de Dirección. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('abarrasy', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('abarrasy', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('abarrasy', 'No', false) !!} 
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Revisión, Ajuste y Engrase. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('raengrase', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('raengrase', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('raengrase', 'No', false) !!} 
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-md-8 col-md-offset-1"><span>Revisión: Nivel de Aceite de Direccion. ¿Nivel Adecuado?!</span></div>
+                            <div class="col-md-8 col-md-offset-1"><span>Revisión: Nivel de Aceite de Direccion. ¿Nivel Adecuado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('rnadireccion', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('rnadireccion', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('rnadireccion', 'No', false) !!} 
                             </div>
                         </div>
@@ -279,7 +275,7 @@
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Lavado del Radiador. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('lavador', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('lavador', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('lavador', 'No', false) !!} 
                                 </div>
                             </div>
@@ -307,7 +303,7 @@
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Revisión y Chequeo: Luces. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('rcluces', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('rcluces', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('rcluces', 'No', false) !!} 
                                 </div>
                             </div>
@@ -383,20 +379,20 @@
                             </div>
                                 <div class="form-group row amortiguador"> <!-- aqui -->
                                     <div class="col-md-7 col-md-offset-1"><strong>¿Reparada?</strong></div>
-                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('racamort', 'Si', true) !!} </div>
+                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('racamort', 'Si', false) !!} </div>
                                     <div class="col-md-2"><span>No:</span>{!! Form::radio('racamort', 'No', false) !!} </div>
                                 </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Revisión: Estado Fisico Muelles. ¿Buen Estado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('rmuelle', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('rmuelle', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('rmuelle', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Lubricar. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('lubricar', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('lubricar', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('lubricar', 'No', false) !!} 
                                 </div>
                             </div>
@@ -411,13 +407,13 @@
                             </div>
                                 <div class="form-group row camaras"> <!-- aqui -->
                                     <div class="col-md-7 col-md-offset-1"><strong>¿Reparada?</strong></div>
-                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('acamaras', 'Si', true) !!} </div>
+                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('acamaras', 'Si', false) !!} </div>
                                     <div class="col-md-2"><span>No:</span>{!! Form::radio('acamaras', 'No', false) !!} </div>
                                 </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Limpieza: Base Suspensión del Aire. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('lbasesusp', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('lbasesusp', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('lbasesusp', 'No', false) !!} 
                                 </div>
                             </div>
@@ -434,14 +430,14 @@
                                 </div>
                             </div>
                                 <div class="form-group row ajuste"> <!-- aqui -->
-                                    <div class="col-md-7 col-md-offset-1"><strong>Se Ajusto?</strong></div>
-                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('arbolajuste', 'Si', true) !!} </div>
+                                    <div class="col-md-7 col-md-offset-1"><strong>¿Se Ajusto?</strong></div>
+                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('arbolajuste', 'Si', false) !!} </div>
                                     <div class="col-md-2"><span>No:</span>{!! Form::radio('arbolajuste', 'No', false) !!} </div>
                                 </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Engrasar</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('engrasar', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('engrasar', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('engrasar', 'No', false) !!} 
                                 </div>
                             </div>
@@ -459,7 +455,7 @@
                             </div>
                                  <div class="form-group row fugadif"> <!-- aqui -->
                                     <div class="col-md-7 col-md-offset-1"><strong>¿Reparada?</strong></div>
-                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('diferencia', 'Si', true) !!} </div>
+                                    <div class="col-md-2"><span>Si:</span>{!! Form::radio('diferencia', 'Si', false) !!} </div>
                                     <div class="col-md-2"><span>No:</span>{!! Form::radio('diferencia', 'No', false) !!} </div>
                                 </div>  
                             <div class="form-group row">
@@ -482,14 +478,14 @@
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Rotación de Baterias. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('rbaterias', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('rbaterias', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('rbaterias', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Cambio de Baterias. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('cbaterias', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('cbaterias', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('cbaterias', 'No', false) !!} 
                                 </div>
                             </div>
@@ -508,9 +504,9 @@
                                     <div class="col-md-2"><span>Lts</span></div>
                                 </div>    
                             <div class="form-group row">
-                                <div class="col-md-8 col-md-offset-1"><span>Medición de Voltaje!</span></div>
+                                <div class="col-md-8 col-md-offset-1"><span>Medición de Voltaje</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('mvoltaje', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('mvoltaje', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('mvoltaje', 'No', false) !!} 
                                 </div>
                             </div>
@@ -531,21 +527,21 @@
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Ajuste y Limpieza: Bornes de Baterias. ¿Realizado?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('albornes', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('albornes', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('albornes', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Chequeo: Funcionamiento del Indicador de Destino. ¿Funciona?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('cdestino', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('cdestino', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('cdestino', 'No', false) !!} 
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Chequeo: Cornetas. ¿Funcionan?</span></div>
                                 <div class="col-md-3">    
-                                    <span>Si:</span>{!! Form::radio('cornetas', 'Si', true) !!} 
+                                    <span>Si:</span>{!! Form::radio('cornetas', 'Si', false) !!} 
                                     <span>No:</span>{!! Form::radio('cornetas', 'No', false) !!} 
                                 </div>
                             </div>
@@ -555,14 +551,14 @@
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Chequeo y Ajustes: Bandas de Frenos. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('bandas', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('bandas', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('bandas', 'No', false) !!} 
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Chequeo y Ajustes: Discos de Frenos. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('discos', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('discos', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('discos', 'No', false) !!} 
                             </div>
                         </div>
@@ -572,14 +568,14 @@
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Cambio: Filtro. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('cambioaa', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('cambioaa', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('cambioaa', 'No', false) !!} 
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-md-8 col-md-offset-1"><span>Lavado: Malla. ¿Realizado?</span></div>
                             <div class="col-md-3">    
-                                <span>Si:</span>{!! Form::radio('lavadoaa', 'Si', true) !!} 
+                                <span>Si:</span>{!! Form::radio('lavadoaa', 'Si', false) !!} 
                                 <span>No:</span>{!! Form::radio('lavadoaa', 'No', false) !!} 
                             </div>
                         </div>                     

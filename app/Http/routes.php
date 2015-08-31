@@ -118,6 +118,12 @@ resource('rdiario4','ReporteDiarioEstadoController');
 resource('rdiario5','ReporteDiarioUnidadController');
 resource('solicitude','SolicitudController@listadoentregado');
 
+resource('rp1','MantenimientoPreventivoController@reporteuso');
+resource('rp2','MantenimientoPreventivoController@reportegral');
+
+resource('rpreventivo','ReportePreventivoController');
+resource('rpreventivo1','ReporteGeneralPreventivoController');
+
 resource('fallas','FallaController');
 resource('causas','CausaController');
 resource('soluciones','SolucionController');
