@@ -91,6 +91,16 @@ class UserTableSeeder extends Seeder
         'respuestas'=>'chompiraa'
    
        ));
+       \DB::table('users')->insert(array (
+                       'persona_id'=>2,
+                       'rol_id'=>1,
+                       'usuario'=>'jaissel',
+                     'password'=>\Hash::make('123456'),
+        'password_confirmation'=>\Hash::make('123456'),
+        'preguntas'=>'Alias',
+        'respuestas'=>'jai'
+   
+       ));
 
    }
 }

@@ -72,7 +72,6 @@ resource('opciones','OpcionesController');
 resource('unidades','UnidadController');
 resource('operadores','OperadorController');
 resource('unidadoperadores','UnidadOperadorController');
-resource('fallas','FallaController');
 resource('categorias','CategoriaController');
 resource('tipos','TipoController');
 resource('reportes','ReporteController');
@@ -127,6 +126,9 @@ resource('rpreventivo1','ReporteGeneralPreventivoController');
 resource('fallas','FallaController');
 resource('causas','CausaController');
 resource('soluciones','SolucionController');
+resource('semanal','MantenimientoSemanalController');
+resource('mensual','MantenimientoMensualController');
+resource('porfalla','MantenimientoPorfallaController');
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');
@@ -138,3 +140,4 @@ Route::get('/ajax-seccion','CargaController@cargarsecciones');
 Route::get('/ajax-grupo','CargaController@cargargrupos');
 Route::get('/ajax-pieza','CargaController@cargarpiezas');
 Route::get('/ajax-mecanico','CargaController@cargarmecanico');
+Route::get('/ajax-causa','CargaController@cargarcausas');

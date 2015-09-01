@@ -4,8 +4,9 @@
 <div class="row">
 		<div class="panel panel-danger">
 			<div class="panel-heading">Reporte Mantenimiento Diario - Estado Fisico de las Unidades</div>
-			<div class="col-md-8 col-md-offset-4"><h4>Desde:{{$inicio}} - Hasta {{$fin}}</h4></div>
-      <div id="graficos" class="col-md-12" style=" height:300px"></div>
+			<div class="panel-body">
+       <div class="col-md-8 col-md-offset-4"><h4>Desde:{{$inicio}} - Hasta {{$fin}}</h4></div>
+        <div id="graficos" class="col-md-12" style=" height:300px"></div>
         <div class="col-md-12">
           <div class="col-md-4">
             <h5><strong>A:</strong> Fuga de Refrigerante: Total: {{$a1}}</h5>
@@ -33,6 +34,7 @@
 			<div class="col-md-9 col-md-offset-1">
         @include('Mantenimiento_Diario.diarios')
 			</div>
+    </div>  
 		</div>
 </div>
 	<script>

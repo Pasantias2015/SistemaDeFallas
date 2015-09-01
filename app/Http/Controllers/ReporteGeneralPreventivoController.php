@@ -37,44 +37,48 @@ class ReporteGeneralPreventivoController extends Controller {
 	 */
 	public function store(FechaRequest $request)
 	{
-		//Reporte de Uso de Fluidos Mto Preventivo
+		//Reporte de Gral 
 		$inicio= $request->fechainicio;
 		$fin = $request->fechafin;
 		$preventivos = MantenimientoPreventivo::where('fecha','>=',$inicio)->where('fecha','<=',$fin)->get();
+		//A/A
+		$j1a = MantenimientoPreventivo::where('cambioaa','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$j2a = MantenimientoPreventivo::where('cambioaa','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$k1a = MantenimientoPreventivo::where('lavadoaa','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$k2a = MantenimientoPreventivo::where('lavadoaa','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+ 		
+ 		//Mantenimiento de motor
+		$a1 = MantenimientoPreventivo::where('rlfiltroa','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$a2 = MantenimientoPreventivo::where('rlfiltroa','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$b1 = MantenimientoPreventivo::where('clubricante','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$b2 = MantenimientoPreventivo::where('clubricante','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$c1 = MantenimientoPreventivo::where('cfaceite','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$c2 = MantenimientoPreventivo::where('cfaceite','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$d1 = MantenimientoPreventivo::where('lfcombustible','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$d2 = MantenimientoPreventivo::where('lfcombustible','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$e1 = MantenimientoPreventivo::where('rlineascom','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$e2 = MantenimientoPreventivo::where('rlineascom','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$f1 = MantenimientoPreventivo::where('rrefrigerante','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$f2 = MantenimientoPreventivo::where('rrefrigerante','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$g1 = MantenimientoPreventivo::where('fugaref','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$g2 = MantenimientoPreventivo::where('fugaref','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$h1 = MantenimientoPreventivo::where('rcorrea','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$h2 = MantenimientoPreventivo::where('rcorrea','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$i1 = MantenimientoPreventivo::where('ccorrea','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$i2 = MantenimientoPreventivo::where('ccorrea','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$j1 = MantenimientoPreventivo::where('tapasr','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$j2 = MantenimientoPreventivo::where('tapasr','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$k1 = MantenimientoPreventivo::where('rtapasr','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$k2 = MantenimientoPreventivo::where('rtapasr','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$l1 = MantenimientoPreventivo::where('lavadom','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$l2 = MantenimientoPreventivo::where('lavadom','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$m1 = MantenimientoPreventivo::where('lfgases','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$m2 = MantenimientoPreventivo::where('lfgases','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$n1 = MantenimientoPreventivo::where('cambfiltro','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
+		$n2 = MantenimientoPreventivo::where('cambfiltro','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
 
-		$a1 = MantenimientoPreventivo::where('correascamb','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('correascamb');
-		$b1 = MantenimientoPreventivo::where('ctapas','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('ctapas');
-		$c1 = MantenimientoPreventivo::where('abra','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('abra');
-		$d1 = MantenimientoPreventivo::where('mague','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('mague');
-		$e1 = MantenimientoPreventivo::where('clucesi','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucesi');
-		$f1 = MantenimientoPreventivo::where('clucese','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucese');
-		$g1 = MantenimientoPreventivo::where('clucesc','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucesc');
-		$h1 = MantenimientoPreventivo::where('clucesem','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucesem');
-		$i1 = MantenimientoPreventivo::where('ctbornes','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('ctbornes');
-		
-		$j1 = MantenimientoPreventivo::where('cambioaa','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$j2 = MantenimientoPreventivo::where('cambioaa','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$k1 = MantenimientoPreventivo::where('lavadoaa','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$k2 = MantenimientoPreventivo::where('lavadoaa','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-
-		$l1 = MantenimientoPreventivo::where('rlfiltroa','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$l2 = MantenimientoPreventivo::where('rlfiltroa','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$m1 = MantenimientoPreventivo::where('clubricante','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$m2 = MantenimientoPreventivo::where('clubricante','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$n1 = MantenimientoPreventivo::where('cfaceite','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$n2 = MantenimientoPreventivo::where('cfaceite','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$o1 = MantenimientoPreventivo::where('lfcombustible','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$o2 = MantenimientoPreventivo::where('lfcombustible','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$p1 = MantenimientoPreventivo::where('rlineascom','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$p2 = MantenimientoPreventivo::where('rlineascom','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$q1 = MantenimientoPreventivo::where('rrefrigerante','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$q2 = MantenimientoPreventivo::where('rrefrigerante','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$r1 = MantenimientoPreventivo::where('fugaref','=','Si')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-		$r2 = MantenimientoPreventivo::where('fugaref','=','No')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->count();
-
-		return view('Mantenimiento_Preventivo.reportegral',compact('preventivos','a1', 'b1','c1','d1','e1','f1','g1','h1','i1',
-																	'j1','j2','k1','k2',
-																	'l1','l2','m1','m2','n1','n2','o1','o2','p1','p2','q1','q2','r1','r2',
+		return view('Mantenimiento_Preventivo.reportegral',compact('preventivos','a1', 'a2', 'b1', 'b2','c1','c2','d1','d2','e1','e2','f1','f2','g1','g2','h1','h2','i1','i2','j1','j2','k1','k2','l1','l2','m1','m2','n1','n2',
+																	'j1a','j2a','k1a','k2a',
 																	'inicio','fin'));
 
 	}

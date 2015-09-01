@@ -4,10 +4,10 @@
 @section('content')
 
 	<div class="row">
-		<div class="col-md-10">
+		<div class="col-md-11">
 			
 				
-					<img src="images/homefondo.jpg" alt="">
+					<img src="images/Systransbar.jpg" alt="">
 			
 		</div>
 	</div>

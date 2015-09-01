@@ -49,7 +49,21 @@ class ReportePreventivoController extends Controller {
 		$e1 = MantenimientoPreventivo::where('laceitedif','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('laceitedif');
 		$f1 = MantenimientoPreventivo::where('batagua','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('batagua');
 		
-		return view('Mantenimiento_Preventivo.reporteuso',compact('preventivos','a1', 'b1','c1','d1','e1','f1','g1','h1','inicio','fin'));
+		$a2 = MantenimientoPreventivo::where('correascamb','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('correascamb');
+		$b2 = MantenimientoPreventivo::where('ctapas','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('ctapas');
+		$c2 = MantenimientoPreventivo::where('abra','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('abra');
+		$d2 = MantenimientoPreventivo::where('mague','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('mague');
+		$e2 = MantenimientoPreventivo::where('clucesi','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucesi');
+		$f2 = MantenimientoPreventivo::where('clucese','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucese');
+		$g2 = MantenimientoPreventivo::where('clucesc','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucesc');
+		$h2 = MantenimientoPreventivo::where('clucesem','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('clucesem');
+		$i2 = MantenimientoPreventivo::where('ctbornes','>','0')->where('fecha','>=',$inicio)->where('fecha','<=',$fin)->sum('ctbornes');
+	
+
+		return view('Mantenimiento_Preventivo.reporteuso',compact('preventivos',
+																	'a1', 'b1','c1','d1','e1','f1',
+																	'a2', 'b2','c2','d2','e2','f2','g2','h2','i2',
+																	'inicio','fin'));
 	}
 
 	/**

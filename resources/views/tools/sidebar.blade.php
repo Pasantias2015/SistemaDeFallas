@@ -1,101 +1,118 @@
 @section('sidebar')
-  <div class="col-md-10">
-      <a title="Transbar C.A." href="http://www.transbarca.gob.ve/" target="_blank">
-      <img src="/images/logo_transbarca.png" alt="Transbar C.A." target="_blank" class="img-responsive" /></a>
-    </div>
-  <div class='sidebar-1'> 
-    <div class='sidebar-menu'><i class="fa fa-car left"></i>Unidades<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-    <ul>
-    <a href="{{ url('unidades/create') }}"><li>Registrar Unidad</li></a>
-  	<a href="{{ url('unidades/') }}"><li>Consultar Unidades</li></a>
-  	<a href="{{ url('unidadoperadores') }}"><li>Asignar Unidad</li></a>
-    <a href="{{ url('asignar') }}"><li>Asignar Codigo del Sistema</li></a>
-
-    </ul>
-      </div>      
-    <div class='sidebar-menu'><i class="fa fa-user left"></i>Persona<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-      <ul>
-      <a href="{{ url('personas/create') }}"><li>Registrar Persona</li></a>
-      <a href="{{ url('lpersonas') }}"><li>Listado</li></a>
-      <a href="{{ url('usuario') }}"><li>Registrar Usuario</li></a>
-      </ul>
-      </div>
-    <div class='sidebar-menu' ><i class="fa fa-folder-open-o left"></i>Reportes<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-      <ul>
-        <a href="{{ url('reportes') }}"><li>Unidades</li></a>
-        <a href="{{ route('reportes.create') }}"><li>Incidencias</li></a>
-        <a href="{{ url('rdiario') }}"><li>Mantenimiento Diario General</li></a>
-        <a href="{{ url('rdiario1') }}"><li>Reporte Mto Diario: Fluidos Usados</li></a>
-        <a href="{{ url('rdiario2') }}"><li>Reporte Mto Diario: Estado Fisico</li></a>
-        <a href="{{ url('rdiario6') }}"><li>Reporte Mto Diario: Unidad</li></a>
-        <a href="{{ url('rp1') }}"><li>Reporte Mto Preventivo: Fluidos Usados</li></a>
-      </ul>
-      </div>
-    <div class='sidebar-menu'><i class="fa fa-pencil-square-o left"></i>Mantenimientos Diario<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-        <ul>
-            <a href="{{ url('diario') }}"><li>Mantenimiento Diario </li></a>
-            <a href="{{ url('ldiario') }}"><li>Mantenimientos Diarios Realizados </li></a>
-        </ul>
-      </div>
-      <div class='sidebar-menu'><i class="fa fa-calendar left"></i>Mantenimientos Preventivo<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-        <ul>
-            <a href="{{ url('uniprev') }}"><li>Mantenimiento Preventivo Pendientes</li></a>
-            <a href="{{ url('lpreventivos') }}"><li>Mantenimiento Preventivo Realizados</li></a>
-        </ul>
-      </div>
-      <div class='sidebar-menu'><i class="fa fa-wrench left"></i>Mantenimientos Correctivo<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-        <ul>
-            <a href="{{ url('') }}"><li>Correctivo</li></a>
-           <!--  <a href="{{ url('') }}"><li></li></a> -->
-        </ul>
-      </div>
-      <div class='sidebar-menu'><i class="fa fa-car left"></i>Neoplan<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-      <div class='sub-menu'>
-        <ul>
-            <a href="{{ url('fallas') }}"><li>Fallas</li></a>
-            <a href="{{ url('causas') }}"><li>Causas</li></a>
-            <a href="{{ url('soluciones') }}"><li>Soluciones</li></a>
-        </ul>
-      </div>
-    <div class='sidebar-menu'><i class="fa fa-archive left"></i>Almacen<div class='expand'><i class="fa fa-angle-left"></i></div></div>
-    <div class='sub-menu'>
-      <ul>
-          <a href="{{ url('almacen') }}"><li>Ingresar Al Almacen </li></a>
-          <a href="{{ url('solicitud') }}"><li>Solicitud Al Almacen </li></a>
-          <a href="{{ url('solicitudp') }}"><li>Solicitudes Pendientes </li></a>
-          <a href="{{ url('solicitude') }}"><li>Solicitudes Entregadas </li></a>
-          <a href="{{ url('piezas') }}"><li>Registrar Piezas</li></a>
-          <a href="{{ url('herramientas') }}"><li>Registrar Herramientas</li></a>
-          <a href="{{ url('cajas') }}"><li>Registrar Cajas</li></a>
-      </ul>
+<div class="col-md-11">
+  <a title="Transbar C.A." href="http://www.transbarca.gob.ve/" target="_blank">
+  <img src="/images/logo_transbarca.png" alt="Transbar C.A." target="_blank" class="img-responsive" /></a>
+</div>
+</br>
+</br>
+</br>
+<div id="MainMenu" class="col-md-11">
+  <div class="list-group panel">
+    <!--  //principal -->
+    <a href="#persona" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-user right"></i> Persona </a>
+    <div class="collapse" id="persona">
+      <a href="{{ url('personas/create') }}" class="list-group-item">Registrar Empleado</a>
+      <a href="{{ url('lpersonas') }}" class="list-group-item">Listado de Empleados</a>
+      <a href="{{ url('usuario') }}" class="list-group-item">Crear Usuario</a>
     </div>
 
-    <div class='sidebar-menu'><i class="fa fa-cog fa-spin left"></i>Configuraciones<div class='expand'><i class="fa fa-angle-left"></i></div></div>
+    <!--  //principal -->
+    <a href="#unidades" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-car right"></i> Unidades </a>
+    <div class="collapse" id="unidades">
+      <a href="{{ url('marcas') }}" class="list-group-item">Registrar Marca</a>
+      <a href="{{ url('modelos') }}" class="list-group-item">Registrar Modelo</a>
+      <a href="{{ url('unidades/create') }}" class="list-group-item">Registrar Unidad</a>
+      <a href="{{ url('unidades/') }}" class="list-group-item">Consultar Unidades</a>
+      <a href="{{ url('unidadoperadores') }}" class="list-group-item">Asignar Unidad</a>
+      <a href="{{ url('asignar') }}" class="list-group-item">Asignar Codigo del Sistema</a>
+    </div>
     
-      <div class='sub-menu'>
-      <ul>
-      <a href="{{ route('servicios.index') }}"><li>Registrar Servicios</li></a>
-      <a href="{{ route('servicios.index') }}"><li>Registrar Servicios</li></a>
-      <a href="{{ route('lugares.index') }}"><li>Registrar Lugares</li></a>
-      <a href="{{ route('patios.index') }}"><li>Registrar Patio</li></a>
-      <a href="{{ route('puestos.index') }}"><li>Registrar Puesto</li></a>
-      
-      <a href="{{ url('rusuario') }}"><li>Registrar Usuario</li></a>
-      <a href="{{ url('marcas') }}"><li>Registrar Marca</li></a>
-      <a href="{{ url('modelos') }}"><li>Registrar Modelo</li></a>
-      <a href="{{ url('secciones') }}"><li>Registrar Seccion</li></a>
-      <a href="{{ url('grupos') }}"><li>Registrar Grupo</li></a>
+    <!--  //principal -->
+    <a href="#almacen" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-truck right"></i> Almacen </a>
+    <div class="collapse" id="almacen">
+      <a href="{{ url('almacen') }}" class="list-group-item">Ingresar Al Almacen</a>
+      <a href="{{ url('solicitud') }}" class="list-group-item">Solicitud Al Almacen</a>
+      <a href="{{ url('solicitudp') }}" class="list-group-item">Solicitudes Pendientes</a>
+      <a href="{{ url('solicitude') }}" class="list-group-item">Solicitudes Entregadas</a>
+    </div>
 
-      <a href="{{ url('coordinaciones') }}"><li>Registrar Coordinaciones</li></a>
-               
+   <!--  //principal -->
+    <a href="#mto" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-cog fa-spin left"></i> Mantenimientos </a>
+    <div class="collapse" id="mto">
+<!--       //hijo de principal-->     
+      <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1"><i class="fa fa-car right"></i> Unidades Yutong <i class="fa fa-caret-down"></i></a>
+        <!-- Hijos de Submenu1 -->
+        <div class="collapse list-group-submenu" id="SubMenu1">
+          <!-- <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
+          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a> -->
+          <a href="#SubSubMenu11" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Diario<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11">
+            <a href="{{ url('diario') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
+            <a href="{{ url('ldiario') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizados </a>
+          </div>
 
-      </ul>
-      </div>
+          <a href="#SubSubMenu12" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-calendar left"></i> - Mantenimiento Preventivo<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu12">
+            <a href="{{ url('uniprev') }}" class="list-group-item" data-parent="#SubSubMenu1">Pendientes</a>
+            <a href="{{ url('lpreventivos') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizados </a>
+          </div>
+
+          <a href="#SubSubMenu13" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-wrench fa-rotate-270 left"></i> - Mantenimiento Correctivo<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu13">
+            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Reportar</a>
+            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Pendientes </a>
+          </div>
+        </div>
+      <!--       //hijo de principal-->     
+      <a href="#SubMenu2" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu2"><i class="fa fa-car right"></i> Unidades Neoplan <i class="fa fa-caret-down"></i></a>
+        <!-- Hijos de Submenu1 -->
+        <div class="collapse list-group-submenu" id="SubMenu2">
+          <!-- <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
+          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a> -->
+          <a href="#SubSubMenu21" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Semanal<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu21">
+            <a href="{{ url('semanal') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
+            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Realizados</a>
+          </div>
+
+          <a href="#SubSubMenu22" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-calendar left"></i> - Mantenimiento Mensual<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu22">
+            <a href="{{ url('mensual') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
+            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Realizados </a>
+          </div>
+
+          <a href="#SubSubMenu23" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-wrench fa-rotate-270 left"></i>Mantenimiento Correctivo<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu23">
+            <a href="porfalla" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
+            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Realizados </a>
+          </div>
+        </div>
+    </div>
+    
+    <!--  //principal -->
+    <a href="#bd" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-database right"></i> Base de Datos </a>
+    <div class="collapse" id="bd">
+      <a href="{{ route('servicios.index') }}" class="list-group-item">Registrar Servicios</a>
+      <a href="{{ route('lugares.index') }}" class="list-group-item">Registrar Lugares</a>
+      <a href="{{ route('patios.index') }}" class="list-group-item">Registrar Patio</a>
+      <a href="{{ route('puestos.index') }}" class="list-group-item">Registrar Puesto</a>
+      <a href="{{ url('secciones') }}" class="list-group-item">Registrar Seccion</a>
+      <a href="{{ url('grupos') }}" class="list-group-item">Registrar Grupo</a>
+      <a href="{{ url('piezas') }}" class="list-group-item">Registrar Piezas</a>
+      <a href="{{ url('herramientas') }}" class="list-group-item">Registrar Equipos</a>
+      <a href="{{ url('cajas') }}" class="list-group-item">Registrar Cajas</a>
+      <a href="{{ url('coordinaciones') }}" class="list-group-item">Registrar Coordinaciones</a>
+      <a href="{{ url('fallas') }}" class="list-group-item">Registrar Fallas</a>
+      <a href="{{ url('causas') }}" class="list-group-item">Registrar Causas</a>
+      <a href="{{ url('soluciones') }}" class="list-group-item">Registrar Soluciones</a>
+    </div>
+
   </div>
+</div>
 @endsection
