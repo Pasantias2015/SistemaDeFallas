@@ -39,7 +39,7 @@
    <!--  //principal -->
     <a href="#mto" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-cog fa-spin left"></i> Mantenimientos </a>
     <div class="collapse" id="mto">
-<!--       //hijo de principal-->     
+    <!-- //hijo de principal-->     
       <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1"><i class="fa fa-car right"></i> Unidades Yutong <i class="fa fa-caret-down"></i></a>
         <!-- Hijos de Submenu1 -->
         <div class="collapse list-group-submenu" id="SubMenu1">
@@ -94,7 +94,30 @@
           </div>
         </div>
     </div>
-    
+
+  <!--  //principal -->
+    <a href="#repor" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-folder-open-o right"></i> Reportes </a>
+    <div class="collapse" id="repor">
+       <a href="#SubMenu1a" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1a"><i class="fa fa-car right"></i> Unidades Yutong <i class="fa fa-caret-down"></i></a>
+
+        <div class="collapse list-group-submenu" id="SubMenu1a">
+          <!-- <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
+          <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a> -->
+          <a href="#SubSubMenu11a" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Diario<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11a">
+            <a href="{{ url('diario') }}" class="list-group-item" data-parent="#SubSubMenu1a">Realizar</a>
+            <a href="{{ url('ldiario') }}" class="list-group-item" data-parent="#SubSubMenu1a">Realizados </a>
+          </div>
+
+         
+        </div>
+
+
+
+
+
+    </div>
     <!--  //principal -->
     <a href="#bd" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-database right"></i> Base de Datos </a>
     <div class="collapse" id="bd">
