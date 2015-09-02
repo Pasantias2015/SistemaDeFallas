@@ -12,7 +12,7 @@ class MantenimientoPorfalla extends Model {
     						"falla_id",
     						"serviciounidadoperador_id",
     						"Horamotor",
-    						"nivelcombus"
+    						"nivelcombus",
     						"fecha",
     						"lugar",
     						"hora",

@@ -6,7 +6,7 @@
         <div class="panel-heading">Mantenimiento Mensual Preventivo</div>
         <div class="panel-body">
 		  @include('tools.errors')
-          {!! Form::open(['route'=>'semanal.store','method'=>'POST']) !!}
+          {!! Form::open(['route'=>'mensual.store','method'=>'POST']) !!}
     		<div class="row">
 				<div class="row">
                 	<div class="col-md-4">
@@ -14,7 +14,8 @@
                         	<div class="col-md-4"><span>Fecha:</span></div>
                         	<div class="col-md-7">
                         		<input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control">
-                        		<input class="hidden" type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
+                        		<input type="text" name="usuario_id" class="hidden" value="{{ Auth::user()->id }}">
+                                <input class="hidden" type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
                         	</div>
                     	</div>
                 	</div>

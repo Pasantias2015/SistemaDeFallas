@@ -2,25 +2,26 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\ServicioUnidadOperador;
-use App\MantenimientoSemanal;
-use App\Http\Requests\CrearMantenimientoSemanalRequest;
-use App\Http\Requests\FechaRequest;
+use App\Pieza_Neoplan;
+use App\Http\Requests\CrearPieza_NeoplanRequest;
 use Illuminate\Http\Request;
-use App\User;
-use App\Unidad;
 
-class MantenimientoSemanalController extends Controller {
 
-	/**
+class Pieza_NeoplanController extends Controller {
+
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		$unidades =  ServicioUnidadOperador::all();
-		return view('Mantenimiento_Semanal.crear',compact('unidades'));
+		$piezaneo = Pieza_Neoplan::paginate(10);
+        return view('Pieza_Neoplan.crear',compact('piezaneo'));
 	}
 
 	/**
@@ -38,10 +39,11 @@ class MantenimientoSemanalController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearMantenimientoSemanalRequest $request)
+	public function store(CrearPieza_NeoplanRequest $request)
 	{
-		$semanal = MantenimientoSemanal::create($request->all());
-		return view('home');
+		$piezaneoplan = Pieza_Neoplan::create($request->all());
+		$piezaneo = Pieza_Neoplan::paginate(10);
+        return view('Pieza_Neoplan.crear',compact('piezaneo'));
 	}
 
 	/**
@@ -63,7 +65,8 @@ class MantenimientoSemanalController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$piezaneo = Pieza_Neoplan::findOrFail($id);
+        return view('Pieza_Neoplan.editar',compact('piezaneo'));
 	}
 
 	/**
@@ -74,7 +77,10 @@ class MantenimientoSemanalController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+		$piezaneo = Pieza_Neoplan::findOrFail($id);
+        $piezaneo->fill($request->all());
+        $piezaneo->save();
+        return redirect('piezaneo');
 	}
 
 	/**

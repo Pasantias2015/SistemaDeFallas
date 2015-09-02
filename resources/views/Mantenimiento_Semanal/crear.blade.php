@@ -13,7 +13,8 @@
                     		<div class="form-group row">
                         		<div class="col-md-4"><span>Fecha:</span></div>
                         		<div class="col-md-7">
-                        			<input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control">
+                                    <input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control">
+                        			<input type="text" name="usuario_id" class="hidden" value="{{ Auth::user()->id }}">
                         			<input class="hidden" type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
                         		</div>
                     		</div>

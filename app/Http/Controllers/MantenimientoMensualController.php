@@ -38,9 +38,10 @@ class MantenimientoMensualController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CrearMantenimientoMensualRequest $request)
 	{
-		//
+		$mensual = MantenimientoMensual::create($request->all());
+		return view('home');
 	}
 
 	/**

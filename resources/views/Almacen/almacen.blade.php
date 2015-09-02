@@ -7,9 +7,10 @@
 		<div class="panel-body">
 		 @include('tools.errors')
             {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!}          
-            <div class="col-md-10">
-                <span>¿Que Desea Registrar en el Almacen?: </span>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza1">Pieza</button>
+            <div class="col-md-6 col-md-offset-4"><span>¿Que Desea Registrar en el Almacen?: </span></div>
+            <div class="col-md-10 col-md-offset-2">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#pieza1">Pieza Yutong</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza2">Pieza Neoplan</button>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#herramienta">Herramienta</button>
                 <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#articulo">Articulo</button>
                 <button type="button" class="btn btn-default" data-toggle="modal" data-target="#caja">Caja</button>
@@ -79,6 +80,45 @@
                 </div>
                 <div class="form-group">
                         <input type="hidden" name="tipo" value="Herramienta">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Registrar</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+            </div>
+            {!! Form::close() !!}
+      </div>
+    </div>
+</div>
+
+<!-- Modal Pieza Neoplan-->
+<div class="modal fade" id="pieza2" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content panel panel-danger">
+            <div class="modal-header panel-heading">
+                Ingresar Pieza Neoplan al Almacen
+            </div>
+            <div class="modal-body">
+            {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
+                <div class="form-group">
+                    <span>Piezas Neoplan: </span>
+                    <select name="codigo" class="form-control">
+                        @foreach($piezasneo as $piez)
+                            <option value="{{ $piez->codigo." : ".$piez->descripcion }}">{{ $piez->codigo."-".$piez->descripcion }}</option>    
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span>Descripcion: </span>
+                    {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                    <span>Cantidad: </span>
+                    {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                        <input type="hidden" name="tipo" value="Pieza Neoplan">
                 </div>
             </div>
             <div class="modal-footer">
@@ -205,7 +245,7 @@
       
       <div class="modal-content panel panel-danger">
         <div class="modal-header panel-heading">
-           Ingresar Pieza al Almacen
+           Ingresar Pieza Yutong al Almacen
         </div>
         <div class="modal-body">
             {!! Form::open(['route'=>'almacen.store','method'=>'POST']) !!} 
@@ -251,7 +291,7 @@
                 {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
             </div> 
             <div class="form-group">
-                    <input type="hidden" name="tipo" value="Pieza">
+                    <input type="hidden" name="tipo" value="Pieza Yutong">
             </div>       
         </div>
         <div class="modal-footer">

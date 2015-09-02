@@ -106,8 +106,17 @@
           <a href="#SubSubMenu11a" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Diario<i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11a">
-            <a href="{{ url('diario') }}" class="list-group-item" data-parent="#SubSubMenu1a">Realizar</a>
-            <a href="{{ url('ldiario') }}" class="list-group-item" data-parent="#SubSubMenu1a">Realizados </a>
+            <a href="{{ url('rdiario') }}" class="list-group-item" data-parent="#SubSubMenu1a">General</a>
+            <a href="{{ url('rdiario1') }}" class="list-group-item" data-parent="#SubSubMenu1a">Fluidos Usados </a>
+            <a href="{{ url('rdiario2') }}" class="list-group-item" data-parent="#SubSubMenu1a">Estado Fisico </a>
+            <a href="{{ url('rdiario6') }}" class="list-group-item" data-parent="#SubSubMenu1a"> Unidad</a>
+          </div>
+
+          <a href="#SubSubMenu11ab" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Preventivo<i class="fa fa-caret-down"></i></a>
+            <!-- Hijos de SubSubMenu1 -->
+          <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11ab">
+            <a href="{{ url('rp1') }}" class="list-group-item" data-parent="#SubSubMenu1a">Fluidos Usados - Sustitución</a>
+            <a href="{{ url('rp2') }}" class="list-group-item" data-parent="#SubSubMenu1a">Mantenimiento Motor</a>
           </div>
 
          
@@ -125,15 +134,16 @@
       <a href="{{ route('lugares.index') }}" class="list-group-item">Registrar Lugares</a>
       <a href="{{ route('patios.index') }}" class="list-group-item">Registrar Patio</a>
       <a href="{{ route('puestos.index') }}" class="list-group-item">Registrar Puesto</a>
-      <a href="{{ url('secciones') }}" class="list-group-item">Registrar Seccion</a>
-      <a href="{{ url('grupos') }}" class="list-group-item">Registrar Grupo</a>
-      <a href="{{ url('piezas') }}" class="list-group-item">Registrar Piezas</a>
+      <a href="{{ url('secciones') }}" class="list-group-item">Registrar Seccion Yutong</a>
+      <a href="{{ url('grupos') }}" class="list-group-item">Registrar Grupo Yutong</a>
+      <a href="{{ url('piezas') }}" class="list-group-item">Registrar Piezas Yutong</a>
       <a href="{{ url('herramientas') }}" class="list-group-item">Registrar Equipos</a>
       <a href="{{ url('cajas') }}" class="list-group-item">Registrar Cajas</a>
       <a href="{{ url('coordinaciones') }}" class="list-group-item">Registrar Coordinaciones</a>
       <a href="{{ url('fallas') }}" class="list-group-item">Registrar Fallas</a>
       <a href="{{ url('causas') }}" class="list-group-item">Registrar Causas</a>
       <a href="{{ url('soluciones') }}" class="list-group-item">Registrar Soluciones</a>
+      <a href="{{ url('piezaneo') }}" class="list-group-item">Registrar Piezas Neoplan</a>
     </div>
 
   </div>

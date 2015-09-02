@@ -13,6 +13,9 @@ use App\Seccion;
 use App\Grupo;
 use App\Pieza;
 use App\Persona;
+use App\Causa;
+use App\Falla;
+use App\Solucion;
 
 class CargaController extends Controller {
 	public function __construct()
@@ -65,5 +68,15 @@ class CargaController extends Controller {
 		{	
 			$mecanico = Persona::where('id','=',\Input::get('mecanico_id'))->get();
 			return response()->json($mecanico);
+		}
+	public function cargarcausas()
+		{	
+			$causa = Causa::where('falla_id','=',\Input::get('falla_id'))->get();
+			return response()->json($causa);
+		}
+	public function cargarsolucion()
+		{	
+			$solucion = Solucion::where('causa_id','=',\Input::get('causa_id'))->get();
+			return response()->json($solucion);
 		}
 }

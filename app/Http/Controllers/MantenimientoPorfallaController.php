@@ -44,9 +44,10 @@ class MantenimientoPorfallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CrearMantenimientoPorfallaRequest $request)
 	{
-		//
+		$falla = MantenimientoPorfalla::create($request->all());
+		return view('home');
 	}
 
 	/**

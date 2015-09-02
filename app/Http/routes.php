@@ -129,6 +129,7 @@ resource('soluciones','SolucionController');
 resource('semanal','MantenimientoSemanalController');
 resource('mensual','MantenimientoMensualController');
 resource('porfalla','MantenimientoPorfallaController');
+resource('piezaneo','Pieza_NeoplanController');
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');
@@ -141,3 +142,4 @@ Route::get('/ajax-grupo','CargaController@cargargrupos');
 Route::get('/ajax-pieza','CargaController@cargarpiezas');
 Route::get('/ajax-mecanico','CargaController@cargarmecanico');
 Route::get('/ajax-causa','CargaController@cargarcausas');
+Route::get('/ajax-solucion','CargaController@cargarsolucion');

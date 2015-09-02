@@ -31,7 +31,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="remember"> Recuerdame	
+										<input type="checkbox" name="remember"> Recordarme	
 									</label>
 								</div>
 							</div>
@@ -41,7 +41,7 @@
 							<div class="col-md-offset-4">
 								<button type="submit" class="btn btn-success">Entrar</button>
 
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Olvide su contraseña?</a>
+								<a class="btn btn-link" href="{{ url('/password/email') }}">¿Olvidó su contraseña?</a>
 							</div>
 						</div>
 					</form>

@@ -70,8 +70,24 @@ class UserTableSeeder extends Seeder
                        'fnacimiento'=>'1992-04-02',
                        'sexo'=>'femenino',
                        'estadocivil'=>'soltero(a)',
-                       'correo-electronico'=>'jaissel92@hotmail.com',
-                       'direccion'=>'Tarabana II',
+                       'correo-electronico'=>'jaissel92@gmail.com',
+                       'direccion'=>'San Fco',
+                       'telefono-mov'=>'04245333255',
+                       'profesion_id'=>1,
+                       'parroquia_id'=>1,
+                              ));
+       \DB::table('personas')->insert(array (
+                       'cedula'=>'21054664',
+                       'rif'=>'v21054664',
+                       'pnombre'=>'Dionel',
+                       'snombre'=>'Enrique',
+                       'papellido'=>'Linarez',
+                       'Sapellido'=>'Mendoza',
+                       'fnacimiento'=>'1991-09-08',
+                       'sexo'=>'masculino',
+                       'estadocivil'=>'soltero(a)',
+                       'correo-electronico'=>'lenoid08@gmail.com',
+                       'direccion'=>'Quibor',
                        'telefono-mov'=>'04245333255',
                        'profesion_id'=>1,
                        'parroquia_id'=>1,
@@ -99,6 +115,16 @@ class UserTableSeeder extends Seeder
         'password_confirmation'=>\Hash::make('123456'),
         'preguntas'=>'Alias',
         'respuestas'=>'jai'
+   
+       ));
+       \DB::table('users')->insert(array (
+                       'persona_id'=>3,
+                       'rol_id'=>1,
+                       'usuario'=>'Dionel',
+                     'password'=>\Hash::make('123456'),
+        'password_confirmation'=>\Hash::make('123456'),
+        'preguntas'=>'Alias',
+        'respuestas'=>'dio'
    
        ));
 

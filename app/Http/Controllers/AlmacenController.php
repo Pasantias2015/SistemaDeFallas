@@ -9,6 +9,7 @@ use App\Almacen;
 use App\Caja;
 use App\Herramienta;
 use App\Pieza;
+use App\Pieza_Neoplan; 
 use App\Grupo;
 use App\Seccion;
 use App\Modelo;	
@@ -36,7 +37,8 @@ class AlmacenController extends Controller {
 		$secciones = Seccion::all();
 		$modelos = Modelo::all();
 		$almacenes = Almacen::paginate(10);
-        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas','marcas'));
+		$piezasneo = Pieza_Neoplan::all();
+        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas','marcas','piezasneo'));
 	}
 
 	/**
@@ -64,8 +66,9 @@ class AlmacenController extends Controller {
 		$grupos = Grupo::all();
 		$secciones = Seccion::all();
 		$modelos = Modelo::all();
+		$piezasneo = Pieza_Neoplan::all();
 		$almacenes = Almacen::paginate(10);
-        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas','marcas'));
+        return view('Almacen.almacen',compact('herramientas','piezas','grupos','secciones','modelos','almacenes','cajas','marcas','piezasneo'));
 	}
 
 

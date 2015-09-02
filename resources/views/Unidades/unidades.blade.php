@@ -31,7 +31,7 @@
 							<td>{{ $unidad->modelo->codigo." - ".$unidad->modelo->descripcion}}</td>
 							<td>{{ $unidad->year}}</td>
 							
-                            <td><a >Editar</a></td>
+                            <td><a href="{{ route('unidades.edit',$unidad)}}">Editar</a></td>
 							
 						</tr>
 						@endforeach	
