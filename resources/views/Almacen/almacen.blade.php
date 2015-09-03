@@ -21,10 +21,10 @@
                         <tr>
                             <th>ID</th>
                             <th>Codigo</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Cantidad</th>
                             <th>Tipo</th>
-                            <th>Accion</th>
+                            <th>Acción</th>
                         </tr>
                         @foreach($almacenes as $almacen)
                         <tr>                            
@@ -71,7 +71,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <span>Descripcion: </span>
+                    <span>Descripción: </span>
                     {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                 </div>
                 <div class="form-group">
@@ -110,7 +110,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <span>Descripcion: </span>
+                    <span>Descripción: </span>
                     {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                 </div>
                 <div class="form-group">
@@ -145,7 +145,7 @@
                         {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        <span>Descripcion: </span>
+                        <span>Descripción: </span>
                         {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
@@ -184,7 +184,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <span>Descripcion: </span>
+                        <span>Descripción: </span>
                         {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
@@ -219,7 +219,7 @@
                         {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        <span>Descripcion: </span>
+                        <span>Descripción: </span>
                         {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
@@ -283,7 +283,7 @@
                   </select>
             </div>
             <div class="form-group">
-                <span>Descripcion: </span>
+                <span>Descripción: </span>
                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
             </div>
             <div class="form-group">

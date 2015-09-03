@@ -9,11 +9,11 @@
             {!! Form::open(['route'=>'piezaneo.store','method'=>'POST']) !!}
                 <div class="col-md-12">
                     <div class="form-group">
-                        <span>Codigo: </span>
+                        <span>Código: </span>
                         {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        <span>Descripcion: </span>
+                        <span>Descripción: </span>
                         {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                     </div>
                     @include('tools.botones-registrar')
@@ -22,9 +22,9 @@
                     <table class="table table-bordered table-striped">
                         <tr>
                             <th>ID</th>
-                            <th>Codigo</th>                     
-                            <th>Descripcion</th>                     
-                            <th>Accion</th>
+                            <th>Código</th>                     
+                            <th>Descripción</th>                     
+                            <th>Acción</th>
                         </tr>
                         @foreach($piezaneo as $pieza)
                         <tr>                            

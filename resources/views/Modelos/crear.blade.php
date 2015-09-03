@@ -10,11 +10,11 @@
 
                 <div class="col-md-12">
                     <div class="form-group">
-                        <span>Codigo del Modelo: </span>
+                        <span>Código del Modelo: </span>
                         {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
-                        <span>Descripcion: </span>
+                        <span>Descripción: </span>
                         {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                     </div>
                     <div class="form-group">
@@ -33,14 +33,14 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <span>Tipo de Transmision:</span>
+                        <span>Tipo de Transmisión:</span>
                         <select name="transmision" id="" class="form-control">
                           <option>Automatico</option>
                           <option>Sincronico</option>
                         </select>
                     </div> 
                     <div class="form-group">
-                        <span>Tamaño(Dimension): </span>
+                        <span>Tamaño(Dimensión): </span>
                         {!! Form::text('dimension',null,['class'=>'form-control']) !!}
                     </div>
                     @include('tools.botones-registrar')
@@ -49,13 +49,13 @@
                     <table class="table table-bordered table-striped">
                         <tr>
                             <th>ID</th>
-                            <th>Codigo</th>
-                            <th>Descripcion</th>
+                            <th>Código</th>
+                            <th>Descripción</th>
                             <th>Marca</th>
                             <th>Tipo de Combustible</th>
                             <th>Tipo de Transmision</th>
                             <th>Tamaño</th>                            
-                            <th>Accion</th>
+                            <th>Acción</th>
                         </tr>
                         @foreach($modelos as $modelo)
                         <tr>                            

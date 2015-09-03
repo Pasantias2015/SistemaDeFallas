@@ -14,7 +14,7 @@
                                     <th>Fecha- Hora</th>
                                     <th>Usuario</th>
                                     <th>Mecanico</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                               </tr>
                               @foreach($solicitudes as $solicitud)
                               <tr>                                

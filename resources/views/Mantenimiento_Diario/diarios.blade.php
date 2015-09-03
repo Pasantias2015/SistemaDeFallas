@@ -10,7 +10,7 @@
                                     <th>ID</th>
                                     <th>Fecha</th>
                                     <th>Servicio - Unidad - Uso- Año</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                               </tr>
                               @foreach($diarios as $diario)
                               <tr>                                

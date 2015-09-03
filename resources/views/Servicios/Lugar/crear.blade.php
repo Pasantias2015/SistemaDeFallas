@@ -10,7 +10,7 @@
 
             	<div class="col-md-12">
             		<div class="form-group">
-				        <span>Descripcion: </span>
+				        <span>Descripción: </span>
 				        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
 					</div>
 					@include('tools.botones-registrar')
@@ -19,9 +19,9 @@
             		<table class="table table-bordered table-striped">
             			<tr>
             				<th>ID</th>
-            				<th>Descripcion</th>
+            				<th>Descripción</th>
             				<th>Estado</th>
-            				<th>Accion</th>
+            				<th>Acción</th>
             			</tr>
             			@foreach($lugares as $lugar)
             			<tr>            				

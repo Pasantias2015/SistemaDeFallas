@@ -42,19 +42,6 @@
     </div>
 
  <div class="row">
-      
-     <!--  <div class="col-md-5">
-          <div class="panel panel-danger">
-            <div class="panel-heading">Reporte de Mantenimiento Preventivo - A/A</div>
-            <div class="panel-body">
-            <div class="row">
-              <div id="graficos1" class="col-md-12" style=" height:300px"></div>
-            </div>
-            </div>
-          </div>
-      </div>
-    </div>
- -->
 		<div class="col-md-9 col-md-offset-1">
       @include('Mantenimiento_Preventivo.preventivos')
 		</div>
@@ -63,31 +50,7 @@
 </div>
 <script>
   $(document).ready(function(){
-    
-    
-
-//Diagrama de Barras A/A
-      // var data1 = [
-      //         { y: 'Cambio Filtro', a: <?php echo $j1a ?>, b: <?php echo $j2a ?>},
-      //         { y: 'Lavado Malla', a: <?php echo $k1a ?>,  b: <?php echo $k2a ?>}, 
-      //       ],
-      //        config = {
-      //               data: data1,
-      //               xkey: 'y',
-      //               ykeys: ['a', 'b'],
-      //               labels: ['Si', 'No'],
-      //               fillOpacity: 0.6,
-      //               hideHover: 'auto',
-      //               behaveLikeLine: true,
-      //               resize: true,
-      //               pointFillColors:['#ffffff'],
-      //               pointStrokeColors: ['black'],
-      //               lineColors:['blue','red']
-      //           };
-      //         config.element = 'graficos1';
-      //         Morris.Bar(config);
-
-//Diagrama de Barras Mantenimiento Motor
+  //Diagrama de Barras Mantenimiento Motor
       var data2 = [
               { y: 'A', a: <?php echo $a1 ?>, b: <?php echo $a2 ?>},
               { y: 'B', a: <?php echo $b1 ?>,  b: <?php echo $b2 ?>}, 
@@ -120,9 +83,6 @@
                 };
               config.element = 'graficos2';
               Morris.Bar(config);
-
-
-
 });
 </script>
 @endsection

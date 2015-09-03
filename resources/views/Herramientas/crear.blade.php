@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-8 col-md-offset-1">
 	<div class="panel panel-danger">
-		<div class="panel-heading">Herramienta </div>
+		<div class="panel-heading">Equipo </div>
 		<div class="panel-body">
 		 @include('tools.errors')
             {!! Form::open(['route'=>'herramientas.store','method'=>'POST']) !!}
@@ -12,11 +12,11 @@
             		
                        
                          <div class="form-group">
-                                <span>Codigo: </span>
+                                <span>Código: </span>
                                 {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
-                                <span>Descripcion: </span>
+                                <span>Descripción: </span>
                                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                         </div>
 					@include('tools.botones-registrar')
@@ -25,9 +25,9 @@
             		<table class="table table-bordered table-striped">
             			<tr>
             				<th>ID</th>
-            				<th>Codigo</th>
-                            <th>Descripcion</th>
-            				<th>Accion</th>
+            				<th>Código</th>
+                            <th>Descripción</th>
+            				<th>Acción</th>
             			</tr>
             			@foreach($herramientas as $herramienta)
             			<tr>            				

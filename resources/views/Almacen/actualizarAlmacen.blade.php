@@ -15,7 +15,7 @@
                         <input type="text" disabled value="{{$almacen->codigo}}" class="form-control">
                    </div> 
                    <div class="form-group">
-                       <span>Descripcion: </span>
+                       <span>Descripción: </span>
                         <input type="text" disabled value="{{$almacen->codigo}}" class="form-control">
                    </div> 
                    <div class="form-group">

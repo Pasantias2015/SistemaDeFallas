@@ -14,19 +14,25 @@
                                 <span>Descripcion: </span>
                                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                         </div>
-                        <div class="form-group">
-                                <span>Mecanico: </span>
-                                {!! Form::text('mecanico',null,['class'=>'form-control']) !!}
-                                                  <!-- llamar mecanico -->
-                        </div>
+                        <div class="col-md-3"><span>Mecánico:</span></div>
+                            <div class="col-md-9">
+                                <select name="mecanico" id="mecanico" class="form-control">
+                                    <option>Seleccione un Mecanico</option>    
+                                    @foreach($mecanicos as $mecanico)
+                                    <option value="{{ $mecanico->persona->pnombre." ".$mecanico->persona->papellido}}">{{ $mecanico->persona->pnombre." ".$mecanico->persona->snombre." ".$mecanico->persona->papellido." ".$mecanico->persona->sapellido  }}</option>    
+                                    @endforeach
+                                </select>
+                                </br>
+                            </div>
+
 					@include('tools.botones-registrar')
             	</div>
             	<div class="col-md-12">
             		<table class="table table-bordered table-striped">
             			<tr>
             				<th>ID</th>
-                            <th>Descripcion</th>
-                            <th>Mecanico</th>
+                            <th>Descripción</th>
+                            <th>Mecánico</th>
             				<th>Accion</th>
             			</tr>
             			@foreach($cajas as $caja)

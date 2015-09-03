@@ -45,7 +45,7 @@
 			<div class="row">
             	<div class="col-md-12">
                 	<div class="panel panel-danger">
-                	<div class="panel-heading">Parametros a Revisar</div>
+                	<div class="panel-heading">Parámetros a Revisar</div>
                 	    <div class="form-group row">
                       		<div class="col-md-8 col-md-offset-1"><span>Chequeo del nivel del liquido de las Baterias.</span><strong>  ¿Nivel Adecuado?</strong></div>
                         	<div class="col-md-2">
@@ -96,7 +96,7 @@
                             	<div class="col-md-2"><span>Lts</span></div>
                         	</div>
                 	    <div class="form-group row">
-                      		<div class="col-md-8 col-md-offset-1"><span>Liberacion de agua en depositos de aire a presion.</span></div>
+                      		<div class="col-md-8 col-md-offset-1"><span>Liberación de agua en depositos de aire a presion.</span></div>
                         	<div class="col-md-2">
                             	<select name="airepresion" id="airepresion" class="form-control">
                                 	<option value="Si">Si</option>
@@ -105,7 +105,7 @@
                         	</div>
                     	</div>
                 	    <div class="form-group row">
-                      		<div class="col-md-8 col-md-offset-1"><span>Liberacion de agua en el Filtro de Combustible.</span></div>
+                      		<div class="col-md-8 col-md-offset-1"><span>Liberación de agua en el Filtro de Combustible.</span></div>
                         	<div class="col-md-2">
                             	<select name="filtrocomb" id="filtrocomb" class="form-control">
                                 	<option value="Si">Si</option>

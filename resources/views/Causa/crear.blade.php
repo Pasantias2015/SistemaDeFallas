@@ -30,7 +30,7 @@
                             <th>ID</th>
                             <th>Causa</th>
                             <th>Falla</th>
-                            <th>Accion</th>
+                            <th>Acción</th>
                         </tr>
                         @foreach($causas as $causa)
                         <tr>                            

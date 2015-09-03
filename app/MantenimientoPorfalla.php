@@ -11,13 +11,13 @@ class MantenimientoPorfalla extends Model {
     protected $fillable=['usuario_id',
     						"falla_id",
     						"serviciounidadoperador_id",
-    						"Horamotor",
+    						"horamotor",
     						"nivelcombus",
     						"fecha",
     						"lugar",
     						"hora",
     						"freocurrencia",
-    						"DescripcionGeneral",
+    						"descripciongeneral",
 
     ];
 
@@ -34,5 +34,8 @@ class MantenimientoPorfalla extends Model {
     {
         return $this->belongsTo('App\Falla');
     }
-
+    public function piezaporfalla()
+    {
+        return $this->hasMany('App\PiezaPorFalla');
+    }
 }

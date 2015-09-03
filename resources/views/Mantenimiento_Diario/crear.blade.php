@@ -50,7 +50,7 @@
             <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-danger">
-                    <div class="panel-heading">Parametros a Revisar</div>
+                    <div class="panel-heading">Parámetros a Revisar</div>
                     <div class="form-group row">
                         <div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Aceite del Motor.</span><strong>¿Esta en el Nivel Indicado?</strong></div>
                         <div class="col-md-2">

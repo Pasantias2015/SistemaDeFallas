@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CrearCajaRequest;
 use App\Http\Requests\EditarCajaRequest;
 use App\Caja;
+use App\Mecanico;
 use Illuminate\Http\Request;
 
 class CajaController extends Controller {
@@ -16,9 +17,9 @@ class CajaController extends Controller {
 	 */
 	public function index()
 	{
-		
+		$mecanicos = Mecanico::all();
 		$cajas = Caja::paginate(5);
-        return view('Cajas.crear',compact('cajas'));
+        return view('Cajas.crear',compact('cajas','mecanicos'));
 	}
 
 	/**
@@ -39,8 +40,9 @@ class CajaController extends Controller {
 	public function store(CrearCajaRequest $request)
 	{
 		$caja = Caja::create($request->all());
+		$mecanicos = Mecanico::all();
 		$cajas = Caja::paginate(5);
-        return view('Cajas.crear',compact('cajas'));
+        return view('Cajas.crear',compact('cajas','mecanicos'));
 	}
 
 	/**

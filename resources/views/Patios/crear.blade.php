@@ -19,8 +19,8 @@
             		<table class="table table-bordered table-striped">
             			<tr>
             				<th>ID</th>
-            				<th>Descripcion</th>
-            				<th>Accion</th>
+            				<th>Descripción</th>
+            				<th>Acción</th>
             			</tr>
             			@foreach($patios as $patio)
             			<tr>            				

@@ -19,11 +19,11 @@
                                 </select>
                         </div>
                          <div class="form-group">
-                                <span>Codigo: </span>
+                                <span>Código: </span>
                                 {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                         </div>
                         <div class="form-group">
-                                <span>Descripcion: </span>
+                                <span>Descripción: </span>
                                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                         </div>
 					@include('tools.botones-registrar')
@@ -32,10 +32,10 @@
             		<table class="table table-bordered table-striped">
             			<tr>
             				<th>ID</th>
-            				<th>Codigo</th>
-                            <th>Descripcion</th>
-                            <th>Seccion</th>
-            				<th>Accion</th>
+            				<th>Código</th>
+                            <th>Descripción</th>
+                            <th>Sección</th>
+            				<th>Acción</th>
             			</tr>
             			@foreach($grupos as $grupo)
             			<tr>            				

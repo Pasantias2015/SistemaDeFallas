@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-10 col-md-offset-1">
     <div class="panel panel-danger">
-        <div class="panel-heading">Soluciones para las fallas</div>
+        <div class="panel-heading">Soluciones para las Fallas</div>
         <div class="panel-body">
          @include('tools.errors')
             {!! Form::open(['route'=>'soluciones.store','method'=>'POST']) !!}
@@ -19,7 +19,7 @@
                                 </select>
                         </div>
                         <div class="form-group">
-                                <span>Solucion: </span>
+                                <span>Solución: </span>
                                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                         </div>
                     @include('tools.botones-registrar')
@@ -28,9 +28,9 @@
                     <table class="table table-bordered table-striped">
                         <tr>
                             <th>ID</th>
-                            <th>Solucion</th>
+                            <th>Solución</th>
                             <th>Causa</th>
-                            <th>Accion</th>
+                            <th>Acción</th>
                         </tr>
                         @foreach($soluciones as $solucion)
                         <tr>                            

@@ -20,7 +20,7 @@
                         </div>
                         
                         <div class="form-group">
-                                <span>Descripcion: </span>
+                                <span>Descripción: </span>
                                 {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                         </div>
 					@include('tools.botones-registrar')
@@ -29,7 +29,7 @@
             		<table class="table table-bordered table-striped">
             			<tr>
             				<th>ID</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
             				<th>Accion</th>
             			</tr>
             			@foreach($fallas as $falla)

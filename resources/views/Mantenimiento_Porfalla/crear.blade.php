@@ -33,7 +33,7 @@
                            <div class="form-group row">
                             <div class="col-md-5"><span>Hora: </span></div>
                             <div class="col-md-6"> 
-                                {!! Form::text('hora',null,['class'=>'form-control']) !!}   
+                                <input class="form-control" type="time" name="hora" id="hora" value="<?php  echo date("h:i:s", time()+27000);?>">
                             </div>
                               </div>
                             </div>  
@@ -50,7 +50,7 @@
                     
                     <div class="form-group row">
                         <div class="col-md-4">
-                            <div class="col-md-5"><span>Codigo:</span></div>   
+                            <div class="col-md-5"><span>Código:</span></div>   
                             <div class="col-md-7">
                                 <select name="serviciounidadoperador_id" id="unidad" class="form-control">
                                  @foreach($unidades as $unidad)
@@ -62,7 +62,7 @@
                         <div class="col-md-4">
                             <div class="col-md-7"><span>Hora de Motor:</span></div>
                             <div class="col-md-5">
-                                {!! Form::text('horamotor',null,['class'=>'form-control']) !!}
+                                <input type="number" name="horamotor" id="litrosa" default="0" min="0" class="form-control"/>
                             </div>
                         </div>
 
@@ -86,7 +86,7 @@
 
                         <div class="form-group col-md-offset-1 col-md-10">
                             <span>Falla Presentada: </span>
-                            <select name="falla" id="falla" class="form-control">
+                            <select name="falla_id" id="falla" class="form-control">
                                 <option default>Seleccione</option> 
                                 @foreach($fallas as $falla)
                                 <option value="{{ $falla->id }}">{{ $falla->descripcion }}</option>    
@@ -106,7 +106,6 @@
                             </select>
                         </div>
 
-
                     <div class="form-group row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="form-group">
@@ -119,28 +118,26 @@
                     </div>
                     <div class="form-group row">
                     <div class="col-md-10 col-md-offset-1">
-                                <div class="col-md-12"><span>Descripcion General:</span></div>
+                                <div class="col-md-12"><span>Descripción General:</span></div>
                                 <div class="col-md-12">
                                     <textarea name="descripgeneral" id="descripgeneral" class="form-control" rows="5"></textarea>
                                 </div>
                         </div>
                     </div>
-            </div>
+                    <div class="form-group row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="form-group row">
+                            <div class="col-md-8 col-md-offset-1"><span>¿Realizó el Cambio de alguna pieza?</span></div>   
+                                <div class="col-md-3">
+                                    <span>Si:</span>{!! Form::radio('cambio', 'Si', false) !!}
+                                    <span>No:</span>{!! Form::radio('cambio', 'No', false) !!}
+                                </div>
+                        </div>
+                    </div>
+                    </div>
+
+            </div> <button type="submit" class="btn btn-success">Aceptar</button>
         </div>
-        
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-danger">
-                    <div class="panel-heading">Piezas Remplazadas</div>
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-        @include('tools.botones-registrar')
         </div>
         {!! Form::close() !!}
     </div>
@@ -173,4 +170,3 @@
  });
 </script>
 @endsection
-

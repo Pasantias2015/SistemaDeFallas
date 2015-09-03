@@ -27,7 +27,7 @@
           </div>
           <div class="row">
             <div class="panel panel-danger">
-              <div class="panel-heading">Parametros a Revisar</div>
+              <div class="panel-heading">Parámetros a Revisar</div>
               <div class="col-md-6">
                 <div class="form-group row">
                   <div class="col-md-5"><span>Kilometraje Actual:</span></div>

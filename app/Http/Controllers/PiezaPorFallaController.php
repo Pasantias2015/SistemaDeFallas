@@ -2,19 +2,15 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\ServicioUnidadOperador;
-use App\MantenimientoPorfalla;
-use App\PiezaPorfalla;
-use App\Http\Requests\CrearMantenimientoPorfallaRequest;
-use Illuminate\Http\Request;
-use App\User;
 use App\Falla;
 use App\Unidad;
 use App\Pieza_Neoplan;
+use App\MantenimientoPorfalla;
+use App\PiezaPorfalla;
+use App\Http\Requests\CrearPiezaPorFallaRequest;
+use Illuminate\Http\Request;
 
-
-
-class MantenimientoPorfallaController extends Controller {
+class PiezaPorFallaController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -22,12 +18,8 @@ class MantenimientoPorfallaController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{				
-		$unidades =  ServicioUnidadOperador::all();
-		$fallas =  Falla::all();
-		$piezasneo = Pieza_Neoplan::all();
-		return view('Mantenimiento_Porfalla.crear',compact('unidades', 'fallas', 'piezas', 'piezasneo'));	
-
+	{
+		//
 	}
 
 	/**
@@ -45,21 +37,13 @@ class MantenimientoPorfallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(CrearMantenimientoPorfallaRequest $request)
+	public function store(CrearPiezaPorFallaRequest $request)
 	{
-		$falla = MantenimientoPorfalla::create($request->all());
-		$fallaid = $falla->id;
-		$cambio = $request->cambio;
-
-		if ($cambio=="Si") {
-			$piezasneo = Pieza_Neoplan::all();
-			$piezas = 	PiezaPorfalla::where('id_porfallas','=',$fallaid);
-			return view('Mantenimiento_Porfalla.detallefalla',compact('piezasneo','piezas','fallaid'));
-		} else {
-			return view('home');
-		}
-		
-		
+		$pfalla = PiezaPorFalla::create($request->all());
+		$fallaid = $pfalla->id_porfallas;
+		$piezasneo = Pieza_Neoplan::all();
+		$piezas = PiezaPorfalla::where('id_porfallas','=',$fallaid)->get();
+		return view('Mantenimiento_Porfalla.detallefalla',compact('piezasneo','piezas','fallaid'));
 	}
 
 	/**

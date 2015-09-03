@@ -47,7 +47,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Solicitud Nº</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Cantidad</th>
                             <th>Tipo</th>
                         </tr>

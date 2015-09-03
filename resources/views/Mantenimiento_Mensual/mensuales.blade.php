@@ -10,7 +10,7 @@
                                     <th>ID</th>
                                     <th>Fecha</th>
                                     <th>Unidad - Uso</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                               </tr>
                               @foreach($mensuales as $mensual)
                               <tr>                                

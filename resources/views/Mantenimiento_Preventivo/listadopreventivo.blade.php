@@ -15,7 +15,7 @@
                                     <th>Uso</th>
                                     <th>Año</th>
                                     <th>Modelo</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                               </tr>
                               @foreach($preventivos as $preventivo)
                               <tr>                                

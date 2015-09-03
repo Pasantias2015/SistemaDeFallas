@@ -12,7 +12,7 @@
           <div class="row">
               <div class="col-md-10 col-md-offset-1">
                   <div class="panel panel-danger">
-                    <div class="panel-heading">Datos Basicos</div>
+                    <div class="panel-heading">Datos Básicos</div>
                           <div class="form-group">
                                 <span>Lugar: </span>
                                 {!! Form::text('lugar',null,['class'=>'form-control']) !!}
@@ -50,7 +50,7 @@
                         <div class="row">
                           <div class="col-md-6">
                           <div class="form-group row">
-                            <div class="col-md-7"><span>Cedula: </span></div>
+                            <div class="col-md-7"><span>Cédula: </span></div>
                             <div class="col-md-7"> 
                                 {!! Form::text('fecha',null,['class'=>'form-control']) !!}   
                             </div>
@@ -80,7 +80,7 @@
                         <div class="row">
                           <div class="col-md-6">
                           <div class="form-group row">
-                            <div class="col-md-7"><span>Cedula: </span></div>
+                            <div class="col-md-7"><span>Cédula: </span></div>
                             <div class="col-md-7"> 
                                 {!! Form::text('fecha',null,['class'=>'form-control']) !!}   
                             </div>
@@ -110,7 +110,7 @@
                         <div class="row">
                           <div class="col-md-4">
                           <div class="form-group row">
-                            <div class="col-md-9"><span>Codigo: </span></div>
+                            <div class="col-md-9"><span>Código: </span></div>
                             <div class="col-md-9"> 
                                 {!! Form::text('fecha',null,['class'=>'form-control']) !!}   
                             </div>
@@ -126,7 +126,7 @@
                           </div>
                           <div class="col-md-4">
                            <div class="form-group row">
-                            <div class="col-md-9"><span>Presion de Gas: </span></div>
+                            <div class="col-md-9"><span>Presión de Gas: </span></div>
                             <div class="col-md-9"> 
                              
                                 {!! Form::text('hora',null,['class'=>'form-control']) !!}   
@@ -144,11 +144,11 @@
           <div class="row">
               <div class="col-md-10 col-md-offset-1">
                   <div class="panel panel-danger">
-                    <div class="panel-heading">Seccion de la Falla</div>
+                    <div class="panel-heading">Sección de la Falla</div>
                         <div class="row">
                             <div class="col-md-10 col-md-offset-1">
                                 <div class="form-group">
-                                    <span>Seccion de la Fallas: </span>
+                                    <span>Sección de la Fallas: </span>
                                     <select name="seccion_id" class="form-control">
                                       @foreach($secciones as $seccion)
                                       <option value="{{ $seccion->id }}">{{ $seccion->descripcion }}</option>    
@@ -179,7 +179,7 @@
                           </div>
                           <div class="col-md-4">
                           <div class="form-group row">
-                            <div class="col-md-9"><span>Frecuncia: </span></div>
+                            <div class="col-md-9"><span>Frecuencia: </span></div>
                             <div class="col-md-9"> 
                                 {!! Form::text('fecha',null,['class'=>'form-control']) !!}   
                             </div>
@@ -196,10 +196,10 @@
                             </div>  
                         </div>
 
-                                                <div class="row">
+                        <div class="row">
                           <div class="col-md-4">
                           <div class="form-group row">
-                            <div class="col-md-9"><span>Hora de Aparicion: </span></div>
+                            <div class="col-md-9"><span>Hora de Aparición: </span></div>
                             <div class="col-md-9"> 
                                 {!! Form::text('fecha',null,['class'=>'form-control']) !!}   
                             </div>
@@ -225,7 +225,7 @@
                         </div>
 
                           <div class="form-group">
-                                <span>Descripcion detallada de la falla Presentada: </span>
+                                <span>Descripción detallada de la falla Presentada: </span>
                                 {!! Form::text('lugar',null,['class'=>'form-control']) !!}
                           </div>
 

@@ -42,7 +42,7 @@
                     <div class="panel-heading">Recibe</div>
                         <div class="col-md-6">
                             <br></br>
-                            <div class="col-md-3"><span>Mecanico:</span></div>
+                            <div class="col-md-3"><span>Mecánico:</span></div>
                             <div class="col-md-9">
                                 <select name="persona_id" id="mecanico" class="form-control">
                                     <option>Seleccione un Mecanico</option>    

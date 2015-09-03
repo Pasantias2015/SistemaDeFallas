@@ -10,11 +10,11 @@
            {!! Form::model($caja,['route'=>['cajas.update',$caja],'method'=>'PUT']) !!}
               <div class="col-md-12">
                 <div class="form-group">
-                  <span>Descripcion: </span>
+                  <span>Descripción: </span>
                   {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                 </div>   
                 <div class="form-group">
-                  <span>Mecanico: </span>
+                  <span>Mecánico: </span>
                   {!! Form::text('mecanico',null,['class'=>'form-control']) !!} 
                 </div>     
               </div>

@@ -10,7 +10,7 @@
                                     <th>ID</th>
                                     <th>Fecha</th>
                                     <th>Unidad - Uso</th>
-                                    <th>Accion</th>
+                                    <th>Acción</th>
                               </tr>
                               @foreach($semanales as $semanal)
                               <tr>                                
@@ -18,7 +18,7 @@
                                 <td>{{ $semanal->fecha }}</td>
                                 <td>{{ $semanal->serviciounidadoperador->unidad->nidentificacion." - ".$semanal->serviciounidadoperador->unidad->uso}}</td>
                                 <td>
-                                  <a href="{{ route('samanal.edit',$semanal) }}" class="btn btn-info">Ver</a>
+                                  <a href="{{ route('semanal.edit',$semanal) }}" class="btn btn-info">Ver</a>
                                 </td>                               
                               </tr>
                               @endforeach

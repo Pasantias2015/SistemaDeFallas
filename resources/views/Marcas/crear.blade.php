@@ -20,7 +20,7 @@
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>                     
-                            <th>Accion</th>
+                            <th>Acción</th>
                         </tr>
                         @foreach($marcas as $marca)
                         <tr>                            

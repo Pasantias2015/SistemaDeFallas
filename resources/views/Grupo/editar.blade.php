@@ -12,15 +12,15 @@
                 <div class="col-md-12">
 
                    <div class="form-group">
-                       <span>Codigo: </span>
+                       <span>Código: </span>
                        {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                    </div> 
                    <div class="form-group">
-                       <span>Descripcion: </span>
+                       <span>Descripción: </span>
                        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                    </div> 
                    <div class="form-group">
-                        <span>Seccion: </span>                    
+                        <span>Sección: </span>                    
                         <input type="text" disabled value="{{$grupo->seccion->descripcion}}" class="form-control">
                    </div>      
                </div>

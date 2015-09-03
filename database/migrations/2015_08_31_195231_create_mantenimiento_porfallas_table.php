@@ -22,7 +22,7 @@ class CreateMantenimientoPorfallasTable extends Migration {
 			$table->integer('serviciounidadoperador_id')->unsigned();
 			$table->foreign('serviciounidadoperador_id')->references('id')->on('servicio_unidad_operadores');
 			$table->date('fecha');
-			$table->time('horamotor');
+			$table->integer('horamotor');
 			$table->integer('nivelcombus');
 			$table->string('lugar');
     		$table->time('hora');

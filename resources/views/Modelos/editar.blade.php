@@ -12,11 +12,11 @@
                 <div class="col-md-12">
 
                    <div class="form-group">
-                       <span>Codigo: </span>
+                       <span>Código: </span>
                        {!! Form::text('codigo',null,['class'=>'form-control']) !!}
                    </div>
                    <div class="form-group">
-                       <span>Descripcion: </span>
+                       <span>Descripción: </span>
                        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                    </div>
                    <div class="form-group">
@@ -27,14 +27,14 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <span>Tipo de Transmision:</span>
-                        <select name="transmision" id="" class="form-control">
+                        <span>Tipo de Transmisión:</span>
+                        <select name="transmision" id="transmision" class="form-control">
                           <option>Automatico</option>
                           <option>Sincronico</option>
                         </select>
                     </div> 
                     <div class="form-group">
-                        <span>Tamaño(Dimension): </span>
+                        <span>Tamaño(Dimensión): </span>
                         {!! Form::text('dimension',null,['class'=>'form-control']) !!}
                     </div>
                </div>

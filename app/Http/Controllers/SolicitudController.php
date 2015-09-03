@@ -51,11 +51,12 @@ class SolicitudController extends Controller {
 		$articulos = Almacen::where('tipo','=','Articulo')->get();
 		$fluidos = Almacen::where('tipo','=','Fluidos')->get();
 		$piezas = Almacen::where('tipo','=','Pieza')->get();
-		
+		$piezasneo = Almacen::where('tipo','=','Pieza Neoplan')->get();
+
 		$id = $solicitud->id;
 		$detalles = DetalleSolicitud::where('solicitud_id','=','$id')->get();
 		
-        return view('Almacen/detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud'));
+        return view('Almacen/detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud','piezasneo'));
 	}
 
 	/**

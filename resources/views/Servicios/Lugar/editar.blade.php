@@ -14,7 +14,7 @@
 
                    <div class="form-group">
 
-                       <span>Descripcion: </span>
+                       <span>Descripción: </span>
                        
                        {!! Form::text('descripcion',null,['class'=>'form-control']) !!}
                    </div>    

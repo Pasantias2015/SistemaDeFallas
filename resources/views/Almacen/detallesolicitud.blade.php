@@ -17,7 +17,7 @@
             </div>
             <div class="col-md-3">
               <div class="form-group row">
-                <div class="col-md-4"><span>Mecanico:</span></div>
+                <div class="col-md-4"><span>Mecánico:</span></div>
                 <div class="col-md-8">   
                     <input type="text" disabled value="{{ $solicitud->persona->pnombre." ".$solicitud->persona->papellido }}" class="form-control">
                 </div>
@@ -44,6 +44,7 @@
                 <div class="panel-heading">¿Que Desea Solicitar al Almacen?:</div>
                 <div class="col-md-8 col-md-offset-4">
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza1">Pieza</button>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#pieza2">Pieza Neoplan</button>
                     <button type="button" class="btn btn-success" data-toggle="modal" data-target="#herramienta">Herramienta</button>
                     <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#articulo">Articulo</button>
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#fluidos">Fluidos</button>
@@ -53,10 +54,10 @@
                         <tr>
                             <th>ID</th>
                             <th>Solicitud Nº</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Cantidad</th>
                             <th>Tipo</th>
-                            <th>Accion</th>
+                            <th>Acción</th>
                         </tr>
                         @foreach($detalles as $detalle)
                         <tr>                            
@@ -121,6 +122,7 @@
       </div>
     </div>
 </div>
+
 <!-- Modal Articulo -->
 <div class="modal fade" id="articulo" role="dialog">
     <div class="modal-dialog">
@@ -162,6 +164,7 @@
         </div>
     </div>
 </div>
+
  <!-- Modal Fluidos -->
 <div class="modal fade" id="fluidos" role="dialog">
     <div class="modal-dialog">
@@ -202,6 +205,7 @@
         </div>
     </div>
 </div>
+
 <!-- Modal Pieza-->
 <div class="modal fade" id="pieza1" role="dialog">
     <div class="modal-dialog">
@@ -233,7 +237,7 @@
                 {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
             </div> 
             <div class="form-group">
-                    <input type="hidden" name="tipo" value="Pieza">
+                    <input type="hidden" name="tipo" value="Pieza Yutong">
             </div>       
         </div>
         <div class="modal-footer">
@@ -241,6 +245,48 @@
             <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
         </div>
       {!! Form::close() !!}
+      </div>
+    </div>
+</div>
+
+<!-- Modal Pieza Neoplan-->
+<div class="modal fade" id="pieza2" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content panel panel-danger">
+            <div class="modal-header panel-heading">
+                Ingresar Pieza Neoplan al Almacen
+            </div>
+            <div class="modal-body">
+            {!! Form::open(['route'=>'dsolicitud.store','method'=>'POST']) !!} 
+                <div class="form-group row">
+                    <div class="col-md-7"><span>Solicitud Nº:</span></div>
+                    <div class="col-md-5">
+                        <input type="text" disabled value="{{$solicitud->id}}" class="form-control">
+                        <input type="hidden" name="solicitud_id" value="{{$solicitud->id}}" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span>Piezas Neoplan: </span>
+                    <select name="almacen_id" id="almacen_id" class="form-control">
+                        @foreach($piezasneo as $piez)
+                            <option value="{{ $piez->id }}">{{ $piez->codigo."-".$piez->descripcion }}</option>    
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
+                    <span>Cantidad: </span>
+                    {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
+                </div>
+                <div class="form-group">
+                        <input type="hidden" name="tipo" value="Pieza Neoplan">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Registrar</button>
+              <button type="button" class="btn btn-success" data-dismiss="modal">Cerrar</button>
+            </div>
+            {!! Form::close() !!}
       </div>
     </div>
 </div>

@@ -130,6 +130,7 @@ resource('semanal','MantenimientoSemanalController');
 resource('mensual','MantenimientoMensualController');
 resource('porfalla','MantenimientoPorfallaController');
 resource('piezaneo','Pieza_NeoplanController');
+resource('pporfalla','PiezaPorFallaController');
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');

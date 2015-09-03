@@ -13,8 +13,8 @@
                                     <th>ID</th>
                                     <th>Fecha- Hora</th>
                                     <th>Usuario</th>
-                                    <th>Mecanico</th>
-                                    <th>Accion</th>
+                                    <th>Mecánico</th>
+                                    <th>Acción</th>
                               </tr>
                               @foreach($solicitudes as $solicitud)
                               <tr>                                

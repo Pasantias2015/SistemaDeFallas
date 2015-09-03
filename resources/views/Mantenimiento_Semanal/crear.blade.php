@@ -45,7 +45,7 @@
 				<div class="row">
             		<div class="col-md-12">
                 		<div class="panel panel-danger">
-                    		<div class="panel-heading">Parametros a Revisar</div>
+                    		<div class="panel-heading">Parámetros a Revisar</div>
                     			 <div class="form-group row">
                       				<div class="col-md-8 col-md-offset-1"><span>Llenado del nivel del liquido del dispositivo del limpia parabrisas.</span></div>
                         			<div class="col-md-2">
@@ -85,7 +85,7 @@
                         			</div>
                    				</div>
                    				<div class="form-group row">
-                        			<div class="col-md-8 col-md-offset-1"><span>Revision del Filtro previo de Combustible.</span><strong>  ¿Lo Reemplazado?</strong></div>
+                        			<div class="col-md-8 col-md-offset-1"><span>Revisión del Filtro previo de Combustible.</span><strong>  ¿Lo Reemplazado?</strong></div>
                         			<div class="col-md-2">
                             			<select name="filtropre" id="filtropre" class="form-control">
                                 			<option value="Si">Si</option>

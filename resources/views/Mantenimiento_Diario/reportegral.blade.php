@@ -22,7 +22,7 @@
 					<h5><strong>K:</strong> Luces de Externas: Si:{{$k1}} - No:{{$k2}} </h5>
 				</div>
 				<div class="col-md-4">
-					<h5><strong>C:</strong> Aire Neumaticos Adecuado: Si:{{$c1}} - No:{{$c2}} </h5>
+					<h5><strong>C:</strong> Aire Neumáticos Adecuado: Si:{{$c1}} - No:{{$c2}} </h5>
 					<h5><strong>F:</strong> Estado de los Carroceria: Bueno:{{$f1}} - Malo:{{$f2}} </h5>
 					<h5><strong>I:</strong> Luces Internas (Edo. Fisico): Bueno:{{$i1}} - Malo:{{$i2}} </h5>
 					<h5><strong>L:</strong> Luces de Cruce: Si:{{$l1}} - No:{{$l2}} </h5>

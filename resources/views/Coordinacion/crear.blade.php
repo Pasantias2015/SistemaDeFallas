@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-8 col-md-offset-1">
 	<div class="panel panel-danger">
-		<div class="panel-heading">Coordinacion </div>
+		<div class="panel-heading">Coordinación </div>
 		<div class="panel-body">
 		 @include('tools.errors')
             {!! Form::open(['route'=>'coordinaciones.store','method'=>'POST']) !!}
@@ -26,7 +26,7 @@
             				<th>ID</th>
                             <th>Codigo</th>
                             <th>Nombre</th>
-            				<th>Accion</th>
+            				<th>Acción</th>
             			</tr>
             			@foreach($coordinaciones as $coordinacion)
             			<tr>            				
