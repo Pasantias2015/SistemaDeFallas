@@ -21,9 +21,9 @@
                     <div class="form-group row">
                         <div class="col-md-3"><span>Unidad:</span></div>
                         <div class="col-md-9">   
-                            <select name="serviciounidadoperador_id" id="unidad" class="form-control">
+                            <select name="unidad_id" id="unidad" class="form-control">
                                 @foreach($unidades as $unidad)
-                                    <option value="{{ $unidad->id }}">{{$unidad->unidad->nidentificacion}}</option>    
+                                    <option value="{{ $unidad->id }}">{{$unidad->nidentificacion}}</option>    
                                 @endforeach
                             </select>
                         </div>
@@ -289,10 +289,8 @@
                                 <div class="col-md-6 "><span>Trasero Izquierdo:</span>{!! Form::radio('tizqem', '*') !!} </div> 
                             </div>
                         </div>
-                        <div class="col-md-6">   
-                            <select name="usuario_id" class="hidden">
-                                <option value=1></option>    
-                            </select>
+                        <div class="col-md-6">  
+                            <input type="text" name="usuario_id" class="hidden" value="{{ Auth::user()->id }}">
                         </div>
                 </div>
                 @include('tools.botones-registrar')

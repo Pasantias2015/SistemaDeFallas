@@ -7,7 +7,7 @@
 		<div class="panel-body">
 		 @include('tools.errors')
             <div class="col-md-12">
-                <h4> La Unidad Introducida Ya se le realizó el Mantenimiento Diario Hoy</h4>
+                <h4> La Unidad Seleccionada Ya tiene los Tres Operadores Asignados</h4>
                 <div class="col-md-8 col-md-offset4">
                 	<h3> ¡Verifique!</h3>
                 </div>

@@ -10,7 +10,7 @@ class MantenimientoDiario extends Model {
 
     protected $fillable=['usuario_id',
                         'fecha',
-    					'serviciounidadoperador_id',
+    					'unidad_id',
     					'cnaceitem', //Chequeo Nivel de Aceite del Motor
                             'litrosa', //Litros Completados
                         'cnrefrigerante',//Chequeo Nivel de Refrigerante
@@ -56,9 +56,9 @@ class MantenimientoDiario extends Model {
                             'tizqem',//Trasero Izquierdo
                         ];
 
-    public function serviciounidadoperador()
+    public function unidad()
     {
-       return $this->belongsTo('App\ServicioUnidadOperador');
+       return $this->belongsTo('App\Unidad');
     }
     public function usuario()
     {

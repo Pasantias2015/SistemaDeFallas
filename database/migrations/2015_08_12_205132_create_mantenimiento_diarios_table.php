@@ -18,8 +18,8 @@ class CreateMantenimientoDiariosTable extends Migration {
 			$table->date('fecha');
 			$table->integer('usuario_id')->unsigned();
 			$table->foreign('usuario_id')->references('id')->on('users');
-			$table->integer('serviciounidadoperador_id')->unsigned();
-			$table->foreign('serviciounidadoperador_id')->references('id')->on('servicio_unidad_operadores');
+			$table->integer('unidad_id')->unsigned();
+			$table->foreign('unidad_id')->references('id')->on('unidades');
 			$table->string('cnaceitem');//Chequeo Nivel de Aceite del Motor
 				$table->integer('litrosr'); //Litros Completados
 			$table->string('cnrefrigerante');//Chequeo Nivel de Refrigerante

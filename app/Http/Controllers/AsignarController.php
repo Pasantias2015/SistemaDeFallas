@@ -22,7 +22,7 @@ class AsignarController extends Controller {
 	public function index()
 	{
 		$modelos = Modelo::all();
-		$unidades = Unidad::paginate(5);
+		$unidades = Unidad::paginate(15);
 		return view('Unidades.asignarcodigo',compact('unidades','modelos'));
 	}
 

@@ -2,7 +2,6 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\ServicioUnidadOperador;
 use App\Unidad;
 use App\Http\Requests\FechaRequest;
 use App\MantenimientoPreventivo;

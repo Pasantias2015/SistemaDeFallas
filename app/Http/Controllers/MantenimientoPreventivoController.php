@@ -63,9 +63,8 @@ class MantenimientoPreventivoController extends Controller {
 	public function show($id)
 	{
 		$unidad = Unidad::findOrFail($id);
-		$serviciounidadoperador = ServicioUnidadOperador::where('unidad_id','=',$unidad->id)->get();
 		$usuarios =  User::all();
-		return view('Mantenimiento_Preventivo.crear',compact('unidad','usuarios','serviciounidadoperador'));
+		return view('Mantenimiento_Preventivo.crear',compact('unidad','usuarios'));
 	}
 
 	/**
@@ -120,6 +119,11 @@ class MantenimientoPreventivoController extends Controller {
 	{
 		$preventivos = MantenimientoPreventivo::paginate(10);
 		return view('Reportes.preventivogral',compact('preventivos'));
+	}
+	public function reportedireccion()
+	{
+		$preventivos = MantenimientoPreventivo::paginate(10);
+		return view('Reportes.preventivodireccion',compact('preventivos'));
 	}
 
 }

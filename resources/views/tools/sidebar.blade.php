@@ -17,7 +17,7 @@
     </div>
 
     <!--  //principal -->
-    <a href="#unidades" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-car right"></i> Unidades </a>
+    <a href="#unidades" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-bus right"></i> Unidades </a>
     <div class="collapse" id="unidades">
       <a href="{{ url('marcas') }}" class="list-group-item">Registrar Marca</a>
       <a href="{{ url('modelos') }}" class="list-group-item">Registrar Modelo</a>
@@ -37,29 +37,29 @@
     </div>
 
    <!--  //principal -->
-    <a href="#mto" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-cog fa-spin left"></i> Mantenimientos </a>
+    <a href="#mto" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-cog left"></i> Mantenimientos </a>
     <div class="collapse" id="mto">
     <!-- //hijo de principal-->     
-      <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1"><i class="fa fa-car right"></i> Unidades Yutong <i class="fa fa-caret-down"></i></a>
+      <a href="#SubMenu1" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1"><i class="fa fa-bus right"></i> <strong>Unidades Yutong</strong> <i class="fa fa-caret-down"></i></a>
         <!-- Hijos de Submenu1 -->
         <div class="collapse list-group-submenu" id="SubMenu1">
           <!-- <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
           <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a> -->
-          <a href="#SubSubMenu11" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Diario<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu11" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-pencil-square-o left"></i> - <strong>Mantenimiento Diario</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11">
             <a href="{{ url('diario') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
             <a href="{{ url('ldiario') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizados </a>
           </div>
 
-          <a href="#SubSubMenu12" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-calendar left"></i> - Mantenimiento Preventivo<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu12" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-calendar left"></i> - <strong>Mantenimiento Preventivo</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu12">
             <a href="{{ url('uniprev') }}" class="list-group-item" data-parent="#SubSubMenu1">Pendientes</a>
             <a href="{{ url('lpreventivos') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizados </a>
           </div>
 
-          <a href="#SubSubMenu13" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-wrench fa-rotate-270 left"></i> - Mantenimiento Correctivo<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu13" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-wrench fa-rotate-270 left"></i> - <strong>Mantenimiento Correctivo</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu13">
             <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Reportar</a>
@@ -67,26 +67,26 @@
           </div>
         </div>
       <!--       //hijo de principal-->     
-      <a href="#SubMenu2" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu2"><i class="fa fa-car right"></i> Unidades Neoplan <i class="fa fa-caret-down"></i></a>
+      <a href="#SubMenu2" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu2"><i class="fa fa-bus right"></i> <strong>Unidades Neoplan</strong> <i class="fa fa-caret-down"></i></a>
         <!-- Hijos de Submenu1 -->
         <div class="collapse list-group-submenu" id="SubMenu2">
           <!-- <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
           <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a> -->
-          <a href="#SubSubMenu21" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Semanal<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu21" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-pencil-square-o left"></i> - <strong>Mantenimiento Semanal</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu21">
             <a href="{{ url('semanal') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
             <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Realizados</a>
           </div>
 
-          <a href="#SubSubMenu22" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-calendar left"></i> - Mantenimiento Mensual<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu22" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-calendar left"></i> - <strong>Mantenimiento Mensual</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu22">
             <a href="{{ url('mensual') }}" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
             <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Realizados </a>
           </div>
 
-          <a href="#SubSubMenu23" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-wrench fa-rotate-270 left"></i>Mantenimiento Correctivo<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu23" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-wrench fa-rotate-270 left"></i> <strong>Mantenimiento Correctivo</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu23">
             <a href="porfalla" class="list-group-item" data-parent="#SubSubMenu1">Realizar</a>
@@ -98,12 +98,12 @@
   <!--  //principal -->
     <a href="#repor" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-folder-open-o right"></i> Reportes </a>
     <div class="collapse" id="repor">
-       <a href="#SubMenu1a" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1a"><i class="fa fa-car right"></i> Unidades Yutong <i class="fa fa-caret-down"></i></a>
+       <a href="#SubMenu1a" class="list-group-item" data-toggle="collapse" data-parent="#SubMenu1a"><i class="fa fa-bus right"></i> <strong>Unidades Yutong</strong> <i class="fa fa-caret-down"></i></a>
 
         <div class="collapse list-group-submenu" id="SubMenu1a">
           <!-- <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
           <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a> -->
-          <a href="#SubSubMenu11a" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Diario<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu11a" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - <strong>Mantenimiento Diario</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11a">
             <a href="{{ url('rdiario') }}" class="list-group-item" data-parent="#SubSubMenu1a">General</a>
@@ -112,20 +112,14 @@
             <a href="{{ url('rdiario6') }}" class="list-group-item" data-parent="#SubSubMenu1a"> Unidad</a>
           </div>
 
-          <a href="#SubSubMenu11ab" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - Mantenimiento Preventivo<i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu11ab" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - <strong>Mantenimiento Preventivo</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11ab">
             <a href="{{ url('rp1') }}" class="list-group-item" data-parent="#SubSubMenu1a">Fluidos Usados - Sustitución</a>
             <a href="{{ url('rp2') }}" class="list-group-item" data-parent="#SubSubMenu1a">Mantenimiento Motor</a>
-          </div>
-
-         
+            <a href="{{ url('rp3') }}" class="list-group-item" data-parent="#SubSubMenu1a">Direccion - Embrague - Enfriamiento - Luces</a>
+          </div>       
         </div>
-
-
-
-
-
     </div>
     <!--  //principal -->
     <a href="#bd" class="list-group-item list-group-item-danger" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-database right"></i> Base de Datos </a>

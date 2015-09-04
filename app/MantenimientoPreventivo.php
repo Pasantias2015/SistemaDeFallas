@@ -11,7 +11,6 @@ class MantenimientoPreventivo extends Model {
     protected $fillable=[
     					'fecha',
     					'unidad_id',
-					    'serviciounidadoperador_id',
 					    'kilometraje',
 					    'rlfiltroa', //revision y limpieza filtro de aire
 					    'clubricante', //cambio lubricante motor
@@ -95,8 +94,8 @@ class MantenimientoPreventivo extends Model {
     {
         return $this->belongsTo('App\User');
     }
-	public function serviciounidadoperador()
+	public function unidad()
     {
-       return $this->belongsTo('App\ServicioUnidadOperador');
+       return $this->belongsTo('App\Unidad');
     }
 }

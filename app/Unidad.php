@@ -44,8 +44,11 @@ class Unidad extends Model {
 	 }
 	 
 	 public function preventivo()
-    {
+     {
         return $this->hasMany('App\MantenimientoPreventivo');
-    }
-
+     }
+	public function diario()
+	{
+		return $this->hasMany('App\MantenimientoDiario');
+	}
 }

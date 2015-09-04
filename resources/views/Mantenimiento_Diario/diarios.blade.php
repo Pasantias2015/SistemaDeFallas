@@ -9,14 +9,14 @@
                               <tr>
                                     <th>ID</th>
                                     <th>Fecha</th>
-                                    <th>Servicio - Unidad - Uso- Año</th>
+                                    <th>Unidad - Uso- Año</th>
                                     <th>Acción</th>
                               </tr>
                               @foreach($diarios as $diario)
                               <tr>                                
                                 <td>{{ $diario->id }}</td>
                                 <td>{{ $diario->fecha }}</td>
-                                <td>{{ $diario->serviciounidadoperador->servicio->descripcion." - ".$diario->serviciounidadoperador->unidad->nidentificacion." - ".$diario->serviciounidadoperador->unidad->uso." - ".$diario->serviciounidadoperador->unidad->year }}</td>
+                                <td>{{ $diario->unidad->nidentificacion." - ".$diario->unidad->uso." - ".$diario->unidad->year }}</td>
                                 <td>
                                   <a href="{{ route('diario.edit',$diario) }}" class="btn btn-info">Ver</a>
                                 </td>                               

@@ -1,8 +1,12 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\CrearServicioUnidadOperadorRequest;
 use App\Http\Controllers\Controller;
-
+use App\ServicioUnidadOperador;
+use App\Operador;
+use App\Unidad;
+use App\Servicio;
 use Illuminate\Http\Request;
 
 class UnidadOperadorController extends Controller {
@@ -14,7 +18,23 @@ class UnidadOperadorController extends Controller {
 	 */
 	public function index()
 	{
-		return view('UnidadOperador.asignar');
+		$servicios = Servicio::all();
+		$unidades = Unidad::all();
+		$operador = Operador::all();
+
+		$cont = count($operador);
+		for ($i=0; $i<$cont; $i++){ 
+			 $fecha = $operador[$i]->fechaasignacion;
+			 $segundos = strtotime('now') - strtotime($fecha);
+			 $diferencia_dias=intval($segundos/60/60/24);
+			if ($diferencia_dias > 21) {
+				 $operador[$i]->estado = "Disponible";
+				 $operador[$i]->save();
+			} 			
+		}	
+		$operadores = Operador::where('estado','=','Disponible')->get();
+		$asignadas = ServicioUnidadOperador::paginate(20);
+		return view('UnidadOperador.asignar',compact('servicios','unidades','operadores','asignadas'));
 	}
 
 	/**
@@ -32,9 +52,24 @@ class UnidadOperadorController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CrearServicioUnidadOperadorRequest $request)
 	{
-		//
+		$total = ServicioUnidadOperador::where('unidad_id','=',$request->unidad_id)->where('fecha','=',$request->fecha)->count('unidad_id');
+		if ($total>=3) {
+			return view('UnidadOperador.error');
+		} else {
+			$servunidoper = ServicioUnidadOperador::create($request->all());
+			$id = $request->operador_id;
+			$operador = Operador::findOrFail($id); 
+			$operador->estado = "Asignado";
+			$operador->fechaasignacion = $request->fecha;
+			$operador->save();
+			$servicios = Servicio::all();
+			$unidades = Unidad::all();
+			$operadores = Operador::where('estado','=',"Disponible")->get();
+			$asignadas = ServicioUnidadOperador::paginate(20);
+			return view('UnidadOperador.asignar',compact('servicios','unidades','operadores','asignadas'));
+		}
 	}
 
 	/**

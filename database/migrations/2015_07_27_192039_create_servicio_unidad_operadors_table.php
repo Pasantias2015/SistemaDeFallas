@@ -23,6 +23,8 @@ class CreateServicioUnidadOperadorsTable extends Migration {
 			
 			$table->integer('unidad_id')->unsigned();
 			$table->foreign('unidad_id')->references('id')->on('unidades');
+			
+			$table->date('fecha');
 		});
 	}
 

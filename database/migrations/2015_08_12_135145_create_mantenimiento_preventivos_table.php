@@ -20,8 +20,6 @@ class CreateMantenimientoPreventivosTable extends Migration {
 			$table->foreign('unidad_id')->references('id')->on('unidades');
 			$table->integer('usuario_id')->unsigned();
 			$table->foreign('usuario_id')->references('id')->on('users');
-			$table->integer('serviciounidadoperador_id')->unsigned();
-			$table->foreign('serviciounidadoperador_id')->references('id')->on('servicio_unidad_operadores');
 			$table->decimal('kilometraje',10,2);		    
 			$table->string('rlfiltroa');//revision y limpieza filtro de aire
 			$table->string('clubricante');//cambio lubricante motor

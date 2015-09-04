@@ -53,6 +53,10 @@ class HomeController extends Controller {
 		
 	}
 
+	public function login(){
+		return view('log');
+	}
+
 }
  
 	/*public function index() 

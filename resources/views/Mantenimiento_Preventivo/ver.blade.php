@@ -3,7 +3,7 @@
 @section('content')
 <div class="col-md-11">
     <div class="panel panel-danger">
-        <div class="panel-heading">Ver Mantenimiento Preventivo: {{ $preventivo->serviciounidadoperador->servicio->descripcion." - ".$preventivo->serviciounidadoperador->unidad->nidentificacion." - ".$preventivo->fecha }}</div>
+        <div class="panel-heading">Ver Mantenimiento Preventivo: {{ $preventivo->unidad->nidentificacion." - ".$preventivo->fecha }}</div>
         <div class="panel-body">
         @include('tools.errors')
         {!! Form::model($preventivo) !!}
@@ -20,7 +20,7 @@
               <div class="form-group row">
                 <div class="col-md-5"><span>Unidad:</span></div>
                 <div class="col-md-6">   
-                  <input type="text" disabled value="{{$preventivo->serviciounidadoperador->servicio->descripcion." - ".$preventivo->serviciounidadoperador->unidad->nidentificacion}}" class="form-control">
+                  <input type="text" disabled value="{{$preventivo->unidad->nidentificacion}}" class="form-control">
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@
                   <div class="form-group row">
                     <div class="col-md-6"><span>Tipo de Combustible:</span></div>
                     <div class="col-md-5">
-                      <input type="text" disabled value="{{$preventivo->serviciounidadoperador->unidad->modelo->combustible}}" class="form-control">
+                      <input type="text" disabled value="{{$preventivo->unidad->modelo->combustible}}" class="form-control">
                    </div>
                   </div>
                 </div>

@@ -14,7 +14,7 @@
                                 <span>Unidad: </span>
                                 <select name="unidad_id" class="form-control">
                                       @foreach($unidades as $unidad)
-                                        <option value="{{ $unidad->id }}">{{ $unidad->modelo->marca->nombre." - ".$unidad->nidentificacion}}</option>    
+                                        <option value="{{ $unidad->id }}">{{ $unidad->modelo->marca->nombre." - ".$unidad->modelo->descripcion." - ".$unidad->nidentificacion}}</option>    
                                       @endforeach
                                 </select>
                         </div>

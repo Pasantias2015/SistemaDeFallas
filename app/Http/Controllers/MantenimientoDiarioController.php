@@ -19,9 +19,8 @@ class MantenimientoDiarioController extends Controller {
 	 */
 	public function index()
 	{
-		$usuarios =  User::all();
-		$unidades =  ServicioUnidadOperador::all();
-		return view('Mantenimiento_Diario.crear',compact('unidades','usuarios'));
+		$unidades =  Unidad::all();
+		return view('Mantenimiento_Diario.crear',compact('unidades'));
 	}
 
 	/**
@@ -41,14 +40,13 @@ class MantenimientoDiarioController extends Controller {
 	 */
 	public function store(CrearMantenimientoDiarioRequest $request)
 	{
-		$diario = $request->serviciounidadoperador_id;
+		$diario = $request->unidad_id;
 				
 		//Actualizacion del Kilometraje
 		$actual = $request->kilometrajeactual;
-		$serv = ServicioUnidadOperador::findOrFail($diario);
-		$idunidad = $serv->unidad_id;
+		$idunidad = $diario;
 		$unidad = Unidad::findOrFail($idunidad);
-		$hola = MantenimientoDiario::where('serviciounidadoperador_id','=',$request->serviciounidadoperador_id)->where('fecha','=',$request->fecha)->get();
+		$hola = MantenimientoDiario::where('unidad_id','=',$request->unidad_id)->where('fecha','=',$request->fecha)->get();
 	
 		if (count($hola)==0) {
 			if ($unidad->kilometrajeactual<$actual) {
@@ -56,8 +54,6 @@ class MantenimientoDiarioController extends Controller {
 				} else {
 					return view('Mantenimiento_Diario.error');
 				}
-				
-				$unidad->save();
 				//verificacion del kilometraje ¿llego al Limite?
 				if (($unidad->modelo->dimension)>10) {
 					if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=10000){
@@ -78,7 +74,7 @@ class MantenimientoDiarioController extends Controller {
 				
 				$diario = MantenimientoDiario::create($request->all());
 		       
-		        $unidades =  ServicioUnidadOperador::all();
+		        $unidades =  Unidad::all();
 				return view('Mantenimiento_Diario.crear',compact('unidades'));
 		} else {
 			return view('Mantenimiento_Diario.errorunidad');

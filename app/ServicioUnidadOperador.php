@@ -5,8 +5,8 @@ use Illuminate\Database\Eloquent\Model;
 class ServicioUnidadOperador extends Model {
 
 	protected $table = 'servicio_unidad_operadores';
-	protected $fillable = ['servicio_id','unidad_id','operadores_id'];
-	public $timestamp = false;
+	protected $fillable = ['servicio_id','unidad_id','operador_id','fecha'];
+	public $timestamps = false;
 
 	
 	public function servicio()
@@ -25,9 +25,7 @@ class ServicioUnidadOperador extends Model {
 	{
 		return $this->hasMany('App\Incidencia');
 	}
-	public function diario(){
-		return $this->hasMany('App\MantenimientoDiario');
-	}
+	
 	public function preventivo(){
 		return $this->hasMany('App\MantenimientoPreventivo');
 	}

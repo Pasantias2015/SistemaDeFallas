@@ -18,6 +18,7 @@ Route::get('/', 'HomeController@index');
 
 
 Route::get('home','HomeController@index');
+Route::get('log','HomeController@login');
 
 Route::get('/', 'HomeController@index');
 
@@ -119,9 +120,11 @@ resource('solicitude','SolicitudController@listadoentregado');
 
 resource('rp1','MantenimientoPreventivoController@reporteuso');
 resource('rp2','MantenimientoPreventivoController@reportegral');
+resource('rp3','MantenimientoPreventivoController@reportedireccion');
 
 resource('rpreventivo','ReportePreventivoController');
 resource('rpreventivo1','ReporteGeneralPreventivoController');
+resource('rpreventivo2','ReporteDireccionPreventivoController');
 
 resource('fallas','FallaController');
 resource('causas','CausaController');

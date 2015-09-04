@@ -21,9 +21,8 @@
                     <div class="form-group row">
                         <div class="col-md-3"><span>Unidad:</span></div>
                         <div class="col-md-9">   
-                            <input type="text" disabled value="{{$unidad->nidentificacion." - ".$unidad->modelo->codigo." - ".$unidad->modelo->descripcion." - ".$unidad->modelo->marca->nombre." - ".$serviciounidadoperador[0]->servicio->descripcion}}" class="form-control">
+                            <input type="text" disabled value="{{$unidad->nidentificacion." - ".$unidad->modelo->codigo." - ".$unidad->modelo->descripcion." - ".$unidad->modelo->marca->nombre}}" class="form-control">
                             <input type="hidden" name="unidad_id" value="{{$unidad->id}}" class="form-control">
-                            <input type="hidden" name="serviciounidadoperador_id" value="{{$serviciounidadoperador[0]->id}}" class="form-control">
                         </div>
                     </div>
                 </div>

@@ -18,9 +18,9 @@
             </div>
             <div class="col-md-6">
               <div class="form-group row">
-                <div class="col-md-6"><span>Servicio-Unidad-Operador:</span></div>
+                <div class="col-md-6"><span>Unidad:</span></div>
                 <div class="col-md-6">   
-                    <input type="text" disabled value="{{$diario->serviciounidadoperador->servicio->descripcion." - ".$diario->serviciounidadoperador->unidad->nidentificacion." - ".$diario->serviciounidadoperador->operador->persona->pnombre}}" class="form-control">
+                    <input type="text" disabled value="{{$diario->unidad->nidentificacion}}" class="form-control">
                 </div>
               </div>
             </div>
@@ -28,7 +28,7 @@
                     <div class="form-group row">
                         <div class="col-md-5"><span>Kilometraje:</span></div>
                         <div class="col-md-6">
-                            <input type="text" disabled value="{{$diario->serviciounidadoperador->unidad->kilometrajeactual}}" class="form-control">
+                            <input type="text" disabled value="{{$diario->unidad->kilometrajeactual}}" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -217,7 +217,7 @@
                     <div class="form-group row">
                         <div class="col-md-4 col-md-offset-1"><span>Usuario:</span></div>
                         <div class="col-md-4">
-                          <input type="text" disabled value="{{$diario->usuario->usuario}}" class="form-control">
+                          <input type="text" disabled value="{{$diario->usuario->persona->pnombre." ".$diario->usuario->persona->papellido}}" class="form-control">
                         </div>
                       </div>        
                 </div>

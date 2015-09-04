@@ -7,6 +7,8 @@ class Operador extends Model {
 	protected $table = 'operadores';
 	public $timestamps=false;
 
+	protected $fillable = ['persona_id','estado','fechaasignacion'];
+
 	public function persona()
 	{
 		return $this->belongsTo('App\Persona');

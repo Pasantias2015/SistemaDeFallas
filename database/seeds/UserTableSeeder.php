@@ -93,8 +93,8 @@ class UserTableSeeder extends Seeder
                        'parroquia_id'=>1,
                               ));
        \DB::table('modulos')->insert(array (    'descripcion'=>'Gestion De Operaciones'));
-       \DB::table('roles')->insert(array (    'descripcion'=>'Supervisor'));
-       \DB::table('roles')->insert(array (    'descripcion'=>'Operador'));
+       \DB::table('roles')->insert(array (    'descripcion'=>'Supervisor(a)'));
+       \DB::table('roles')->insert(array (    'descripcion'=>'Operador(a)'));
 
 
        \DB::table('users')->insert(array (
