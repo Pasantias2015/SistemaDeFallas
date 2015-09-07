@@ -121,10 +121,18 @@ resource('solicitude','SolicitudController@listadoentregado');
 resource('rp1','MantenimientoPreventivoController@reporteuso');
 resource('rp2','MantenimientoPreventivoController@reportegral');
 resource('rp3','MantenimientoPreventivoController@reportedireccion');
+resource('rp4','MantenimientoPreventivoController@reportesuspension');
+resource('rp5','MantenimientoPreventivoController@reporteelectrico');
+resource('rp6','MantenimientoPreventivoController@observaciones');
 
 resource('rpreventivo','ReportePreventivoController');
 resource('rpreventivo1','ReporteGeneralPreventivoController');
 resource('rpreventivo2','ReporteDireccionPreventivoController');
+resource('rpreventivo3','ReporteSuspensionPreventivoController');
+resource('rpreventivo4','ReporteElectricoPreventivoController');
+
+resource('correctivo','MantenimientoCorrectivoController');
+resource('reparaciones','OrdenReparacionController');
 
 resource('fallas','FallaController');
 resource('causas','CausaController');
@@ -147,3 +155,4 @@ Route::get('/ajax-pieza','CargaController@cargarpiezas');
 Route::get('/ajax-mecanico','CargaController@cargarmecanico');
 Route::get('/ajax-causa','CargaController@cargarcausas');
 Route::get('/ajax-solucion','CargaController@cargarsolucion');
+Route::get('/ajax-operador','CargaController@cargaroperador');

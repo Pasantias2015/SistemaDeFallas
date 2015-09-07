@@ -473,7 +473,7 @@
                                 </div>
                     </div>          
                     <div class="panel panel-danger">
-                        <div class="panel-heading">Sistema Electrico</div>
+                        <div class="panel-heading">Sistema Eléctrico</div>
                             <div class="form-group row">
                                 <div class="col-md-8 col-md-offset-1"><span>Rotación de Baterias. ¿Realizado?</span></div>
                                 <div class="col-md-3">    

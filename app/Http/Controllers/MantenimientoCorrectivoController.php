@@ -7,6 +7,8 @@ use App\Herramienta;
 use App\OrdenReparacion;
 use App\MantenimientoCorrectivo;
 use App\User;
+use App\Unidad;
+use App\ServicioUnidadOperador;
 use App\Operador;
 use App\Seccion;
 
@@ -23,10 +25,12 @@ class MantenimientoCorrectivoController extends Controller {
 	public function index()
 	{
 		$usuarios= User::all();
+		$unidades= Unidad::all();
 		$operadores= Operador::all();
 		$secciones= Seccion::all();
+		$servicios = ServicioUnidadOperador::all();
 		$mantenimientocorrectivos = MantenimientoCorrectivo::paginate(5);
-        return view('MantenimientoCorrectivo.crear',compact('usuarios','operadores','secciones','mantenimientocorrectivos'));
+        return view('MantenimientoCorrectivo.crear',compact('unidades','usuarios','operadores','secciones','mantenimientocorrectivos','servicios'));
 	}
 
 	/**

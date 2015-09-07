@@ -33,13 +33,13 @@ body {
   bottom: 10%;
   right: 40%;
   margin-left: -195px;
-  background: -moz-linear-gradient(-45deg, #660033 0%, #FF0000  26%, #000000 72%, #146882 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#660033), color-stop(26%,#FF0000), color-stop(72%,#000000), color-stop(100%,#146882)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(-45deg, #66003 0%,#FF0000 26%,#000000 72%,#146882 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(-45deg, #660033 0%,#FF0000 26%,#000000 72%,#146882 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(-45deg, #66003 0%,#FF0000 26%,#000000 72%,#146882 100%); /* IE10+ */
-background: linear-gradient(135deg, #66003 0%,#FF0000 26%,#000000 72%,#146882 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a1233', endColorstr='#146882',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: -moz-linear-gradient(-45deg, #FF0000 0%, #FFFFFF  26%, #000000 72%, #FF0000 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#FF0000), color-stop(26%,#FFFFFF), color-stop(72%,#000000), color-stop(100%,#FF0000)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg, #FF0000 0%,#FFFFFF 26%,#000000 72%,#FF0000 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg, #FF0000 0%,#FFFFFF 26%,#000000 72%,#FF0000 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg, #FF0000 0%,#FFFFFF 26%,#000000 72%,#FF0000 100%); /* IE10+ */
+background: linear-gradient(135deg, #FF0000 0%,#FFFFFF 26%,#000000 72%,#FF0000 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a1233', endColorstr='#FF0000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   visibility: visible;
   transition: all 250ms ease-out;
   z-index: 100;
@@ -54,7 +54,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a1233', end
 .login-title {
   positon: fixed;
   width: 100%;
-  color: #EBFAFC;
+  color: #000000;
   margin-top: 220px;
   margin-left: .5px;
   opacity: 0.8;
@@ -98,7 +98,7 @@ input {
 }
 .user-icon {
   position: absolute;
-  color: #ffffff;
+  color: #A00000;
   opacity: 0.7;
   margin-top: 20px;
   margin-left: 40.5px;
@@ -229,7 +229,7 @@ input[placeholder]:focus
   transition: opacity 200ms ease-in;
 }
 div.no h3 {
-font-size: 0.5em; color: #efefef; margin-top: 10px;margin-left: 5px;}
+font-size: 0.5em; color: #ffffff; margin-top: 10px;margin-left: 8px;}
 .bottom-button {
   cursor: pointer;
   position: absolute;

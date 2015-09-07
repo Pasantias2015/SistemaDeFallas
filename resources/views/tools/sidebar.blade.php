@@ -62,7 +62,7 @@
           <a href="#SubSubMenu13" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1"><i class="fa fa-wrench fa-rotate-270 left"></i> - <strong>Mantenimiento Correctivo</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu13">
-            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Reportar</a>
+            <a href="correctivo" class="list-group-item" data-parent="#SubSubMenu1">Reportar</a>
             <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Pendientes </a>
           </div>
         </div>
@@ -103,7 +103,7 @@
         <div class="collapse list-group-submenu" id="SubMenu1a">
           <!-- <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 1 a</a>
           <a href="#" class="list-group-item" data-parent="#SubMenu1">Subitem 2 b</a> -->
-          <a href="#SubSubMenu11a" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - <strong>Mantenimiento Diario</strong> <i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu11a" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pie-chart left"></i> - <strong>Mantenimiento Diario</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11a">
             <a href="{{ url('rdiario') }}" class="list-group-item" data-parent="#SubSubMenu1a">General</a>
@@ -112,12 +112,15 @@
             <a href="{{ url('rdiario6') }}" class="list-group-item" data-parent="#SubSubMenu1a"> Unidad</a>
           </div>
 
-          <a href="#SubSubMenu11ab" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pencil-square-o left"></i> - <strong>Mantenimiento Preventivo</strong> <i class="fa fa-caret-down"></i></a>
+          <a href="#SubSubMenu11ab" class="list-group-item" data-toggle="collapse" data-parent="#SubSubMenu1a"><i class="fa fa-pie-chart left"></i> - <strong>Mantenimiento Preventivo</strong> <i class="fa fa-caret-down"></i></a>
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu11ab">
             <a href="{{ url('rp1') }}" class="list-group-item" data-parent="#SubSubMenu1a">Fluidos Usados - Sustitución</a>
             <a href="{{ url('rp2') }}" class="list-group-item" data-parent="#SubSubMenu1a">Mantenimiento Motor</a>
-            <a href="{{ url('rp3') }}" class="list-group-item" data-parent="#SubSubMenu1a">Direccion - Embrague - Enfriamiento - Luces</a>
+            <a href="{{ url('rp3') }}" class="list-group-item" data-parent="#SubSubMenu1a">Dirección - Embrague - Enfriamiento - Luces</a>
+            <a href="{{ url('rp4') }}" class="list-group-item" data-parent="#SubSubMenu1a">Suspensión - Arbol - Eje y Rueda</a>
+            <a href="{{ url('rp5') }}" class="list-group-item" data-parent="#SubSubMenu1a">Electrico - Frenos - Aire Acondicionado</a>
+            <a href="{{ url('rp6') }}" class="list-group-item" data-parent="#SubSubMenu1a">Observaciones</a>
           </div>       
         </div>
     </div>

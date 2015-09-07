@@ -125,5 +125,20 @@ class MantenimientoPreventivoController extends Controller {
 		$preventivos = MantenimientoPreventivo::paginate(10);
 		return view('Reportes.preventivodireccion',compact('preventivos'));
 	}
+	public function reportesuspension()
+	{
+		$preventivos = MantenimientoPreventivo::paginate(10);
+		return view('Reportes.preventivosuspension',compact('preventivos'));
+	}
+	public function reporteelectrico()
+	{
+		$preventivos = MantenimientoPreventivo::paginate(10);
+		return view('Reportes.preventivoelectrico',compact('preventivos'));
+	}
+	public function observaciones()
+	{
+		$preventivos = MantenimientoPreventivo::paginate(10);
+		return view('Mantenimiento_Preventivo.listadoobservaciones',compact('preventivos'));
+	}
 
 }
