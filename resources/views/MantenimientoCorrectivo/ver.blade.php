@@ -11,16 +11,16 @@
         <div class="row">
           <div class="col-md-12">
             <div class="panel panel-danger">
-              <div class="panel-heading">Datos del Supervisor</div>
+              <div class="panel-heading">Datos</div>
               <div class="panel-body">
+                <div class="col-md-2"><span>Supervisor:</span> </div>
                 <div class="col-md-6">
-                  <input type="text" disabled value="{{ Auth::user()->persona->nombrecompleto }}" class="form-control">
-                  <input type="text" name="supervisor" value="{{ Auth::user()->persona->nombrecompleto }}" class="hidden">
-                  <input type="text" name="pendiente" value="Si" class="hidden">
-                </div>
-                <div class="col-md-6">
-                  <input type="text" disabled value="{{ Auth::user()->persona->cedula }}" class="form-control">
-                </div>
+                  <input type="text" disabled value="{{ $correctivo->supervisor }}" class="form-control">
+                </div> 
+                <div class="col-md-4">
+                <div class="col-md-6"><span>Nº Reporte</span></div>
+                <div class="col-md-6"> <input type="text" disabled value="{{ $correctivo->id }}" class="form-control"></div>
+                </div> 
               </div>
             </div>
           </div>
@@ -33,17 +33,13 @@
               <div class="panel-body">
                 <div class="col-md-4">
                   <span>Servicio- Unidad- Operador </span>
-                   <select name="serviciounidadoperador_id" class="form-control">
-                      @foreach($servicios as $servicio)
-                        <option value="{{ $servicio->id }}">{{ $servicio->servicio->descripcion."-".$servicio->unidad->nidentificacion."-".$servicio->operador->persona->nombrecompleto }}</option>    
-                      @endforeach
-                    </select>
+                    <input type="text" disabled value="{{ $correctivo->serviciounidadoperador->servicio->descripcion."-".$correctivo->serviciounidadoperador->unidad->nidentificacion."-".$correctivo->serviciounidadoperador->operador->persona->nombrecompleto }}" class="form-control">
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <div class="col-md-9"><span>Kilometraje: </span></div>
                       <div class="col-md-12"> 
-                        {!! Form::number('kilometraje',null,['class'=>'form-control']) !!}   
+                       <input type="text" disabled value="{{ $correctivo->kilometraje }}" class="form-control"> 
                       </div>
                   </div>
                 </div>
@@ -51,7 +47,7 @@
                   <div class="form-group">
                     <div class="col-md-9"><span>Presión de Gas: </span></div>
                     <div class="col-md-12"> 
-                      {!! Form::number('gas',null,['class'=>'form-control']) !!}   
+                       <input type="text" disabled value="{{ $correctivo->gas }}" class="form-control">                     
                     </div>
                   </div>
                 </div>
@@ -68,15 +64,15 @@
               <div class="panel-body">
                 <div class="col-md-6">
                   <span>Lugar: </span>
-                  {!! Form::text('lugar',null,['class'=>'form-control']) !!}
+                  <input type="text" disabled value="{{ $correctivo->lugar }}" class="form-control"> 
                 </div>
                 <div class="col-md-3">
                   <span>Hora: </span>
-                  <div class="col-md-12"><input type="time" name="hora" id="hora" value="<?php  echo date("h:i:s", time()+27000);?>" class="form-control"></div>
+                  <input type="text" disabled value="{{ $correctivo->hora }}" class="form-control"> 
                 </div>
                 <div class="col-md-3">
                   <span>Fecha: </span>
-                  <input  type="date" name="fecha" class="form-control" max="<?php echo date("Y-m-d");?>" value="<?php echo date("Y-m-d");?>">
+                  <input type="text" disabled value="{{ $correctivo->fecha }}" class="form-control"> 
                 </div>
               </div>
             </div>
@@ -91,11 +87,7 @@
                     <div class="form-group">
                       <div class="col-md-5"><span>Sección de la Falla: </span> </div>
                       <div class="col-md-7">
-                        <select name="seccion_id" class="form-control">
-                          @foreach($secciones as $seccion)
-                          <option value="{{ $seccion->id }}">{{ $seccion->descripcion." - ".$seccion->modelo->descripcion }}</option>    
-                         @endforeach
-                        </select>
+                        <input type="text" disabled value="{{ $correctivo->seccion->descripcion }}" class="form-control"> 
                       </div>
                     </div>         
                 </div>
@@ -111,44 +103,44 @@
                     <div class="form-group">
                       <div class="col-md-4">
                         <div class="col-md-9"><span>Sitio de Ocurrencia: </span></div>
-                        <div class="col-md-12">{!! Form::text('ocurrencia',null,['class'=>'form-control']) !!}</div>
+                        <div class="col-md-12"><input type="text" disabled value="{{ $correctivo->ocurrencia }}" class="form-control"></div>
                       </div>
                       <div class="col-md-4">
                         <div class="col-md-9"><span>Frecuencia: </span></div>
-                        <div class="col-md-12">{!! Form::text('frecuencia',null,['class'=>'form-control']) !!}</div>
+                        <div class="col-md-12"><input type="text" disabled value="{{ $correctivo->frecuencia }}" class="form-control"></div>
                       </div>
                       <div class="col-md-4">
                         <div class="col-md-12"><span>Condiciones Generales:</span></div>
-                        <div class="col-md-12">{!! Form::text('condiciones',null,['class'=>'form-control']) !!}</div>
+                        <div class="col-md-12"><input type="text" disabled value="{{ $correctivo->condiciones }}" class="form-control"></div>
                       </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-4">
                           <div class="col-md-9"><span>Hora de Aparición: </span></div>
-                          <div class="col-md-12"><input type="time" name="aparicion" id="aparicion" value="<?php  echo date("h:i:s", time()+27000);?>" class="form-control"></div>
+                          <div class="col-md-12"><input type="text" disabled value="{{ $correctivo->aparicion }}" class="form-control"></div>
                         </div>
                         <div class="col-md-4">
                           <div class="col-md-9"><span>Horas de Servicio: </span></div>
-                          <div class="col-md-12">{!! Form::number('hservicio',null,['class'=>'form-control']) !!} </div>
+                          <div class="col-md-12"><input type="text" disabled value="{{ $correctivo->hservicio }}" class="form-control"></div>
                         </div>
                         <div class="col-md-4">
                           <div class="col-md-9"><span>Otras Observaciones: </span></div>
-                          <div class="col-md-12">{!! Form::text('otrasobs',null,['class'=>'form-control']) !!} </div>
+                          <div class="col-md-12"><input type="text" disabled value="{{ $correctivo->otrasobs }}" class="form-control"></div>
                         </div>
                     </div>
                     <div class="form-group">
                       <div class="col-md-6"><span> Descripción Detallada de la Falla Presentada: </span></div>
                       <div class="col-md-12">
-                      <textarea name="detalle" id="detalle" class="form-control" rows="5"></textarea>
+                      <input type="textarea" disabled value="{{ $correctivo->detalle }}" class="form-control">
                       </div>
                     </div>
               </div>
           </div>
       </div>
     </div>
-    @include('tools.botones-registrar')
-  </div>
+    <input action="action" type="button" value="Regresar" onclick="history.go(-1);" class="btn btn-danger" />
 
+  </div>
 {!! Form::close() !!}
 </div>
 @endsection

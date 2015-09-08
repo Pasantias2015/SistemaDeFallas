@@ -63,7 +63,8 @@
             <!-- Hijos de SubSubMenu1 -->
           <div class="collapse list-group-submenu list-group-submenu-1" id="SubSubMenu13">
             <a href="correctivo" class="list-group-item" data-parent="#SubSubMenu1">Reportar</a>
-            <a href="#" class="list-group-item" data-parent="#SubSubMenu1">Pendientes </a>
+            <a href="correctivop" class="list-group-item" data-parent="#SubSubMenu1">Pendientes </a>
+            <a href="correctivor" class="list-group-item" data-parent="#SubSubMenu1">Registrados </a>
           </div>
         </div>
       <!--       //hijo de principal-->     

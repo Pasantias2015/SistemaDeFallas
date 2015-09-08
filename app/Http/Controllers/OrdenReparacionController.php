@@ -20,16 +20,9 @@ class OrdenReparacionController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index( )
 	{
-		$usuarios= User::all();
-		$piezas= Pieza::all();
-		$herramientas= Herramienta::all();
-		$secciones= Seccion::all();
-		$grupos= Grupo::all();
-		$modelos= Modelo::all();
-		$reparaciones = OrdenReparacion::paginate(5);
-        return view('OrdenReparacion.crear',compact('usuarios','piezas','herramientas','secciones','grupos','modelos','reparaciones'));
+	
 	}
 
 	/**
@@ -50,11 +43,7 @@ class OrdenReparacionController extends Controller {
 	public function store(CrearOrdenReparacionRequest $request)
 	{
 		$reparaciones = OrdenReparacion::create($request->all());
-		$piezas= Pieza::all();
-		$herramientas= Herramienta::all();
-		$secciones= Seccion::all();
-		$reparaciones = OrdenReparacion::paginate(5);
-        return view('OrdenReparacion.crear',compact('reparaciones','piezas','herramientas','secciones'));
+        return view('home');
 	}
 
 	/**

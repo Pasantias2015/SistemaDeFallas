@@ -5,20 +5,26 @@ use Illuminate\Database\Eloquent\Model;
 class MantenimientoCorrectivo extends Model {
 
 	protected $table = 'mantenimiento_correctivos';
-	protected $fillable = [		'lugar',
-								'fecha',
-								'hora',
-								'user_id',
-								'seccion_id',
-								'serviciounidadoperador_id',
-								'sitioocurrencia', //grupo donde ocurre falla
-								'frecuencia',
-								'ruta',
-								'haparicion', //hora aparcicioon
-								'hservicio', //hora servicio
-								'condiciones', //condiciones de la unidad
-								'observaciones',
-								'descripcion'];
+	protected $fillable = [ 'supervisor',
+							'serviciounidadoperador_id',
+							'kilometraje',
+							'gas',
+							'lugar',
+							'hora',
+							'fecha',
+							'seccion_id',
+							'ocurrencia',
+							'frecuencia',
+							'condiciones',
+							'aparicion',
+							'hservicio',
+							'otrasobs',
+							'detalle',
+							'revisado',
+							'pendiente'	];
+
+
+
 	public $timestamps = false;
 
 

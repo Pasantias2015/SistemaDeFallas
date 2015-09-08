@@ -80,9 +80,4 @@ class CargaController extends Controller {
 			$solucion = Solucion::where('causa_id','=',\Input::get('causa_id'))->get();
 			return response()->json($solucion);
 		}
-	public function cargaroperador()
-		{	
-			$operador = ServicioUnidadOperador::where('unidad_id','=',\Input::get('unidad_id'))->get();
-			return response()->json($operador);
-		}
 }

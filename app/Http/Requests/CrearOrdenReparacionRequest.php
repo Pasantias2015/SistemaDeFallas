@@ -4,7 +4,7 @@ use App\Http\Requests\Request;
 use Illuminate\Routing\Route;
 
 
-class OrdenReparacionRequest extends Request {
+class CrearOrdenReparacionRequest extends Request {
 
 	 public function __construct(Route $route)
    {
@@ -28,7 +28,6 @@ class OrdenReparacionRequest extends Request {
 	public function rules()
 	{
 		return [
-			'combustible' =>'required|unique:reparaciones,combustible'
 		];
 	}
 
