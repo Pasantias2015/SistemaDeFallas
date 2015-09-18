@@ -38,10 +38,7 @@ Route::get('rusuario','RegistrarController@index');
 Route::get('usuariosall','RegistrarController@index');
 Route::get('changepassword','RegistrarController@change');
 
-
-/*Vistas De Operador*/
-//Route::get('roperador','OperadorController@registraroperador');
-//Route::get('operadores','OperadorController@index');
+resource('user','UsuarioController');
 
 /*Vistas De Unidades*/
 Route::get('uoperador','UnidadController@asignarunidad');
@@ -135,6 +132,16 @@ resource('correctivo','MantenimientoCorrectivoController');
 resource('correctivop','MantenimientoCorrectivoController@pendientes');
 resource('correctivor','MantenimientoCorrectivoController@listado');
 resource('reparaciones','OrdenReparacionController');
+resource('detallep','PiezaReparacionController');
+resource('detallee','HerramientaReparacionController');
+
+resource('rcorrectivo1','MantenimientoCorrectivoController@reportegral');
+resource('rcorrectivo2','MantenimientoCorrectivoController@reportesistema');
+resource('rcorrectivo3','MantenimientoCorrectivoController@reportecategoria');
+
+resource('rc1','ReporteCorrectivoController');
+resource('rc2','ReporteCorrectivoFallaController');
+resource('rc3','ReporteCorrectivoCategoriaController');
 
 resource('fallas','FallaController');
 resource('causas','CausaController');
@@ -144,6 +151,14 @@ resource('mensual','MantenimientoMensualController');
 resource('porfalla','MantenimientoPorfallaController');
 resource('piezaneo','Pieza_NeoplanController');
 resource('pporfalla','PiezaPorFallaController');
+
+resource('cargos','CargoController');
+
+resource('operativa','UnidadController@listado');
+
+resource('listasemanal','MantenimientoSemanalController@listado');
+resource('listamensual','MantenimientoMensualController@listado');
+resource('listaporfalla','MantenimientoPorfallaController@listado');
 
 /*combo*/
 Route::get('/ajax-estado','CargaController@cargarestados');
@@ -157,3 +172,4 @@ Route::get('/ajax-pieza','CargaController@cargarpiezas');
 Route::get('/ajax-mecanico','CargaController@cargarmecanico');
 Route::get('/ajax-causa','CargaController@cargarcausas');
 Route::get('/ajax-solucion','CargaController@cargarsolucion');
+Route::get('/ajax-cargo','CargaController@cargarcargo');

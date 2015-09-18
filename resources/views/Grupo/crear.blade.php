@@ -45,7 +45,7 @@
             				<td>{{ $grupo->seccion->descripcion }}</td>
             				<td>
             					<a href="{{ route('grupos.edit',$grupo) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
+
             				</td>            				
             			</tr>
             			@endforeach

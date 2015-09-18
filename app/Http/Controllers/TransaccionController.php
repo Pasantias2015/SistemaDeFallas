@@ -11,7 +11,11 @@ use Illuminate\Http\Request;
 class TransaccionController extends Controller {
 
 
-	public function servicio_operador()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+public function servicio_operador()
 	{
 		$servicios = Servicio::all();
 		//$operadores = ServicioOperador::all();

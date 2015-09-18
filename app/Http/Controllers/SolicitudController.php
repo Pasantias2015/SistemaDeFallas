@@ -20,12 +20,15 @@ class SolicitudController extends Controller {
 	 *
 	 * @return Response     
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+public function index()
 	{
 		$usuarios = User::all();
-		$mecanicos = Mecanico::all();
-		
-		return view('Almacen\solicitud',compact('usuarios','mecanicos'));
+		$mecanicos = Persona::where('profesion_id','=','5')->get();
+		return view('Almacen.solicitud',compact('usuarios','mecanicos'));
 	}
 
 	/**
@@ -50,13 +53,13 @@ class SolicitudController extends Controller {
 		$herramientas = Almacen::where('tipo','=','Herramienta')->get();
 		$articulos = Almacen::where('tipo','=','Articulo')->get();
 		$fluidos = Almacen::where('tipo','=','Fluidos')->get();
-		$piezas = Almacen::where('tipo','=','Pieza')->get();
+		$piezas = Almacen::where('tipo','=','Pieza Yutong')->get();
 		$piezasneo = Almacen::where('tipo','=','Pieza Neoplan')->get();
 
 		$id = $solicitud->id;
 		$detalles = DetalleSolicitud::where('solicitud_id','=','$id')->get();
 		
-        return view('Almacen/detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud','piezasneo'));
+        return view('Almacen.detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud','piezasneo'));
 	}
 
 	/**
@@ -71,7 +74,7 @@ class SolicitudController extends Controller {
 		$detalles = DetalleSolicitud::where('solicitud_id','=',$id)->get();
 		$entregado = Entregado::where('solicitud_id','=',$id)->first();
 		
-        return view('Almacen/verentregado',compact('solicitud','detalles','entregado'));
+        return view('Almacen.verentregado',compact('solicitud','detalles','entregado'));
 	}
 
 	/**
@@ -85,7 +88,7 @@ class SolicitudController extends Controller {
 		$solicitud = Solicitud::where('id','=',$id)->first();
 		$detalles = DetalleSolicitud::where('solicitud_id','=',$id)->get();
 		
-        return view('Almacen/verdetalle',compact('solicitud','detalles'));
+        return view('Almacen.verdetalle',compact('solicitud','detalles'));
 	}
 
 	/**
@@ -111,12 +114,12 @@ class SolicitudController extends Controller {
 	public function listado()
 	{
 		$solicitudes = Solicitud::where('estado','=','Pendiente')->get();
-		return view('Almacen/listadopendiente',compact('solicitudes'));
+		return view('Almacen.listadopendiente',compact('solicitudes'));
 	}
 	public function listadoentregado()
 	{
 		$solicitudes = Solicitud::where('estado','=','Entregado')->get();
-		return view('Almacen/listadoentregado',compact('solicitudes'));
+		return view('Almacen.listadoentregado',compact('solicitudes'));
 	}
 
 

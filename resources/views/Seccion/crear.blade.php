@@ -45,7 +45,7 @@
             				<td>{{ $seccion->modelo->descripcion }}</td>
             				<td>
             					<a href="{{ route('secciones.edit',$seccion) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
+
             				</td>            				
             			</tr>
             			@endforeach

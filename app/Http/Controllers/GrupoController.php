@@ -15,7 +15,12 @@ class GrupoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+public function index()
 	{
 		$secciones= Seccion::all();
 		$grupos = Grupo::paginate(5);

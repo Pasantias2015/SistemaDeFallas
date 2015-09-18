@@ -82,12 +82,18 @@
          <div class="row">
             <div class="col-md-12">
               <div class="panel panel-danger">
-                <div class="panel-heading">Sección de la Falla</div>
+                <div class="panel-heading">Ubicaci&oacuten de la Falla</div>
                 <div class="panel-body">
                     <div class="form-group">
-                      <div class="col-md-5"><span>Sección de la Falla: </span> </div>
+                      <div class="col-md-5"><span>Sistema de la Falla: </span> </div>
                       <div class="col-md-7">
                         <input type="text" disabled value="{{ $correctivo->seccion->descripcion }}" class="form-control"> 
+                      </div>
+                    </div>  
+ 			<div class="form-group">
+                      <div class="col-md-5"><span>Sección de la Falla: </span> </div>
+                      <div class="col-md-7">
+                        <input type="text" disabled value="{{ $correctivo->sistema }}" class="form-control"> 
                       </div>
                     </div>         
                 </div>

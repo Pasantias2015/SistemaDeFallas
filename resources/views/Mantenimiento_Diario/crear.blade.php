@@ -7,7 +7,8 @@
         <div class="panel-body">
          @include('tools.errors')
             {!! Form::open(['route'=>'diario.store','method'=>'POST']) !!}
-            <div class="row">
+            
+	    <div class="row">
                 <div class="col-md-4">
                     <div class="form-group row">
                         <div class="col-md-4"><span>Fecha:</span></div>
@@ -23,7 +24,7 @@
                         <div class="col-md-9">   
                             <select name="unidad_id" id="unidad" class="form-control">
                                 @foreach($unidades as $unidad)
-                                    <option value="{{ $unidad->id }}">{{$unidad->nidentificacion}}</option>    
+                                    <option value="{{ $unidad->id }}">{{$unidad->modelo->marca->nombre." - ".$unidad->modelo->combustible." - ".$unidad->nidentificacion}}</option>    
                                 @endforeach
                             </select>
                         </div>
@@ -47,6 +48,7 @@
                     </div>
                 </div>  
             </div>
+
             <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-danger">
@@ -289,12 +291,16 @@
                                 <div class="col-md-6 "><span>Trasero Izquierdo:</span>{!! Form::radio('tizqem', '*') !!} </div> 
                             </div>
                         </div>
+
                         <div class="col-md-6">  
                             <input type="text" name="usuario_id" class="hidden" value="{{ Auth::user()->id }}">
                         </div>
                 </div>
                 @include('tools.botones-registrar')
             </div>
+
+
+
             {!! Form::close() !!}
             </div>
         </div>

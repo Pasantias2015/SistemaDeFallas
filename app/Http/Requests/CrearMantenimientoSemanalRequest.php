@@ -22,9 +22,8 @@ class CrearMantenimientoSemanalRequest extends Request {
 	public function rules()
 	{
 		return [		
-						'usuario_id'=>'required',
                         'fecha'=>'required',
-    					'serviciounidadoperador_id'=>'required',
+
 
 		];
 	}

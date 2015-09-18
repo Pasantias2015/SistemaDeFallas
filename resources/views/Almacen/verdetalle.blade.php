@@ -55,7 +55,7 @@
                         <tr>                            
                             <td>{{ $detalle->id }}</td>
                             <td>{{ $detalle->solicitud_id }}</td>
-                            <td>{{ $detalle->almacen->codigo." - ".$detalle->almacen->descripcion }}</td>
+                            <td>{{ $detalle->almacen->codigo}}</td>
                             <td>{{ $detalle->cantidad }}</td>
                             <td>{{ $detalle->almacen->tipo }}</td>                          
                         </tr>

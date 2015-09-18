@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CrearCajaRequest;
 use App\Http\Requests\EditarCajaRequest;
 use App\Caja;
-use App\Mecanico;
+use App\Persona;
 use Illuminate\Http\Request;
 
 class CajaController extends Controller {
@@ -15,11 +15,17 @@ class CajaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
 	{
-		$mecanicos = Mecanico::all();
+		$this->middleware('auth');
+	}
+
+
+public function index()
+	{
+		$mecanicos = Persona::where('profesion_id','=',5)->get();
 		$cajas = Caja::paginate(5);
-        return view('Cajas.crear',compact('cajas','mecanicos'));
+        	return view('Cajas.crear',compact('cajas','mecanicos'));
 	}
 
 	/**
@@ -40,7 +46,7 @@ class CajaController extends Controller {
 	public function store(CrearCajaRequest $request)
 	{
 		$caja = Caja::create($request->all());
-		$mecanicos = Mecanico::all();
+		$mecanicos = Persona::where('profesion_id','=',5)->get();
 		$cajas = Caja::paginate(5);
         return view('Cajas.crear',compact('cajas','mecanicos'));
 	}

@@ -39,7 +39,7 @@
             				<td>{{ $puesto->patio->descripcion }}</td>
             				<td>
             					<a href="{{ route('puestos.edit',$puesto) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
+
             				</td>            				
             			</tr>
             			@endforeach

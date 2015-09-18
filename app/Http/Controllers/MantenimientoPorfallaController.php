@@ -2,15 +2,15 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\ServicioUnidadOperador;
 use App\MantenimientoPorfalla;
-use App\PiezaPorfalla;
 use App\Http\Requests\CrearMantenimientoPorfallaRequest;
+use App\Http\Requests\FechaRequest;
 use Illuminate\Http\Request;
-use App\User;
+use App\Modelo;
 use App\Falla;
+use App\Causa;
+use App\Solucion;
 use App\Unidad;
-use App\Pieza_Neoplan;
 
 
 
@@ -21,13 +21,27 @@ class MantenimientoPorfallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{				
-		$unidades =  ServicioUnidadOperador::all();
-		$fallas =  Falla::all();
-		$piezasneo = Pieza_Neoplan::all();
-		return view('Mantenimiento_Porfalla.crear',compact('unidades', 'fallas', 'piezas', 'piezasneo'));	
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
+public function index()
+	{
+		$modelos = Modelo::where('marca_id','=',2)->get();
+			
+		for ($i=0; $i <count($modelos) ; $i++) { 
+			$uno[$i]=$modelos[$i]->id;
+		}
+
+		$unidades =  Unidad::whereIn('modelo_id', $uno)->get();
+
+		$fallas =  Falla::all();
+		
+
+		return view('Mantenimiento_Porfalla.crear',compact('unidades', 'fallas'));
+
+	
 	}
 
 	/**
@@ -47,19 +61,10 @@ class MantenimientoPorfallaController extends Controller {
 	 */
 	public function store(CrearMantenimientoPorfallaRequest $request)
 	{
-		$falla = MantenimientoPorfalla::create($request->all());
-		$fallaid = $falla->id;
-		$cambio = $request->cambio;
 
-		if ($cambio=="Si") {
-			$piezasneo = Pieza_Neoplan::all();
-			$piezas = 	PiezaPorfalla::where('id_porfallas','=',$fallaid);
-			return view('Mantenimiento_Porfalla.detallefalla',compact('piezasneo','piezas','fallaid'));
-		} else {
-			return view('home');
-		}
-		
-		
+		$Porfalla = MantenimientoPorfalla::create($request->all());
+		$porfallas = MantenimientoPorfalla::paginate(10);
+		return view('Mantenimiento_Porfalla.listado',compact('porfallas'));
 	}
 
 	/**
@@ -81,7 +86,8 @@ class MantenimientoPorfallaController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$porfalla = MantenimientoPorfalla::findOrFail($id);
+        return view('Mantenimiento_Porfalla.ver',compact('porfalla'));
 	}
 
 	/**
@@ -104,6 +110,12 @@ class MantenimientoPorfallaController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+		public function listado()
+	{
+		$porfallas = MantenimientoPorfalla::paginate(10);
+		return view('Mantenimiento_Porfalla.listado',compact('porfallas'));
 	}
 
 }

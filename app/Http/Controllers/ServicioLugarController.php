@@ -14,7 +14,11 @@ class ServicioLugarController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+public function index()
 	{
 		$servicios = Servicio::all();
 		$lugares = Lugar::all();

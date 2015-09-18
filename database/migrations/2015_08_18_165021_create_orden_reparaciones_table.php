@@ -25,11 +25,9 @@ class CreateOrdenReparacionesTable extends Migration {
 			$table->string('diagnostico');
 			$table->string('descripcionuno');
 			$table->string('descripciondos');
-			// $table->integer('mantenimientocorrectivo_id')->unsigned();
-			// $table->foreign('mantenimientocorrectivo_id')->references('id')->on('mantenimientocorrectivos');
-			
-
-
+			$table->string('nivel');
+			$table->integer('mantenimientocorrectivo_id')->unsigned();
+			$table->foreign('mantenimientocorrectivo_id')->references('id')->on('mantenimiento_correctivos');
 		});
 	}
 

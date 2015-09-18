@@ -18,7 +18,7 @@
 							<th>Serial de Carroceria</th>
 							<th>Serial de Motor</th>
 							<th>Modelo</th>
-							<th>Año</th>
+							<th>A&ntildeo</th>
                             <th>Accion</th>
 						</tr>
 						@foreach($unidades as $unidad)
@@ -28,7 +28,7 @@
 							<td>{{ $unidad->vin}}</td>
 							<td>{{ $unidad->serialcarroceria}}</td>
 							<td>{{ $unidad->serialmotor}}</td>
-							<td>{{ $unidad->modelo->codigo." - ".$unidad->modelo->descripcion}}</td>
+							<td>{{ $unidad->modelo->marca->nombre." - ".$unidad->modelo->codigo." - ".$unidad->modelo->descripcion}}</td>
 							<td>{{ $unidad->year}}</td>
 							
                             <td><a href="{{ route('unidades.edit',$unidad)}}">Editar</a></td>

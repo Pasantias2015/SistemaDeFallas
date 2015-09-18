@@ -20,12 +20,24 @@
                                <input type="text" disabled value="{{$unidad->modelo_id}}" class="form-control">
                            </div> 
                             <div class="form-group">
-                               <span>Año: </span>
+                               <span>A&ntildeo: </span>
                                <input type="text" disabled value="{{$unidad->year}}" class="form-control">
                            </div> 
                            <div class="form-group">
                                 <span>Codigo del Sistema: </span>                    
                                 {!! Form::text('codigosistema',null,['class'=>'form-control']) !!}
+                           </div>
+                           <div class="form-group">
+                                <span>IMEI SIM CARD: </span>                    
+                                {!! Form::text('imei',null,['class'=>'form-control']) !!}
+                           </div> 
+                           <div class="form-group">
+                                <span>Proveedor de Servicio (ISP):</span>                    
+                                <select name="isp" id="isp" class="form-control">
+                                      <option value="Movilnet">Movilnet</option>              
+                                      <option value="Movistar">Movistar</option>
+                                      <option value="Digitel">Digitel</option>
+                                    </select>
                            </div>      
                          </div>
                             @include('tools.botones-actualizar')
@@ -36,7 +48,4 @@
                 </div>
             </div>
         </div>
-
-
-
 @endsection

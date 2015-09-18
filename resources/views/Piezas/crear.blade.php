@@ -52,7 +52,7 @@
             				<td>{{ $pieza->grupo->descripcion }}</td>
             				<td>
             					<a href="{{ route('piezas.edit',$pieza) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
+
             				</td>            				
             			</tr>
             			@endforeach

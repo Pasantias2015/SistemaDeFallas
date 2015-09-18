@@ -13,5 +13,9 @@ class Pieza extends Model {
 	{
 	 	return $this->belongsTo('App\Grupo');
 	}
+	public function piezareparacion()
+	{
+	 	return $this->belongsTo('App\Pieza_Reparacion');
+	}
 
 }

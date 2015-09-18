@@ -21,7 +21,7 @@
 
 <div class="form-group">
         <span>Año:</span>
-        {!! Form::text('year',null,['class'=>'form-control']) !!}
+        {!! Form::number('year',null,['class'=>'form-control']) !!}
 </div>
 
 <div class="form-group">

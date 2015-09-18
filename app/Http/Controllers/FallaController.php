@@ -15,7 +15,12 @@ class FallaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+public function index()
 	{
 		$unidades= Unidad::all();
 		$fallas = Falla::paginate(5);

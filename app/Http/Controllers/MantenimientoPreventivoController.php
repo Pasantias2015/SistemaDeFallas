@@ -7,7 +7,7 @@ use App\Http\Requests\CrearMantenimientoPreventivoRequest;
 use App\ServicioUnidadOperador;
 use App\Unidad;
 use App\User;
-
+use App\Persona;
 use Illuminate\Http\Request;
 
 class MantenimientoPreventivoController extends Controller {
@@ -17,7 +17,12 @@ class MantenimientoPreventivoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($preventivo)
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+public function index($preventivo)
 	{
 		// $unidad = Unidad::findOrFail($preventivo);
 		// $serviciounidadoperador = ServicioUnidadOperador::where('unidad_id','=',$preventivo)->get();
@@ -49,6 +54,7 @@ class MantenimientoPreventivoController extends Controller {
 		$unidad = Unidad::findOrFail($unidad);
 		$unidad->kilometrajebase = $unidad->kilometrajeactual;
 		$unidad->preventivo = "No";
+		$unidad->operativa = "Si";
 		$unidad->save();
 
 		$preventivos = Unidad::where('preventivo','=','Si')->get();
@@ -64,7 +70,10 @@ class MantenimientoPreventivoController extends Controller {
 	{
 		$unidad = Unidad::findOrFail($id);
 		$usuarios =  User::all();
-		return view('Mantenimiento_Preventivo.crear',compact('unidad','usuarios'));
+		$mecanicos =  Persona::where('cargo_id','=','5')->get();
+		$tecmecanicos =  Persona::where('cargo_id','=','6')->get();
+		$ayudmecanicos =  Persona::where('cargo_id','=','7')->get();
+		return view('Mantenimiento_Preventivo.crear',compact('unidad','usuarios','mecanicos','tecmecanicos','ayudmecanicos'));
 	}
 
 	/**

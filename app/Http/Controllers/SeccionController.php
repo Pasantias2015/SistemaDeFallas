@@ -15,7 +15,11 @@ class SeccionController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+public function index()
 	{
 		$modelos= Modelo::all();
 		$secciones = Seccion::paginate(5);

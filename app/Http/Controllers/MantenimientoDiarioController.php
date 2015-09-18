@@ -9,6 +9,7 @@ use App\Http\Requests\FechaRequest;
 use Illuminate\Http\Request;
 use App\User;
 use App\Unidad;
+use App\Modelo;
 
 class MantenimientoDiarioController extends Controller {
 
@@ -17,9 +18,20 @@ class MantenimientoDiarioController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
 	{
-		$unidades =  Unidad::all();
+		$this->middleware('auth');
+	}
+
+public function index()
+	{
+		$modelos = Modelo::where('marca_id','=',1)->get();
+			
+		for ($i=0; $i <count($modelos) ; $i++) { 
+			$uno[$i]=$modelos[$i]->id;
+		}
+
+		$unidades =  Unidad::whereIn('modelo_id', $uno)->get();
 		return view('Mantenimiento_Diario.crear',compact('unidades'));
 	}
 
@@ -58,14 +70,14 @@ class MantenimientoDiarioController extends Controller {
 				if (($unidad->modelo->dimension)>10) {
 					if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=10000){
 						$unidad->preventivo = "Si";
-						// $unidad->operativo = "No";
+						$unidad->operativo = "No";
 					} else {
 						$unidad->preventivo = "No";
 					}
 				} else {
 					if ((($unidad->kilometrajeactual)-($unidad->kilometrajebase))>=5000){
 						$unidad->preventivo = "Si";
-						// $unidad->operativo = "No";
+						$unidad->operativo = "No";
 					} else {
 						$unidad->preventivo = "No";
 					}
@@ -74,8 +86,15 @@ class MantenimientoDiarioController extends Controller {
 				
 				$diario = MantenimientoDiario::create($request->all());
 		       
-		        $unidades =  Unidad::all();
-				return view('Mantenimiento_Diario.crear',compact('unidades'));
+		       $modelos = Modelo::where('marca_id','=',1)->get();
+			
+		for ($i=0; $i <count($modelos) ; $i++) { 
+			$uno[$i]=$modelos[$i]->id;
+		}
+
+		$unidades =  Unidad::whereIn('modelo_id', $uno)->get();
+		return view('Mantenimiento_Diario.crear',compact('unidades'));
+
 		} else {
 			return view('Mantenimiento_Diario.errorunidad');
 		}		

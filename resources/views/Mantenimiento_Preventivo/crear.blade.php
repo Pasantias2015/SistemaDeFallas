@@ -594,20 +594,32 @@
                                 <div class="panel-heading">Trabajo Realizado Por:</div>
                                 <div class="form-group row">
                                     <div class="col-md-4 col-md-offset-1"><span>Mecanico:</span></div>
-                                    <div class="col-md-6">    
-                                        {!! Form::text('mecanico',null,['class'=>'form-control']) !!}
+                                    <div class="col-md-6">
+  			    <select name="mecanico" id="mecanico" class="form-control">
+                                @foreach($mecanicos as $mecanico)
+                                    <option value="{{ $mecanico->nombrecompleto }}">{{$mecanico->nombrecompleto}}</option>    
+                                @endforeach
+                            </select>                                      
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4 col-md-offset-1"><span>Tec. Mecanico:</span></div>
-                                    <div class="col-md-6">    
-                                        {!! Form::text('tecmecanico',null,['class'=>'form-control']) !!}
+                                    <div class="col-md-6">
+    			   <select name="tecmecanico" id="tecmecanico" class="form-control">
+                                @foreach($tecmecanicos as $tecmecanico)
+                                    <option value="{{ $tecmecanico->nombrecompleto }}">{{$tecmecanico->nombrecompleto}}</option>    
+                                @endforeach
+                            </select> 
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-md-4 col-md-offset-1"><span>Ayud. Mecanico:</span></div>
                                     <div class="col-md-6">    
-                                        {!! Form::text('ayudmecanico',null,['class'=>'form-control']) !!}
+                             <select name="ayudmecanico" id="ayudmecanico" class="form-control">
+                                @foreach($ayudmecanicos as $ayudmecanico)
+                                    <option value="{{ $ayudmecanico->nombrecompleto }}">{{$ayudmecanico->nombrecompleto}}</option>    
+                                @endforeach
+                            </select> 
                                     </div>
                                 </div>
                             </div>                            

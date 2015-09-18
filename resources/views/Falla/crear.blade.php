@@ -38,7 +38,7 @@
                             <td>{{ $falla->descripcion }}</td>
             				<td>
             					<a href="{{ route('fallas.edit',$falla) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
+
             				</td>            				
             			</tr>
             			@endforeach

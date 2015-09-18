@@ -7,6 +7,20 @@
 		<div class="panel-body">
         @include('tools.errors')
         {!! Form::open(['route'=>'reparaciones.store','method'=>'POST']) !!}
+            <div class="row" >
+                <div class="form-group row">
+                    <div class="col-md-6">
+                        <div class="col-md-6 col-md-offset-1"><span>Reporte de Falla Nº:</span></div>
+                        <div class="col-md-4"><input type="text" disabled value="{{$correctivo->id}}" class="form-control">
+                        <input type="text" name="mantenimientocorrectivo_id" value="{{$correctivo->id}}" class="hidden"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-5"><span>Fecha:</span></div>
+                        <div class="col-md-6"><input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control"></div>
+                        <input type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="hidden">
+                    </div>
+                </div>
+            </div>
             <div class="col-md-12">
                 <div class="panel panel-danger">
                     <div class="panel-heading">Datos de la Unidad</div>
@@ -35,6 +49,7 @@
                                     <div class="col-md-5"><span>Combustible: </span></div>
                                     <div class="col-md-6"> 
                                        <input type="text" disabled value="{{ $correctivo->serviciounidadoperador->unidad->modelo->combustible }} " class="form-control">
+                                       <input type="text" value="{{ $correctivo->serviciounidadoperador->unidad->modelo->combustible }} " class="hidden">
                                     </div>
                                 </div>
                             </div> 
@@ -42,8 +57,8 @@
                                 <div class="form-group row">
                                    <div class="col-md-6"><span>Aceite de Caja</span></div>
                                    <div class="col-md-4">    
-                                       <span>Si:</span>{!! Form::radio('airene', 'Si') !!} 
-                                       <span>No:</span>{!! Form::radio('airene', 'No') !!} 
+                                       <span>Si:</span>{!! Form::radio('aceitec', 'Si') !!} 
+                                       <span>No:</span>{!! Form::radio('aceitec', 'No') !!} 
                                    </div>
                                 </div>
                             </div> 
@@ -53,8 +68,8 @@
                                 <div class="form-group row">
                                    <div class="col-md-6"><span>Aceite de Motor:</span></div>
                                    <div class="col-md-4">    
-                                       <span>Si:</span>{!! Form::radio('airene', 'Si') !!} 
-                                       <span>No:</span>{!! Form::radio('airene', 'No') !!} 
+                                       <span>Si:</span>{!! Form::radio('aceitem', 'Si') !!} 
+                                       <span>No:</span>{!! Form::radio('aceitem', 'No') !!} 
                                    </div>
                                 </div>
                             </div> 
@@ -62,8 +77,8 @@
                                 <div class="form-group row">
                                     <div class="col-md-6"><span>Refrigerante: </span></div>
                                     <div class="col-md-4">    
-                                        <span>Si:</span>{!! Form::radio('airene', 'Si') !!} 
-                                        <span>No:</span>{!! Form::radio('airene', 'No') !!} 
+                                        <span>Si:</span>{!! Form::radio('refrige', 'Si') !!} 
+                                        <span>No:</span>{!! Form::radio('refrige', 'No') !!} 
                                     </div>
                                 </div>
                             </div> 
@@ -83,7 +98,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-4"><span>Descripción del Trabajo a Realizar: </span></div>
-                            <div class="col-md-8"><textarea name="descipcionuno" id="descipcionuno" class="form-control" rows="5"></textarea></div>
+                            <div class="col-md-8"><textarea name="descripcionuno" id="descripcionuno" class="form-control" rows="5"></textarea></div>
                         </div>        
                        
                     </div>
@@ -96,7 +111,7 @@
                         <div class="panel-body">
                             <div class="col-md-5"><span>Usuario:</span></div>
                             <div class="col-md-6"><input type="text" disabled value="{{ Auth::user()->persona->nombrecompleto }}" class="form-control"></div>   
-                                                  <input type="text" disabled value="{{ Auth::user()->id }}" class="hidden">   
+                                                  <input type="text" name="usuario_id" disabled value="{{ Auth::user()->id }}" class="hidden">   
                         </div>
                     </div>        
                 </div>

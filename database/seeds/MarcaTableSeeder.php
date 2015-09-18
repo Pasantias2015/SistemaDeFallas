@@ -8,16 +8,7 @@ class MarcaTableSeeder extends Seeder
 {
 	public function run()
 	{
-			for($r = 1; $r <= 3; $r++)
-			{
-				$marca = [
-							'nombre'=> "Marca ".$r,
-							];
-				\DB::table('marcas')->insert($marca);	
-			}
-		
-
-	
-
+			\DB::table('marcas')->insert(array ('id'=>1, 'nombre'=>'Yutong'));
+			\DB::table('marcas')->insert(array ('id'=>2,'nombre'=>'Neoplan'));
 	}
 }

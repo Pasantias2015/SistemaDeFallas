@@ -5,6 +5,7 @@ use App\Http\Requests\CrearUnidadRequest;
 use App\Http\Requests\EditUnidadRequest;
 use App\Unidad;
 use App\Marca;
+use App\Modelo;
 
 class UnidadController extends Controller {
 
@@ -39,17 +40,7 @@ class UnidadController extends Controller {
 	public function asignarunidad()
 	{
 
-	/*
-	$html =
-	  '<html>Title<body>'.
-	  '</body></html>';
-	 '<p>Perro Cagon</p>'.
-	 
-	$dompdf = new \DOMPDF();
-	$dompdf->load_html($html);
-	$dompdf->render();
-	$dompdf->stream("Reporte.pdf");
-	*/
+	
 	return view ('Unidades.unidadoperador');
 	}
 	/**
@@ -60,7 +51,8 @@ class UnidadController extends Controller {
 	public function create()
 	{
 		$marcas = Marca::all();
-		return view('Unidades.registrarunidad',compact('marcas'));
+		$modelos = Modelo::all();
+		return view('Unidades.registrarunidad',compact('marcas','modelos'));
 	}
 
 	/**
@@ -83,7 +75,8 @@ class UnidadController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+		$unidades = Unidad::findOrFail($id);
+        	return view('Unidades.ver',compact('unidades'));
 	}
 
 	/**
@@ -123,6 +116,12 @@ class UnidadController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+	public function listado()
+	{
+		$operativas = Unidad::where('operativa','=','Si')->get();
+		$inoperativas = Unidad::where('operativa','=','No')->get();
+		return view('Unidades.operativas',compact('operativas','inoperativas'));
 	}
 
 }

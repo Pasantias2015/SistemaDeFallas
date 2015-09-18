@@ -14,7 +14,12 @@ class EntregadoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+public function index()
 	{
 		//
 	}

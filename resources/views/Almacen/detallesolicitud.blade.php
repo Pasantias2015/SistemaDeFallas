@@ -107,8 +107,8 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <span>Cantidad Solicitada: </span>
-                    {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
+                    <span>Cantidad Solicitada: </span>        
+			<input type="number" name="cantidad" min="1" max="{{$herramienta->cantidad}}" class="form-control">
                 </div>
                 <div class="form-group">
                         <input type="hidden" name="tipo" value="Herramienta">
@@ -150,7 +150,7 @@
                     </div>
                     <div class="form-group">
                         <span>Cantidad: </span>
-                         {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
+                        <input type="number" name="cantidad" min="1" max="{{$articulo->cantidad}}" class="form-control">
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="tipo" value="Articulo">
@@ -191,7 +191,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                         <span>Cantidad(Lts): </span>{!! Form::number('cantidad',null,['class'=>'form-control']) !!} 
+                         <span>Cantidad(Lts): </span>
+                        <input type="number" name="cantidad" min="1" max="{{$fluido->cantidad}}" class="form-control">
                     </div>
                     <div class="form-group">
                         <input type="hidden" name="tipo" value="Fluidos">
@@ -228,13 +229,13 @@
                         <span>Piezas: </span>
                         <select name="almacen_id" class="form-control">
                             @foreach($piezas as $pieza)
-                                <option value="{{ $pieza->id}}">{{ $pieza->codigo."-".$pieza->descripcion." -Cant Disp.:".$pieza->cantidad }}</option>    
+                                <option value="{{ $pieza->id}}">{{ $pieza->codigo." -Cant Disp.:".$pieza->cantidad }}</option>    
                             @endforeach
                         </select>
                     </div>
             <div class="form-group">
                 <span>Cantidad: </span>
-                {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
+                        <input type="number" name="cantidad" min="1" max="{{$pieza->cantidad}}" class="form-control">
             </div> 
             <div class="form-group">
                     <input type="hidden" name="tipo" value="Pieza Yutong">
@@ -270,13 +271,13 @@
                     <span>Piezas Neoplan: </span>
                     <select name="almacen_id" id="almacen_id" class="form-control">
                         @foreach($piezasneo as $piez)
-                            <option value="{{ $piez->id }}">{{ $piez->codigo."-".$piez->descripcion }}</option>    
+                            <option value="{{ $piez->id }}">{{ $piez->codigo."-".$piez->descripcion." -Cant Disp.:".$piez->cantidad }}</option>    
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <span>Cantidad: </span>
-                    {!! Form::number('cantidad',null,['class'=>'form-control']) !!}
+                        <input type="number" name="cantidad" min="1" max="{{$piez->cantidad}}" class="form-control">
                 </div>
                 <div class="form-group">
                         <input type="hidden" name="tipo" value="Pieza Neoplan">

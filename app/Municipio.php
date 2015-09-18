@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 
 class Municipio extends Model {
-	protected $table = 'Municipios';
+	protected $table = 'municipios';
 	protected $fillable =['descripcion','ciudad_id'];
 	public $timestamps =false;
 

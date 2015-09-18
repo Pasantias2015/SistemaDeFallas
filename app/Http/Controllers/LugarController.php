@@ -23,7 +23,7 @@ class LugarController extends Controller {
 	public function index()
 	{
 		$lugares = Lugar::paginate(5);
-        return view('Servicios\Lugar.crear',compact('lugares'));
+        return view('Servicios/Lugar.crear',compact('lugares'));
 	}
 
 	/**
@@ -67,7 +67,7 @@ class LugarController extends Controller {
 	public function edit($id)
 	{
 	 	$lugar = Lugar::findOrFail($id);
-        return view('Servicios\Lugar.editar',compact('lugar'));
+        return view('Servicios/Lugar.editar',compact('lugar'));
 	}
 
 	/**

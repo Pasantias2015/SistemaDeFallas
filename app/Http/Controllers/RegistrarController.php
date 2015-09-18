@@ -36,10 +36,8 @@ class RegistrarController extends Controller {
 	 */
 	public function create()
 	{
-		$personas = Persona::all();
-		$coords = Coordinacion::all();
-		$roles = Rol::all();
-		return view('Usuarios.crear',compact('personas','coords','roles'));
+		$personas = Persona::where('acceso','=','Si')->get();
+		return view('Usuarios.crear',compact('personas'));
 	}
 
 	/**

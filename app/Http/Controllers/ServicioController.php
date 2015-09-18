@@ -24,7 +24,7 @@ class ServicioController extends Controller {
 	{
 		$servicios = Servicio::paginate(5);
 		
-		return view('Servicios\Servicio.crear',compact('servicios'));		
+		return view('Servicios/Servicio.crear',compact('servicios'));		
 
 	}
 	/**

@@ -14,26 +14,26 @@
                         		<div class="col-md-4"><span>Fecha:</span></div>
                         		<div class="col-md-7">
                                     <input type="date" disabled value="<?php echo date("Y-m-d");?>" class="form-control">
-                        			<input type="text" name="usuario_id" class="hidden" value="{{ Auth::user()->id }}">
-                        			<input class="hidden" type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
+                                    <input class="hidden" type="date" name="fecha" value="<?php echo date("Y-m-d");?>" class="form-control">
+                        			<input class="hidden" type="text" name="usuario_id" value="{{ Auth::user()->id }}" >
                         		</div>
                     		</div>
                 		</div>
+                <div class="col-md-4">
+                    <div class="form-group row">
+                        <div class="col-md-3"><span>Unidad:</span></div>
+                        <div class="col-md-9">   
+                            <select name="unidad_id" id="unidad" class="form-control">
+                                @foreach($unidades as $unidad)
+                                    <option value="{{ $unidad->id }}">{{$unidad->nidentificacion}}</option>    
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 		<div class="col-md-4">
                     		<div class="form-group row">
-                        		<div class="col-md-3"><span>Unidad:</span></div>
-                        		<div class="col-md-9">   
-                            		<select name="serviciounidadoperador_id" id="unidad" class="form-control">
-                                	@foreach($unidades as $unidad)
-                                    <option value="{{ $unidad->id }}">{{$unidad->unidad->nidentificacion}}</option>    
-                                	@endforeach
-                            		</select>
-                        		</div>
-                    		</div>
-               			</div>
-                		<div class="col-md-4">
-                    		<div class="form-group row">
-                        		<div class="col-md-5"><span>Hora actual de motor:</span></div>
+                        		<div class="col-md-5"><span>Hora de Motor:</span></div>
                         		<div class="col-md-6">
                             		{!! Form::text('horamotor',null,['class'=>'form-control']) !!}
                         		</div>
@@ -45,9 +45,10 @@
 				<div class="row">
             		<div class="col-md-12">
                 		<div class="panel panel-danger">
-                    		<div class="panel-heading">Parámetros a Revisar</div>
+                    		<div class="panel-heading">Parametros a Revisar</div>
+                            <div class="panel-body">
                     			 <div class="form-group row">
-                      				<div class="col-md-8 col-md-offset-1"><span>Llenado del nivel del liquido del dispositivo del limpia parabrisas.</span></div>
+                      				<div class="col-md-8 col-md-offset-1"><span>Llenado de Liquido del dispositivo del Limpia Parabrisas.</span></div>
                         			<div class="col-md-2">
                             			<select name="cnliquido" id="cnliquido" class="form-control">
                                 			<option value="No">No</option>
@@ -56,27 +57,28 @@
                         			</div>
                     			</div>
                     				<div class="form-group row liquido">
-                           				<div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Litros Completó?</strong></div>
+                           				<div class="col-md-7 col-md-offset-1"><strong>¿Cuántos Litros Completó?</strong></div>
                             			<div class="col-md-2">
                             			<input type="number" name="litrosl" id="litrosl" default="0" min="0" class="form-control"/></div>
                             			<div class="col-md-2"><span>Lts</span></div>
                         			</div>
                         		<div class="form-group row">
-                        			<div class="col-md-8 col-md-offset-1"><span>Revisión de la presion de los Cauchos.</span><strong>  ¿Se encuentran con la presion requerida?</strong></div>
+                        			<div class="col-md-8 col-md-offset-1"><span>Revisión de la Presión de los Cauchos.</span><strong>  ¿Se encuentran con la presión requerida?</strong></div>
                         			<div class="col-md-2">
                             			<select name="presionc" id="presionc" class="form-control">
-                                			<option value="No">No</option>
-                                			<option value="Si">Si</option>                                			
+                                			<option value="Si">Si</option>
+                                            <option value="No">No</option>
+                                			                                			
                             			</select>    
                         			</div>
                    				</div>
                    					<div class="form-group row presioncauchos">
-                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Psi/Bar Completó?</strong></div>
+                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuántos Psi/Bar Completó?</strong></div>
                             			<div class="col-md-2"><input type="number" name="cantidadpre" id="cantidadpre" default="0" min="0" class="form-control"/></div>
                             			<div class="col-md-2"><span>Psi/Bar</span></div>
                         			</div>
                         		<div class="form-group row">
-                        			<div class="col-md-8 col-md-offset-1"><span>Limpieza de la estera de Filtros del Aire Acondicionado.</span><strong>  ¿Lo ha Reemplazada?</strong></div>
+                        			<div class="col-md-8 col-md-offset-1"><span>Limpieza de la Estera de Filtros del Aire Acondicionado.</span><strong>  ¿Lo ha Reemplazada?</strong></div>
                         			<div class="col-md-2">
                             			<select name="filtrosa" id="filtrosa" class="form-control">
                                 			<option value="No">No</option>
@@ -85,7 +87,7 @@
                         			</div>
                    				</div>
                    				<div class="form-group row">
-                        			<div class="col-md-8 col-md-offset-1"><span>Revisión del Filtro previo de Combustible.</span><strong>  ¿Lo Reemplazado?</strong></div>
+                        			<div class="col-md-8 col-md-offset-1"><span>Revisión del Filtro previo de Combustible.</span><strong>  ¿Lo ha Reemplazado?</strong></div>
                         			<div class="col-md-2">
                             			<select name="filtropre" id="filtropre" class="form-control">
                                 			<option value="Si">Si</option>
@@ -95,7 +97,7 @@
                    				</div>
 
                         		<div class="form-group row">
-                        			<div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Refrigerante.</span><strong>  ¿Esta en el Nivel Indicado?</strong></div>
+                        			<div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Refrigerante.</span><strong>  ¿Está en el Nivel Indicado?</strong></div>
                         			<div class="col-md-2">
                             			<select name="cantrefrigerante" id="cantrefrigerante" class="form-control">
                                 			<option value="Si">Si</option>              
@@ -104,27 +106,27 @@
                         			</div>
                     			</div>
                         			<div class="form-group row refrigerantes">
-                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Litros Completó?</strong></div>
+                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuántos Litros Completó?</strong></div>
                             			<div class="col-md-2"><input type="number" name="litrosref" id="litrosref" default="0" min="0" class="form-control"/></div>
                             			<div class="col-md-2"><span>Lts</span></div>
                         			</div>
                         		<div class="form-group row">
-                        			<div class="col-md-8 col-md-offset-1"><span>Chequeo del Nivel de Aceite del Motor.</span><strong> ¿Esta en el Nivel Indicado?</strong></div>
+                        			<div class="col-md-8 col-md-offset-1"><span>Chequeo del Nivel de Aceite del Motor.</span><strong> ¿Está en el Nivel Indicado?</strong></div>
                         			<div class="col-md-2">
-                            			<select name="cnaceitem" id="cantaceitem" class="form-control">
+                            			<select name="cantaceitem" id="cantaceitem" class="form-control">
                                 			<option value="Si">Si</option>              
                                 			<option value="No">No</option>
                             			</select>    
                         			</div>
                     			</div>
                         			<div class="form-group row aceitemotor">
-                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Litros Completó?</strong></div>
+                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuántos Litros Completó?</strong></div>
                             			<div class="col-md-2">
                             			<input type="number" name="litrosam" id="litrosam" default="0" min="0" class="form-control"/></div>
                             			<div class="col-md-2"><span>Lts</span></div>
                         			</div>
                         		<div class="form-group row">
-                        			<div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Aceite del Sistema Hidraulico.</span><strong> ¿Esta en el Nivel Indicado?</strong></div>
+                        			<div class="col-md-8 col-md-offset-1"><span>Chequeo Nivel de Aceite del Sistema Hidraulico.</span><strong> ¿Está en el Nivel Indicado?</strong></div>
                         			<div class="col-md-2">
                             			<select name="cantaceiteh" id="cantaceiteh" class="form-control">
                                 			<option value="Si">Si</option>              
@@ -133,13 +135,13 @@
                         			</div>
                     			</div>
                         			<div class="form-group row aceitesh">
-                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuantos Litros Completó?</strong></div>
+                            			<div class="col-md-7 col-md-offset-1"><strong>¿Cuántos Litros Completó?</strong></div>
                             			<div class="col-md-2">
                             			<input type="number" name="litroshidra" id="litrosahidra" default="0" min="0" class="form-control"/></div>
                             			<div class="col-md-2"><span>Lts</span></div>
                         			</div>
                                 <div class="form-group row">
-                                    <div class="col-md-8 col-md-offset-1"><span>Revision del Estado de los Fuelles Neumáticos.</span><strong>¿Buen Estado?</strong></div>
+                                    <div class="col-md-8 col-md-offset-1"><span>Revisión del Estado de los Fuelles Neumáticos.</span><strong>¿Buen Estado?</strong></div>
                                     <div class="col-md-2">
                                         <select name="fuelle" id="fuelle" class="form-control">
                                             <option value="Si">Si</option>              
@@ -148,13 +150,14 @@
                                     </div>
                                 </div>
                                     <div class="form-group row repararfuelle">
-                                        <div class="col-md-7 col-md-offset-1"><strong>¿Lo ha sustituido?</strong></div>
+                                        <div class="col-md-7 col-md-offset-1"><strong>¿Lo ha Sustituido?</strong></div>
                                         <div class="col-md-2">
                                             <select name="reparado" id="reparado" class="form-control">
                                                 <option value="Si">Si</option>              
                                                 <option value="No">No</option>
                                             </select>    
                                         </div>
+                                    </div>
                                     </div>
 
                 		</div>

@@ -28,7 +28,6 @@
             				<td>{{ $patio->descripcion }}</td>
             				<td>
             					<a href="{{ route('patios.edit',$patio) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
             				</td>            				
             			</tr>
             			@endforeach

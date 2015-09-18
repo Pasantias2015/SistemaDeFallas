@@ -47,7 +47,7 @@
                                 <select name="persona_id" id="mecanico" class="form-control">
                                     <option>Seleccione un Mecanico</option>    
                                     @foreach($mecanicos as $mecanico)
-                                    <option value="{{ $mecanico->persona->id}}">{{ $mecanico->persona->pnombre." ".$mecanico->persona->snombre." ".$mecanico->persona->papellido." ".$mecanico->persona->sapellido  }}</option>    
+                                    <option value="{{ $mecanico->id}}">{{ $mecanico->nombrecompleto  }}</option>    
                                     @endforeach
                                 </select>
                             </div>

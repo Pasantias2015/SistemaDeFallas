@@ -45,9 +45,20 @@
 		
 			var ciudad_id = e.target.value;
 			$.get('/ajax-municipio?ciudad_id='+ciudad_id,function(data){
-				$('#municipio').empty();
+				//$('#municipio').empty();
 				$.each(data,function(index,municipioObj){
 					$('#municipio').append('<option value="'+municipioObj.id+'">'+municipioObj.descripcion+'</option>');
+				});
+			});
+			console.log(e);
+		});
+		$('#municipio').on('change',function(e){
+		
+			var municipio_id = e.target.value;
+			$.get('/ajax-parroquia?municipio_id='+municipio_id,function(data){
+				//$('#parroquia').empty();
+				$.each(data,function(index,parroquiaObj){
+					$('#parroquia').append('<option value="'+parroquiaObj.id+'">'+parroquiaObj.descripcion+'</option>');
 				});
 			});
 			console.log(e);
@@ -63,11 +74,24 @@
 			});
 			console.log(e);
 		});
+		 
+	$('#coordinacion').on('change',function(e){      
+            var coordinacion = e.target.value;
+            $.get('/ajax-cargo?coordinacion='+coordinacion,function(data){
+                $('#cargo').empty();
+                $.each(data,function(index,cargoObj){
+                    $('#cargo_id').append('<option value="'+cargoObj.id+'">'+cargoObj.nombre+'</option>');
+                });
+            });
+            console.log(e);
+        });
 	});
+
+
 	 function soloLetras(e){
        key = e.keyCode || e.which;
        tecla = String.fromCharCode(key).toLowerCase();
-       letras = " Ã¡Ã©Ã­Ã³ÃºabcdefghijklmnÃ±opqrstuvwxyz";
+       letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
        especiales = "8-37-39-46";
 
        tecla_especial = false

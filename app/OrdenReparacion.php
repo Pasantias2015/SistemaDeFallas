@@ -16,16 +16,17 @@ class OrdenReparacion extends Model {
 						'diagnostico',
 						'descripcionuno',
 						'descripciondos',
-						'mantenimientocorrectivo_id'];
+						'mantenimientocorrectivo_id',
+						'nivel'];
+						
 	public $timestamps = false;
 
 	public function mantenimientocorrectivo()
     {
-        return $this->belongsTo('MantenimientoCorrectivo');
+        return $this->belongsTo('App\MantenimientoCorrectivo');
     }
-
-
-
-
-
+    public function pieza()
+	{
+	 	return $this->belongsTo('App\Pieza_Equipo_Reparacion');
+	}
 }

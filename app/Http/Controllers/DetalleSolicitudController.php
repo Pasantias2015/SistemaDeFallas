@@ -21,7 +21,12 @@ class DetalleSolicitudController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+public function index()
 	{
 		//
 	}
@@ -55,7 +60,7 @@ class DetalleSolicitudController extends Controller {
 		$detalles = DetalleSolicitud::where('solicitud_id','=',$id)->get();
 		
 		$solicitud = Solicitud::findOrFail($id);
-        return view('Almacen/detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud','piezasneo'));
+        return view('Almacen.detallesolicitud',compact('detalles','herramientas','articulos','fluidos','piezas','solicitud','piezasneo'));
 
 	}
 

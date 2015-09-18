@@ -38,7 +38,7 @@ $(document).ready(function(){
             $.get('/ajax-pieza?grupo_id='+grupo_id,function(data){
                 //$('#pieza').empty();
                 $.each(data,function(index,piezaObj){
-                    $('#pieza').append('<option value="'+piezaObj.codigo+'">'+piezaObj.descripcion+'</option>');
+                    $('#pieza').append('<option value="'+piezaObj.id+'">'+piezaObj.descripcion+'</option>');
                 });
             });
           

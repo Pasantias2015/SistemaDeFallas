@@ -10,13 +10,13 @@
                                     <th>ID</th>
                                     <th>Fecha</th>
                                     <th>Unidad - Uso</th>
-                                    <th>Acción</th>
+                                    <th>Accion</th>
                               </tr>
                               @foreach($mensuales as $mensual)
                               <tr>                                
                                 <td>{{ $mensual->id }}</td>
                                 <td>{{ $mensual->fecha }}</td>
-                                <td>{{ $mensual->serviciounidadoperador->unidad->nidentificacion." - ".$semanal->serviciounidadoperador->unidad->uso}}</td>
+                                <td>{{ $mensual->unidad->nidentificacion." - ".$mensual->unidad->uso}}</td>
                                 <td>
                                   <a href="{{ route('mensual.edit',$mensual) }}" class="btn btn-info">Ver</a>
                                 </td>                               

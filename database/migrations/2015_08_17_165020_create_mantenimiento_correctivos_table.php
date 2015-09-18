@@ -33,7 +33,9 @@ class CreateMantenimientoCorrectivosTable extends Migration {
 			$table->string('otrasobs');
 			$table->string('detalle');
 			$table->string('revisado');		
-			$table->string('pendiente');		
+			$table->string('pendiente');
+			$table->string('sistema');		
+		
 		});
 	}
 	

@@ -21,6 +21,7 @@ class MantenimientoCorrectivo extends Model {
 							'otrasobs',
 							'detalle',
 							'revisado',
+							'sistema',
 							'pendiente'	];
 
 

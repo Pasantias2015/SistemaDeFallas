@@ -16,10 +16,11 @@ class CreateMantenimientoSemanalsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->date('fecha');
+			$table->integer('horamotor');
 			$table->integer('usuario_id')->unsigned();
 			$table->foreign('usuario_id')->references('id')->on('users');
-			$table->integer('serviciounidadoperador_id')->unsigned();
-			$table->foreign('serviciounidadoperador_id')->references('id')->on('servicio_unidad_operadores');
+			$table->integer('unidad_id')->unsigned();
+			$table->foreign('unidad_id')->references('id')->on('unidades');
     		$table->string('cnliquido'); //Llenado del liquido del limpia parabrisa
     			$table->integer('litrosl'); //Cantidad en litros de liquido completados
     		$table->string('presionc'); //Correccion de la presion de los cauchos

@@ -35,7 +35,6 @@
                             <td>{{ $coordinacion->nombre }}</td>
             				<td>
             					<a href="{{ route('coordinaciones.edit',$coordinacion) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
             				</td>            				
             			</tr>
             			@endforeach

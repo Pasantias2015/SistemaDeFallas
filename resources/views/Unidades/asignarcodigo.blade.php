@@ -12,19 +12,27 @@
 					<table class="table table-bordered table-hover">
 						<tr>
 							<th>ID</th>
-							<th>Nº Identificacion</th>
+							<th>N&deg Identificaci&oacuten</th>
+							<th>A&ntildeo</th>
 							<th>Modelo</th>
-							<th>Año</th>
-							<th>Codigo del Sistema</th>
-                            <th>Accion</th>
+							<th>C&oacutedigo del Sistema</th>
+							<th>IMEI SIM CARD</th>
+							<th>ISP</th>
+							
+
+                            				<th>Acci&oacuten</th>
 						</tr>
 						@foreach($unidades as $unidad)
 						<tr>
 							<td>{{ $unidad->id}}</td>
 							<td>{{ $unidad->nidentificacion}}</td>
-							<td>{{ $unidad->year}}</td><!-- no me quiere mostrar la descripcion -->
-							<td>{{ $unidad->modelo->codigo}}</td><!-- no me quiere mostrar la descripcion -->
-							<td>{{ $unidad->codigosistema}}</td> 
+							<td>{{ $unidad->year}}</td>
+							<td>{{ $unidad->modelo->codigo." ".$unidad->modelo->marca->nombre}}</td>
+							<td>{{ $unidad->codigosistema}}</td>
+							<td>{{ $unidad->imei}}</td> 
+							<td>{{ $unidad->isp}}</td> 
+
+
 
                             <td><a href="{{ route('asignar.edit',$unidad) }}">Asignar</a></td>
 							

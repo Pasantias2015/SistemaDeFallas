@@ -3,7 +3,7 @@
 <head>
 {!! Html::script('js/jquery-1.11.3.min.js') !!}   
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
-<link rel="stylesheet" href="/css/login.css"> 
+<link rel="stylesheet" href="{!! url('css/login.css') !!}"> 
 <title></title>
 </head>
 <body>
@@ -11,26 +11,26 @@
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 </head>
 <div class="wrapper">
-  <div class="background"></div>
+  <div class="background" >
+ <img src="{!! url('images/login.jpg') !!}" height="100%" width="100%" >
+  </div>
   <div class="auth opa">
     <div class="image-size" >
-        <img src="/images/s.png" alt="" style="width:250px;height:200px;">
+        <img src="{!! url('images/s.png') !!}" alt="" style="width:250px;height:200px;">
     </div>
     <div class="login-title">
-        </br>
-        <h3> <strong>SysTransbarca - Bienvenido(a)</strong> </h3>
+
+        <h6 style="text-align:center"> <strong>Ingresar al Sistema</strong> </h6>
+
     </div>
     <form class="inputWrapper" class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="user-icon"><i class="fa fa-user"></i></div>
-        <input type="text" class="username" name="usuario" placeholder="Ingrese su Usuario"/>
+        <input type="text" class="username" name="usuario" placeholder="Usuario"/>
       <div class="user-icon"><i class="fa fa-key"></i></div>
-        <input type="password" class="password" name="password" placeholder="Ingrese su Contraseña"/>
+        <input type="password" class="password" name="password" placeholder="Clave"/>
         <button type="submit" class="btn btn-login" value="Login">Entrar</button>
-      <div class="forget">
-        <!-- <p style="color:white"><input type="checkbox" name="remember"> Recordarme</p> -->
-        <p><span><a href="{{ url('changepassword') }}">Recuperar Contraseña</a></span></p>
-      </div>
+     
     </form>
   </div>
 </div>

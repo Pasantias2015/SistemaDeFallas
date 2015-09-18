@@ -30,7 +30,6 @@
             				<td>{{ $servicio->estado }}</td>
             				<td>
             					<a href="{{ route('servicios.edit',$servicio) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
             				</td>            				
             			</tr>
             			@endforeach

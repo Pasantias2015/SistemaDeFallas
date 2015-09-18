@@ -5,20 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Transbarca</title>
-        
-    <!--
-    {!! Html::style('materialize/css/materialize.css') !!}
-    {!! Html::style('bower_components/bootstrap-material-design/dist/css/material.min.css') !!}
-    {!! Html::style('bower_components/bootstrap-material-design/dist/css/ripples.min.css') !!}
-    {!! Html::style('bower_components/bootstrap-material-design/dist/css/roboto.min.css') !!}
-    {!! Html::style('bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css') !!}
-    {!! Html::script('bower_components/bootstrap-material-design/dist/js/ripples.min.js') !!}
-    {!! Html::script('bower_components/bootstrap-material-design/dist/js/material.min.js') !!}
-    
-    {!! Html::style('css/app.css') !!}
-    -->
+  
     {!! Html::style('css/style.css') !!}
 
+    {!! Html::script('js/modernizr.js') !!}    
     {!! Html::script('js/jquery-1.11.3.min.js') !!}    
     {!! Html::script('js/jasny-bootstrap.min.js') !!}    
     {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
@@ -47,7 +37,7 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <span class="navbar-brand"> <i class="fa fa-laptop fa-2x"></i> SysTransbarC.A. | <small>Sistema de Gestión y Control</small>  </span>
+               <span class="navbar-brand"> <i class="fa fa-laptop fa-2x"></i> SysTransbarC.A. | <small>Sistema de Gesti&oacuten y Control</small>  </span>
            </div>
 
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -62,10 +52,11 @@
                        -->
                    @else
                        <li class="dropdown">
-                           <a href="#" class="dropdown-toggle text-blanco" data-toggle="dropdown" role="button" aria-expanded="false">Bienvenido {{ Auth::user()->rol->descripcion }} - {{ Auth::user()->persona->nombrecompleto }} <span class="caret"></span></a>
-                           <ul class="dropdown-menu" role="menu">
-                               <li><a href="{{ url('changepassword') }}">Cambiar Contraseña</a></li>
-                               <li><a href="{{ url('/auth/logout') }}">Cerrar Sesion</a></li>
+                           <a href="#" class="dropdown-toggle text-blanco" data-toggle="dropdown" role="button" aria-expanded="false">Bienvenido - <i class="fa fa-user"></i>{{ Auth::user()->persona->nombrecompleto }} <span class="caret"></span></a>
+
+			  <ul class="dropdown-menu" role="menu">
+                               <li><a href="{{ url('changepassword') }}">Cambiar Contrase&ntildea</a></li>
+                               <li><a href="{{ url('/auth/logout') }}">Cerrar Sesi&oacuten</a></li>
                            </ul>
                        </li>
                    @endif

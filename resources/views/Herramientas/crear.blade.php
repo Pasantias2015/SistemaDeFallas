@@ -36,7 +36,7 @@
                             <td>{{ $herramienta->descripcion }}</td>
             				<td>
             					<a href="{{ route('herramientas.edit',$herramienta) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
+            				
             				</td>            				
             			</tr>
             			@endforeach

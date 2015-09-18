@@ -7,7 +7,7 @@
 		<div class="panel-body">
 		 @include('tools.errors')
             <div class="col-md-12">
-                <h4> La Hora Introducida es Menor que la Anterior</h4>
+                <h4> la hora introducida es menor que la Anterior</h4>
                 <div class="col-md-8 col-md-offset4">
                 	<h3> ¡Verifique!</h3>
                 </div>

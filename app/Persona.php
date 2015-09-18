@@ -8,9 +8,8 @@ class Persona extends Model {
 	protected $fillable = ['cedula','pnombre','snombre','papellido',
 							'sapellido','direccion','fnacimiento','estadocivil',
 							'telefono-hab','telefono-mov','correo-electronico',
-							'rif','sexo','estatura','peso',
-    						'camisa','pantalon','zapato',
-    						'profesion_id','nivel','parroquia_id','hijos','foto'];
+							'rif','sexo','estatura','peso','camisa','pantalon','zapato',
+    						'profesion_id','nivel','parroquia_id','cargo_id','hijos','foto','acceso'];
     public $timestamps=false;
 
     public function getProfileImage()
@@ -45,6 +44,10 @@ class Persona extends Model {
 	public function usuario()
 	{
         return $this->hasOne('App\User','id');
+	}
+	public function cargo()
+	{
+        return $this->belongsTo('App\Cargo','id');
 	}
 
 	public function operador()

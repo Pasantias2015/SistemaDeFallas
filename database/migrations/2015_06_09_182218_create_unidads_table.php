@@ -28,15 +28,9 @@ class CreateUnidadsTable extends Migration {
 			$table->integer('kilometrajeactual');
 			$table->string('operativa');
 			$table->string('preventivo');
-			//$table->string('potenciamotor');
-			//$table->integer('cantpersona');
-			//$table->integer('pesomax');
-			//$table->string('fabricante',10);
-			//$table->date('ffabricacion');
-			//$table->string('longitud',10);
-			//$table->string('combustible',10);			
-			//$table->rememberToken();
-			//$table->timestamps();
+			$table->string('imei');
+			$table->string('isp');
+			
 		});
 	}
 

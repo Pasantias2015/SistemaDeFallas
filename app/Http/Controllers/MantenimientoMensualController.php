@@ -2,12 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\ServicioUnidadOperador;
-use App\Mantenimientomensual;
+use App\MantenimientoMensual;
 use App\Http\Requests\CrearMantenimientoMensualRequest;
 use App\Http\Requests\FechaRequest;
 use Illuminate\Http\Request;
-use App\User;
+use App\Modelo;
 use App\Unidad;
 
 class MantenimientoMensualController extends Controller {
@@ -17,10 +16,21 @@ class MantenimientoMensualController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
 	{
-		$unidades =  ServicioUnidadOperador::all();
-		return view('Mantenimiento_Mensual.crear',compact('unidades'));
+		$this->middleware('auth');
+	}
+
+public function index()
+	{
+		$modelos = Modelo::where('marca_id','=',2)->get();
+			
+		for ($i=0; $i <count($modelos) ; $i++) { 
+			$uno[$i]=$modelos[$i]->id;
+		}
+
+		$unidades =  Unidad::whereIn('modelo_id', $uno)->get();
+		return view('Mantenimiento_Mensual.crear',compact('unidades'));	
 	}
 
 	/**
@@ -41,7 +51,8 @@ class MantenimientoMensualController extends Controller {
 	public function store(CrearMantenimientoMensualRequest $request)
 	{
 		$mensual = MantenimientoMensual::create($request->all());
-		return view('home');
+		$mensuales = MantenimientoMensual::paginate(10);
+		return view('Mantenimiento_Mensual.listado',compact('mensuales'));
 	}
 
 	/**
@@ -63,7 +74,8 @@ class MantenimientoMensualController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+		$mensual = MantenimientoMensual::findOrFail($id);
+        return view('Mantenimiento_Mensual.ver',compact('mensual'));
 	}
 
 	/**
@@ -88,4 +100,9 @@ class MantenimientoMensualController extends Controller {
 		//
 	}
 
+	public function listado()
+	{
+		$mensuales = MantenimientoMensual::paginate(10);
+		return view('Mantenimiento_Mensual.listado',compact('mensuales'));
+	}
 }

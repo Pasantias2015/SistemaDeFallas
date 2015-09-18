@@ -36,11 +36,15 @@ class CreatePersonasTable extends Migration {
 			$table->string('zapato');
 			$table->integer('profesion_id')->unsigned();
 			$table->foreign('profesion_id')->references('id')->on('profesiones');
+			$table->integer('cargo_id')->unsigned();
+			$table->foreign('cargo_id')->references('id')->on('cargos');
 			$table->enum('nivel',array('ninguno','basico','bachiller','universitario'));
 			$table->integer('parroquia_id')->unsigned();
 			$table->foreign('parroquia_id')->references('id')->on('parroquias');
 			$table->integer('hijos')->unsigned();
 			$table->string('foto');
+			$table->string('acceso');
+
 		});
 	}
 

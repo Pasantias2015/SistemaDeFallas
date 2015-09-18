@@ -24,7 +24,7 @@ class CrearMantenimientoPorfallaRequest extends Request {
 		return [		
 						'usuario_id'=>'required',
                         'fecha'=>'required',
-    					'serviciounidadoperador_id'=>'required',
+    					'unidad_id'=>'required',
 
 		];
 	}

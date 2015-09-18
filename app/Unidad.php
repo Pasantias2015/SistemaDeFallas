@@ -17,16 +17,9 @@ class Unidad extends Model {
 	 						'kilometrajebase',
 							'kilometrajeactual',
 							'operativa',
-							'preventivo'
-	 						//'kilometraje'//para monitero 
-	 						/*'cantpersona',,
-	 						'pesomax',
-	 						'potenciamotor',
-	 						'fabricante',
-	 						'ffabricaicon',
-	 						'longitud',
-	 						'combustible'*/
-	 						];
+							'preventivo',
+	 						'imei',
+							'isp'];
 	 public $timestamps = false; 
 
 	 public function modelo()

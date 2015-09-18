@@ -13,7 +13,11 @@ class ReporteDiarioController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+public function index()
 	{
 		$diarios = MantenimientoDiario::paginate(10);
 		return view('Reportes.diariouso',compact('diarios'));

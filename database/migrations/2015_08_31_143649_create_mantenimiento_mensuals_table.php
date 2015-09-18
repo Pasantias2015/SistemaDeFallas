@@ -18,10 +18,10 @@ class CreateMantenimientoMensualsTable extends Migration {
 			$table->date('fecha');
 			$table->integer('usuario_id')->unsigned();
 			$table->foreign('usuario_id')->references('id')->on('users');
-			$table->integer('serviciounidadoperador_id')->unsigned();
-			$table->foreign('serviciounidadoperador_id')->references('id')->on('servicio_unidad_operadores');
+			$table->integer('unidad_id')->unsigned();
+			$table->foreign('unidad_id')->references('id')->on('unidades');
 			$table->string('liquidobat'); //nivel del liquido de la bateria
-    			$table->integer('Litrosb'); //Cantidad de Litros completados a la bateria
+    			$table->integer('litrosb'); //Cantidad de Litros completados a la bateria
     		$table->string('escobillas'); //revision de las escobillas de los limpia parabrisas
     		$table->string('filtros'); // revision de estado de filtro de la instalacion de aire
     		$table->string('liquidoven'); //nivel del liquido del accionamiento hidroestatico del ventilador

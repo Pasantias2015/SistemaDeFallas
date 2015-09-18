@@ -39,7 +39,7 @@
                             <td>{{ $solucion->causa->causafalla }}</td>
                             <td>
                                 <a href="{{ route('soluciones.edit',$solucion) }}" class="btn btn-info">Modificar</a>
-                                <a href="" class="btn btn-danger">Eliminar</a>
+
                             </td>                           
                         </tr>
                         @endforeach

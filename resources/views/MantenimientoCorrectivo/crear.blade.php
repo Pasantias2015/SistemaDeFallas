@@ -86,9 +86,24 @@
          <div class="row">
             <div class="col-md-12">
               <div class="panel panel-danger">
-                <div class="panel-heading">Sección de la Falla</div>
+                <div class="panel-heading">Ubicaci&oacuten de la Falla</div>
                 <div class="panel-body">
+		   <div class="row">
                     <div class="form-group">
+                      <div class="col-md-5"><span>Sistema de la Falla: </span> </div>
+                      <div class="col-md-7">
+                        <select name="seccion_id" class="form-control">
+                          <option value="Sistema de Propulsores">Sistema de Propulsores</option>    
+                          <option value="Sistema Neumatico">Sistema Neum&aacutetico</option>    
+                          <option value="Sistema de Carroceria">Sistema de Carroceria</option>    
+                          <option value="Sistema Electrico">Sistema Electrico</option>    
+                          <option value="Sistema de Direccion">Sistema de Direcci&oacuten</option>    
+                        </select>
+                      </div>
+                    </div>
+		</div>         
+               <div class="row">
+        	<div class="form-group">
                       <div class="col-md-5"><span>Sección de la Falla: </span> </div>
                       <div class="col-md-7">
                         <select name="seccion_id" class="form-control">
@@ -97,11 +112,12 @@
                          @endforeach
                         </select>
                       </div>
-                    </div>         
+                    </div>
+ 		</div>   
+                    </div>        
                 </div>
               </div>
             </div>
-          </div>
 
           <div class="row">
             <div class="col-md-12">

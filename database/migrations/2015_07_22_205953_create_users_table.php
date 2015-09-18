@@ -20,17 +20,10 @@ class CreateUsersTable extends Migration {
 			$table->foreign('persona_id')->references('id')->on('personas');
 
 			$table->string('usuario')->unique();
-			$table->integer('rol_id')->unsigned();
-			$table->foreign('rol_id')->references('id')->on('roles');
 			$table->string('password',60);
 			$table->string('password_confirmation',60);
 			$table->string('preguntas');
-			$table->string('respuestas');
-			$table->rememberToken();
-			$table->timestamps();
-
-			
-			 	
+			$table->string('respuestas');		 	
 		});
 	}
 

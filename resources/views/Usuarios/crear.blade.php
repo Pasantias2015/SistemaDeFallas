@@ -6,6 +6,7 @@
 		<div class="panel-heading">Registra Usuario</div>
 		<div class="panel-body">
 		 @include('tools.errors')
+ {!! Form::open(['route'=>'user.store','method'=>'POST']) !!}
 
             	<div class="col-md-12">
                         <div class="form-group">
@@ -18,32 +19,7 @@
                               </select>
                         </div>
                         </div>
-                        <div class="row">
-                          <div class="col-md-6">
-                          <div class="form-group row">
-                              <div class="col-md-5"><strong>Coordinacion</strong>  </div>
-                               <div class="col-md-7">    
-                                  <select name="rol" id="rol" class="form-control">
-                                  @foreach($coords as $coord)
-                                    <option value="{{ $coord->id }}">{{ $coord->nombre }}</option>            
-                                  @endforeach
-                                  </select>
-                              </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                          <div class="form-group row">
-                            <div class="col-md-5"><strong>Cargo</strong>  </div>
-                               <div class="col-md-7">    
-                                  <select name="rol" id="rol" class="form-control">
-                                  @foreach($roles as $rol)
-                                    <option value="{{ $rol->id }}">{{ $rol->descripcion }}</option>            
-                                  @endforeach
-                                  </select>
-                              </div>
-                          </div>
-                        </div>
-                        </div>
+                        
             		<div class="form-group">
                                 <span>Pregunta Secreta: </span>
                                 {!! Form::text('preguntas',null,['class'=>'form-control']) !!}
@@ -57,13 +33,14 @@
 				        {!! Form::text('usuario',null,['class'=>'form-control']) !!}
 				</div>
                         <div class="form-group">
-                        <span>Contraseña: </span>
+                        <span>Contrase&ntildea: </span>
                             <div class="form-group">
-                              <input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required>
+                              <input name="password" type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Clave" required>
                               <span class="help-block">Minimo 6 caracteres</span>
                             </div>
                         </div>
 			@include('tools.botones-registrar')
+{!! Form::close() !!}
             	</div>
 		</div>
 	</div>

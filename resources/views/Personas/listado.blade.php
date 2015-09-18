@@ -15,9 +15,9 @@
                                     <th>Cedula</th>
                                     <th>Nombre</th>
                                     <th>Apellido</th>
-                                    <th>Dirección</th>
-                                    <th>Profesion</th>
-                                    <th>Accion</th>
+                                    <th>Direcci&oacuten</th>
+                                    <th>Profesi&oacuten</th>
+                                    <th>Acci&oacuten</th>
                               </tr>
                               @foreach($personas as $persona)
                               <tr>                                

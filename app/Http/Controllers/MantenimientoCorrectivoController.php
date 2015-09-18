@@ -24,7 +24,12 @@ class MantenimientoCorrectivoController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
+public function index()
 	{
 		$usuarios= User::all();
 		$unidades= Unidad::all();
@@ -129,4 +134,18 @@ class MantenimientoCorrectivoController extends Controller {
 	 	$correctivos = MantenimientoCorrectivo::paginate(10);
         return view('MantenimientoCorrectivo.listado',compact('correctivos'));
 	 }
+	 public function reportegral(){
+	 	$unidades = Unidad::all();
+        return view('Reportes.correctivo',compact('unidades'));
+	 }
+ 	public function reportesistema()
+{
+        return view('Reportes.correctivosistema');
+	 }
+public function reportecategoria()
+{
+        return view('Reportes.correctivocategoria');
+	 }
+
+
 }

@@ -19,7 +19,7 @@
                                 <select name="mecanico" id="mecanico" class="form-control">
                                     <option>Seleccione un Mecanico</option>    
                                     @foreach($mecanicos as $mecanico)
-                                    <option value="{{ $mecanico->persona->pnombre." ".$mecanico->persona->papellido}}">{{ $mecanico->persona->pnombre." ".$mecanico->persona->snombre." ".$mecanico->persona->papellido." ".$mecanico->persona->sapellido  }}</option>    
+                                    <option value="{{ $mecanico->nombrecompleto}}">{{ $mecanico->nombrecompleto }}</option>    
                                     @endforeach
                                 </select>
                                 </br>
@@ -42,7 +42,7 @@
                             <td>{{ $caja->mecanico }}</td>
             				<td>
             					<a href="{{ route('cajas.edit',$caja) }}" class="btn btn-info">Modificar</a>
-            					<a href="" class="btn btn-danger">Eliminar</a>
+            					
             				</td>            				
             			</tr>
             			@endforeach

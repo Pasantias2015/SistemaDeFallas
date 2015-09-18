@@ -9,7 +9,7 @@
           {!! Form::open(['route'=>'mensual.store','method'=>'POST']) !!}
     		<div class="row">
 				<div class="row">
-                	<div class="col-md-4">
+                	<div class="col-md-4 col-md-offset-1">
                     	<div class="form-group row">
                         	<div class="col-md-4"><span>Fecha:</span></div>
                         	<div class="col-md-7">
@@ -19,33 +19,27 @@
                         	</div>
                     	</div>
                 	</div>
-                	<div class="col-md-4">
-                    	<div class="form-group row">
-                        	<div class="col-md-3"><span>Unidad:</span></div>
-                        	<div class="col-md-9">   
-                            	<select name="serviciounidadoperador_id" id="unidad" class="form-control">
-                                	@foreach($unidades as $unidad)
-                                    <option value="{{ $unidad->id }}">{{$unidad->unidad->nidentificacion}}</option>    
-                                	@endforeach
-                            	</select>
-                        	</div>
-                    	</div>
-               		</div>
-                	<div class="col-md-4">
-                    	<div class="form-group row">
-                        	<div class="col-md-5"><span>Hora actual de motor:</span></div>
-                        	<div class="col-md-6">
-                            	{!! Form::text('horamotor',null,['class'=>'form-control']) !!}
-                        	</div>
-                    	</div>
-                	</div>
+                <div class="col-md-4 col-md-offset-1">
+                    <div class="form-group row">
+                        <div class="col-md-3"><span>Unidad:</span></div>
+                        <div class="col-md-9">   
+                            <select name="unidad_id" id="unidad" class="form-control">
+                                @foreach($unidades as $unidad)
+                                    <option value="{{ $unidad->id }}">{{$unidad->nidentificacion}}</option>    
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
             	</div>
 			</div>
 
 			<div class="row">
             	<div class="col-md-12">
                 	<div class="panel panel-danger">
-                	<div class="panel-heading">Parámetros a Revisar</div>
+                	<div class="panel-heading">Parametros a Revisar</div>
+                    <div class="panel-body">
                 	    <div class="form-group row">
                       		<div class="col-md-8 col-md-offset-1"><span>Chequeo del nivel del liquido de las Baterias.</span><strong>  ¿Nivel Adecuado?</strong></div>
                         	<div class="col-md-2">
@@ -96,7 +90,7 @@
                             	<div class="col-md-2"><span>Lts</span></div>
                         	</div>
                 	    <div class="form-group row">
-                      		<div class="col-md-8 col-md-offset-1"><span>Liberación de agua en depositos de aire a presion.</span></div>
+                      		<div class="col-md-8 col-md-offset-1"><span>Liberación de agua en Depositos de Aire a presión.</span></div>
                         	<div class="col-md-2">
                             	<select name="airepresion" id="airepresion" class="form-control">
                                 	<option value="Si">Si</option>
@@ -105,9 +99,9 @@
                         	</div>
                     	</div>
                 	    <div class="form-group row">
-                      		<div class="col-md-8 col-md-offset-1"><span>Liberación de agua en el Filtro de Combustible.</span></div>
+                      		<div class="col-md-8 col-md-offset-1"><span>Liberacion de agua en el Filtro de Combustible.</span></div>
                         	<div class="col-md-2">
-                            	<select name="filtrocomb" id="filtrocomb" class="form-control">
+                            	<select name="filtroscomb" id="filtroscomb" class="form-control">
                                 	<option value="Si">Si</option>
                                 	<option value="No">No</option>
                             	</select>    
@@ -132,13 +126,14 @@
                         	</div>
                     	</div>
                     	<div class="form-group row">
-                      		<div class="col-md-8 col-md-offset-1"><span>Limpieza de las rejillas de Filtrantes de Recirculacion del Climatizador.</span><strong>  ¿Realizó Sustitución?</strong></div>
+                      		<div class="col-md-8 col-md-offset-1"><span>Limpieza de las Rejillas de Filtrantes de Recirculacion del Climatizador.</span><strong>  ¿Realizó Sustitución?</strong></div>
                         	<div class="col-md-2">
                             	<select name="rejillas" id="rejillas" class="form-control">
                                 	<option value="Si">Si</option>
                                 	<option value="No">No</option>
                             	</select>    
                         	</div>
+                        </div>
                     	</div>
 
 

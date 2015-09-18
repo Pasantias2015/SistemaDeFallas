@@ -23,8 +23,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['usuario','rol_id','password','password_confirmation','preguntas','respuestas'];
+	protected $fillable = ['usuario','password','password_confirmation','preguntas','respuestas','persona_id'];
 	protected $guard =['id','persona_id'];
+	public $timestamps =false;
+
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -38,10 +40,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->belongsTo('App\Persona');
 	}
 
-	public function rol()
-	{
-		return $this->belongsTo('App\Rol');
-	}
 	public function preventivo()
     {
         return $this->hasMany('App\MantenimientoPreventivo','id');

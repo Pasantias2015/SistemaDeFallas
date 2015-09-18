@@ -9,13 +9,14 @@ use App\Persona;
 use App\Operador;
 use App\Mecanico;
 use App\User;
-use App\Rol;
 use App\Profesion;
 use App\Pais;
 use App\Estado;
 use App\Ciudad;
+use App\Cargo;
 use App\Municipio;
 use App\Parroquia;
+use App\Coordinacion;
 
 class PersonaController extends Controller {
 
@@ -24,9 +25,14 @@ class PersonaController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+ public function index()
 	{
 		$per = Persona::findorfail(2)->foto;
+		
        return view ('Personas.persona',compact('persona'));
 
 	}
@@ -38,10 +44,11 @@ class PersonaController extends Controller {
 	 */
 	public function create()
 	{
-			$roles=Rol::all();
             $profesiones=Profesion::all();
             $paises=Pais::all();
-            return view('Personas.crear',compact('roles','profesiones','paises'));
+	    $cargos=Cargo::all();
+            $coordinaciones = Coordinacion::all();
+            return view('Personas.crear',compact('profesiones','paises','coordinaciones','cargos'));
     }
 
 	/**
@@ -60,7 +67,8 @@ class PersonaController extends Controller {
         	//guardamos la imagen en public/imgs con el nombre original
         	//$file->move("images",$persona->foto);
 			//redirigimos con un mensaje flash
-			return 'Te has registrado correctamente.';
+				return view('home');
+		
         } 
 		
 		
@@ -113,8 +121,8 @@ class PersonaController extends Controller {
 	}
 	public function listado()
 	{
-		$personas=Persona::all();
-        return view('Personas.listado',compact('personas'));
+		$personas=Persona::all();        	
+		return view('Personas.listado',compact('personas'));
 	}
 
 }

@@ -15,6 +15,7 @@ use App\Pieza;
 use App\Persona;
 use App\Causa;
 use App\Falla;
+use App\Cargo;
 use App\Solucion;
 use App\ServicioUnidadOperador;
 
@@ -79,5 +80,10 @@ class CargaController extends Controller {
 		{	
 			$solucion = Solucion::where('causa_id','=',\Input::get('causa_id'))->get();
 			return response()->json($solucion);
+		}
+	public function cargarcargo()
+		{	
+			$cargo = Cargo::where('coordinacion_id','=',\Input::get('coordinacion'))->get();
+			return response()->json($cargo);
 		}
 }

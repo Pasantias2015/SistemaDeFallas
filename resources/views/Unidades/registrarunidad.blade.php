@@ -12,21 +12,20 @@
                                 <div class=" col-md-12">
                                     @include('Unidades.form.form')
                                     <div class="form-group">
-                                            <span>Marca: </span>
-                                            <select name="marca" id="marca" class="form-control">
-                                                 <option default>Seleccione</option>
-                                                 @foreach($marcas as $marca)
-                                                    <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>    
-                                                 @endforeach
-                                            </select>
-                                    </div>
-                                    <div class="form-group">
-                                            <span>Modelo: </span>
-                                            <select name="modelo_id" id="modelo" class="form-control">
-                                                <option default>Seleccione</option>
-                                                <option value=""></option>
-                                            </select>
-                                    </div>
+                			<span>Marca: </span>
+                <select name="marca" id="marca" class="form-control">
+                    <option default>Seleccione</option>
+                        @foreach($marcas as $marca)
+                        <option value="{{ $marca->id }}">{{ $marca->nombre }}</option>    
+                        @endforeach
+                </select>
+            </div>
+            <div class="form-group">
+                <span>Modelo: </span>
+                <select name="modelo" id="modelo" class="form-control">
+                    <option default>Seleccione</option>
+                </select>
+            </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="col-md-offset-4 col-md-8 form-group">

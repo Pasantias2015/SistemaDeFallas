@@ -122,12 +122,23 @@
           </select>
       </div>
     </div>
-     <div class="form-group row">
+    <div class="form-group row">
       <div class="col-md-5"><span>Municipio</span>  </div>
        <div class="col-md-7">    
           <select name="municipio" id="municipio" class="form-control">
                     <option default>Seleccione</option>
             <option value=""></option>
+           </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-md-5"><span>Coordinaciones</span>  </div>
+       <div class="col-md-7">    
+          <select name="coordinacion" id="coordinacion" class="form-control">
+            <option default>Seleccione</option>
+            @foreach($coordinaciones as $coordinacion)
+            <option value="{{ $coordinacion->id}}">{{ $coordinacion->nombre }}</option>
+            @endforeach
            </select>
       </div>
     </div>
@@ -201,11 +212,26 @@
          </select>
       </div>
     </div>
+     <div class="form-group row">
+      <div class="col-md-5"><span>Cargo</span>  </div>
+       <div class="col-md-7">    
+          <select name="cargo_id" id="cargo_id" class="form-control">
+          <option default>Seleccione</option>
+          </select>
+      </div>
+    </div>
   </div> 
 
 </div>  
 <div class="col-md-12">
+	<div class="form-group row">
+		<div class="col-md-8 col-md-offset-1"><span>&iquestEsta Persona Tendr&aacute acceso al Sistema?</span></div>   
+                                <div class="col-md-3">
+                                    <span>Si:</span>{!! Form::radio('acceso', 'Si', false) !!}
+                                    <span>No:</span>{!! Form::radio('acceso', 'No', false) !!}
+                                </div>
+  </div>
   <div class="form-group row">
       <span>Direccion Exacta</span>
-          {!! Form::textarea('snombre',null,['class'=>'form-control','rows'=>3]) !!}
+          {!! Form::textarea('direccion',null,['class'=>'form-control','rows'=>3]) !!}
   </div>
